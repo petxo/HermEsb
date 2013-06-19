@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{52ED72A3-CB7B-4E4E-BDD4-B69BA2539BB7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HermEsb.Configuration</RootNamespace>
+    <AssemblyName>HermEsb.Configuration</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bteam.Specifications">
+      <HintPath>..\..\libs\Bteam.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="BteamMongoDB">
+      <HintPath>..\..\libs\BteamMongoDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.3.2.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\packages\Castle.Windsor.3.2.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\packages\mongocsharpdriver.1.8.1\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\packages\mongocsharpdriver.1.8.1\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builder\Registration\AssemblyDescriptor.cs" />
+    <Compile Include="Builder\Registration\AssemblyDescriptorFactory.cs" />
+    <Compile Include="Builder\Registration\BasedOnDescriptor.cs" />
+    <Compile Include="Builder\Registration\BaseOnDescriptorFactory.cs" />
+    <Compile Include="Builder\Registration\IRegister.cs" />
+    <Compile Include="Builder\Registration\RegisterTypes.cs" />
+    <Compile Include="Builder\Registration\Services\BaseServiceStrategy.cs" />
+    <Compile Include="Builder\Registration\Services\FirstServiceStrategy.cs" />
+    <Compile Include="Builder\Registration\Services\IServiceStrategy.cs" />
+    <Compile Include="Builder\Registration\Services\SelfServiceStrategy.cs" />
+    <Compile Include="Builder\Registration\Services\ServiceDescriptor.cs" />
+    <Compile Include="Builder\Registration\Specifications\Component.cs" />
+    <Compile Include="Builder\Registration\Specifications\IsConcreteClassSpec.cs" />
+    <Compile Include="Builder\Registration\Specifications\TypeInNamespaceSpec.cs" />
+    <Compile Include="Bus\BusConfigurator.cs" />
+    <Compile Include="Bus\HermEsbConfig.cs" />
+    <Compile Include="Bus\Persisters\Mongo\MongoPersiterConfig.cs" />
+    <Compile Include="Bus\Persisters\SubscriptiorPersisterConfig.cs" />
+    <Compile Include="Bus\RouterControlConfigurator.cs" />
+    <Compile Include="Bus\RouterControlProcessorConfig.cs" />
+    <Compile Include="Bus\RouterProcessorConfig.cs" />
+    <Compile Include="Bus\RouterProcessorConfigurator.cs" />
+    <Compile Include="ConfigurationFragmentNameAttribute.cs" />
+    <Compile Include="ConfigurationHelper.cs" />
+    <Compile Include="ConfigurationHelperExtensions.cs" />
+    <Compile Include="ConfigurationPublisher.cs" />
+    <Compile Include="ConfigurationPublisherExtensions.cs" />
+    <Compile Include="DefaultConfigurationRepository.cs" />
+    <Compile Include="EndPoints\EndPointConfig.cs" />
+    <Compile Include="EndPoints\EndPointParameterConfig.cs" />
+    <Compile Include="EndPoints\IEndPointConfig.cs" />
+    <Compile Include="FileConfigurationRepository.cs" />
+    <Compile Include="IConfigurationFragmentNameAttribute.cs" />
+    <Compile Include="IConfigurationRespository.cs" />
+    <Compile Include="IConfigurator.cs" />
+    <Compile Include="Ioc\ConfigureIoc.cs" />
+    <Compile Include="Listeners\ListenerConfig.cs" />
+    <Compile Include="Listeners\MonitorListenerConfigurator.cs" />
+    <Compile Include="Logging\ConfiguratorLogger.cs" />
+    <Compile Include="MessageBuilder\ConfigurationBuilderHelper.cs" />
+    <Compile Include="MessageBuilder\ConfigurationMessageBuilder.cs" />
+    <Compile Include="MessageBuilder\ConfigurationRegisterHelper.cs" />
+    <Compile Include="Monitoring\FrequenceLevelConfig.cs" />
+    <Compile Include="Monitoring\MonitorConfig.cs" />
+    <Compile Include="Monitoring\MonitorConfigurator.cs" />
+    <Compile Include="Persister\Mongo\GatewayEntity.cs" />
+    <Compile Include="Persister\Mongo\MongoSubscriptorsPersister.cs" />
+    <Compile Include="Persister\Mongo\MongoSubscriptorsPersisterFactory.cs" />
+    <Compile Include="Persister\Mongo\SubscriptionType.cs" />
+    <Compile Include="Persister\Mongo\SubscriptorEntity.cs" />
+    <Compile Include="Persister\Mongo\SubscriptorEntityExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publishers\PublisherConfig.cs" />
+    <Compile Include="Publishers\PublisherConfigurator.cs" />
+    <Compile Include="Services\BusConfig.cs" />
+    <Compile Include="Services\ControlProcessorConfig.cs" />
+    <Compile Include="Services\ControlProcessorConfigurator.cs" />
+    <Compile Include="Services\ErrorHandlingControllerConfig.cs" />
+    <Compile Include="Services\ErrorHandlingControllerConfigurator.cs" />
+    <Compile Include="Services\HandlerAssembliesListConfig.cs" />
+    <Compile Include="Services\HandlerAssemblyConfig.cs" />
+    <Compile Include="Services\HandlerConfigurator.cs" />
+    <Compile Include="Services\IdentificationConfig.cs" />
+    <Compile Include="Services\MrwesbServiceConfig.cs" />
+    <Compile Include="Services\ServiceConfigurator.cs" />
+    <Compile Include="Services\ServiceProcessorConfig.cs" />
+    <Compile Include="Services\ServiceProcessorConfigurator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\HermEsb.Core\HermEsb.Core.csproj">
+      <Project>{ABAD7CC1-9A85-4F5E-9109-D00F5700CAF1}</Project>
+      <Name>HermEsb.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extended\HermEsb.Logging\HermEsb.Logging.csproj">
+      <Project>{9A6B1507-AE61-4773-9D72-718E33106397}</Project>
+      <Name>HermEsb.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABAD7CC1-9A85-4F5E-9109-D00F5700CAF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HermEsb.Core</RootNamespace>
+    <AssemblyName>HermEsb.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bteam.SimpleStateMachine">
+      <HintPath>..\..\libs\Bteam.SimpleStateMachine.dll</HintPath>
+    </Reference>
+    <Reference Include="Bteam.Specifications">
+      <HintPath>..\..\libs\Bteam.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.3.2.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\packages\Castle.Windsor.3.2.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\..\packages\RabbitMQ.Client.3.1.1\lib\net30\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builder\IObjectBuilder.cs" />
+    <Compile Include="Builder\ITypeRegister.cs" />
+    <Compile Include="Builder\ObjectBuilder.cs" />
+    <Compile Include="Builder\ObjectBuilderFactory.cs" />
+    <Compile Include="Builder\Types\Builders\DynamicMethodBuilder.cs" />
+    <Compile Include="Builder\Types\Builders\DynamicPropertyBuilder.cs" />
+    <Compile Include="Builder\Types\Builders\DynamicTypeBuilder.cs" />
+    <Compile Include="Builder\Types\Builders\ITypeBuilder.cs" />
+    <Compile Include="Builder\Types\Builders\TypesBuildersFactory.cs" />
+    <Compile Include="Builder\Types\ITypesManager.cs" />
+    <Compile Include="Builder\Types\Repositories\ITypesRepository.cs" />
+    <Compile Include="Builder\Types\Repositories\TypesRepository.cs" />
+    <Compile Include="Builder\Types\TypeExtensionMethods.cs" />
+    <Compile Include="Builder\Types\TypesManager.cs" />
+    <Compile Include="Builder\Types\TypesManagerFactory.cs" />
+    <Compile Include="Communication\Channels\AbstractReceiverChannel.cs" />
+    <Compile Include="Communication\Channels\AbstractSenderChannel.cs" />
+    <Compile Include="Communication\Channels\ChannelMessageReceived.cs" />
+    <Compile Include="Communication\Channels\ChannelMessageReceivedArgs.cs" />
+    <Compile Include="Communication\Channels\IChannelController.cs" />
+    <Compile Include="Communication\Channels\IConnectionProvider.cs" />
+    <Compile Include="Communication\Channels\IReceiverChannel.cs" />
+    <Compile Include="Communication\Channels\ISenderChannel.cs" />
+    <Compile Include="Communication\Channels\Msmq\IMessageQueue.cs" />
+    <Compile Include="Communication\Channels\Msmq\MessageQueueDecorator.cs" />
+    <Compile Include="Communication\Channels\Msmq\MessageQueueFactory.cs" />
+    <Compile Include="Communication\Channels\Msmq\MsmqChannelController.cs" />
+    <Compile Include="Communication\Channels\Msmq\MsmqReceiverChannel.cs" />
+    <Compile Include="Communication\Channels\Msmq\MsmqSenderChannel.cs" />
+    <Compile Include="Communication\Channels\Msmq\TextFormatter.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\BasicConsumerFactory.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\ChannelProvider.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\ConnectionLost.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\IChannelProvider.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\IQueueBasicConsumer.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\IRabbitConnection.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\IRabbitWrapper.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\ISharedQueue.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\QueueBasicConsumerDecorator.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\QueueInfo.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\RabbitChannelController.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\RabbitConnection.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\RabbitConnectionProvider.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\RabbitReceiverChannel.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\RabbitReconnectionException.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\RabbitSenderChannel.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\RabbitWrapper.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\RabbitWrapperFactory.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\RabbitWrapperType.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\SharedQueueDecorator.cs" />
+    <Compile Include="Communication\Channels\RabbitMq\UnableToConnect.cs" />
+    <Compile Include="Communication\Channels\Specifications\RunningChannelSpec.cs" />
+    <Compile Include="Communication\EndPoints\EndPointFactory.cs" />
+    <Compile Include="Communication\EndPoints\EndPointStatus.cs" />
+    <Compile Include="Communication\EndPoints\EventReceiverEndPointHandler.cs" />
+    <Compile Include="Communication\EndPoints\EventReceiverEndPointHandlerArgs.cs" />
+    <Compile Include="Communication\EndPoints\IEndPoint.cs" />
+    <Compile Include="Communication\EndPoints\IEndPointFactory.cs" />
+    <Compile Include="Communication\EndPoints\IReceiverEndPoint.cs" />
+    <Compile Include="Communication\EndPoints\ISenderEndPoint.cs" />
+    <Compile Include="Communication\EndPoints\Msmq\MsmqEndPointFactory.cs" />
+    <Compile Include="Communication\EndPoints\RabbitMq\RabbitEndPointFactory.cs" />
+    <Compile Include="Communication\EndPoints\ReceiverEndPoint.cs" />
+    <Compile Include="Communication\EndPoints\SenderEndPoint.cs" />
+    <Compile Include="Communication\IStartable.cs" />
+    <Compile Include="Communication\TransportType.cs" />
+    <Compile Include="Communication\TypeFinder.cs" />
+    <Compile Include="Controller\Handlers\SubscriptionCompletedHandler.cs" />
+    <Compile Include="Controller\Handlers\SubscriptionHandler.cs" />
+    <Compile Include="Controller\Handlers\UnsubscriptionHandler.cs" />
+    <Compile Include="Controller\Messages\EndPointMessage.cs" />
+    <Compile Include="Controller\Messages\ISubscriptionCompletedMessage.cs" />
+    <Compile Include="Controller\Messages\ISubscriptionMessage.cs" />
+    <Compile Include="Controller\Messages\IUnsubscriptionMessage.cs" />
+    <Compile Include="Controller\Messages\SubscriptionCompletedMessage.cs" />
+    <Compile Include="Controller\Messages\SubscriptionKeyMessage.cs" />
+    <Compile Include="Controller\Messages\SubscriptionKeyMessageFactory.cs" />
+    <Compile Include="Controller\Messages\SubscriptionMessage.cs" />
+    <Compile Include="Controller\Messages\SubscriptionTypeMessage.cs" />
+    <Compile Include="Controller\Messages\UnsubscriptionMessage.cs" />
+    <Compile Include="ErrorHandling\ErrorHandlingController.cs" />
+    <Compile Include="ErrorHandling\ErrorHandlingControllerFactory.cs" />
+    <Compile Include="ErrorHandling\ErrorOnHandlersEventHandler.cs" />
+    <Compile Include="ErrorHandling\ErrorOnHandlersEventHandlerArgs.cs" />
+    <Compile Include="ErrorHandling\ErrorOnRouterEventHandler.cs" />
+    <Compile Include="ErrorHandling\ErrorOnRouterEventHandlerArgs.cs" />
+    <Compile Include="ErrorHandling\IAgentErrorHandling.cs" />
+    <Compile Include="ErrorHandling\IErrorHandlingController.cs" />
+    <Compile Include="ErrorHandling\IRouterErrorHandling.cs" />
+    <Compile Include="ErrorHandling\Messages\ErrorHandlerMessage.cs" />
+    <Compile Include="ErrorHandling\Messages\ErrorMessage.cs" />
+    <Compile Include="ErrorHandling\Messages\ErrorMessageFactory.cs" />
+    <Compile Include="ErrorHandling\Messages\ErrorRouterMessage.cs" />
+    <Compile Include="ErrorHandling\Messages\ExceptionMessage.cs" />
+    <Compile Include="ErrorHandling\Messages\IErrorHandlerMessage.cs" />
+    <Compile Include="ErrorHandling\Messages\IErrorMessage.cs" />
+    <Compile Include="ErrorHandling\Messages\IErrorRouterMessage.cs" />
+    <Compile Include="ErrorHandling\NullErrorHandlingController.cs" />
+    <Compile Include="Gateways\AbstractInputGateway.cs" />
+    <Compile Include="Gateways\AbstractOutputGateway.cs" />
+    <Compile Include="Gateways\Agent\AgentGatewayFactory.cs" />
+    <Compile Include="Gateways\Agent\AgentInputGateway.cs" />
+    <Compile Include="Gateways\Agent\AgentOutputGateway.cs" />
+    <Compile Include="Gateways\IInputGateway.cs" />
+    <Compile Include="Gateways\IOutputGateway.cs" />
+    <Compile Include="Gateways\OutputGatewayEventHandler.cs" />
+    <Compile Include="Gateways\OutputGatewayEventHandlerArgs.cs" />
+    <Compile Include="Gateways\Router\RouterGatewayFactory.cs" />
+    <Compile Include="Gateways\Router\RouterInputGateway.cs" />
+    <Compile Include="Gateways\Router\RouterOutputGateway.cs" />
+    <Compile Include="Handlers\Context\ContextHandler.cs" />
+    <Compile Include="Handlers\Context\ContextHandlerFactory.cs" />
+    <Compile Include="Handlers\Context\IContextHandler.cs" />
+    <Compile Include="Handlers\Control\ControlHandlerRepositoryFactory.cs" />
+    <Compile Include="Handlers\Control\IControlMessageHandler.cs" />
+    <Compile Include="Handlers\Dynamic\DerivedTypesFinder.cs" />
+    <Compile Include="Handlers\Dynamic\DynamicHandlerAttribute.cs" />
+    <Compile Include="Handlers\Dynamic\HandlerCreator.cs" />
+    <Compile Include="Handlers\Dynamic\HandlerCreatorInstance.cs" />
+    <Compile Include="Handlers\HandlerRepository.cs" />
+    <Compile Include="Handlers\HandlerRepositoryFactory.cs" />
+    <Compile Include="Handlers\IHandlerRepository.cs" />
+    <Compile Include="Handlers\IHandlerRepositoryFactory.cs" />
+    <Compile Include="Handlers\IMessageHandler.cs" />
+    <Compile Include="Handlers\Monitoring\IMonitoringMessageHandler.cs" />
+    <Compile Include="Handlers\Monitoring\MonitoringHandlerRepositoryFactory.cs" />
+    <Compile Include="Handlers\Service\IServiceMessageHandler.cs" />
+    <Compile Include="Handlers\Service\ServiceHandlerRepositoryFactory.cs" />
+    <Compile Include="Helpers\AssemblyHelper.cs" />
+    <Compile Include="IBus.cs" />
+    <Compile Include="Identification.cs" />
+    <Compile Include="IIdentificable.cs" />
+    <Compile Include="Ioc\ContextManager.cs" />
+    <Compile Include="Ioc\IContextManager.cs" />
+    <Compile Include="Ioc\IIoc.cs" />
+    <Compile Include="Ioc\IMessageContext.cs" />
+    <Compile Include="Ioc\IMessageInfo.cs" />
+    <Compile Include="Ioc\MessageContext.cs" />
+    <Compile Include="Ioc\MessageInfo.cs" />
+    <Compile Include="Ioc\WindsorContainer\WindsorContainerHelper.cs" />
+    <Compile Include="IPublisher.cs" />
+    <Compile Include="IReceiver.cs" />
+    <Compile Include="Listeners\IListener.cs" />
+    <Compile Include="Listeners\Listener.cs" />
+    <Compile Include="Listeners\ListenerFactory.cs" />
+    <Compile Include="Listeners\ListenerStatus.cs" />
+    <Compile Include="LoadBalancers\ILoadBalancer.cs" />
+    <Compile Include="LoadBalancers\LoadBalancer.cs" />
+    <Compile Include="LoadBalancers\LoadBalancerController.cs" />
+    <Compile Include="Logging\ILoggable.cs" />
+    <Compile Include="Messages\Builders\IMessageBuilder.cs" />
+    <Compile Include="Messages\Builders\MessageBuilder.cs" />
+    <Compile Include="Messages\Builders\MessageBuilderFactory.cs" />
+    <Compile Include="Messages\CallerContext.cs" />
+    <Compile Include="Messages\CallerContextFactory.cs" />
+    <Compile Include="Messages\Control\IControlMessage.cs" />
+    <Compile Include="Messages\IMessage.cs" />
+    <Compile Include="Messages\IReplyMessage.cs" />
+    <Compile Include="Messages\IRequestMessage.cs" />
+    <Compile Include="Messages\ISession.cs" />
+    <Compile Include="Messages\MessageBus.cs" />
+    <Compile Include="Messages\MessageBusFactory.cs" />
+    <Compile Include="Messages\MessageBusType.cs" />
+    <Compile Include="Messages\MessageHeader.cs" />
+    <Compile Include="Messages\Monitoring\IInputQueueMessage.cs" />
+    <Compile Include="Messages\Monitoring\IMessageTypesMessage.cs" />
+    <Compile Include="Messages\Monitoring\IMonitoringMessage.cs" />
+    <Compile Include="Messages\Monitoring\InputQueueMessage.cs" />
+    <Compile Include="Messages\Monitoring\MessageType.cs" />
+    <Compile Include="Messages\Monitoring\MessageTypesMessage.cs" />
+    <Compile Include="Messages\Monitoring\MonitoringMessage.cs" />
+    <Compile Include="Messages\Monitoring\MonitoringMessageFactory.cs" />
+    <Compile Include="Messages\Monitoring\ProcessorType.cs" />
+    <Compile Include="Messages\Session.cs" />
+    <Compile Include="Messages\SessionFactory.cs" />
+    <Compile Include="Monitoring\Frequences\FrequenceHelper.cs" />
+    <Compile Include="Monitoring\Frequences\FrequenceLevel.cs" />
+    <Compile Include="Monitoring\Frequences\IFrequenceHelper.cs" />
+    <Compile Include="Monitoring\Frequences\SamplerFrequenceLevelAttribute.cs" />
+    <Compile Include="Monitoring\HandlerMonitorEventHandler.cs" />
+    <Compile Include="Monitoring\HandlerMonitoringEventArgs.cs" />
+    <Compile Include="Monitoring\IMonitor.cs" />
+    <Compile Include="Monitoring\IMonitorableEndPoint.cs" />
+    <Compile Include="Monitoring\IMonitorableGateway.cs" />
+    <Compile Include="Monitoring\IMonitorableProcessor.cs" />
+    <Compile Include="Monitoring\IMonitorableReceiverGateway.cs" />
+    <Compile Include="Monitoring\IMonitorableRouter.cs" />
+    <Compile Include="Monitoring\IMonitorableSenderGateway.cs" />
+    <Compile Include="Monitoring\IMonitoringSender.cs" />
+    <Compile Include="Monitoring\IPublisherSampler.cs" />
+    <Compile Include="Monitoring\ISampler.cs" />
+    <Compile Include="Monitoring\MessageGatewayEventHandler.cs" />
+    <Compile Include="Monitoring\MessageGatewayEventHandlerArgs.cs" />
+    <Compile Include="Monitoring\Monitor.cs" />
+    <Compile Include="Monitoring\MonitorEventArgs.cs" />
+    <Compile Include="Monitoring\MonitorEventHandler.cs" />
+    <Compile Include="Monitoring\MonitorFactory.cs" />
+    <Compile Include="Monitoring\MonitorListener.cs" />
+    <Compile Include="Monitoring\MonitorStatus.cs" />
+    <Compile Include="Monitoring\Sampler.cs" />
+    <Compile Include="Monitoring\SamplerFactory.cs" />
+    <Compile Include="Processors\Agent\Agent.cs" />
+    <Compile Include="Processors\Agent\ControlProcessor.cs" />
+    <Compile Include="Processors\Agent\Reinjection\DirectReinjectionEngine.cs" />
+    <Compile Include="Processors\Agent\Reinjection\IReinjectionEngine.cs" />
+    <Compile Include="Processors\Agent\Reinjection\ReinjectionEngineFactory.cs" />
+    <Compile Include="Processors\Agent\Reinjection\ReinjectionMessage.cs" />
+    <Compile Include="Processors\Agent\Reinjection\ReinjectionQueue.cs" />
+    <Compile Include="Processors\Agent\Reinjection\ReinjectionStatus.cs" />
+    <Compile Include="Processors\Agent\ServiceProcessor.cs" />
+    <Compile Include="Processors\BusInfo.cs" />
+    <Compile Include="Processors\IBusInfo.cs" />
+    <Compile Include="Processors\IConfigurableProcessor.cs" />
+    <Compile Include="Processors\IController.cs" />
+    <Compile Include="Processors\IProcessor.cs" />
+    <Compile Include="Processors\IRouterController.cs" />
+    <Compile Include="Processors\ProcessorsFactory.cs" />
+    <Compile Include="Processors\ProcessorStatus.cs" />
+    <Compile Include="Processors\Router\ISubscriber.cs" />
+    <Compile Include="Processors\Router\Outputs\GatewaysRepositoryBase.cs" />
+    <Compile Include="Processors\Router\Outputs\IGatewaysRepository.cs" />
+    <Compile Include="Processors\Router\Outputs\IHierarchicalKeyEngine.cs" />
+    <Compile Include="Processors\Router\Outputs\IRouterOutputHelper.cs" />
+    <Compile Include="Processors\Router\Outputs\MemoryGatewaysRepository.cs" />
+    <Compile Include="Processors\Router\Outputs\RouterOutputHelper.cs" />
+    <Compile Include="Processors\Router\Outputs\TypeHierarchicalKeyEngine.cs" />
+    <Compile Include="Processors\Router\RouterControlProcessor.cs" />
+    <Compile Include="Processors\Router\RouterProcessor.cs" />
+    <Compile Include="Processors\Router\Subscriptors\ISubscriptons.cs" />
+    <Compile Include="Processors\Router\Subscriptors\ISubscriptorsHelper.cs" />
+    <Compile Include="Processors\Router\Subscriptors\ISubscriptorsRepository.cs" />
+    <Compile Include="Processors\Router\Subscriptors\MemorySubscriptorsRepository.cs" />
+    <Compile Include="Processors\Router\Subscriptors\Persisters\ISubscriptorsPersister.cs" />
+    <Compile Include="Processors\Router\Subscriptors\Persisters\NullSubscriptorPersister.cs" />
+    <Compile Include="Processors\Router\Subscriptors\SubscriptionKey.cs" />
+    <Compile Include="Processors\Router\Subscriptors\SubscriptionKeyExtensions.cs" />
+    <Compile Include="Processors\Router\Subscriptors\Subscriptor.cs" />
+    <Compile Include="Processors\Router\Subscriptors\SubscriptorsHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publishers\BusPublisher.cs" />
+    <Compile Include="Publishers\IBusPublisher.cs" />
+    <Compile Include="Publishers\PublisherFactory.cs" />
+    <Compile Include="Serialization\AbstractDataContractSerializer.cs" />
+    <Compile Include="Serialization\IDataContractSerializer.cs" />
+    <Compile Include="Serialization\JsonDataContractSerializer.cs" />
+    <Compile Include="Serialization\XmlDataContractSerializer.cs" />
+    <Compile Include="Serialization\XmlSchemaSerializer.cs" />
+    <Compile Include="Service\IService.cs" />
+    <Compile Include="Service\Service.cs" />
+    <Compile Include="Service\ServiceFactory.cs" />
+    <Compile Include="Service\ServiceStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Communication\Channels\Socket\" />
+    <Folder Include="Communication\EndPoints\Socket\" />
+    <Folder Include="Handlers\Configuration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Extended\HermEsb.Logging\HermEsb.Logging.csproj">
+      <Project>{9A6B1507-AE61-4773-9D72-718E33106397}</Project>
+      <Name>HermEsb.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
