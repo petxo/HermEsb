@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="HermEsb" type="HermEsb.Configuration.Bus.HermEsbConfig, HermEsb.Configuration"/>
+  </configSections>
+
+  <HermEsb>
+    <identification id="Bus" type="Bus"/>
+    <routerProcessor>
+      <input transport="RabbitMq">
+        <add name="uri" value="//localhost/HermEsbSamples.Exch/BasicBusSample.Input/inputBasicBusSampleKey"/>
+      </input>
+    </routerProcessor>
+
+    <routerControlProcessor>
+      <input transport="RabbitMq">
+        <add name="uri" value="//localhost/HermEsbSamples.Exch/BasicBusSample.ControlInput/controlinputBasicBusSampleKey"/>
+      </input>
+    </routerControlProcessor>
+  </HermEsb>
+</configuration>

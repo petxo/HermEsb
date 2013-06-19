@@ -124,7 +124,7 @@
     <Compile Include="Services\HandlerAssemblyConfig.cs" />
     <Compile Include="Services\HandlerConfigurator.cs" />
     <Compile Include="Services\IdentificationConfig.cs" />
-    <Compile Include="Services\MrwesbServiceConfig.cs" />
+    <Compile Include="Services\HermEsbServiceConfig.cs" />
     <Compile Include="Services\ServiceConfigurator.cs" />
     <Compile Include="Services\ServiceProcessorConfig.cs" />
     <Compile Include="Services\ServiceProcessorConfigurator.cs" />
