@@ -1,18 +1,18 @@
 using System;
 using HermEsb.Core.Ioc;
 
-namespace HermEsb.Core.Handlers.Monitoring
+namespace HermEsb.Core.Handlers.Listeners
 {
     /// <summary>
     /// 
     /// </summary>
-    public class MonitoringHandlerRepositoryFactory : HandlerRepositoryFactory
+    public class ListenersHandlerRepositoryFactory : HandlerRepositoryFactory
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MonitoringHandlerRepositoryFactory"/> class.
+        /// Initializes a new instance of the <see cref="ListenersHandlerRepositoryFactory"/> class.
         /// </summary>
         /// <param name="contextManager">The context manager.</param>
-        public MonitoringHandlerRepositoryFactory(IContextManager contextManager)
+        public ListenersHandlerRepositoryFactory(IContextManager contextManager)
             : base(contextManager)
         {
         }
@@ -27,7 +27,7 @@ namespace HermEsb.Core.Handlers.Monitoring
         /// </returns>
         protected override bool IsAssignableToHandler(Type type, Type genericArgument)
         {
-            var handlerType = typeof(IMonitoringMessageHandler<>).MakeGenericType(genericArgument);
+            var handlerType = typeof(IListenerMessageHandler<>).MakeGenericType(genericArgument);
             return handlerType.IsAssignableFrom(type);
         }
     }

@@ -183,8 +183,6 @@
     <Compile Include="Handlers\IHandlerRepository.cs" />
     <Compile Include="Handlers\IHandlerRepositoryFactory.cs" />
     <Compile Include="Handlers\IMessageHandler.cs" />
-    <Compile Include="Handlers\Monitoring\IMonitoringMessageHandler.cs" />
-    <Compile Include="Handlers\Monitoring\MonitoringHandlerRepositoryFactory.cs" />
     <Compile Include="Handlers\Service\IServiceMessageHandler.cs" />
     <Compile Include="Handlers\Service\ServiceHandlerRepositoryFactory.cs" />
     <Compile Include="Helpers\AssemblyHelper.cs" />
@@ -205,6 +203,8 @@
     <Compile Include="Listeners\Listener.cs" />
     <Compile Include="Listeners\ListenerFactory.cs" />
     <Compile Include="Listeners\ListenerStatus.cs" />
+    <Compile Include="Handlers\Listeners\IListenerMessageHandler.cs" />
+    <Compile Include="Handlers\Listeners\ListenersHandlerRepositoryFactory.cs" />
     <Compile Include="LoadBalancers\ILoadBalancer.cs" />
     <Compile Include="LoadBalancers\LoadBalancer.cs" />
     <Compile Include="LoadBalancers\LoadBalancerController.cs" />

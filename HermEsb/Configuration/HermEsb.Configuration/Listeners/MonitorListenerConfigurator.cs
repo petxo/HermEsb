@@ -4,7 +4,7 @@ using HermEsb.Configuration.Services;
 using HermEsb.Core.Gateways;
 using HermEsb.Core.Gateways.Agent;
 using HermEsb.Core.Handlers;
-using HermEsb.Core.Handlers.Monitoring;
+using HermEsb.Core.Handlers.Listeners;
 using HermEsb.Core.Listeners;
 using HermEsb.Core.Messages;
 using HermEsb.Core.Messages.Builders;
@@ -54,7 +54,7 @@ namespace HermEsb.Configuration.Listeners
         /// <returns></returns>
         private MonitorListenerConfigurator CreateHandlerRepository()
         {
-            var handlerRepositoryFactory = HandlerRepositoryFactory.GetFactory<MonitoringHandlerRepositoryFactory>();
+            var handlerRepositoryFactory = HandlerRepositoryFactory.GetFactory<ListenersHandlerRepositoryFactory>();
             var assemblies = _listenerConfig.HandlersAssemblies.Cast<HandlerAssemblyConfig>().Select(ha => ha.Assembly).ToList();
             _handlerRepository = handlerRepositoryFactory.Create(assemblies);
             return this;
