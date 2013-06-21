@@ -10,6 +10,7 @@ using HermEsb.Core.Messages;
 using HermEsb.Core.Messages.Builders;
 using HermEsb.Core.Monitoring;
 using HermEsb.Core.Service;
+using HermEsb.Logging;
 
 namespace HermEsb.Configuration.Listeners
 {

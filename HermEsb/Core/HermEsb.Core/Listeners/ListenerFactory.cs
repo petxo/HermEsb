@@ -1,6 +1,7 @@
 using HermEsb.Core.Gateways;
 using HermEsb.Core.Handlers;
 using HermEsb.Core.Messages;
+using HermEsb.Logging;
 
 namespace HermEsb.Core.Listeners
 {
@@ -18,7 +19,9 @@ namespace HermEsb.Core.Listeners
         /// <returns></returns>
         public static Listener<TMessage> Create<TMessage>(IInputGateway<TMessage> inputGateway, IHandlerRepository handlerRepository) where TMessage : IMessage
         {
-            return new Listener<TMessage>(inputGateway, handlerRepository);
+            var listener = new Listener<TMessage>(inputGateway, handlerRepository);
+            listener.Logger = LoggerManager.Instance;
+            return listener;
         }
     }
 }
