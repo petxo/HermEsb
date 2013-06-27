@@ -196,6 +196,8 @@
     <Compile Include="Ioc\IMessageInfo.cs" />
     <Compile Include="Ioc\MessageContext.cs" />
     <Compile Include="Ioc\MessageInfo.cs" />
+    <Compile Include="Ioc\WindsorContainer\MessageLifetimeScope.cs" />
+    <Compile Include="Ioc\WindsorContainer\MessageScopeAccesor.cs" />
     <Compile Include="Ioc\WindsorContainer\WindsorContainerHelper.cs" />
     <Compile Include="IPublisher.cs" />
     <Compile Include="IReceiver.cs" />

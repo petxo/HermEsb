@@ -76,7 +76,7 @@ namespace HermEsb.Core.Ioc.WindsorContainer
         /// <returns></returns>
         public IIoc AddComponent<T>() where T : class
         {
-            WindsorContainer.Register(Component.For<T>().LifestyleScoped().Named(typeof(T).FullName));
+            WindsorContainer.Register(Component.For<T>().LifestyleScoped<MessageScopeAccesor>().Named(typeof(T).FullName));
             return this;
         }
 
@@ -87,7 +87,7 @@ namespace HermEsb.Core.Ioc.WindsorContainer
         /// <returns></returns>
         public IIoc AddComponent(Type type)
         {
-            WindsorContainer.Register(Component.For(type).LifestyleScoped().Named(type.FullName));
+            WindsorContainer.Register(Component.For(type).LifestyleScoped<MessageScopeAccesor>().Named(type.FullName));
             return this;
         }
 

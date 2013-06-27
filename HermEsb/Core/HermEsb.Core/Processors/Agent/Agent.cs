@@ -404,7 +404,7 @@ namespace HermEsb.Core.Processors.Agent
                     {
                         try
                         {
-                            using (IMessageContext messageContext = ContextManager.Instance.CreateNewContext())
+                            using (var messageContext = ContextManager.Instance.CreateNewContext())
                             {
                                 Logger.Warn(string.Format("Se abre el handler {0}: ", typeClosure.FullName));
                                 var messageSession = (Session) currentSession.Clone();

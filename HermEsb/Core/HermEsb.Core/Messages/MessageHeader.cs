@@ -24,6 +24,7 @@ namespace HermEsb.Core.Messages
             CreatedAt = DateTime.UtcNow;
             CallContext = new Session();
             CallStack = new Stack<CallerContext>();
+            MessageId = Guid.NewGuid();
         }
 
         /// <summary>
@@ -40,6 +41,7 @@ namespace HermEsb.Core.Messages
             CallContext = callContext;
             CallStack = callStack;
             CreatedAt = createdAt;
+            MessageId = Guid.NewGuid();
         }
 
         /// <summary>
@@ -48,6 +50,16 @@ namespace HermEsb.Core.Messages
         /// <value>The identification service.</value>
         [DataMember]
         public Identification IdentificationService { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets the message id.
+        /// </summary>
+        /// <value>
+        /// The message id.
+        /// </value>
+        [DataMember]
+        public Guid MessageId { get; set; }
 
         /// <summary>
         ///     Gets or sets the type of the body.
