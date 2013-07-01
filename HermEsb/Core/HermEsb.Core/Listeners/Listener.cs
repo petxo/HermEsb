@@ -150,6 +150,8 @@ namespace HermEsb.Core.Listeners
         {
             var listTask = new List<Task>();
 
+            Logger.Debug(string.Format("Ha llegado el Mensaje:{0}", args.SerializedMessage));
+            Logger.Debug(string.Format("Tipo del Mensaje:{0}", args.Header.BodyType));
             //Buscar en los handlers para procesar el mensaje
             foreach (var type in _handlerRepository.GetHandlersByMessage(args.Message.GetType()))
             {
@@ -161,6 +163,7 @@ namespace HermEsb.Core.Listeners
                     {
                         using (var messageContext = ContextManager.Instance.CreateNewContext())
                         {
+                            Logger.Debug(string.Format("Se abre el handler {0}: ", typeClosure.FullName));
                             InitializeContext(messageContext, args);
 
                             using (var messageHandler = (IDisposable)messageContext.Resolve(typeClosure))
@@ -173,6 +176,7 @@ namespace HermEsb.Core.Listeners
                                 catch (Exception exception)
                                 {
                                     Logger.Fatal("Error On Handler", exception);
+                                    Logger.Fatal(string.Format("Message Error: {0}", args.SerializedMessage), exception);
                                 }
                             }
                         }
@@ -180,6 +184,7 @@ namespace HermEsb.Core.Listeners
                     catch (Exception ex)
                     {
                         Logger.Error("Error Message Received", ex);
+                        Logger.Fatal(string.Format("Message Error: {0}", args.SerializedMessage), ex);
                     }
                 }));
             }

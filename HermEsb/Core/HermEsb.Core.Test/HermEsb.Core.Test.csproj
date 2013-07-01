@@ -33,6 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bteam.SimpleStateMachine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Bteam.SimpleStateMachine.dll</HintPath>
+    </Reference>
+    <Reference Include="Bteam.Specifications, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Bteam.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="BteamMongoDB">
+      <HintPath>..\..\libs\BteamMongoDB.dll</HintPath>
+    </Reference>
     <Reference Include="FluentAssert">
       <HintPath>..\..\libs\FluentAssert.dll</HintPath>
     </Reference>
@@ -53,6 +64,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,7 +76,47 @@
     <Compile Include="Communication\Channels\RabbitChannels\DadoUnMensajeCuandoArrancaElChannel.cs" />
     <Compile Include="Communication\Channels\RabbitChannels\DadoUnMensajeCuandoSeEnvia.cs" />
     <Compile Include="Communication\EndPointFactoryTest.cs" />
+    <Compile Include="Fakes\Handlers\FakeHandler.cs" />
+    <Compile Include="Fakes\Messages\MessageFake.cs" />
+    <Compile Include="Gateway\Agent\AgentGatewayFactoryTest.cs" />
+    <Compile Include="Gateway\Agent\AgentInputGatewayTest.cs" />
+    <Compile Include="Gateway\Agent\AgentOutputGatewayTest.cs" />
+    <Compile Include="Gateway\Router\RouterGatewayFactoryTest.cs" />
+    <Compile Include="Gateway\Router\RouterInputGatewayTest.cs" />
+    <Compile Include="Gateway\Router\RouterOutputGatewayTest.cs" />
+    <Compile Include="Handlers\Dynamic\DerivedTypesFinderTest.cs" />
+    <Compile Include="Handlers\Dynamic\Domain\IDynamicBaseMessage.cs" />
+    <Compile Include="Handlers\Dynamic\Domain\IDynamicChild1Level1.cs" />
+    <Compile Include="Handlers\Dynamic\Domain\IDynamicChild1Level2.cs" />
+    <Compile Include="Handlers\Dynamic\Domain\IDynamicChild1Level3.cs" />
+    <Compile Include="Handlers\Dynamic\Domain\IDynamicChild2Level2.cs" />
+    <Compile Include="Handlers\Dynamic\Domain\IDynamicChild3Level2.cs" />
+    <Compile Include="Handlers\Dynamic\HandlerCreatorTest.cs" />
+    <Compile Include="Handlers\Dynamic\Handlers\DynamicMessageHandler.cs" />
+    <Compile Include="Handlers\HandlerRepositoryTest.cs" />
+    <Compile Include="Messages\MessageSerializationTest.cs" />
+    <Compile Include="Monitoring\MonitoringMessageFake.cs" />
+    <Compile Include="Monitoring\MonitorTest.cs" />
+    <Compile Include="Monitoring\SamplerFake.cs" />
+    <Compile Include="Processors\Agent\AgentFake.cs" />
+    <Compile Include="Processors\Agent\AgentTest.cs" />
+    <Compile Include="Processors\Agent\ControlProcessorTest.cs" />
+    <Compile Include="Processors\Agent\ServiceProcessorTest.cs" />
+    <Compile Include="Processors\Router\FakeReplayMessage.cs" />
+    <Compile Include="Processors\Router\Outputs\MemoryGateWayRepositoryTest.cs" />
+    <Compile Include="Processors\Router\Outputs\RouterOutputHelperTest.cs" />
+    <Compile Include="Processors\Router\RouterControlProcessorConstructorTest.cs" />
+    <Compile Include="Processors\Router\RouterControlProcessorTest.cs" />
+    <Compile Include="Processors\Router\RouterProcessorContructorTest.cs" />
+    <Compile Include="Processors\Router\RouterProcessorTest.cs" />
+    <Compile Include="Processors\Router\Subscriptors\MemorySubscriptorsRepositoryTest.cs" />
+    <Compile Include="Processors\Router\Subscritors\IProcessorFake.cs" />
+    <Compile Include="Processors\Router\Subscritors\SubscriptorsHelperTest.cs" />
+    <Compile Include="Processors\Service\ServiceFactoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Configuration\ServiceConfigTest.cs" />
+    <Compile Include="Service\Hanlders\HandlerMessageFake.cs" />
+    <Compile Include="Service\Hanlders\HandlerRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

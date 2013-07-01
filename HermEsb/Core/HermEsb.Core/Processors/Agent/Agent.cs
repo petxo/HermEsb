@@ -143,11 +143,11 @@ namespace HermEsb.Core.Processors.Agent
                 if (ContextManager.Instance.HasCurrentContext())
                 {
                     Logger.Warn(string.Format("Enviando Mensaje: {0}", message.GetType().FullName));
-                    OutputGateway.Send((TMessage) message, ContextManager.Instance.CurrentContext.MessageInfo);
+                    OutputGateway.Send((TMessage)message, ContextManager.Instance.CurrentContext.MessageInfo);
                 }
                 else
                 {
-                    OutputGateway.Send((TMessage) message);
+                    OutputGateway.Send((TMessage)message);
                 }
 
                 InvokeOnMessageSent();
@@ -391,8 +391,6 @@ namespace HermEsb.Core.Processors.Agent
                 }
             }
 
-            Logger.Warn(string.Format("Tipo del Mensaje:{0}", args.Header.BodyType));
-
             var listTask = new List<Task>();
 
             //Buscar en los handlers para procesar el mensaje
@@ -406,8 +404,8 @@ namespace HermEsb.Core.Processors.Agent
                         {
                             using (var messageContext = ContextManager.Instance.CreateNewContext())
                             {
-                                Logger.Warn(string.Format("Se abre el handler {0}: ", typeClosure.FullName));
-                                var messageSession = (Session) currentSession.Clone();
+                                Logger.Debug(string.Format("Se abre el handler {0}: ", typeClosure.FullName));
+                                var messageSession = (Session)currentSession.Clone();
 
                                 object messageHandler =
                                     messageContext.Resolve(typeClosure);
@@ -416,11 +414,11 @@ namespace HermEsb.Core.Processors.Agent
 
                                 InitializeContext(messageContext, args, messageSession);
 
-                                IContextHandler contextHandler = ContextHandlerFactory.Create(messageSession,
-                                                                                              ContextManager.Instance
-                                                                                                            .CurrentContext
-                                                                                                            .MessageInfo
-                                                                                                            .CurrentCallContext);
+                                var contextHandler = ContextHandlerFactory.Create(messageSession,
+                                                                                    ContextManager.Instance
+                                                                                                .CurrentContext
+                                                                                                .MessageInfo
+                                                                                                .CurrentCallContext);
 
                                 InitializeMessageHandler(messageHandler, contextHandler);
 
@@ -462,10 +460,10 @@ namespace HermEsb.Core.Processors.Agent
                                               Session currentSession)
         {
             messageContext.MessageInfo.Body = args.Message;
-            messageContext.MessageInfo.Header = (MessageHeader) args.Header.Clone();
+            messageContext.MessageInfo.Header = (MessageHeader)args.Header.Clone();
             messageContext.MessageInfo.CurrentSession = currentSession;
             messageContext.MessageInfo.CurrentCallContext = args.Header.CallContext != null
-                                                                ? (Session) args.Header.CallContext.Clone()
+                                                                ? (Session)args.Header.CallContext.Clone()
                                                                 : SessionFactory.Create();
         }
 
@@ -491,12 +489,12 @@ namespace HermEsb.Core.Processors.Agent
         /// <param name="message">The message.</param>
         protected static void InvokeMethodHandle(object messageHandler, object message)
         {
-            MethodInfo method = messageHandler.GetType().GetMethod("HandleMessage", new[] {message.GetType()});
+            MethodInfo method = messageHandler.GetType().GetMethod("HandleMessage", new[] { message.GetType() });
             if (method != null)
             {
                 try
                 {
-                    method.Invoke(messageHandler, new[] {message});
+                    method.Invoke(messageHandler, new[] { message });
                 }
                 finally
                 {
