@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using ServiceStack.Text;
 
 namespace HermEsb.Core.Serialization
 {
@@ -20,9 +21,10 @@ namespace HermEsb.Core.Serialization
         /// Initializes a new instance of the <see cref="JsonDataContractSerializer"/> class.
         /// </summary>
         /// <param name="encoding">The encoding.</param>
-        public JsonDataContractSerializer(Encoding encoding) : base(encoding)
+        public JsonDataContractSerializer(Encoding encoding)
+            : base(encoding)
         {
-            
+
         }
 
         /// <summary>
@@ -44,12 +46,8 @@ namespace HermEsb.Core.Serialization
         /// <param name="encoding">The encoding.</param>
         public override string Serialize(object objToSerialize, Encoding encoding)
         {
-            var dataContractJsonSerializer = new DataContractJsonSerializer(objToSerialize.GetType());
-            using (var memoryStream = new MemoryStream())
-            {
-                dataContractJsonSerializer.WriteObject(memoryStream, objToSerialize);
-                return encoding.GetString(memoryStream.GetBuffer(), 0, (int) memoryStream.Length);
-            }
+            
+            return objToSerialize.ToJson();
         }
 
         /// <summary>
@@ -60,8 +58,7 @@ namespace HermEsb.Core.Serialization
         /// <returns></returns>
         public override object Deserialize(Stream stream, Type type)
         {
-            var dataContractJsonSerializer = new DataContractJsonSerializer(type);
-            return dataContractJsonSerializer.ReadObject(stream);
+            return JsonSerializer.DeserializeFromStream(type, stream);
         }
 
     }

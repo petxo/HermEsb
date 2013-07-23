@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <log4net debug="false">
   <root>
-    <priority value="DEBUG"/>
+    <priority value="ERROR"/>
     <appender-ref ref="ColoredConsoleAppender"/>
   </root>
   <appender name="ColoredConsoleAppender" type="log4net.Appender.ColoredConsoleAppender,log4net">

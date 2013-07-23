@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Facilities\LoggerResolver.cs" />
     <Compile Include="Facilities\LoggingWindsorFacility.cs" />
     <Compile Include="ILogger.cs" />
