@@ -4,7 +4,6 @@ import re
 import socket
 import struct
 import threading
-from time import sleep
 from hermEsbBalancer.core import compressors, loggerManager
 from hermEsbBalancer.endpoints.channels import reconnectiontimers
 from hermEsbBalancer.endpoints.channels.basechannels import OutBoundChannel, Channel, InBoundChannel
@@ -41,13 +40,12 @@ class BaseChannelTcp:
         try:
             self._socket.shutdown(socket.SHUT_RDWR)
             self._socket.close()
-            sleep(5)
-            self._socket = None
         except Exception as ex:
             loggerManager.get_endPoints_logger().error(
                 "Error al desconectar del host %s:%i : %s" % (self._server, self._port, ex.message))
         finally:
             del self._socket
+            self._socket = None
 
 
 class OutBoundChannelTcp(OutBoundChannel, BaseChannelTcp):
@@ -169,6 +167,7 @@ class InBoundChannelTcp(InBoundChannel, BaseChannelTcp):
                 message = clientSocket.recv(messageLength)
                 if not len(message) == messageLength:
                     raise Exception("Error de longitud del mensaje : Expected length %s - Actual length %i" % (messageLength, len(message)))
+                # TODO: Esto tiene que ir en la clase superior
                 idMessage = clientSocket.recv(36)
                 if not len(idMessage) == 36:
                     raise Exception("Error de identificacion del mensaje : Msg length %i - Msg Id length %i" % (len(message), len(idMessage)))
@@ -187,11 +186,11 @@ class InBoundChannelTcp(InBoundChannel, BaseChannelTcp):
         try:
             clientSocket.shutdown(socket.SHUT_RDWR)
             clientSocket.close()
-            clientSocket = None
         except Exception as ex:
             loggerManager.get_endPoints_logger().error("Error al desconectar del cliente : %s" % ex.message)
         finally:
             del clientSocket
+            clientSocket = None
 
     def _sendAck(self, obj):
         buff = struct.pack('!I%ds' % (len(obj['idMessage']),), len(obj['idMessage']), obj['idMessage'])

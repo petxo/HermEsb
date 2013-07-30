@@ -3,7 +3,10 @@ from distutils.core import setup
 setup(
     name='HermEsbBalancer',
     version='1.0.0',
-    packages=['hermEsbBalancer'],
+    packages=['hermEsbBalancer',
+              'hermEsbBalancer.core',
+              'hermEsbBalancer.endpoints',
+              'hermEsbBalancer.endpoints.channels'],
     url='',
     license='',
     author='Sergio',

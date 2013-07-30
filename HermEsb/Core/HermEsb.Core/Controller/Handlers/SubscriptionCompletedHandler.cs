@@ -37,7 +37,7 @@ namespace HermEsb.Core.Controller.Handlers
                 var outputGateway = AgentGatewayFactory.CreateOutputGateway(Processor.Identification,
                                                         new Uri(message.InputGateway.Uri),
                                                         message.InputGateway.Type);
-                
+                //TODO: Hacer el dispose del gateway viejoñ
                 (Processor as IConfigurableProcessor).ConfigureOutputGateway(outputGateway);
                 Processor.Start();
             }
