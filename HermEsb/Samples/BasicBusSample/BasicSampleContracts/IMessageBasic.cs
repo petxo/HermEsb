@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using HermEsb.Core.Messages;
 
 namespace BasicSampleContracts
@@ -12,5 +13,8 @@ namespace BasicSampleContracts
         /// The fecha.
         /// </value>
         DateTime Fecha { get; set; }
+
+        SubMessage Data { get; set; }
+        IList<int> ListaEnteros { get; set; }
     }
 }

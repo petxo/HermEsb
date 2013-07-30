@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IMessageBasic.cs" />
     <Compile Include="MessageBasic.cs" />
+    <Compile Include="MessageBasicFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -21,8 +21,8 @@ namespace BasicSamplePublisher
             {
                 var key = Console.ReadKey(true);
                 if (key.KeyChar == 'x' || key.KeyChar == 'X') break;
-                var messageBasic = busPublisher.MessageBuilder.CreateInstance<MessageBasic>(basic => basic.Fecha = DateTime.UtcNow);
-                for (int i = 0; i < 1000000; i++)
+                var messageBasic = busPublisher.MessageBuilder.CreateInstance<MessageBasic>(MessageBasicFactory.FillData);
+                for (var i = 0; i < 1000000; i++)
                 {
                     busPublisher.Publish(messageBasic);
                 }

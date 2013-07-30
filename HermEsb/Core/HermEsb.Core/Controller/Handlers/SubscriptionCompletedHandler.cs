@@ -1,4 +1,5 @@
 using System;
+using HermEsb.Core.Clustering;
 using HermEsb.Core.Controller.Messages;
 using HermEsb.Core.Gateways.Agent;
 using HermEsb.Core.Handlers.Control;
@@ -25,6 +26,14 @@ namespace HermEsb.Core.Controller.Handlers
         public IController Controller { get; set; }
 
         /// <summary>
+        /// Gets or sets the cluster controller.
+        /// </summary>
+        /// <value>
+        /// The cluster controller.
+        /// </value>
+        public IClusterController ClusterController { get; set; }
+
+        /// <summary>
         /// Handles the message.
         /// </summary>
         /// <param name="message">The message.</param>
@@ -37,7 +46,7 @@ namespace HermEsb.Core.Controller.Handlers
                 var outputGateway = AgentGatewayFactory.CreateOutputGateway(Processor.Identification,
                                                         new Uri(message.InputGateway.Uri),
                                                         message.InputGateway.Type);
-                //TODO: Hacer el dispose del gateway viejoñ
+                //TODO: Hacer el dispose del gateway viejo
                 (Processor as IConfigurableProcessor).ConfigureOutputGateway(outputGateway);
                 Processor.Start();
             }

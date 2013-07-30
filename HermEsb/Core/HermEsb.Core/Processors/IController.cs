@@ -1,4 +1,5 @@
 using System;
+using HermEsb.Core.Clustering;
 using HermEsb.Core.Communication;
 using HermEsb.Core.Monitoring;
 
@@ -20,5 +21,13 @@ namespace HermEsb.Core.Processors
         /// </summary>
         /// <value>The monitor.</value>
         IMonitor Monitor { get; set; }
+
+        /// <summary>
+        /// Gets or sets the cluster controller.
+        /// </summary>
+        /// <value>
+        /// The cluster controller.
+        /// </value>
+        IClusterController ClusterController { get; set; }
     }
 }

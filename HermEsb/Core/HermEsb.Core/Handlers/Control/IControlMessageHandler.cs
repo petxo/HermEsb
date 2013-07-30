@@ -1,3 +1,4 @@
+using HermEsb.Core.Clustering;
 using HermEsb.Core.Messages;
 using HermEsb.Core.Processors;
 
@@ -20,5 +21,13 @@ namespace HermEsb.Core.Handlers.Control
         /// </summary>
         /// <value>The controller.</value>
         IController Controller { get; set; }
+
+        /// <summary>
+        /// Gets or sets the cluster controller.
+        /// </summary>
+        /// <value>
+        /// The cluster controller.
+        /// </value>
+        IClusterController ClusterController { get; set; }
     }
 }

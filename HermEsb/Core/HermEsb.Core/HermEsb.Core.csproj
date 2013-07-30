@@ -80,6 +80,17 @@
     <Compile Include="Builder\Types\TypeExtensionMethods.cs" />
     <Compile Include="Builder\Types\TypesManager.cs" />
     <Compile Include="Builder\Types\TypesManagerFactory.cs" />
+    <Compile Include="Clustering\ActionClusterProcessor.cs" />
+    <Compile Include="Clustering\ClusterController.cs" />
+    <Compile Include="Clustering\Actions\HeartBeatActionCluster.cs" />
+    <Compile Include="Clustering\Actions\IActionCluster.cs" />
+    <Compile Include="Clustering\CluterControllerExtensions.cs" />
+    <Compile Include="Clustering\Messages\NewSuscriberClusterMessage.cs" />
+    <Compile Include="Clustering\NullClusterController.cs" />
+    <Compile Include="Clustering\IActionClusterProcessor.cs" />
+    <Compile Include="Clustering\IClusterController.cs" />
+    <Compile Include="Clustering\Messages\HeartBeatClusterMessage.cs" />
+    <Compile Include="Clustering\Messages\IHeartBeatClusterMessage.cs" />
     <Compile Include="Communication\Channels\AbstractReceiverChannel.cs" />
     <Compile Include="Communication\Channels\AbstractSenderChannel.cs" />
     <Compile Include="Communication\Channels\ChannelMessageReceived.cs" />
@@ -118,6 +129,7 @@
     <Compile Include="Communication\Channels\RabbitMq\UnableToConnect.cs" />
     <Compile Include="Communication\Channels\Specifications\RunningChannelSpec.cs" />
     <Compile Include="Communication\EndPoints\EndPointFactory.cs" />
+    <Compile Include="Communication\EndPoints\EndPointInfo.cs" />
     <Compile Include="Communication\EndPoints\EndPointStatus.cs" />
     <Compile Include="Communication\EndPoints\EventReceiverEndPointHandler.cs" />
     <Compile Include="Communication\EndPoints\EventReceiverEndPointHandlerArgs.cs" />
@@ -132,6 +144,7 @@
     <Compile Include="Communication\IStartable.cs" />
     <Compile Include="Communication\TransportType.cs" />
     <Compile Include="Communication\TypeFinder.cs" />
+    <Compile Include="Clustering\CluterControllerFactory.cs" />
     <Compile Include="Controller\Handlers\SubscriptionCompletedHandler.cs" />
     <Compile Include="Controller\Handlers\SubscriptionHandler.cs" />
     <Compile Include="Controller\Handlers\UnsubscriptionHandler.cs" />

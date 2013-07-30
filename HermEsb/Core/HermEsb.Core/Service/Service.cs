@@ -1,5 +1,6 @@
 using System;
 using Bteam.SimpleStateMachine;
+using HermEsb.Core.Clustering;
 using HermEsb.Core.ErrorHandling;
 using HermEsb.Core.Logging;
 using HermEsb.Core.Processors;
@@ -17,6 +18,7 @@ namespace HermEsb.Core.Service
         private readonly IProcessor _processor;
         private ILogger _logger;
         private IStateMachine<ServiceStatus> _stateMachine;
+        private IClusterController _clusterController;
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="Service" /> class.
@@ -24,13 +26,15 @@ namespace HermEsb.Core.Service
         /// <param name="processor">The processor.</param>
         /// <param name="controller">The controller.</param>
         /// <param name="errorHandlingController">The error handling controller.</param>
-        public Service(IProcessor processor, IController controller, IErrorHandlingController errorHandlingController)
+        public Service(IProcessor processor, IController controller, IErrorHandlingController errorHandlingController, IClusterController clusterController)
         {
             _processor = processor;
             _controller = controller;
             _errorHandlingController = errorHandlingController;
+            _clusterController = clusterController;
             ConfigureErrorHandling();
             _controller.Processor = _processor;
+            _controller.ClusterController = _clusterController;
             ConfigureStateMachine();
         }
 
@@ -185,6 +189,10 @@ namespace HermEsb.Core.Service
         {
             Logger.Debug("Stopping Control Processor");
             _controller.Stop();
+
+            Logger.Debug("Stopping Control Processor");
+            _clusterController.Stop();
+
             InvokeOnStop();
         }
 
@@ -196,6 +204,9 @@ namespace HermEsb.Core.Service
         {
             Logger.Debug("Starting Control Processor");
             _controller.Start();
+
+            Logger.Debug("Starting Control Processor");
+            _clusterController.Start();
         }
 
         /// <summary>

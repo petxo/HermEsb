@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using HermEsb.Core.Clustering;
 using HermEsb.Core.Controller.Messages;
 using HermEsb.Core.Gateways;
 using HermEsb.Core.Handlers;
@@ -13,7 +14,7 @@ namespace HermEsb.Core.Processors.Agent
     /// <summary>
     /// 
     /// </summary>
-    public class ControlProcessor : Agent<IControlMessage>, IController 
+    public class ControlProcessor : Agent<IControlMessage>, IController
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ControlProcessor"/> class.
@@ -24,9 +25,9 @@ namespace HermEsb.Core.Processors.Agent
         /// <param name="handlerRepository">The handler repository.</param>
         /// <param name="messageBuilder">The message builder.</param>
         /// <param name="reinjectionEngine">The reinjection engine.</param>
-        internal ControlProcessor(Identification identification, 
-                                IInputGateway<IControlMessage> inputGateway, 
-                                IOutputGateway<IControlMessage> outputGateway, 
+        internal ControlProcessor(Identification identification,
+                                IInputGateway<IControlMessage> inputGateway,
+                                IOutputGateway<IControlMessage> outputGateway,
                                 IHandlerRepository handlerRepository, IMessageBuilder messageBuilder, IReinjectionEngine reinjectionEngine)
             : base(identification, inputGateway, handlerRepository, messageBuilder, reinjectionEngine)
         {
@@ -42,6 +43,8 @@ namespace HermEsb.Core.Processors.Agent
         {
             SetPropertyToHandler(messageHandler, "Controller", this);
             SetPropertyToHandler(messageHandler, "Processor", Processor);
+            SetPropertyToHandler(messageHandler, "ClusterController", ClusterController);
+
             SetPropertyToHandler(messageHandler, "Context", contextHandler);
         }
 
@@ -56,6 +59,14 @@ namespace HermEsb.Core.Processors.Agent
         /// </summary>
         /// <value>The monitor.</value>
         public IMonitor Monitor { get; set; }
+
+        /// <summary>
+        /// Gets or sets the cluster controller.
+        /// </summary>
+        /// <value>
+        /// The cluster controller.
+        /// </value>
+        public IClusterController ClusterController { get; set; }
 
         /// <summary>
         /// Starts this instance.
@@ -92,13 +103,13 @@ namespace HermEsb.Core.Processors.Agent
         /// </summary>
         private void SendSubscriptionMessage()
         {
-            if(Processor is ServiceProcessor)
+            if (Processor is ServiceProcessor)
             {
                 var serviceProcessor = Processor as ServiceProcessor;
 
                 var subscriptionMessage = new SubscriptionMessage
                                               {
-                                                  Service = (Identification) serviceProcessor.Identification,
+                                                  Service = (Identification)serviceProcessor.Identification,
                                                   InputGateway = new EndPointMessage
                                                                      {
                                                                          Type =

@@ -49,5 +49,11 @@ namespace HermEsb.Configuration.Bus
         {
             get { return (ErrorHandlingControllerConfig)this["errorHandling"]; }
         }
+
+        [ConfigurationProperty("clusterController", IsRequired = false)]
+        public ClusterControllerConfig  ClusterController
+        {
+            get { return (ClusterControllerConfig)this["clusterController"]; }
+        }
     }
 }

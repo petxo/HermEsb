@@ -79,6 +79,8 @@
     <Compile Include="Builder\Registration\Specifications\IsConcreteClassSpec.cs" />
     <Compile Include="Builder\Registration\Specifications\TypeInNamespaceSpec.cs" />
     <Compile Include="Bus\BusConfigurator.cs" />
+    <Compile Include="Bus\ClusterControllerConfig.cs" />
+    <Compile Include="Bus\ClusterControllerConfigurator.cs" />
     <Compile Include="Bus\HermEsbConfig.cs" />
     <Compile Include="Bus\Persisters\Mongo\MongoPersiterConfig.cs" />
     <Compile Include="Bus\Persisters\SubscriptiorPersisterConfig.cs" />

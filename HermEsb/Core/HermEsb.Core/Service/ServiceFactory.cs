@@ -1,3 +1,4 @@
+using HermEsb.Core.Clustering;
 using HermEsb.Core.ErrorHandling;
 using HermEsb.Core.Processors;
 using HermEsb.Logging;
@@ -9,16 +10,18 @@ namespace HermEsb.Core.Service
     public static class ServiceFactory
     {
         /// <summary>
-        ///     Creates the specified processor.
+        /// Creates the specified processor.
         /// </summary>
         /// <param name="processor">The processor.</param>
         /// <param name="controller">The controller.</param>
         /// <param name="errorHandlingController">The error handling controller.</param>
+        /// <param name="clusterController">The cluster controller.</param>
         /// <returns></returns>
         public static IService Create(IProcessor processor, IController controller,
-                                      IErrorHandlingController errorHandlingController)
+                                      IErrorHandlingController errorHandlingController,
+                                        IClusterController clusterController)
         {
-            var service = new Service(processor, controller, errorHandlingController);
+            var service = new Service(processor, controller, errorHandlingController, clusterController);
             InjectDependencies(service);
             return service;
         }

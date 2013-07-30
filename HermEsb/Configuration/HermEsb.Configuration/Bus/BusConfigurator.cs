@@ -1,6 +1,7 @@
 using HermEsb.Configuration.Monitoring;
 using HermEsb.Configuration.Services;
 using HermEsb.Core;
+using HermEsb.Core.Clustering;
 using HermEsb.Core.ErrorHandling;
 using HermEsb.Core.Monitoring;
 using HermEsb.Core.Processors;
@@ -20,7 +21,8 @@ namespace HermEsb.Configuration.Bus
         private IErrorHandlingController _errorHandlingController;
         private Identification _identification;
         private IProcessor _processor;
-
+        private IClusterController _clusterController;
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BusConfigurator"/> class.
@@ -50,7 +52,8 @@ namespace HermEsb.Configuration.Bus
         {
             LoadIdentification()
                 .CreateMonitor()
-                .CreateErrorHandlingController();
+                .CreateErrorHandlingController()
+                .CreateClusterController();
         }
 
         /// <summary>
@@ -59,7 +62,7 @@ namespace HermEsb.Configuration.Bus
         /// <returns></returns>
         private IService CreateService()
         {
-            IService service = ServiceFactory.Create(_processor, _controller, _errorHandlingController);
+            IService service = ServiceFactory.Create(_processor, _controller, _errorHandlingController, _clusterController);
             if (_errorHandlingConfigurator != null)
             {
                 IMonitor monitor = _errorHandlingConfigurator.Create(_controller);
@@ -132,6 +135,25 @@ namespace HermEsb.Configuration.Bus
             else
             {
                 _errorHandlingController = ErrorHandlingControllerFactory.NullController;
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Creates the cluster controller.
+        /// </summary>
+        /// <returns></returns>
+        private BusConfigurator CreateClusterController()
+        {
+            if (_hermEsbConfig.ClusterController.ElementInformation.IsPresent)
+            {
+                var clusterControllerConfigurator =
+                    new ClusterControllerConfigurator(_hermEsbConfig.ClusterController, _identification);
+                _clusterController = clusterControllerConfigurator.Create();
+            }
+            else
+            {
+                _clusterController = CluterControllerFactory.NullController;
             }
             return this;
         }

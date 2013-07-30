@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Bteam.SimpleStateMachine;
+using HermEsb.Core.Clustering;
 using HermEsb.Core.Communication.EndPoints;
 using HermEsb.Core.ErrorHandling;
 using HermEsb.Core.Gateways;
@@ -94,6 +95,8 @@ namespace HermEsb.Core.Processors.Router
                 _stateMachine.ChangeState(ProcessorStatus.Configured);
             }
         }
+
+        public IClusterController ClusterController { get; set; }
 
         /// <summary>
         ///     Gets or sets the monitor.
@@ -336,6 +339,8 @@ namespace HermEsb.Core.Processors.Router
                                                      this);
                                 SetPropertyToHandler(messageHandler, "Processor",
                                                      Processor);
+                                SetPropertyToHandler(messageHandler, "ClusterController",
+                                                     ClusterController);
 
                                 InvokeMethodHandle(messageHandler, args.Message);
                             }

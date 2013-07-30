@@ -1,5 +1,6 @@
 using HermEsb.Configuration.Monitoring;
 using HermEsb.Core;
+using HermEsb.Core.Clustering;
 using HermEsb.Core.ErrorHandling;
 using HermEsb.Core.Processors;
 using HermEsb.Core.Service;
@@ -11,7 +12,7 @@ namespace HermEsb.Configuration.Services
     /// </summary>
     public class ServiceConfigurator : IConfigurator
     {
-        private readonly HermEsbServiceConfig _HermEsbServiceConfig;
+        private readonly HermEsbServiceConfig _hermEsbServiceConfig;
         private MonitorConfigurator _monitorConfigurator;
 
         private IController _controller;
@@ -23,10 +24,10 @@ namespace HermEsb.Configuration.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceConfigurator"/> class.
         /// </summary>
-        /// <param name="HermEsbServiceConfig">The HermEsb service config.</param>
-        public ServiceConfigurator(HermEsbServiceConfig HermEsbServiceConfig)
+        /// <param name="hermEsbServiceConfig">The HermEsb service config.</param>
+        public ServiceConfigurator(HermEsbServiceConfig hermEsbServiceConfig)
         {
-            _HermEsbServiceConfig = HermEsbServiceConfig;
+            _hermEsbServiceConfig = hermEsbServiceConfig;
         }
 
         /// <summary>
@@ -55,9 +56,9 @@ namespace HermEsb.Configuration.Services
         /// </summary>
         private ServiceConfigurator CreateMonitor()
         {
-            if (_HermEsbServiceConfig.ControlProcessor.Monitor.ElementInformation.IsPresent)
+            if (_hermEsbServiceConfig.ControlProcessor.Monitor.ElementInformation.IsPresent)
             {
-                _monitorConfigurator = new MonitorConfigurator(_HermEsbServiceConfig.ControlProcessor.Monitor, _identification);
+                _monitorConfigurator = new MonitorConfigurator(_hermEsbServiceConfig.ControlProcessor.Monitor, _identification);
             }
             return this;
         }
@@ -68,7 +69,7 @@ namespace HermEsb.Configuration.Services
         /// <returns></returns>
         private IService CreateService()
         {
-            var service = ServiceFactory.Create(_processor, _controller, _errorHandlingController);
+            var service = ServiceFactory.Create(_processor, _controller, _errorHandlingController, CluterControllerFactory.NullController);
             if (_monitorConfigurator != null)
             {
                 var monitor = _monitorConfigurator.Configure()
@@ -86,8 +87,8 @@ namespace HermEsb.Configuration.Services
         {
             _identification = new Identification
                                   {
-                                      Id = _HermEsbServiceConfig.Identification.Id,
-                                      Type = _HermEsbServiceConfig.Identification.Type
+                                      Id = _hermEsbServiceConfig.Identification.Id,
+                                      Type = _hermEsbServiceConfig.Identification.Type
                                   };
 
             return this;
@@ -99,7 +100,7 @@ namespace HermEsb.Configuration.Services
         /// <returns></returns>
         private ServiceConfigurator CreateControlProcessor()
         {
-            _controller = new ControlProcessorConfigurator(_HermEsbServiceConfig, _identification).CreateControlProcessor();
+            _controller = new ControlProcessorConfigurator(_hermEsbServiceConfig, _identification).CreateControlProcessor();
             return this;
         }
 
@@ -110,7 +111,7 @@ namespace HermEsb.Configuration.Services
         private ServiceConfigurator CreateServiceProcessor()
         {
             _processor =
-                new ServiceProcessorConfigurator(_HermEsbServiceConfig.ServiceProcessor, _identification).
+                new ServiceProcessorConfigurator(_hermEsbServiceConfig.ServiceProcessor, _identification).
                     CreateServiceProcessor();
 
             return this;
@@ -121,9 +122,9 @@ namespace HermEsb.Configuration.Services
         /// </summary>
         private ServiceConfigurator CreateErrorHandlingController()
         {
-            if (_HermEsbServiceConfig.ErrorHandlingController.ElementInformation.IsPresent)
+            if (_hermEsbServiceConfig.ErrorHandlingController.ElementInformation.IsPresent)
             {
-                var errorHandlingConfigurator = new ErrorHandlingControllerConfigurator(_HermEsbServiceConfig.ErrorHandlingController, _identification);
+                var errorHandlingConfigurator = new ErrorHandlingControllerConfigurator(_hermEsbServiceConfig.ErrorHandlingController, _identification);
                 _errorHandlingController = errorHandlingConfigurator.Create();
             }
             else

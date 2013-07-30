@@ -1,4 +1,6 @@
 using System;
+using HermEsb.Core.Clustering;
+using HermEsb.Core.Clustering.Messages;
 using HermEsb.Core.Controller.Messages;
 using HermEsb.Core.Gateways.Agent;
 using HermEsb.Core.Gateways.Router;
@@ -27,6 +29,8 @@ namespace HermEsb.Core.Controller.Handlers
         /// <value>The controller.</value>
         public IController Controller { get; set; }
 
+        public IClusterController ClusterController { get; set; }
+
         /// <summary>
         /// Handles the message.
         /// </summary>
@@ -45,6 +49,9 @@ namespace HermEsb.Core.Controller.Handlers
 
                 //Enviar el mensaje de suscripcion completada
                 SendSubscriptionCompleted(message);
+
+                var newSuscriberClusterMessage = new NewSuscriberClusterMessage {Identification = Processor.Identification};
+                ClusterController.SendMessage(newSuscriberClusterMessage);
             }
         }
 
@@ -54,14 +61,22 @@ namespace HermEsb.Core.Controller.Handlers
         /// <param name="message">The message.</param>
         private void SendSubscriptionCompleted(ISubscriptionMessage message)
         {
+            var endPointMessage = new EndPointMessage();
+            if (!ClusterController.IsNull())
+            {
+                endPointMessage.Uri = ClusterController.EndPointClusterInput.Uri.OriginalString;
+                endPointMessage.Type = ClusterController.EndPointClusterInput.Transport;
+            }
+            else
+            {
+                endPointMessage.Uri = Processor.ReceiverEndPoint.Uri.OriginalString;
+                endPointMessage.Type = Processor.ReceiverEndPoint.Transport;
+            }
+
             var subscriptionCompletedMessage = new SubscriptionCompletedMessage
                                                    {
                                                        BusIdentification = Processor.Identification,
-                                                       InputGateway = new EndPointMessage
-                                                           {
-                                                               Uri = Processor.ReceiverEndPoint.Uri.OriginalString,
-                                                               Type = Processor.ReceiverEndPoint.Transport
-                                                           }
+                                                       InputGateway = endPointMessage
                                                    };
 
             ((IRouterController) Controller).Publish(message.Service, subscriptionCompletedMessage);

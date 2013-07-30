@@ -57,5 +57,16 @@ namespace HermEsb.Core.Communication.EndPoints
             throw new NotImplementedException("Transporte no implementado");
         }
 
+
+        /// <summary>
+        /// Creates the end point info.
+        /// </summary>
+        /// <param name="uri">The URI.</param>
+        /// <param name="transportType">Type of the transport.</param>
+        /// <returns></returns>
+        public static IEndPoint CreateEndPointInfo(Uri uri, TransportType transportType)
+        {
+            return new EndPointInfo(uri, transportType);
+        }
     }
 }
