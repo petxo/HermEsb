@@ -2,44 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beffee36-b932-40c7-8e59-f1f30bb2f02d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Samples/BasicBusSample/BasicSampleContracts/BasicSampleContracts.csproj" afterPath="$PROJECT_DIR$/../HermEsb/Samples/BasicBusSample/BasicSampleContracts/BasicSampleContracts.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Configuration/HermEsb.Configuration/HermEsb.Configuration.csproj" afterPath="$PROJECT_DIR$/../HermEsb/Configuration/HermEsb.Configuration/HermEsb.Configuration.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/HermEsb.Core.csproj" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/HermEsb.Core.csproj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hermEsbBalancer/clusterController.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hermEsbBalancer/handlers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hermEsbBalancer/messages.py" />
+      <change type="DELETED" beforePath="C:\Projects\Bteam\HermEsb\HermEsb\Core\HermEsb.Core\Clustering\CluterControllerFactory.cs" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projects\Bteam\HermEsb\HermEsb\Core\HermEsb.Core\Clustering\Messages\NewSuscriberClusterMessage.cs" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Configuration/HermEsb.Configuration/Bus/BusConfigurator.cs" afterPath="$PROJECT_DIR$/../HermEsb/Configuration/HermEsb.Configuration/Bus/BusConfigurator.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Agent/ControlProcessor.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Agent/ControlProcessor.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Communication/EndPoints/EndPointFactory.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Communication/EndPoints/EndPointFactory.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Configuration/HermEsb.Configuration/Bus/HermEsbConfig.cs" afterPath="$PROJECT_DIR$/../HermEsb/Configuration/HermEsb.Configuration/Bus/HermEsbConfig.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Handlers/Control/IControlMessageHandler.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Handlers/Control/IControlMessageHandler.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/IController.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/IController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Samples/BasicBusSample/BasicSampleContracts/IMessageBasic.cs" afterPath="$PROJECT_DIR$/../HermEsb/Samples/BasicBusSample/BasicSampleContracts/IMessageBasic.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Samples/BasicBusSample/BasicSampleContracts/MessageBasic.cs" afterPath="$PROJECT_DIR$/../HermEsb/Samples/BasicBusSample/BasicSampleContracts/MessageBasic.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Samples/BasicBusSample/BasicSamplePublisher/Program.cs" afterPath="$PROJECT_DIR$/../HermEsb/Samples/BasicBusSample/BasicSamplePublisher/Program.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Router/RouterControlProcessor.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Router/RouterControlProcessor.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Service/Service.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Service/Service.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Configuration/HermEsb.Configuration/Bus/ClusterControllerConfigurator.cs" afterPath="$PROJECT_DIR$/../HermEsb/Configuration/HermEsb.Configuration/Bus/ClusterControllerConfigurator.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Clustering/CluterControllerExtensions.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Clustering/CluterControllerExtensions.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core.Test/HermEsb.Core.Test.csproj" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core.Test/HermEsb.Core.Test.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/HermEsb.Core.csproj" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/HermEsb.Core.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Router/Subscriptors/ISubscriptons.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Router/Subscriptors/ISubscriptons.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Configuration/HermEsb.Configuration/Services/ServiceConfigurator.cs" afterPath="$PROJECT_DIR$/../HermEsb/Configuration/HermEsb.Configuration/Services/ServiceConfigurator.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Service/ServiceFactory.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Service/ServiceFactory.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Controller/Handlers/SubscriptionCompletedHandler.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Controller/Handlers/SubscriptionCompletedHandler.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Messages/Session.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Messages/Session.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Controller/Handlers/SubscriptionHandler.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Controller/Handlers/SubscriptionHandler.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Router/Subscriptors/SubscriptorsHelper.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Router/Subscriptors/SubscriptorsHelper.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Controller/Handlers/UnsubscriptionHandler.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Controller/Handlers/UnsubscriptionHandler.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Samples/BasicBusSample/BasicBusSample/config/service.xml" afterPath="$PROJECT_DIR$/../HermEsb/Samples/BasicBusSample/BasicBusSample/config/service.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hermEsbBalancer/balancer.cfg" afterPath="$PROJECT_DIR$/hermEsbBalancer/balancer.cfg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hermEsbBalancer/balancer.py" afterPath="$PROJECT_DIR$/hermEsbBalancer/balancer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hermEsbBalancer/core/loadbalancers.py" afterPath="$PROJECT_DIR$/hermEsbBalancer/core/loadbalancers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hermEsbBalancer/core/queue.py" afterPath="$PROJECT_DIR$/hermEsbBalancer/core/queue.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hermEsbBalancer/server.py" afterPath="$PROJECT_DIR$/hermEsbBalancer/server.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HermEsbBalancer.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375164771820" ignored="false" />
+    <file path="/Dummy.txt" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375767347386" ignored="false" />
     <file path="/setup.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374589773982" ignored="false" />
-    <file path="/balancer.cfg" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374577221095" ignored="false" />
+    <file path="/balancer.cfg" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375799083774" ignored="false" />
     <file path="/fsm.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374574958490" ignored="false" />
     <file path="/amqp.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374565447898" ignored="false" />
     <file path="/gateways.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374569258467" ignored="false" />
     <file path="/hermEsbBalancer.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374574897397" ignored="false" />
     <file path="/basechannels.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374572433988" ignored="false" />
-    <file path="/server.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374574622370" ignored="false" />
+    <file path="/server.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375801753792" ignored="false" />
     <file path="/logging.yml" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374575261542" ignored="false" />
-    <file path="/balancer.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374577302645" ignored="false" />
+    <file path="/balancer.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375809592591" ignored="false" />
     <file path="/tcpsocket.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374595074988" ignored="false" />
     <file path="/loggerManager.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374588494481" ignored="false" />
     <file path="/MANIFEST.in" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1374589974886" ignored="false" />
+    <file path="/handlers.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375809359299" ignored="false" />
+    <file path="/clusterController.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375809826158" ignored="false" />
+    <file path="/a.dummy" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375807046082" ignored="false" />
+    <file path="/loadbalancers.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375786725181" ignored="false" />
+    <file path="/bus.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375789028594" ignored="false" />
+    <file path="/fragment.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375803697764" ignored="false" />
+    <file path="/queue.py" changelist="beffee36-b932-40c7-8e59-f1f30bb2f02d" time="1375807498861" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +70,30 @@
       <file leaf-file-name="balancer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hermEsbBalancer/balancer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="43" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.0">
+            <state line="30" column="0" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#60#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eventhandling.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/eventhandling.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="0" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clusterController.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/clusterController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="72" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,29 +101,34 @@
       <file leaf-file-name="gateways.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hermEsbBalancer/endpoints/gateways.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="60" selection-start="3956" selection-end="3956" vertical-scroll-proportion="0.42777777">
-              <folding>
-                <element signature="e#174#190#0" expanded="true" />
-              </folding>
+            <state line="114" column="0" selection-start="4023" selection-end="4023" vertical-scroll-proportion="1.052795">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tcpsocket.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/tcpsocket.py">
+      <file leaf-file-name="basechannels.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/basechannels.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="34" selection-start="4687" selection-end="4687" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#43#52#0" expanded="true" />
-              </folding>
+            <state line="160" column="39" selection-start="6687" selection-end="6687" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loadbalancers.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/loadbalancers.py">
+      <file leaf-file-name="amqp.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/amqp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="18" selection-start="1640" selection-end="1650" vertical-scroll-proportion="0.0">
+            <state line="75" column="0" selection-start="3046" selection-end="3046" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="queue.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/queue.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="4" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -102,7 +137,7 @@
       <file leaf-file-name="balancer.cfg" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hermEsbBalancer/balancer.cfg">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="9" selection-start="912" selection-end="1815" vertical-scroll-proportion="-18.72">
+            <state line="12" column="37" selection-start="447" selection-end="447" vertical-scroll-proportion="-8.16">
               <folding />
             </state>
           </provider>
@@ -111,37 +146,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="queue.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/queue.py">
+      <file leaf-file-name="handlers.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/handlers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="38" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="61" column="0" selection-start="2060" selection-end="2060" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup.py">
+      <file leaf-file-name="loadbalancers.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/loadbalancers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="35" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compressors.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/compressors.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loggerManager.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/loggerManager.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
+            <state line="56" column="0" selection-start="1920" selection-end="1920" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -165,22 +184,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/hermEsbBalancer/hermEsbBalancer.py" />
-        <option value="$PROJECT_DIR$/hermEsbBalancer/server.py" />
-        <option value="$PROJECT_DIR$/hermEsbBalancer/core/fsm.py" />
-        <option value="$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/factories.py" />
-        <option value="$PROJECT_DIR$/hermEsbBalancer/endpoints/gateways.py" />
-        <option value="$PROJECT_DIR$/hermEsbBalancer/logging.yml" />
-        <option value="$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/basechannels.py" />
-        <option value="$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/amqp.py" />
-        <option value="$PROJECT_DIR$/hermEsbBalancer/balancer.cfg" />
-        <option value="$PROJECT_DIR$/hermEsbBalancer/core/queue.py" />
         <option value="$PROJECT_DIR$/hermEsbBalancer/core/loggerManager.py" />
-        <option value="$PROJECT_DIR$/hermEsbBalancer/balancer.py" />
         <option value="$PROJECT_DIR$/MANIFEST" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/MANIFEST.in" />
         <option value="$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/tcpsocket.py" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/app-context.yml" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/core/loadbalancers.py" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/serialization.py" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/bus.py" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/messages.py" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/balancer.cfg" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/server.py" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/core/queue.py" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/handlers.py" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/balancer.py" />
+        <option value="$PROJECT_DIR$/hermEsbBalancer/clusterController.py" />
       </list>
     </option>
   </component>
@@ -264,24 +283,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="endpoints" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HermEsbBalancer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HermEsbBalancer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hermEsbBalancer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,7 +396,9 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hermEsbBalancer/server.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
     <list size="1">
@@ -430,14 +433,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2219697" sideWeight="0.67232597" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22424242" sideWeight="0.67232597" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37478706" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19924243" sideWeight="0.6264856" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37351444" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -445,7 +449,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -510,85 +513,76 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="39" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/site-packages/pika/channel.py">
+    <entry file="file://C:/Python27/Lib/site-packages/pika/connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="885" column="0" selection-start="39386" selection-end="39386" vertical-scroll-proportion="0.0" />
+        <state line="1270" column="0" selection-start="45898" selection-end="45898" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/server.py">
+    <entry file="file://C:/Python27/Lib/site-packages/pika/adapters/base_connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0" />
+        <state line="325" column="0" selection-start="12086" selection-end="12086" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/eventhandling.py">
+    <entry file="file://C:/Python27/Lib/site-packages/pika/adapters/blocking_connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0" />
+        <state line="66" column="0" selection-start="2177" selection-end="2177" vertical-scroll-proportion="0.33229813">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/basechannels.py">
+    <entry file="file://C:/Python27/Lib/site-packages/pymongo/collection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="273" column="0" selection-start="10770" selection-end="10770" vertical-scroll-proportion="0.0" />
+        <state line="1303" column="0" selection-start="57980" selection-end="57980" vertical-scroll-proportion="0.19741698">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="450" column="0" selection-start="16719" selection-end="16719" vertical-scroll-proportion="0.19005328">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/bus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="0" selection-start="1555" selection-end="1555" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/loadbalancers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="0" selection-start="1920" selection-end="1920" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/amqp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="0" selection-start="4687" selection-end="4687" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/loggerManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
+        <state line="75" column="0" selection-start="3046" selection-end="3046" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/compressors.py">
+    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/eventhandling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+        <state line="30" column="0" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/queue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="38" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="35" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MANIFEST.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="24" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MANIFEST">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="297" selection-end="297" vertical-scroll-proportion="-0.056756757" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/tcpsocket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="34" selection-start="4687" selection-end="4687" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#43#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hermEsbBalancer/balancer.cfg">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="9" selection-start="912" selection-end="1815" vertical-scroll-proportion="-18.72">
+        <state line="12" column="37" selection-start="447" selection-end="447" vertical-scroll-proportion="-8.16">
           <folding />
         </state>
       </provider>
@@ -596,26 +590,51 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/balancer.py">
+    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/handlers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="43" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.0">
+        <state line="61" column="0" selection-start="2060" selection-end="2060" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/queue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="4" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/core/loadbalancers.py">
+    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/balancer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="18" selection-start="1640" selection-end="1650" vertical-scroll-proportion="0.0">
+        <state line="30" column="0" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/clusterController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="72" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hermEsbBalancer/endpoints/channels/basechannels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="160" column="39" selection-start="6687" selection-end="6687" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hermEsbBalancer/endpoints/gateways.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="60" selection-start="3956" selection-end="3956" vertical-scroll-proportion="0.42777777">
-          <folding>
-            <element signature="e#174#190#0" expanded="true" />
-          </folding>
+        <state line="114" column="0" selection-start="4023" selection-end="4023" vertical-scroll-proportion="1.052795">
+          <folding />
         </state>
       </provider>
     </entry>

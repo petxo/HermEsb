@@ -114,6 +114,7 @@
     <Compile Include="Processors\Router\Subscritors\SubscriptorsHelperTest.cs" />
     <Compile Include="Processors\Service\ServiceFactoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\SessionSerializationTest.cs" />
     <Compile Include="Service\Configuration\ServiceConfigTest.cs" />
     <Compile Include="Service\Hanlders\HandlerMessageFake.cs" />
     <Compile Include="Service\Hanlders\HandlerRepositoryTest.cs" />

@@ -128,11 +128,13 @@ class MongoQueue(PersistenceQueue):
         return None
 
     def task_done(self):
-        self._collection.find_and_modify(query={"_id" : self._localStorage.rec},
+        if hasattr(self._localStorage, 'rec'):
+            self._collection.find_and_modify(query={"_id" : self._localStorage.rec},
                                     update={ "$set": {"Status":2, "ProcessedAt": datetime.utcnow()}})
 
     def task_not_done(self):
-        self._collection.find_and_modify(query={"_id" : self._localStorage.rec},
+        if hasattr(self._localStorage, 'rec'):
+            self._collection.find_and_modify(query={"_id" : self._localStorage.rec},
                                     update={ "$set": {"Status":0, "ProcessedAt": None}})
     def peek(self):
         rec = self._collection.find_one(query={"Status" : 0})

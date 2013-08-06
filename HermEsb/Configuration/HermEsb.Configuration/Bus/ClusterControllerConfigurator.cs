@@ -38,7 +38,7 @@ namespace HermEsb.Configuration.Bus
             CreateOutput();
             var endPointInfoInput = EndPointFactory.CreateEndPointInfo(new Uri(_clusterControllerConfig.ClusterInput.Uri),
                                                _clusterControllerConfig.ClusterInput.Transport);
-            return CluterControllerFactory.Create(_output, _identification, endPointInfoInput);
+            return ClusterControllerFactory.Create(_output, _identification, endPointInfoInput);
         }
 
         /// <summary>

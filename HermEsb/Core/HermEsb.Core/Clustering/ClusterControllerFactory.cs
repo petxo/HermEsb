@@ -8,12 +8,12 @@ namespace HermEsb.Core.Clustering
     /// <summary>
     /// 
     /// </summary>
-    public static class CluterControllerFactory
+    public static class ClusterControllerFactory
     {
         /// <summary>
         /// Initializes the <see cref="ErrorHandlingControllerFactory"/> class.
         /// </summary>
-        static CluterControllerFactory()
+        static ClusterControllerFactory()
         {
             NullController = new NullClusterController();
         }

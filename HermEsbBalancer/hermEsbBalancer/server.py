@@ -1,8 +1,8 @@
 import signal
 import sys
 from time import sleep
+from hermEsbBalancer.handlers import HandlerRepository
 from hermEsbBalancer.balancer import Balancer
-
 
 __author__ = 'Sergio'
 import logging
@@ -33,15 +33,14 @@ if __name__ == "__main__":
 
     logcfg = yaml.load(open(options.logfile, 'r'))
     logging.config.dictConfig(logcfg)
-    bal = Balancer(cfg)
-
-    bal.start()
+    Balancer.Create(cfg, HandlerRepository.Instance())
+    Balancer.Instance().start()
     if sys.platform != "win32":
         signal.pause()
     else:
         try:
             sleep(-1)
         except KeyboardInterrupt:
-            bal.stop()
+            Balancer.Instance().stop()
     sys.exit(0)
 

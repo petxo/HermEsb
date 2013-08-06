@@ -153,7 +153,7 @@ namespace HermEsb.Configuration.Bus
             }
             else
             {
-                _clusterController = CluterControllerFactory.NullController;
+                _clusterController = ClusterControllerFactory.NullController;
             }
             return this;
         }

@@ -25,5 +25,17 @@ namespace HermEsb.Core.Processors.Router.Subscriptors
         /// 	<c>true</c> if [contains] [the specified identification]; otherwise, <c>false</c>.
         /// </returns>
         bool Contains(Identification identification);
+
+        /// <summary>
+        /// Clears this instance.
+        /// </summary>
+        void Clear();
+
+        /// <summary>
+        /// Refreshes this instance.
+        /// </summary>
+        void Refresh();
+
+        void AddService(Identification serviceId);
     }
 }

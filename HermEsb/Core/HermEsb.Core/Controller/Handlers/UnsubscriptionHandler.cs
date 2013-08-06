@@ -1,4 +1,5 @@
 using HermEsb.Core.Clustering;
+using HermEsb.Core.Clustering.Messages;
 using HermEsb.Core.Controller.Messages;
 using HermEsb.Core.Handlers.Control;
 using HermEsb.Core.Processors;
@@ -43,6 +44,12 @@ namespace HermEsb.Core.Controller.Handlers
                 if (!routerController.Subscriptons.Contains(message.Service))
                 {
                     routerController.Subscriptons.Remove(message.Service);
+                }
+
+                if (!ClusterController.IsNull())
+                {
+                    var unsuscriberClusterMessage = new RemoveClusterSubscriberMessage { Identification = Processor.Identification };
+                    ClusterController.SendMessage(unsuscriberClusterMessage);
                 }
             }
         }

@@ -1,6 +1,6 @@
 namespace HermEsb.Core.Clustering
 {
-    public static class CluterControllerExtensions
+    public static class ClusterControllerExtensions
     {
         /// <summary>
         /// Determines whether the specified cluster controller is null.
@@ -11,7 +11,7 @@ namespace HermEsb.Core.Clustering
         /// </returns>
         public static bool IsNull(this IClusterController clusterController)
         {
-            return clusterController == CluterControllerFactory.NullController;
+            return clusterController == ClusterControllerFactory.NullController;
         }
     }
 }

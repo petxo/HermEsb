@@ -40,7 +40,7 @@ namespace HermEsb.Core.Controller.Handlers
             if ((Processor is ISubscriber) && (Controller is IRouterController))
             {
                 var routerController = (Controller as IRouterController);
-                var subscriptor = GetSubscriptor(message);
+                var subscriptor = message.ToSubscriptor(Processor.Identification);
                 if (routerController.Subscriptons.Contains(message.Service))
                 {
                     routerController.Subscriptons.Remove(message.Service);
@@ -50,8 +50,21 @@ namespace HermEsb.Core.Controller.Handlers
                 //Enviar el mensaje de suscripcion completada
                 SendSubscriptionCompleted(message);
 
-                var newSuscriberClusterMessage = new NewSuscriberClusterMessage {Identification = Processor.Identification};
-                ClusterController.SendMessage(newSuscriberClusterMessage);
+                if (!ClusterController.IsNull())
+                {
+                    var newSuscriberClusterMessage = new NewClusterSubscriberMessage
+                    {
+                        Identification = Processor.Identification,
+                        Service = new SubscriptionMessage
+                                        {
+                                            InputControlGateway = message.InputControlGateway,
+                                            InputGateway = message.InputGateway,
+                                            Service = message.Service,
+                                            Types = message.Types
+                                        }
+                    };
+                    ClusterController.SendMessage(newSuscriberClusterMessage);
+                }
             }
         }
 
@@ -79,37 +92,7 @@ namespace HermEsb.Core.Controller.Handlers
                                                        InputGateway = endPointMessage
                                                    };
 
-            ((IRouterController) Controller).Publish(message.Service, subscriptionCompletedMessage);
-        }
-
-        /// <summary>
-        /// Gets the subscriptor.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        /// <returns></returns>
-        private Subscriptor GetSubscriptor(ISubscriptionMessage message)
-        {
-            var subscriptor = new Subscriptor
-                                  {
-                                      Service = message.Service,
-                                      ServiceInputGateway =
-                                          RouterGatewayFactory.CreateOutputGateway(
-                                                                                new Uri(message.InputGateway.Uri),
-                                                                                message.InputGateway.Type),
-                                      ServiceInputControlGateway =
-                                          AgentGatewayFactory.CreateOutputGateway(Processor.Identification,
-                                                                                  new Uri(message.InputControlGateway.Uri),
-                                                                                  message.InputControlGateway.Type),
-                                  };
-
-
-            foreach (var subscriptionTypeMessage in message.Types)
-            {
-                LoggerManager.Instance.Debug(string.Format("Adding Type {0}", subscriptionTypeMessage.Key));
-
-                subscriptor.SubcriptionTypes.Add(subscriptionTypeMessage.ToSubscriptorKey());
-            }
-            return subscriptor;
+            ((IRouterController)Controller).Publish(message.Service, subscriptionCompletedMessage);
         }
 
         /// <summary>
@@ -117,7 +100,7 @@ namespace HermEsb.Core.Controller.Handlers
         /// </summary>
         public void Dispose()
         {
-            
+
         }
     }
 }

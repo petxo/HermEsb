@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="publisher" type="HermEsb.Configuration.Publishers.PublisherConfig, HermEsb.Configuration"/>
+  </configSections>
+
+  <publisher>
+    <identification id="Publisher1" type="Publisher"/>
+      <output transport="RabbitMq">
+        <add name="uri" value="//localhost/HermEsbSamples.Exch/BusCluster.Input/inputBusClusterKey"/>
+      </output>
+  </publisher>
+</configuration>

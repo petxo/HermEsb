@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using HermEsb.Core.Messages.Control;
 using HermEsb.Core.Processors.Router.Subscriptors.Persisters;
 using HermEsb.Logging;
@@ -79,6 +80,36 @@ namespace HermEsb.Core.Processors.Router.Subscriptors
             _subscriptorsPersister.Remove(subscriptor.Service);
 
             subscriptor.Dispose();
+        }
+
+        /// <summary>
+        /// Clears this instance.
+        /// </summary>
+        public void Clear()
+        {
+            foreach (var subscriber in _subscriptorsRepository.GetAll().ToList())
+            {
+                _subscriptorsRepository.Remove(subscriber);
+            }
+        }
+
+        /// <summary>
+        /// Refreshes this instance.
+        /// </summary>
+        public void Refresh()
+        {
+            Clear();
+            LoadStoredSubscriptors(Controller.Processor.Identification);
+        }
+
+        /// <summary>
+        /// Adds the service.
+        /// </summary>
+        /// <param name="serviceId">The service id.</param>
+        public void AddService(Identification serviceId)
+        {
+            var subscriptor = _subscriptorsRepository.Get(serviceId);
+            AddSubscriptor(subscriptor);
         }
 
         /// <summary>

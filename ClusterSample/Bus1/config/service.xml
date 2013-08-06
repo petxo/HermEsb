@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="HermEsb" type="HermEsb.Configuration.Bus.HermEsbConfig, HermEsb.Configuration"/>
+  </configSections>
+
+  <HermEsb>
+    <identification id="Bus1" type="Bus"/>
+    <clusterController>
+      <clusterControlOutput transport="RabbitMq">
+        <add name="uri" value="//localhost/HermEsbSamples.Exch/clusterControl.Input/clusterControl.InputKey"/>
+      </clusterControlOutput>
+      <clusterInput transport="RabbitMq">
+        <add name="uri" value="//localhost/HermEsbSamples.Exch/BusCluster.Input/inputBusClusterKey"/>
+      </clusterInput>
+    </clusterController>
+    <routerProcessor>
+      <input transport="RabbitMq">
+        <add name="uri" value="//localhost/HermEsbSamples.Exch/BusCluster1.Input/inputBusCluster1Key"/>
+      </input>
+    </routerProcessor>
+
+    <routerControlProcessor>
+      <input transport="RabbitMq">
+        <add name="uri" value="//localhost/HermEsbSamples.Exch/BusCluster1.ControlInput/controlinputBusCluster1Key"/>
+      </input>
+    </routerControlProcessor>
+  </HermEsb>
+</configuration>

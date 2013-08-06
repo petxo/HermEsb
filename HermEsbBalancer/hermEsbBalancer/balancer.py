@@ -1,15 +1,24 @@
-from hermEsbBalancer.core import loadbalancers, queue, loggerManager
+from hermEsbBalancer import clusterController, serialization
+from hermEsbBalancer.core import queue, loggerManager
 from hermEsbBalancer.endpoints.channels.amqp import OutBoundAmqpChannel, InBoundAmqpChannel
-from hermEsbBalancer.endpoints.gateways import SenderGateway, ReceiverGateway
 
 
 __author__ = 'Sergio'
 
 
 class Balancer:
-    def __init__(self, cfg):
-        lbNodesInput = loadbalancers.CreateRouterFromConfig(None)
-        lbNodesControl = loadbalancers.CreateRouterFromConfig(None)
+
+    __instance = None
+
+    @classmethod
+    def Create(cls, cfg, handlerRepository):
+        cls.__instance = Balancer(cfg, handlerRepository)
+
+    @classmethod
+    def Instance(cls):
+        return cls.__instance
+
+    def __init__(self, cfg, handlerRepository):
         qInput = queue.CreateQueueFromConfig(cfg['balancer']['inputChannel']['queue'])
         qControl = queue.CreateQueueFromConfig(cfg['balancer']['controlChannel']['queue'])
 
@@ -21,46 +30,47 @@ class Balancer:
             controlChannels.append(OutBoundAmqpChannel(host=node['controlChannel']['url'],
                                                        useAck=bool(node['controlChannel']['useAck'])))
 
-        self.nodesInputGateway = SenderGateway(lbNodesInput, qInput, channels=inputChannels,
-                                               numExtractors=len(inputChannels))
-        self.nodesInputGateway.connect()
+        receiverInputGateway = InBoundAmqpChannel(host=cfg['balancer']['inputChannel']['url'],
+                                                  useAck=bool(cfg['balancer']['inputChannel']['useAck']))
 
-        self.nodesControlGateway = SenderGateway(lbNodesControl, qControl, channels=controlChannels,
-                                                 numExtractors=len(controlChannels))
-        self.nodesControlGateway.connect()
+        receiverClusterControlChannel = InBoundAmqpChannel(host=cfg['balancer']['controlChannel']['url'],
+                                                           useAck=bool(cfg['balancer']['controlChannel']['useAck']))
 
-        self.receiverInputGateway = InBoundAmqpChannel(host=cfg['balancer']['inputChannel']['url'],
-                                                       useAck=bool(cfg['balancer']['inputChannel']['useAck']))
+        self.inputClusterController = clusterController.CreateClusterController(qInput, inputChannels,
+                                                                                  receiverInputGateway)
 
-        self.receiverInputGateway.OnMessageReceived += self.InputMessageReceived
-        self.receiverInputGateway.connect()
+        self.inputClusterController.connect()
+        self.controlClusterController = clusterController.CreateClusterController(qControl, controlChannels,
+                                                                                    receiverClusterControlChannel)
+        self.controlClusterController.connect()
 
-        self.receiverControlGateway = InBoundAmqpChannel(host=cfg['balancer']['controlChannel']['url'],
-                                                         useAck=bool(cfg['balancer']['controlChannel']['useAck']))
-        self.receiverControlGateway.OnMessageReceived += self.ControlMessageReceived
-        self.receiverControlGateway.connect()
+        self.receiverClusterControlChannel = InBoundAmqpChannel(host=cfg['balancer']['clusterControlChannel']['url'],
+                                                                useAck=bool(
+                                                                    cfg['balancer']['clusterControlChannel']['useAck']))
 
-    def InputMessageReceived(self, sender, args):
-        self.nodesInputGateway.send(args.message)
+        self.receiverClusterControlChannel.OnMessageReceived += self.ClusterControlMessageReceived
+        self.receiverClusterControlChannel.connect()
 
-    def ControlMessageReceived(self, sender, args):
-        self.nodesControlGateway.send(args.message)
+        self.clusterControllerHandler = []
+        self.handlerRepository = handlerRepository
+
+    def ClusterControlMessageReceived(self, sender, args):
+        loggerManager.getlogger().debug('Control Message Received')
+        message = serialization.loads(args.message)
+        handler = self.handlerRepository.getHandler(message["Header"]["BodyType"])
+        body = serialization.loads(message["Body"])
+        handler.HandleMessage(body)
+        del handler
 
     def stop(self):
         loggerManager.getlogger().debug('Parando...')
-        self.nodesInputGateway.stop()
-        self.nodesInputGateway.close()
-        self.nodesControlGateway.stop()
-        self.nodesControlGateway.close()
-
-        self.receiverInputGateway.stop()
-        self.receiverInputGateway.close()
-        self.receiverControlGateway.stop()
-        self.receiverControlGateway.close()
+        self.receiverClusterControlChannel.stop()
+        self.receiverClusterControlChannel.close()
+        self.inputClusterController.stop()
+        self.controlClusterController.stop()
         loggerManager.getlogger().debug('Parado')
 
     def start(self):
-        self.nodesInputGateway.start()
-        self.nodesControlGateway.start()
-        self.receiverInputGateway.start()
-        self.receiverControlGateway.start()
+        self.receiverClusterControlChannel.start()
+        self.inputClusterController.start()
+        self.controlClusterController.start()

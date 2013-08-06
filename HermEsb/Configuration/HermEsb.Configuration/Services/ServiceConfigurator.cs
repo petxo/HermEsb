@@ -69,7 +69,7 @@ namespace HermEsb.Configuration.Services
         /// <returns></returns>
         private IService CreateService()
         {
-            var service = ServiceFactory.Create(_processor, _controller, _errorHandlingController, CluterControllerFactory.NullController);
+            var service = ServiceFactory.Create(_processor, _controller, _errorHandlingController, ClusterControllerFactory.NullController);
             if (_monitorConfigurator != null)
             {
                 var monitor = _monitorConfigurator.Configure()

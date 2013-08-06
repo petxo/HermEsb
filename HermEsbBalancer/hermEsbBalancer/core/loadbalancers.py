@@ -52,6 +52,10 @@ class LoadBalancer:
         if resetAfter:
             self.reset()
 
+    ## Devuelve la lista de elementos del balanceador
+    def getItems(self):
+        return self._items
+
     ## Devuelve el siguiente canal al que se le debe enviar el mensaje
     def next(self):
         self._initialized.wait()
