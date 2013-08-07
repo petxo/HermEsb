@@ -11,22 +11,17 @@ from hermEsbBalancer.endpoints.channels.events import MessageReceivedArgs
 
 __author__ = 'sergio'
 
-## Clase que expone los metodos basicos para la encapsulacion del sistema de mensajeria
-class BaseGateway(Startable):
+class BaseNoDurableGateway(Startable):
 
     ## Crea una instancia de BasicGateway
     # @param channel Canal de comunicacion utilizado por el gateway
-    def __init__(self, queue, channels=list(), numExtractors=4):
+    def __init__(self, channels=list()):
         Startable.__init__(self)
         self._channels = list()
         self._queue = queue
         self.OnConnectionError = EventHook()
         for channel in channels:
             self.addChannel(channel)
-
-        self._thExtractors = list()
-        for count in range(0, numExtractors):
-            self._thExtractors.append(threading.Thread(target=self._process_queue))
 
     ## Añade un nuevo canal al gateway
     def addChannel(self, channel):
@@ -56,18 +51,11 @@ class BaseGateway(Startable):
         #TODO: Es un error de conexion del canal que hay que tratar ademas de disparar
         self.OnConnectionError.fire(self, args)
 
-    def _process_queue(self):
-        pass
-
     def _invokeOnStart(self):
         Startable._invokeOnStart(self)
-        for th in self._thExtractors:
-            th.start()
 
     def _invokeOnStopped(self):
         Startable._invokeOnStopped(self)
-        for th in self._thExtractors:
-            th.join()
 
     def __del__(self):
         Startable.__del__(self)
@@ -76,6 +64,30 @@ class BaseGateway(Startable):
 
         self.OnConnectionError.clear()
 
+## Clase que expone los metodos basicos para la encapsulacion del sistema de mensajeria
+class BaseGateway(BaseNoDurableGateway):
+
+    ## Crea una instancia de BasicGateway
+    # @param channel Canal de comunicacion utilizado por el gateway
+    def __init__(self, queue, channels=list(), numExtractors=4):
+        BaseNoDurableGateway.__init__(self, channels)
+        self._queue = queue
+        self._thExtractors = list()
+        for count in range(0, numExtractors):
+            self._thExtractors.append(threading.Thread(target=self._process_queue))
+
+    def _process_queue(self):
+        pass
+
+    def _invokeOnStart(self):
+        BaseNoDurableGateway._invokeOnStart(self)
+        for th in self._thExtractors:
+            th.start()
+
+    def _invokeOnStopped(self):
+        BaseNoDurableGateway._invokeOnStopped(self)
+        for th in self._thExtractors:
+            th.join()
 
 ## Crea un SenderGateway desde un config
 # { channels : [
@@ -96,6 +108,31 @@ def CreateSenderFromConfig(config):
     cola = queue.CreateQueueFromConfig(config["queue"])
 
     return SenderGateway(router, cola, channels)
+
+## Clase que implementa un gateway de salida
+class SenderNoDurableGateway (BaseNoDurableGateway):
+    def __init__(self, loadBalancer, channels=list()):
+        self._loadBalancer = loadBalancer
+        BaseNoDurableGateway.__init__(self, channels)
+
+    # TODO: añadir la informacion de enrutamiento, y añadir el canal al router
+    def addChannel(self, outBoundChannel):
+        BaseNoDurableGateway.addChannel(self, outBoundChannel)
+        self._loadBalancer.addChannel(outBoundChannel)
+        outBoundChannel.OnSendError += self._errorSending
+        outBoundChannel.OnMessageSent += self._onMessageSent
+
+    def send(self, message):
+        outBoundChannel = self._loadBalancer.next()
+        outBoundChannel.send(message)
+
+    def _errorSending(self, sender, args):
+        # Reencolamos el mensaje
+        pass
+
+    def _onMessageSent(self, sender, args):
+        #Eliminamos el mensaje de la cola definitivamente
+        pass
 
 ## Clase que implementa un gateway de salida
 class SenderGateway (BaseGateway):

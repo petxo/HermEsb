@@ -19,8 +19,12 @@ class Balancer:
         return cls.__instance
 
     def __init__(self, cfg, handlerRepository):
-        qInput = queue.CreateQueueFromConfig(cfg['balancer']['inputChannel']['queue'])
-        qControl = queue.CreateQueueFromConfig(cfg['balancer']['controlChannel']['queue'])
+        qInput = None
+        qControl = None
+        if not cfg['balancer']['inputChannel'].get('queue') is None:
+            qInput = queue.CreateQueueFromConfig(cfg['balancer']['inputChannel']['queue'])
+        if not cfg['balancer']['controlChannel'].get('queue') is None:
+            qControl = queue.CreateQueueFromConfig(cfg['balancer']['controlChannel']['queue'])
 
         inputChannels = list()
         controlChannels = list()

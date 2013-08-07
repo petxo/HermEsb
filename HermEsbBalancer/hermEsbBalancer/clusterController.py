@@ -1,15 +1,18 @@
 from hermEsbBalancer.core import loadbalancers
 from hermEsbBalancer.core.fsm import Startable
-from hermEsbBalancer.endpoints.gateways import SenderGateway
+from hermEsbBalancer.endpoints.gateways import SenderGateway, SenderNoDurableGateway
 
 __author__ = 'Sergio'
 
 
 def CreateClusterController(queue, channels, inBoundAmqpChannel):
     loadBalancer = loadbalancers.CreateRouterFromConfig(None)
-    gateway = SenderGateway(loadBalancer, queue, channels=channels,
+    if not queue is None:
+        gateway = SenderGateway(loadBalancer, queue, channels=channels,
                             numExtractors=30)
                             ##numExtractors=len(channels))
+    else:
+        gateway = SenderNoDurableGateway(loadBalancer, channels=channels)
     return ClusterController(loadBalancer, gateway, inBoundAmqpChannel)
 
 

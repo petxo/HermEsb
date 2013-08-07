@@ -100,7 +100,7 @@ class InBoundAmqpChannel(InBoundChannel, BaseAmqpChannel):
 
     def _connect_point(self):
         BaseAmqpChannel._connect_point(self)
-        self._connection.add_timeout(self._receptionTimeout, self._stopReceive)
+        # self._connection.add_timeout(self._receptionTimeout, self._stopReceive)
 
     def _close_point(self):
         BaseAmqpChannel._close_point(self)
