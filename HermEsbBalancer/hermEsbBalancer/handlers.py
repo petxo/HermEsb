@@ -1,6 +1,7 @@
 from hermEsbBalancer import serialization
 from hermEsbBalancer.balancer import Balancer
 from hermEsbBalancer.bus import MessageBus
+from hermEsbBalancer.messages import AddSubscriberFromClusterMessage
 
 __author__ = 'Sergio'
 
@@ -36,12 +37,7 @@ class NewSubscriberClusterMessageHandler:
         self.balancer = Balancer.Instance()
 
     def HandleMessage(self, message):
-        messageType = "HermEsb.Core.Controller.Messages.IAddSubscriberFromClusterMessage,HermEsb.Core"
-        body = dict()
-        body['Trigger'] = message["Identification"]
-        body['SubscriberService'] = message["Service"]
-        refreshMessage = MessageBus.Create(serialization.dumps(body), messageType, message["Identification"]["Id"], message["Identification"]["Type"])
-        msg = serialization.dumps(refreshMessage)
+        msg = serialization.dumps(AddSubscriberFromClusterMessage.Create(message))
         for channel in self.balancer.controlClusterController.getChannels():
             channel.send(msg)
 
