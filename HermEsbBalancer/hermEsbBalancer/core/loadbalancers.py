@@ -58,7 +58,7 @@ class LoadBalancer:
 
     ## Devuelve el siguiente canal al que se le debe enviar el mensaje
     def next(self):
-        self._initialized.wait()
+        # self._initialized.wait()
         return self._next()
 
     ## Reinicia el router

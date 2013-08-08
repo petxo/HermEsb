@@ -274,7 +274,6 @@ class InBoundChannel(Channel, Startable):
                 self._sendAck(obj)
         except Exception as ex:
             loggerManager.get_endPoints_logger().error("Error al procesar el mensaje: %s" % ex)
-            raise ex
 
     ## Metodo que se las clases hijas deben sobrescribir para realizar la recepcion
     # No se debe dejar bloqueado el hilo

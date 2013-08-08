@@ -109,7 +109,7 @@ class InBoundAmqpChannel(InBoundChannel, BaseAmqpChannel):
         self._processMessage(body, { "channel" : ch, "method": method })
 
     def _startReceive(self):
-        self._channel.basic_consume(self.__readMessage,queue=self._queue,no_ack=False)
+        self._channel.basic_consume(self.__readMessage, queue=self._queue, no_ack=not self._useAck)
         self._channel.start_consuming()
 
     def _stopReceive(self):
