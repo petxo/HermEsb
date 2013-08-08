@@ -123,6 +123,11 @@ class SenderNoDurableGateway (BaseNoDurableGateway):
         outBoundChannel.OnMessageSent += self._onMessageSent
 
     def send(self, message):
+        th = threading.Thread(target=SenderNoDurableGateway._processMessage, args=(self, message))
+        th.start()
+        # th.join(timeout=None)
+
+    def _processMessage(self, message):
         outBoundChannel = self._loadBalancer.next()
         outBoundChannel.send(message)
 

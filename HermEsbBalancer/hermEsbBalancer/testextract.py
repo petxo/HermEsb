@@ -3,7 +3,7 @@ from hermEsbBalancer.endpoints.channels.amqp import InBoundAmqpChannel
 
 __author__ = 'Sergio'
 def ClusterControlMessageReceived(sender, args):
-    print "o"
+    pass
 
 receiverClusterControlChannel = InBoundAmqpChannel(host='amqp://localhost:5672/HermEsbSamples.Exch/BusCluster.Input/inputBusClusterKey',
                                                                 useAck=True)
