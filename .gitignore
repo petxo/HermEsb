@@ -114,3 +114,7 @@ UpgradeLog*.XML
 .idea/
 tasks.xml
 workspace.xml
+
+# Ignore cluster sample and build directory
+ClusterSample/HermEsbBalancer-*
+HermEsbBalancer/build/*
