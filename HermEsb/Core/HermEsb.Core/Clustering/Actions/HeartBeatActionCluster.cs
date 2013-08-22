@@ -11,6 +11,8 @@ namespace HermEsb.Core.Clustering.Actions
 {
     public class HeartBeatActionCluster : IActionCluster
     {
+        private static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+
         private Task _task;
         private readonly IStateMachine<ProcessorStatus> _stateMachine;
         private readonly IOutputGateway<IMessage> _outputGateway;
@@ -44,9 +46,10 @@ namespace HermEsb.Core.Clustering.Actions
         {
             while (_stateMachine.CurrentState == ProcessorStatus.Started)
             {
-                var heartBeatClusterMessage = new HeartBeatClusterMessage { Identification = _identification };
+                var nowInSeconds = DateTime.UtcNow.Subtract(UnixEpoch).TotalSeconds;
+                var heartBeatClusterMessage = new HeartBeatClusterMessage { Identification = _identification, Time = nowInSeconds };
                 _outputGateway.Send(heartBeatClusterMessage);
-                Thread.Sleep(TimeSpan.FromSeconds(60));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
             }
         }
 

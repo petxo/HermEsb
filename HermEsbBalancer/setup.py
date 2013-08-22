@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='HermEsbBalancer',
-    version='1.0.0',
+    version='1.1.0',
     packages=['hermEsbBalancer',
               'hermEsbBalancer.core',
               'hermEsbBalancer.endpoints',

@@ -7,6 +7,9 @@ import threading
 
 
 ## Devuelve el balanceador de carga por defecto
+import time
+
+
 def __defaultLoadBalancer():
     return RoundRobinLoadBalancer()
 
@@ -21,6 +24,12 @@ def CreateRouterFromConfig(config):
         return RoundRobinLoadBalancer()
     else:
         return __defaultLoadBalancer()
+
+
+class BalancingInfo:
+    def __init__(self, nodeName):
+        self.nodeName = nodeName
+        self.processTimeLimit = 0
 
 
 ## Clase que contiene la informacion necesaria para balancear la carga de un canal
@@ -87,4 +96,8 @@ class RoundRobinLoadBalancer(LoadBalancer):
         self._ciclo = itertools.cycle(self._items)
 
     def _next(self):
-        return self._ciclo.next().item
+        nextItem = self._ciclo.next()
+        while nextItem.balancingInfo.processTimeLimit < time.time():
+            nextItem = self._ciclo.next()
+
+        return nextItem.item

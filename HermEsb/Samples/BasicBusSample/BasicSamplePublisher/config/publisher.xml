@@ -7,7 +7,7 @@
   <publisher>
     <identification id="Publisher1" type="Publisher"/>
       <output transport="RabbitMq">
-        <add name="uri" value="//localhost/HermEsbSamples.Exch/BasicBusSample.Input/inputBasicBusSampleKey"/>
+        <add name="uri" value="//localhost/HermEsbSamples.Exch/BusCluster.Input/inputBusClusterKey"/>
       </output>
   </publisher>
 </configuration>

@@ -13,7 +13,8 @@ __author__ = 'sergio'
 class BaseAmqpChannel:
 
     ## Crea una intancia de BaseAmqpChannel
-    def __init__(self, host):
+    def __init__(self, host, channelId):
+        self.channelId = channelId
         match = re.search('^amqp://(.*):(\d+)/(.*)/(.*)/(.*)', host)
         if match:
             self._server = match.group(1)
@@ -26,8 +27,7 @@ class BaseAmqpChannel:
             raise NameError("Invalid host name", host)
 
         self._connectionParams = pika.ConnectionParameters(host=self._server,
-            port= self._port,
-            heartbeat_interval=600)
+            port=self._port, heartbeat_interval=600)
 
     def _connect_point(self):
         try:
@@ -35,8 +35,7 @@ class BaseAmqpChannel:
             self._channel = self._connection.channel()
 
             self._channel.exchange_declare(exchange=self._exchange, durable=True, passive=True)
-            self._channel.queue_declare(queue=self._queue, durable=True,
-                arguments = {"x-ha-policy" : "all"})
+            self._channel.queue_declare(queue=self._queue, durable=True, arguments={"x-ha-policy": "all"})
             self._channel.queue_bind(queue=self._queue, exchange=self._exchange, routing_key=self._key)
 
         except Exception as ex:
@@ -54,10 +53,11 @@ class OutBoundAmqpChannel(OutBoundChannel, BaseAmqpChannel):
     # @param maxReconnections Numero maximo de reconexiones
     # @param host Nombre del host ej: amqp://server:port/exchange/queue/key
     def __init__(self, host="", reconnectionTimer=reconnectiontimers.CreateLogarithmicTimer(),
-                 maxReconnections=Channel.MAX_RECONNECTIONS, compressor = compressors.DefaultCompressor(), useAck=False):
+                 maxReconnections=Channel.MAX_RECONNECTIONS, compressor=compressors.DefaultCompressor(), useAck=False, channelId=""):
 
-        BaseAmqpChannel.__init__(self, host)
+        BaseAmqpChannel.__init__(self, host, channelId)
         OutBoundChannel.__init__(self, host, reconnectionTimer, maxReconnections, compressor, useAck=useAck)
+        self.messageProperties = pika.BasicProperties(content_type='text/plain', delivery_mode=1, content_encoding='utf-8')
 
     def _connect_point(self):
         BaseAmqpChannel._connect_point(self)
@@ -69,11 +69,10 @@ class OutBoundAmqpChannel(OutBoundChannel, BaseAmqpChannel):
 
     def _send(self, message):
         try:
-            messageProperties = pika.BasicProperties(content_type='text/plain', delivery_mode=1, content_encoding='utf-8')
             return self._channel.basic_publish(exchange= self._exchange,
                                                 routing_key= self._key,
                                                 body= unicode(message).encode('utf-8'),
-                                                properties= messageProperties)
+                                                properties= self.messageProperties)
         except ConnectionClosed as ex:
             loggerManager.get_endPoints_logger().error("Error: %s" % ex)
             raise ConnectionError("Se ha perdido la conexcion con el servidor AMPQ")
@@ -90,9 +89,9 @@ class InBoundAmqpChannel(InBoundChannel, BaseAmqpChannel):
     # @param host Nombre del host ej: amqp://server:port/queue
     # @param receptionTimeout Timeout de recepcion de mensaje en milisegudos por defecto 20000
     def __init__(self, host="", reconnectionTimer=reconnectiontimers.CreateLogarithmicTimer(),
-                 maxReconnections=Channel.MAX_RECONNECTIONS, receptionTimeout = 10, compressor = compressors.DefaultCompressor(),
-                 useAck=False):
-        BaseAmqpChannel.__init__(self, host)
+                 maxReconnections=Channel.MAX_RECONNECTIONS, receptionTimeout=10, compressor = compressors.DefaultCompressor(),
+                 useAck=False, channelId=""):
+        BaseAmqpChannel.__init__(self, host, channelId)
         InBoundChannel.__init__(self, host, reconnectionTimer, maxReconnections, compressor= compressor,
             useAck=useAck)
         self._receptionTimeout = receptionTimeout

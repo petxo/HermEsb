@@ -9,5 +9,13 @@
         /// The identification.
         /// </value>
         public Identification Identification { get; set; }
+
+        /// <summary>
+        /// Gets or sets the time.
+        /// </summary>
+        /// <value>
+        /// The time.
+        /// </value>
+        public double Time { get; set; }
     }
 }

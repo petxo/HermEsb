@@ -1,6 +1,6 @@
 from hermEsbBalancer import serialization
+from datetime import time
 from hermEsbBalancer.balancer import Balancer
-from hermEsbBalancer.bus import MessageBus
 from hermEsbBalancer.messages import AddSubscriberFromClusterMessage
 
 __author__ = 'Sergio'
@@ -42,6 +42,7 @@ class NewSubscriberClusterMessageHandler:
             channel.send(msg)
 
 
+
 @handleMessage(message="HermEsb.Core.Clustering.Messages.IRemoveClusterSubscriberMessage,HermEsb.Core")
 class RemoveClusterSubscriberMessageHandler:
     def __init__(self):
@@ -54,7 +55,12 @@ class RemoveClusterSubscriberMessageHandler:
 @handleMessage(message="HermEsb.Core.Clustering.Messages.IHeartBeatClusterMessage,HermEsb.Core")
 class HeartBeatClusterMessageHandler:
     def __init__(self):
-        self.clusterController = Balancer.Instance().inputClusterController
+        self.balancer = Balancer.Instance()
+        self._timeout = 6
 
     def HandleMessage(self, message):
-        pass
+        nodeName = message['Identification']['Id']
+        time = message['Time'] + self._timeout
+
+        self.balancer.controlClusterController.updateProcessTimeLimit(nodeName, time)
+        self.balancer.inputClusterController.updateProcessTimeLimit(nodeName, time)

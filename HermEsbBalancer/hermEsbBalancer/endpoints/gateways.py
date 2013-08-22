@@ -6,6 +6,7 @@ import threading
 from hermEsbBalancer.core import queue, loadbalancers
 from hermEsbBalancer.core.eventhandling import EventHook
 from hermEsbBalancer.core.fsm import Startable
+from hermEsbBalancer.core.loadbalancers import BalancingInfo
 from hermEsbBalancer.endpoints.channels import factories
 from hermEsbBalancer.endpoints.channels.events import MessageReceivedArgs
 
@@ -21,10 +22,10 @@ class BaseNoDurableGateway(Startable):
         self._queue = queue
         self.OnConnectionError = EventHook()
         for channel in channels:
-            self.addChannel(channel)
+            self.addChannel(channel, BalancingInfo(channel.channelId))
 
     ## Añade un nuevo canal al gateway
-    def addChannel(self, channel):
+    def addChannel(self, channel, balancingInfo=None):
         self._channels.append(channel)
         channel.OnConnectionError += self._invokeOnConnectionError
 
@@ -116,9 +117,9 @@ class SenderNoDurableGateway (BaseNoDurableGateway):
         BaseNoDurableGateway.__init__(self, channels)
 
     # TODO: añadir la informacion de enrutamiento, y añadir el canal al router
-    def addChannel(self, outBoundChannel):
+    def addChannel(self, outBoundChannel, balancingInfo=None):
         BaseNoDurableGateway.addChannel(self, outBoundChannel)
-        self._loadBalancer.addChannel(outBoundChannel)
+        self._loadBalancer.addChannel(outBoundChannel, balancingInfo)
         outBoundChannel.OnSendError += self._errorSending
         outBoundChannel.OnMessageSent += self._onMessageSent
 
@@ -146,9 +147,9 @@ class SenderGateway (BaseGateway):
         BaseGateway.__init__(self, queue, channels, numExtractors)
 
     # TODO: añadir la informacion de enrutamiento, y añadir el canal al router
-    def addChannel(self, outBoundChannel):
+    def addChannel(self, outBoundChannel, balancingInfo=None):
         BaseGateway.addChannel(self, outBoundChannel)
-        self._loadBalancer.addChannel(outBoundChannel)
+        self._loadBalancer.addChannel(outBoundChannel, balancingInfo)
         outBoundChannel.OnSendError += self._errorSending
         outBoundChannel.OnMessageSent += self._onMessageSent
 
@@ -183,7 +184,7 @@ class ReceiverGateway(BaseGateway):
         BaseGateway.__init__(self, queue, channels, numExtractors)
         self.OnMessageReceived = EventHook()
 
-    def addChannel(self, channel):
+    def addChannel(self, channel, balancingInfo=None):
         BaseGateway.addChannel(self, channel)
         channel.OnMessageReceived += self._messageReceivedChannel
 

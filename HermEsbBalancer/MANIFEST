@@ -3,8 +3,14 @@ setup.py
 hermEsbBalancer\__init__.py
 hermEsbBalancer\balancer.cfg
 hermEsbBalancer\balancer.py
+hermEsbBalancer\bus.py
+hermEsbBalancer\clusterController.py
+hermEsbBalancer\handlers.py
 hermEsbBalancer\logging.yml
+hermEsbBalancer\messages.py
+hermEsbBalancer\serialization.py
 hermEsbBalancer\server.py
+hermEsbBalancer\testextract.py
 hermEsbBalancer\core\__init__.py
 hermEsbBalancer\core\compressors.py
 hermEsbBalancer\core\eventhandling.py

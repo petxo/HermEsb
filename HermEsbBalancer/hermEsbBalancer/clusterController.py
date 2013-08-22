@@ -8,8 +8,7 @@ __author__ = 'Sergio'
 def CreateClusterController(queue, channels, inBoundAmqpChannel):
     loadBalancer = loadbalancers.CreateRouterFromConfig(None)
     if not queue is None:
-        gateway = SenderGateway(loadBalancer, queue, channels=channels,
-                            numExtractors=30)
+        gateway = SenderGateway(loadBalancer, queue, channels=channels, numExtractors=30)
                             ##numExtractors=len(channels))
     else:
         gateway = SenderNoDurableGateway(loadBalancer, channels=channels)
@@ -26,6 +25,11 @@ class ClusterController(Startable):
 
     def getChannels(self):
         return [bal.item for bal in self.__loadBalancer.getItems()]
+
+    def updateProcessTimeLimit(self, nodeName, time):
+        for node in self.__loadBalancer.getItems():
+            if node.balancingInfo.nodeName == nodeName:
+                node.balancingInfo.processTimeLimit = time
 
     def connect(self):
         self.__senderGateway.connect()

@@ -30,9 +30,9 @@ class Balancer:
         controlChannels = list()
         for node in cfg['balancer']['nodes']:
             for i in range(0, 10):
-                inputChannels.append(OutBoundAmqpChannel(host=node['inputChannel']['url'],
-                                                         useAck=bool(node['inputChannel']['useAck'])))
-            controlChannels.append(OutBoundAmqpChannel(host=node['controlChannel']['url'],
+                inputChannels.append(OutBoundAmqpChannel(host=node['inputChannel']['url'], channelId=node['name'],
+                                                             useAck=bool(node['inputChannel']['useAck'])))
+            controlChannels.append(OutBoundAmqpChannel(host=node['controlChannel']['url'], channelId=node['name'],
                                                        useAck=bool(node['controlChannel']['useAck'])))
 
         receiverInputGateway = InBoundAmqpChannel(host=cfg['balancer']['inputChannel']['url'],
