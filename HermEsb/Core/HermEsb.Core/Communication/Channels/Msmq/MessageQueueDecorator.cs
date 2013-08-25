@@ -146,6 +146,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
             return _queue.BeginPeek(timeout, stateObject, callback);
         }
 
+#if !__MonoCS__
         /// <summary>
         /// Initiates an asynchronous peek operation that has a specified time-out and that uses a specified cursor, a specified peek action, and a specified state object. The state object provides associated information throughout the lifetime of the operation. This overload receives notification, through a callback, of the identity of the event handler for the operation. The operation is not complete until either a message becomes available in the queue or the time-out occurs.
         /// </summary>
@@ -157,6 +158,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         {
             return _queue.BeginPeek(timeout, cursor, action, state, callback);
         }
+#endif
 
         /// <summary>
         /// Initiates an asynchronous receive operation that has no time-out. The operation is not complete until a message becomes available in the queue.
@@ -206,6 +208,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
             return _queue.BeginReceive(timeout, stateObject, callback);
         }
 
+#if !__MonoCS__
         /// <summary>
         /// Initiates an asynchronous receive operation that has a specified time-out and uses a specified cursor and a specified state object. The state object provides associated information throughout the lifetime of the operation. This overload receives notification, through a callback, of the identity of the event handler for the operation. The operation is not complete until either a message becomes available in the queue or the time-out occurs.
         /// </summary>
@@ -217,6 +220,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         {
             return _queue.BeginReceive(timeout, cursor, state, callback);
         }
+#endif
 
         /// <summary>
         /// Frees all resources allocated by the <see cref="T:System.Messaging.MessageQueue"/>.
@@ -226,6 +230,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
             _queue.Close();
         }
 
+#if !__MonoCS__
         /// <summary>
         /// Creates a new <see cref="T:System.Messaging.Cursor"/> for the current message queue.
         /// </summary>
@@ -236,6 +241,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         {
             return _queue.CreateCursor();
         }
+#endif
 
         /// <summary>
         /// Completes the specified asynchronous peek operation.
@@ -332,6 +338,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
             return _queue.Peek(timeout);
         }
 
+#if !__MonoCS__
         /// <summary>
         /// Returns without removing (peeks) the current or next message in the queue, using the specified cursor. The <see cref="M:System.Messaging.MessageQueue.Peek"/> method is synchronous, so it blocks the current thread until a message becomes available or the specified time-out occurs.
         /// </summary>
@@ -343,6 +350,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         {
             return _queue.Peek(timeout, cursor, action);
         }
+#endif
 
         /// <summary>
         /// Peeks the message whose message identifier matches the <paramref name="id"/> parameter.
@@ -449,6 +457,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
             return _queue.Receive(timeout);
         }
 
+#if !__MonoCS__
         /// <summary>
         /// Receives the current message in the queue, using a specified cursor. If no message is available, this method waits until either a message is available, or the time-out expires.
         /// </summary>
@@ -460,6 +469,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         {
             return _queue.Receive(timeout, cursor);
         }
+#endif
 
         /// <summary>
         /// Receives the first message available in the transactional queue referenced by the <see cref="T:System.Messaging.MessageQueue"/> and waits until either a message is available in the queue, or the time-out expires.
@@ -485,6 +495,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
             return _queue.Receive(timeout, transactionType);
         }
 
+#if !__MonoCS__
         /// <summary>
         /// Receives the current message in the queue, using a specified cursor. If no message is available, this method waits until either a message is available, or the time-out expires.
         /// </summary>
@@ -508,6 +519,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         {
             return _queue.Receive(timeout, cursor, transactionType);
         }
+#endif
 
         /// <summary>
         /// Receives the message that matches the given identifier from a non-transactional queue and immediately raises an exception if no message with the specified identifier currently exists in the queue.
@@ -662,9 +674,14 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// <param name="lookupId">The <see cref="P:System.Messaging.Message.LookupId"/> of the message to receive. </param><exception cref="T:System.PlatformNotSupportedException">MSMQ 3.0 is not installed.</exception><exception cref="T:System.InvalidOperationException">The message with the specified <paramref name="lookupId"/> could not be found. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception>
         public Message ReceiveByLookupId(long lookupId)
         {
+#if !__MonoCS__
             return _queue.ReceiveByLookupId(lookupId);
-        }
+#else
+			return null;
+#endif
+		}
 
+#if !__MonoCS__
         /// <summary>
         /// Introduced in MSMQ 3.0. Receives a specific message from the queue, using the specified transaction context. The message can be specified by a lookup identifier or by its position at the front or end of the queue.
         /// </summary>
@@ -688,6 +705,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         {
             return _queue.ReceiveByLookupId(action, lookupId, transaction);
         }
+#endif
 
         /// <summary>
         /// Introduced in MSMQ 3.0. Peeks at the message that matches the given lookup identifier from a non-transactional queue.
@@ -698,9 +716,14 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// <param name="lookupId">The <see cref="P:System.Messaging.Message.LookupId"/> of the message to peek at. </param><exception cref="T:System.PlatformNotSupportedException">MSMQ 3.0 is not installed.</exception><exception cref="T:System.InvalidOperationException">The message with the specified <paramref name="lookupId"/> could not be found. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception>
         public Message PeekByLookupId(long lookupId)
         {
+#if !__MonoCS__
             return _queue.PeekByLookupId(lookupId);
-        }
+#else
+			return null;
+#endif
+		}
 
+#if !__MonoCS__
         /// <summary>
         /// Introduced in MSMQ 3.0. Peeks at a specific message from the queue. The message can be specified by a lookup identifier or by its position at the front or end of the queue.
         /// </summary>
@@ -712,6 +735,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         {
             return _queue.PeekByLookupId(action, lookupId);
         }
+#endif
 
         /// <summary>
         /// Refreshes the properties presented by the <see cref="T:System.Messaging.MessageQueue"/> to reflect the current state of the resource.
@@ -828,8 +852,12 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// </returns>
         public QueueAccessMode AccessMode
         {
+#if !__MonoCS__
             get { return _queue.AccessMode; }
-        }
+#else
+			get { return QueueAccessMode.Peek; }
+#endif
+		}
 
         /// <summary>
         /// Gets or sets a value that indicates whether the queue accepts only authenticated messages.
@@ -1061,14 +1089,19 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// Introduced in MSMQ 3.0. Gets or sets the multicast address associated with the queue.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.String"/> that contains a valid multicast address (in the form shown below) or null, which indicates that the queue is not associated with a multicast address. Copy Code&lt;address&gt;:&lt;port&gt;
+        /// A <see cref="T:System.String"/> that contains a valid multicast address (in the form shown below) or null, which indicates that the queue is not associated with a multicast address.ï¿½Copy Code&lt;address&gt;:&lt;port&gt;
         /// </returns>
         /// <exception cref="T:System.PlatformNotSupportedException">MSMQ 3.0 is not installed.</exception>
         public string MulticastAddress
         {
+#if !__MonoCS__
             get { return _queue.MulticastAddress; }
             set { _queue.MulticastAddress = value; }
-        }
+#else
+			get { return string.Empty; }
+			set {}
+#endif
+		}
 
         /// <summary>
         /// Gets or sets the queue's path. Setting the <see cref="P:System.Messaging.MessageQueue.Path"/> causes the <see cref="T:System.Messaging.MessageQueue"/> to point to a new queue.

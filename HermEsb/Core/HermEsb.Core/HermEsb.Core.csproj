@@ -43,13 +43,10 @@
       <HintPath>..\..\packages\Castle.Core.3.2.0\lib\net40-client\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Windsor">
-      <HintPath>..\..\packages\Castle.Windsor.3.2.1\lib\net40\Castle.Windsor.dll</HintPath>
+      <HintPath>..\..\packages\Castle.Windsor.3.2.0\lib\net40\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="RabbitMQ.Client">
       <HintPath>..\..\packages\RabbitMQ.Client.3.1.1\lib\net30\RabbitMQ.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\..\packages\ServiceStack.Text.3.9.56\lib\net35\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,6 +57,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\..\packages\ServiceStack.Text.3.9.58\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\SharedAssemblyInfo.cs">
@@ -341,11 +341,16 @@
     <Compile Include="Service\Service.cs" />
     <Compile Include="Service\ServiceFactory.cs" />
     <Compile Include="Service\ServiceStatus.cs" />
+    <Compile Include="Ioc\WindsorContainer\LifeStyles\ContextStore.cs" />
+    <Compile Include="Ioc\WindsorContainer\LifeStyles\ContextThread.cs" />
+    <Compile Include="Ioc\WindsorContainer\LifeStyles\ContextualLifestyleManager.cs" />
+    <Compile Include="Ioc\WindsorContainer\LifeStyles\IContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Communication\Channels\Socket\" />
     <Folder Include="Communication\EndPoints\Socket\" />
     <Folder Include="Handlers\Configuration\" />
+    <Folder Include="Ioc\WindsorContainer\LifeStyles\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Extended\HermEsb.Logging\HermEsb.Logging.csproj">

@@ -328,6 +328,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// <param name="timeout">A <see cref="T:System.TimeSpan"/> that indicates the interval of time to wait for a message to become available. </param><param name="stateObject">A state object, specified by the application, that contains information associated with the asynchronous operation. </param><param name="callback">The <see cref="T:System.AsyncCallback"/> that will receive the notification of the asynchronous operation completion. </param><exception cref="T:System.ArgumentException">The value specified for the <paramref name="timeout"/> parameter is not valid. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception><PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence"/><IPermission class="System.Messaging.MessageQueuePermission, System.Messaging, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" version="1" Unrestricted="true"/><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/></PermissionSet>
         IAsyncResult BeginPeek(TimeSpan timeout, object stateObject, AsyncCallback callback);
 
+#if !__MonoCS__
         /// <summary>
         /// Initiates an asynchronous peek operation that has a specified time-out and that uses a specified cursor, a specified peek action, and a specified state object. The state object provides associated information throughout the lifetime of the operation. This overload receives notification, through a callback, of the identity of the event handler for the operation. The operation is not complete until either a message becomes available in the queue or the time-out occurs.
         /// </summary>
@@ -336,6 +337,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// </returns>
         /// <param name="timeout">A <see cref="T:System.TimeSpan"/> that indicates the interval of time to wait for a message to become available. </param><param name="cursor">A <see cref="T:System.Messaging.Cursor"/> that maintains a specific position in the message queue.</param><param name="action">One of the <see cref="T:System.Messaging.PeekAction"/> values. Indicates whether to peek at the current message in the queue, or the next message.</param><param name="state">A state object, specified by the application, that contains information associated with the asynchronous operation. </param><param name="callback">The <see cref="T:System.AsyncCallback"/> that receives the notification of the asynchronous operation completion. </param><exception cref="T:System.ArgumentOutOfRangeException">A value other than PeekAction.Current or PeekAction.Next was specified for the <paramref name="action"/> parameter.</exception><exception cref="T:System.ArgumentNullException">The <paramref name="cursor"/> parameter is null.</exception><exception cref="T:System.ArgumentException">The value specified for the <paramref name="timeout"/> parameter is not valid. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception>
         IAsyncResult BeginPeek(TimeSpan timeout, Cursor cursor, PeekAction action, object state, AsyncCallback callback);
+#endif
 
         /// <summary>
         /// Initiates an asynchronous receive operation that has no time-out. The operation is not complete until a message becomes available in the queue.
@@ -373,6 +375,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// <param name="timeout">A <see cref="T:System.TimeSpan"/> that indicates the interval of time to wait for a message to become available. </param><param name="stateObject">A state object, specified by the application, that contains information associated with the asynchronous operation. </param><param name="callback">The <see cref="T:System.AsyncCallback"/> that will receive the notification of the asynchronous operation completion. </param><exception cref="T:System.ArgumentException">The value specified for the <paramref name="timeout"/> parameter is not valid. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception><PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence"/><IPermission class="System.Messaging.MessageQueuePermission, System.Messaging, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" version="1" Unrestricted="true"/><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/></PermissionSet>
         IAsyncResult BeginReceive(TimeSpan timeout, object stateObject, AsyncCallback callback);
 
+#if !__MonoCS__
         /// <summary>
         /// Initiates an asynchronous receive operation that has a specified time-out and uses a specified cursor and a specified state object. The state object provides associated information throughout the lifetime of the operation. This overload receives notification, through a callback, of the identity of the event handler for the operation. The operation is not complete until either a message becomes available in the queue or the time-out occurs.
         /// </summary>
@@ -381,12 +384,13 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// </returns>
         /// <param name="timeout">A <see cref="T:System.TimeSpan"/> that indicates the interval of time to wait for a message to become available. </param><param name="cursor">A <see cref="T:System.Messaging.Cursor"/> that maintains a specific position in the message queue.</param><param name="state">A state object, specified by the application, that contains information associated with the asynchronous operation. </param><param name="callback">The <see cref="T:System.AsyncCallback"/> that receives the notification of the asynchronous operation completion. </param><exception cref="T:System.ArgumentNullException">The <paramref name="cursor"/> parameter is null.</exception><exception cref="T:System.ArgumentException">The value specified for the <paramref name="timeout"/> parameter is not valid. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception>
         IAsyncResult BeginReceive(TimeSpan timeout, Cursor cursor, object state, AsyncCallback callback);
-
+#endif
         /// <summary>
         /// Frees all resources allocated by the <see cref="T:System.Messaging.MessageQueue"/>.
         /// </summary>
         void Close();
 
+#if !__MonoCS__
         /// <summary>
         /// Creates a new <see cref="T:System.Messaging.Cursor"/> for the current message queue.
         /// </summary>
@@ -394,6 +398,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// A new <see cref="T:System.Messaging.Cursor"/> for the current message queue. This cursor is used to maintain a specific location in the queue when reading the queue's messages.
         /// </returns>
         Cursor CreateCursor();
+#endif
 
         /// <summary>
         /// Completes the specified asynchronous peek operation.
@@ -466,6 +471,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// <param name="timeout">A <see cref="T:System.TimeSpan"/> that indicates the maximum time to wait for the queue to contain a message. </param><exception cref="T:System.ArgumentException">The value specified for the <paramref name="timeout"/> parameter is not valid, possibly <paramref name="timeout"/> is less than <see cref="F:System.TimeSpan.Zero"/> or greater than <see cref="F:System.Messaging.MessageQueue.InfiniteTimeout"/>. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception><PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence"/><IPermission class="System.Messaging.MessageQueuePermission, System.Messaging, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" version="1" Unrestricted="true"/><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/></PermissionSet>
         Message Peek(TimeSpan timeout);
 
+#if !__MonoCS__
         /// <summary>
         /// Returns without removing (peeks) the current or next message in the queue, using the specified cursor. The <see cref="M:System.Messaging.MessageQueue.Peek"/> method is synchronous, so it blocks the current thread until a message becomes available or the specified time-out occurs.
         /// </summary>
@@ -474,6 +480,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// </returns>
         /// <param name="timeout">A <see cref="T:System.TimeSpan"/> that indicates the maximum time to wait for the queue to contain a message. </param><param name="cursor">A <see cref="T:System.Messaging.Cursor"/> that maintains a specific position in the message queue.</param><param name="action">One of the <see cref="T:System.Messaging.PeekAction"/> values. Indicates whether to peek at the current message in the queue, or the next message.</param><exception cref="T:System.ArgumentOutOfRangeException">A value other than PeekAction.Current or PeekAction.Next was specified for the <paramref name="action"/> parameter.</exception><exception cref="T:System.ArgumentNullException">The <paramref name="cursor"/> parameter is null.</exception><exception cref="T:System.ArgumentException">The value specified for the <paramref name="timeout"/> parameter is not valid. Possibly <paramref name="timeout"/> is less than <see cref="F:System.TimeSpan.Zero"/> or greater than <see cref="F:System.Messaging.MessageQueue.InfiniteTimeout"/>. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception>
         Message Peek(TimeSpan timeout, Cursor cursor, PeekAction action);
+#endif
 
         /// <summary>
         /// Peeks the message whose message identifier matches the <paramref name="id"/> parameter.
@@ -553,6 +560,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// <param name="timeout">A <see cref="T:System.TimeSpan"/> that indicates the time to wait until a new message is available for inspection. </param><exception cref="T:System.ArgumentException">The value specified for the <paramref name="timeout"/> parameter is not valid, possibly <paramref name="timeout"/> is less than <see cref="F:System.TimeSpan.Zero"/> or greater than <see cref="F:System.Messaging.MessageQueue.InfiniteTimeout"/>. </exception><exception cref="T:System.Messaging.MessageQueueException">A message did not arrive in the queue before the time-out expired.-or- An error occurred when accessing a Message Queuing method </exception><PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence"/><IPermission class="System.Messaging.MessageQueuePermission, System.Messaging, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" version="1" Unrestricted="true"/><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/></PermissionSet>
         Message Receive(TimeSpan timeout);
 
+#if !__MonoCS__
         /// <summary>
         /// Receives the current message in the queue, using a specified cursor. If no message is available, this method waits until either a message is available, or the time-out expires.
         /// </summary>
@@ -561,6 +569,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// </returns>
         /// <param name="timeout">A <see cref="T:System.TimeSpan"/> that indicates the time to wait until a new message is available for inspection. </param><param name="cursor">A <see cref="T:System.Messaging.Cursor"/> that maintains a specific position in the message queue.</param><exception cref="T:System.ArgumentException">The value specified for the <paramref name="timeout"/> parameter is not valid, possibly <paramref name="timeout"/> is less than <see cref="F:System.TimeSpan.Zero"/> or greater than <see cref="F:System.Messaging.MessageQueue.InfiniteTimeout"/>. </exception><exception cref="T:System.Messaging.MessageQueueException">A message did not arrive in the queue before the time-out expired.-or- An error occurred when accessing a Message Queuing method </exception>
         Message Receive(TimeSpan timeout, Cursor cursor);
+#endif
 
         /// <summary>
         /// Receives the first message available in the transactional queue referenced by the <see cref="T:System.Messaging.MessageQueue"/> and waits until either a message is available in the queue, or the time-out expires.
@@ -580,6 +589,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// <param name="timeout">A <see cref="T:System.TimeSpan"/> that indicates the time to wait until a new message is available for inspection. </param><param name="transactionType">One of the <see cref="T:System.Messaging.MessageQueueTransactionType"/> values, describing the type of transaction context to associate with the message. </param><exception cref="T:System.ArgumentException">The value specified for the <paramref name="timeout"/> parameter is not valid, possibly <paramref name="timeout"/> is less than <see cref="F:System.TimeSpan.Zero"/> or greater than <see cref="F:System.Messaging.MessageQueue.InfiniteTimeout"/>. </exception><exception cref="T:System.ComponentModel.InvalidEnumArgumentException">The <paramref name="transactionType"/> parameter is not one of the <see cref="T:System.Messaging.MessageQueueTransactionType"/> members. </exception><exception cref="T:System.Messaging.MessageQueueException">A message did not arrive in the queue before the time-out expired.-or- An error occurred when accessing a Message Queuing method. </exception><PermissionSet><IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence"/><IPermission class="System.Messaging.MessageQueuePermission, System.Messaging, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" version="1" Unrestricted="true"/><IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true"/></PermissionSet>
         Message Receive(TimeSpan timeout, MessageQueueTransactionType transactionType);
 
+#if !__MonoCS__
         /// <summary>
         /// Receives the current message in the queue, using a specified cursor. If no message is available, this method waits until either a message is available, or the time-out expires.
         /// </summary>
@@ -597,6 +607,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// </returns>
         /// <param name="timeout">A <see cref="T:System.TimeSpan"/> that indicates the time to wait until a new message is available for inspection. </param><param name="cursor">A <see cref="T:System.Messaging.Cursor"/> that maintains a specific position in the message queue.</param><param name="transactionType">One of the <see cref="T:System.Messaging.MessageQueueTransactionType"/> values that describes the type of transaction context to associate with the message. </param><exception cref="T:System.ArgumentNullException">The <paramref name="cursor"/> parameter is null.</exception><exception cref="T:System.ArgumentException">The value specified for the <paramref name="timeout"/> parameter is not valid. Possibly <paramref name="timeout"/> is less than <see cref="F:System.TimeSpan.Zero"/> or greater than <see cref="F:System.Messaging.MessageQueue.InfiniteTimeout"/>. </exception><exception cref="T:System.ComponentModel.InvalidEnumArgumentException">The <paramref name="transactionType"/> parameter is not one of the <see cref="T:System.Messaging.MessageQueueTransactionType"/> members. </exception><exception cref="T:System.Messaging.MessageQueueException">A message did not arrive in the queue before the time-out expired.-or- An error occurred when accessing a Message Queuing method. </exception>
         Message Receive(TimeSpan timeout, Cursor cursor, MessageQueueTransactionType transactionType);
+#endif
 
         /// <summary>
         /// Receives the message that matches the given identifier from a non-transactional queue and immediately raises an exception if no message with the specified identifier currently exists in the queue.
@@ -715,6 +726,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// <param name="lookupId">The <see cref="P:System.Messaging.Message.LookupId"/> of the message to receive. </param><exception cref="T:System.PlatformNotSupportedException">MSMQ 3.0 is not installed.</exception><exception cref="T:System.InvalidOperationException">The message with the specified <paramref name="lookupId"/> could not be found. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception>
         Message ReceiveByLookupId(long lookupId);
 
+#if !__MonoCS__
         /// <summary>
         /// Introduced in MSMQ 3.0. Receives a specific message from the queue, using the specified transaction context. The message can be specified by a lookup identifier or by its position at the front or end of the queue.
         /// </summary>
@@ -732,6 +744,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// </returns>
         /// <param name="action">One of the <see cref="T:System.Messaging.MessageLookupAction"/> values, specifying how the message is read in the queue. Specify one of the following:MessageLookupAction.Current: Receives the message specified by <paramref name="lookupId"/> and removes it from the queue.MessageLookupAction.Next: Receives the message following the message specified by <paramref name="lookupId"/> and removes it from the queue.MessageLookupAction.Previous: Receives the message preceding the message specified by <paramref name="lookupId"/> and removes it from the queue.MessageLookupAction.First: Receives the first message in the queue and removes it from the queue. The <paramref name="lookupId"/> parameter must be set to 0.MessageLookupAction.Last: Receives the last message in the queue and removes it from the queue. The <paramref name="lookupId"/> parameter must be set to 0.</param><param name="lookupId">The <see cref="P:System.Messaging.Message.LookupId"/> of the message to receive, or 0. 0 is used when accessing the first or last message in the queue. </param><param name="transaction">The <see cref="T:System.Messaging.MessageQueueTransaction"/> object.</param><exception cref="T:System.PlatformNotSupportedException">MSMQ 3.0 is not installed.</exception><exception cref="T:System.InvalidOperationException">The message with the specified <paramref name="lookupId"/> could not be found. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method.-or- The queue is non-transactional.</exception><exception cref="T:System.ComponentModel.InvalidEnumArgumentException">The <paramref name="action"/> parameter is not one of the <see cref="T:System.Messaging.MessageLookupAction"/> members.</exception>
         Message ReceiveByLookupId(MessageLookupAction action, long lookupId, MessageQueueTransaction transaction);
+#endif
 
         /// <summary>
         /// Introduced in MSMQ 3.0. Peeks at the message that matches the given lookup identifier from a non-transactional queue.
@@ -742,6 +755,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// <param name="lookupId">The <see cref="P:System.Messaging.Message.LookupId"/> of the message to peek at. </param><exception cref="T:System.PlatformNotSupportedException">MSMQ 3.0 is not installed.</exception><exception cref="T:System.InvalidOperationException">The message with the specified <paramref name="lookupId"/> could not be found. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception>
         Message PeekByLookupId(long lookupId);
 
+#if !__MonoCS__
         /// <summary>
         /// Introduced in MSMQ 3.0. Peeks at a specific message from the queue. The message can be specified by a lookup identifier or by its position at the front or end of the queue.
         /// </summary>
@@ -750,6 +764,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// </returns>
         /// <param name="action">One of the <see cref="T:System.Messaging.MessageLookupAction"/> values, specifying how the message is read in the queue. Specify one of the following:MessageLookupAction.Current: Peeks at the message specified by <paramref name="lookupId"/>.MessageLookupAction.Next: Peeks at the message following the message specified by <paramref name="lookupId"/>.MessageLookupAction.Previous: Peeks at the message preceding the message specified by <paramref name="lookupId"/>.MessageLookupAction.First: Peeks at the first message in the queue. The <paramref name="lookupId"/> parameter must be set to 0.MessageLookupAction.Last: Peeks at the last message in the queue. The <paramref name="lookupId"/> parameter must be set to 0.</param><param name="lookupId">The <see cref="P:System.Messaging.Message.LookupId"/> of the message to peek at, or 0. 0 is used when accessing the first or last message in the queue. </param><exception cref="T:System.PlatformNotSupportedException">MSMQ 3.0 is not installed.</exception><exception cref="T:System.InvalidOperationException">The message with the specified <paramref name="lookupId"/> could not be found. </exception><exception cref="T:System.Messaging.MessageQueueException">An error occurred when accessing a Message Queuing method. </exception><exception cref="T:System.ComponentModel.InvalidEnumArgumentException">The <paramref name="action"/> parameter is not one of the <see cref="T:System.Messaging.MessageLookupAction"/> members.</exception>
         Message PeekByLookupId(MessageLookupAction action, long lookupId);
+#endif
 
         /// <summary>
         /// Refreshes the properties presented by the <see cref="T:System.Messaging.MessageQueue"/> to reflect the current state of the resource.
