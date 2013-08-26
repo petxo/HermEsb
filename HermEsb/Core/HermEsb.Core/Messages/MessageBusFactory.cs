@@ -66,11 +66,14 @@ namespace HermEsb.Core.Messages
         /// <returns></returns>
         private static Type GetInterface(Type type)
         {
-            var interfaces = type.GetInterfaces().ToList();
-
+#if !__MonoCS__
+			var interfaces = type.GetInterfaces().ToList();
             var baseInterfaces = GetBaseInterfaces(type);
             interfaces = interfaces.Except(baseInterfaces).ToList();
-
+#else
+			var baseInterfaces = type.GetInterfaces();
+			var interfaces = baseInterfaces.Except(baseInterfaces.SelectMany(iface => iface.GetInterfaces()));
+#endif
             return interfaces.Any() ? interfaces.First() : type;
         }
 
