@@ -2,6 +2,9 @@ using System;
 using Castle.MicroKernel.Lifestyle;
 using Castle.Windsor;
 using Castle.MicroKernel.Registration;
+#if __MonoCS__
+using HermEsb.Core.Ioc.WindsorContainer.LifeStyles;
+#endif
 
 namespace HermEsb.Core.Ioc.WindsorContainer
 {
@@ -76,8 +79,12 @@ namespace HermEsb.Core.Ioc.WindsorContainer
         /// <returns></returns>
         public IIoc AddComponent<T>() where T : class
         {
-            WindsorContainer.Register(Component.For<T>().LifestyleScoped<MessageScopeAccesor>().Named(typeof(T).FullName));
-            return this;
+#if !__MonoCS__            
+			WindsorContainer.Register(Component.For<T>().LifestyleScoped<MessageScopeAccesor>().Named(typeof(T).FullName));
+#else
+			WindsorContainer.Register(Component.For<T>().LifeStyle.Custom<ContextualLifestyleManager>().Named(typeof(T).FullName));
+#endif
+			return this;
         }
 
         /// <summary>
@@ -87,10 +94,15 @@ namespace HermEsb.Core.Ioc.WindsorContainer
         /// <returns></returns>
         public IIoc AddComponent(Type type)
         {
-            WindsorContainer.Register(Component.For(type).LifestyleScoped<MessageScopeAccesor>().Named(type.FullName));
-            return this;
+#if !__MonoCS__
+			WindsorContainer.Register(Component.For(type).LifestyleScoped<MessageScopeAccesor>().Named(type.FullName));
+#else
+			WindsorContainer.Register(Component.For(type).LifeStyle.Custom<ContextualLifestyleManager>().Named(type.FullName));
+#endif
+			return this;
         }
 
+#if !__MonoCS__
         /// <summary>
         /// News the context.
         /// </summary>
@@ -98,12 +110,23 @@ namespace HermEsb.Core.Ioc.WindsorContainer
         {
             return _windsorContainer.BeginScope();
         }
+#else
+		/// <summary>
+		/// News the context.
+		/// </summary>
+		public void CreateContext()
+		{
+		}
+#endif
 
         /// <summary>
         /// Disposes the context.
         /// </summary>
         public void DisposeContext()
         {
+#if __MonoCS__
+			ContextStore.DisposeContext();
+#endif
         }
     }
 }

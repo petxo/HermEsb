@@ -41,11 +41,17 @@ namespace HermEsb.Core.Ioc
         /// <returns></returns>
         IIoc AddComponent(Type type);
 
+#if !__MonoCS__
         /// <summary>
         /// News the context.
         /// </summary>
         IDisposable CreateContext();
-
+#else
+		/// <summary>
+		/// News the context.
+		/// </summary>
+		void CreateContext();
+#endif
 
         /// <summary>
         /// Disposes the context.

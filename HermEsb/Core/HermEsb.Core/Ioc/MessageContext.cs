@@ -8,7 +8,9 @@ namespace HermEsb.Core.Ioc
     public class MessageContext : IMessageContext
     {
         private readonly IIoc _ioc;
+#if !__MonoCS__
         private IDisposable _containerScope;
+#endif
 
         /// <summary>
         /// Gets the message info.
@@ -23,8 +25,12 @@ namespace HermEsb.Core.Ioc
         public MessageContext(IIoc ioc)
         {
             _ioc = ioc;
+#if !__MonoCS__
             _containerScope = _ioc.CreateContext();
-            MessageInfo = new MessageInfo();
+#else
+			_ioc.CreateContext();
+#endif            
+			MessageInfo = new MessageInfo();
         }
 
         /// <summary>
@@ -45,7 +51,11 @@ namespace HermEsb.Core.Ioc
         {
             if (disposing)
             {
+#if !__MonoCS__
                 _containerScope.Dispose();
+#else
+				_ioc.DisposeContext();
+#endif
             }
         }
 

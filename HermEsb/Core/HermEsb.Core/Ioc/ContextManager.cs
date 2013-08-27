@@ -7,6 +7,10 @@ namespace HermEsb.Core.Ioc
     /// </summary>
     public class ContextManager : IContextManager
     {
+#if __MonoCS__
+		private const string ContextStorageName = "CurrentHermEsbStorage";
+#endif
+
         /// <summary>
         /// Gets or sets the instance.
         /// </summary>
