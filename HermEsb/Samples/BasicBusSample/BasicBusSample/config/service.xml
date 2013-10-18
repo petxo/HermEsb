@@ -6,14 +6,14 @@
 
   <HermEsb>
     <identification id="Bus" type="Bus"/>
-    <clusterController>
+<!--    <clusterController>
       <clusterControlOutput transport="RabbitMq">
         <add name="uri" value="//localhost/HermEsbSamples.Exch/clusterControl.Input/clusterControl.InputKey"/>
       </clusterControlOutput>
       <clusterInput transport="RabbitMq">
         <add name="uri" value="//localhost/HermEsbSamples.Exch/cluster.Input/cluster.InputKey"/>
       </clusterInput>
-    </clusterController>
+    </clusterController>-->
     <routerProcessor>
       <input transport="RabbitMq">
         <add name="uri" value="//localhost/HermEsbSamples.Exch/BasicBusSample.Input/inputBasicBusSampleKey"/>

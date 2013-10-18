@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A5CB520-855D-459F-B349-DA6AE5729DDC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mrw.PoC.MongoDb.Embedded</RootNamespace>
+    <AssemblyName>Mrw.PoC.MongoDb.Embedded</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\packages\Castle.Core.3.2.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\packages\Castle.Windsor.3.2.1\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\BinariesConfig.cs" />
+    <Compile Include="Configuration\BinaryConfig.cs" />
+    <Compile Include="Configuration\IBinaryConfig.cs" />
+    <Compile Include="Configuration\IMongoDbEmbeddedConfig.cs" />
+    <Compile Include="Configuration\MongoDbEmbeddedConfig.cs" />
+    <Compile Include="IEmbeddedResourceHelper.cs" />
+    <Compile Include="Installer\MongoDbEmbeddedInstaller.cs" />
+    <Compile Include="MongoBootstrapper.cs" />
+    <Compile Include="IMongoBootstrapper.cs" />
+    <Compile Include="MongoContextType.cs" />
+    <Compile Include="MongoDeployer.cs" />
+    <Compile Include="IMongoDeployer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EmbeddedResourceHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\bsondump.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongo.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongod.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongodump.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongoexport.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongofiles.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongoimport.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongooplog.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongoperf.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongorestore.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongos.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongostat.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\2008R2+\mongotop.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mongodb\x64\bsondump.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongo.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongod.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongodump.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongoexport.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongofiles.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongoimport.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongooplog.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongoperf.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongorestore.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongos.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongostat.exe" />
+    <EmbeddedResource Include="mongodb\x64\mongotop.exe" />
+    <EmbeddedResource Include="mongodb\x86\bsondump.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongo.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongod.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongodump.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongoexport.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongofiles.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongoimport.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongooplog.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongoperf.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongorestore.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongos.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongostat.exe" />
+    <EmbeddedResource Include="mongodb\x86\mongotop.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\HermEsb.JobObjects\HermEsb.JobObjects\HermEsb.JobObjects.csproj">
+      <Project>{A1451246-C2A3-492E-9F0A-9C108BC3F1CA}</Project>
+      <Name>HermEsb.JobObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\HermEsb.Core\HermEsb.Core.csproj">
+      <Project>{ABAD7CC1-9A85-4F5E-9109-D00F5700CAF1}</Project>
+      <Name>HermEsb.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
