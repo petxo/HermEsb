@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 using HermEsb.Core.Gateways;
 using HermEsb.Core.Messages;
@@ -16,7 +17,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
     {
         private readonly IDataContractSerializer _dataContractSerializer;
         private readonly IGatewaysRepository _gatewaysRepository;
-        private readonly IDictionary<Identification, IOutputGateway<string>> _subcriptorsList;
+        private readonly IDictionary<Identification, IOutputGateway<byte[]>> _subcriptorsList;
         private SpinLock _lockSubcriptorsList;
 
         /// <summary>
@@ -27,7 +28,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         {
             _gatewaysRepository = gatewaysRepository;
             _dataContractSerializer = new JsonDataContractSerializer();
-            _subcriptorsList = new Dictionary<Identification, IOutputGateway<string>>();
+            _subcriptorsList = new Dictionary<Identification, IOutputGateway<byte[]>>();
         }
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="type">The type.</param>
         /// <param name="service"></param>
         /// <param name="sender">The sender.</param>
-        public void Subscribe(SubscriptionKey type, Identification service, IOutputGateway<string> sender)
+        public void Subscribe(SubscriptionKey type, Identification service, IOutputGateway<byte[]> sender)
         {
             bool lockTaken = false;
             _lockSubcriptorsList.Enter(ref lockTaken);
@@ -69,7 +70,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="type">The type.</param>
         /// <param name="service"></param>
         /// <param name="sender">The sender.</param>
-        public void Unsubscribe(SubscriptionKey type, Identification service, IOutputGateway<string> sender)
+        public void Unsubscribe(SubscriptionKey type, Identification service, IOutputGateway<byte[]> sender)
         {
             bool lockTaken = false;
             _lockSubcriptorsList.Enter(ref lockTaken);
@@ -102,7 +103,8 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="messageBus">The message bus.</param>
         public void Publish(MessageBus messageBus)
         {
-            string serializedMessage = _dataContractSerializer.Serialize(messageBus);
+            byte[] serializedMessage = Encoding.UTF8.GetBytes(_dataContractSerializer.Serialize(messageBus));
+            //TODO: Crear la serializacion del message bus
             Publish(messageBus.Header.BodyType, messageBus.Header.Priority, serializedMessage);
         }
 
@@ -112,14 +114,14 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="routingKey">The routing key.</param>
         /// <param name="priority">The priority.</param>
         /// <param name="serializedMessage">The serialized message.</param>
-        public void Publish(string routingKey, int priority, string serializedMessage)
+        public void Publish(string routingKey, int priority, byte[] serializedMessage)
         {
             if (string.IsNullOrEmpty(routingKey))
             {
                 return;
             }
 
-            IEnumerable<IOutputGateway<string>> messageSenders = _gatewaysRepository.GetMessageSenders(routingKey);
+            IEnumerable<IOutputGateway<byte[]>> messageSenders = _gatewaysRepository.GetMessageSenders(routingKey);
             int size = 0;
 
             foreach (var messageSender in messageSenders)
@@ -145,7 +147,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="service">The service.</param>
         /// <param name="priority">The priority.</param>
         /// <param name="serializedMessage">The serialized message.</param>
-        public void Reply(Identification service, int priority, string serializedMessage)
+        public void Reply(Identification service, int priority, byte[] serializedMessage)
         {
             if (_subcriptorsList.ContainsKey(service))
             {

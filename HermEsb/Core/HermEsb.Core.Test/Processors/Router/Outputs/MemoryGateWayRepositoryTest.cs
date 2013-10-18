@@ -12,9 +12,9 @@ namespace HermEsb.Core.Test.Processors.Router.Outputs
     [TestFixture]
     public class MemoryGateWayRepositoryTest
     {
-        private Mock<IOutputGateway<string>> _senderMessageFake;
-        private Mock<IOutputGateway<string>> _senderIMessageFake;
-        private Mock<IOutputGateway<string>> _senderIMessage;
+        private Mock<IOutputGateway<byte[]>> _senderMessageFake;
+        private Mock<IOutputGateway<byte[]>> _senderIMessageFake;
+        private Mock<IOutputGateway<byte[]>> _senderIMessage;
         private SubscriptionKey _subscriptionKey;
         private string _key;
         private Identification _identification;
@@ -23,9 +23,9 @@ namespace HermEsb.Core.Test.Processors.Router.Outputs
         public void SetUp()
         {
             _identification = new Identification { Id = "Test", Type = "Test_Type" };
-            _senderMessageFake = new Mock<IOutputGateway<string>>();
-            _senderIMessage = new Mock<IOutputGateway<string>>();
-            _senderIMessageFake = new Mock<IOutputGateway<string>>();
+            _senderMessageFake = new Mock<IOutputGateway<byte[]>>();
+            _senderIMessage = new Mock<IOutputGateway<byte[]>>();
+            _senderIMessageFake = new Mock<IOutputGateway<byte[]>>();
             _subscriptionKey = SubscriptionKeyMessageFactory.CreateFromType(typeof(MessageFake)).ToSubscriptorKey();
             _key = string.Format("{0},{1}", typeof(MessageFake).FullName, typeof(MessageFake).Assembly.GetName().Name);
         }

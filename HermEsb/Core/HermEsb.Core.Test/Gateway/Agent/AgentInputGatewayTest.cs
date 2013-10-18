@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using HermEsb.Core.Communication.EndPoints;
 using HermEsb.Core.Gateways.Agent;
 using HermEsb.Core.Messages;
@@ -34,7 +35,7 @@ namespace HermEsb.Core.Test.Gateway.Agent
 
             var eventargs = new EventReceiverEndPointHandlerArgs
                                 {
-                                    Message = jsonDataContractSerializer.Serialize(messageBus)
+                                    Message = Encoding.UTF8.GetBytes(jsonDataContractSerializer.Serialize(messageBus))
                                 };
 
 

@@ -14,7 +14,7 @@ namespace HermEsb.Core.Test.Processors.Agent
     class ServiceProcessorTest
     {
         private Mock<Identification> _mockIdentification;
-        private Mock<IInputGateway<IMessage>> _mockInputGateway;
+        private Mock<IInputGateway<IMessage, MessageHeader>> _mockInputGateway;
         private Mock<IHandlerRepository> _mockHandlerRepository;
         private ServiceProcessor _subject;
         private Mock<IOutputGateway<IMessage>> _mockOutputGateway;
@@ -24,7 +24,7 @@ namespace HermEsb.Core.Test.Processors.Agent
         public void Setup()
         {
             _mockIdentification = new Mock<Identification>();
-            _mockInputGateway = new Mock<IInputGateway<IMessage>>();
+            _mockInputGateway = new Mock<IInputGateway<IMessage, MessageHeader>>();
             _mockHandlerRepository = new Mock<IHandlerRepository>();
             _messageBuilder = new Mock<IMessageBuilder>();
 

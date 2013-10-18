@@ -69,5 +69,13 @@ namespace HermEsb.Core.Serialization
         /// <param name="type">The type.</param>
         /// <returns></returns>
         object Deserialize(string strObject, Encoding encoding, Type type);
+
+        /// <summary>
+        /// Deserializes the specified STR objet.
+        /// </summary>
+        /// <typeparam name="TEntity">The type of the entity.</typeparam>
+        /// <param name="obj">The obj.</param>
+        /// <returns></returns>
+        TEntity Deserialize<TEntity>(byte[] obj) where TEntity : class;
     }
 }

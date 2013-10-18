@@ -17,7 +17,7 @@ namespace HermEsb.Core.Test.Processors.Router.Subscritors
         private Mock<IRouterController> _controller;
         private Mock<IProcessorFake> _processor;
         private Mock<IOutputGateway<IControlMessage>> _outputControlGateway;
-        private Mock<IOutputGateway<string>> _outputGateway;
+        private Mock<IOutputGateway<byte[]>> _outputGateway;
         private Identification _identification;
         private Subscriptor _subscriptor;
         private SubscriptionKey _subscriptionKey;
@@ -30,7 +30,7 @@ namespace HermEsb.Core.Test.Processors.Router.Subscritors
             _controller = new Mock<IRouterController>(MockBehavior.Strict);
             _processor = new Mock<IProcessorFake>(MockBehavior.Strict);
             _outputControlGateway = new Mock<IOutputGateway<IControlMessage>>(MockBehavior.Strict);
-            _outputGateway = new Mock<IOutputGateway<string>>(MockBehavior.Strict);
+            _outputGateway = new Mock<IOutputGateway<byte[]>>(MockBehavior.Strict);
 
             _controller.SetupGet(c => c.Processor).Returns(_processor.Object);
             _identification = new Identification { Id = "Test", Type = "Test_Type" };

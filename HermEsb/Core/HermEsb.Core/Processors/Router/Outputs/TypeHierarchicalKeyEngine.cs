@@ -13,10 +13,10 @@ namespace HermEsb.Core.Processors.Router.Outputs
     /// </summary>
     public class TypeHierarchicalKeyEngine : IHierarchicalKeyEngine<Type>
     {
-        private readonly IDictionary<string, LoadBalancerController<string, IOutputGateway<string>>>
+        private readonly IDictionary<string, LoadBalancerController<string, IOutputGateway<byte[]>>>
             _assignableTypesList;
 
-        private readonly IDictionary<SubscriptionKey, List<IOutputGateway<string>>> _keyDictionary;
+        private readonly IDictionary<SubscriptionKey, List<IOutputGateway<byte[]>>> _keyDictionary;
         private SpinLock _lockAsignableTypes;
         private SpinLock _lockKeys;
         private int _numThreadsRunning;
@@ -31,8 +31,8 @@ namespace HermEsb.Core.Processors.Router.Outputs
             _lockKeys = new SpinLock();
             _numThreadsRunning = 0;
 
-            _assignableTypesList = new Dictionary<string, LoadBalancerController<string, IOutputGateway<string>>>();
-            _keyDictionary = new Dictionary<SubscriptionKey, List<IOutputGateway<string>>>();
+            _assignableTypesList = new Dictionary<string, LoadBalancerController<string, IOutputGateway<byte[]>>>();
+            _keyDictionary = new Dictionary<SubscriptionKey, List<IOutputGateway<byte[]>>>();
         }
 
         /// <summary>
@@ -48,9 +48,9 @@ namespace HermEsb.Core.Processors.Router.Outputs
         ///     Gets the output gateways.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<IOutputGateway<string>> GetOutputGateways()
+        public IEnumerable<IOutputGateway<byte[]>> GetOutputGateways()
         {
-            var outputGateways = new List<IOutputGateway<string>>();
+            var outputGateways = new List<IOutputGateway<byte[]>>();
 
             bool lockTaken = false;
             _lockKeys.Enter(ref lockTaken);
@@ -71,7 +71,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="key">The key.</param>
         /// <param name="service">The service.</param>
         /// <param name="outputGateway">The output gateway.</param>
-        public void Add(SubscriptionKey key, Identification service, IOutputGateway<string> outputGateway)
+        public void Add(SubscriptionKey key, Identification service, IOutputGateway<byte[]> outputGateway)
         {
             LoggerManager.Instance.Info(string.Format("Add Type {0}", key.Key));
             bool lockTaken = false;
@@ -82,7 +82,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
                 {
                     if (!_keyDictionary.ContainsKey(key))
                     {
-                        _keyDictionary.Add(key, new List<IOutputGateway<string>>());
+                        _keyDictionary.Add(key, new List<IOutputGateway<byte[]>>());
                     }
                     _keyDictionary[key].Add(outputGateway);
 
@@ -106,7 +106,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="key">The key.</param>
         /// <param name="service"></param>
         /// <param name="outputGateway">The output gateway.</param>
-        public void Remove(SubscriptionKey key, Identification service, IOutputGateway<string> outputGateway)
+        public void Remove(SubscriptionKey key, Identification service, IOutputGateway<byte[]> outputGateway)
         {
             LoggerManager.Instance.Info(string.Format("Remove Type {0}", key.Key));
             bool lockTaken = false;
@@ -158,9 +158,9 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// </summary>
         /// <param name="key">The key.</param>
         /// <returns></returns>
-        public IEnumerable<IOutputGateway<string>> GetMessageSenders(string key)
+        public IEnumerable<IOutputGateway<byte[]>> GetMessageSenders(string key)
         {
-            var outputGateways = new List<IOutputGateway<string>>();
+            var outputGateways = new List<IOutputGateway<byte[]>>();
             if (string.IsNullOrEmpty(key))
             {
                 return outputGateways;
@@ -209,7 +209,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="service">The service.</param>
         /// <param name="outputGateway">The output gateway.</param>
         private void ReloadAssignableTypes(SubscriptionKey subscriptionKey, Identification service,
-                                           IOutputGateway<string> outputGateway)
+                                           IOutputGateway<byte[]> outputGateway)
         {
             //Recargamos la lista de tipos asignables
             bool lockTaken = false;
@@ -220,7 +220,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
 
                 foreach (var assignableType in _assignableTypesList)
                 {
-                    KeyValuePair<SubscriptionKey, List<IOutputGateway<string>>> key =
+                    KeyValuePair<SubscriptionKey, List<IOutputGateway<byte[]>>> key =
                         _keyDictionary.FirstOrDefault(pair => pair.Key.Key == assignableType.Key);
 
                     if (key.Key != null && key.Key.IsAssignableKey(subscriptionKey.Key))
@@ -234,7 +234,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
 
                 if (!_assignableTypesList.ContainsKey(subscriptionKey.Key))
                 {
-                    var loadBalancerController = new LoadBalancerController<string, IOutputGateway<string>>();
+                    var loadBalancerController = new LoadBalancerController<string, IOutputGateway<byte[]>>();
                     _assignableTypesList.Add(subscriptionKey.Key, loadBalancerController);
 
                     loadBalancerController.Add(service.Type, outputGateway);

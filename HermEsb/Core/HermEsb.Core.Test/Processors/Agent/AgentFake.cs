@@ -20,7 +20,7 @@ namespace HermEsb.Core.Test.Processors.Agent
         /// <param name="identification">The identification.</param>
         /// <param name="inputGateway">The input gateway.</param>
         /// <param name="handlerRepository">The handler repository.</param>
-        public AgentFake(Identification identification, IInputGateway<IMessage> inputGateway, IHandlerRepository handlerRepository)
+        public AgentFake(Identification identification, IInputGateway<IMessage, MessageHeader> inputGateway, IHandlerRepository handlerRepository)
             : base(identification, inputGateway, handlerRepository, MessageBuilderFactory.CreateDefaultBuilder(), ReinjectionEngineFactory.CreateDefaultEngine(inputGateway))
         {
         }

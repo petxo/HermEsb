@@ -17,7 +17,7 @@ namespace HermEsb.Core.Listeners
         /// <param name="inputGateway">The input gateway.</param>
         /// <param name="handlerRepository">The handler repository.</param>
         /// <returns></returns>
-        public static Listener<TMessage> Create<TMessage>(IInputGateway<TMessage> inputGateway, IHandlerRepository handlerRepository) where TMessage : IMessage
+        public static Listener<TMessage> Create<TMessage>(IInputGateway<TMessage, MessageHeader> inputGateway, IHandlerRepository handlerRepository) where TMessage : IMessage
         {
             var listener = new Listener<TMessage>(inputGateway, handlerRepository);
             listener.Logger = LoggerManager.Instance;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using HermEsb.Core.Messages;
 
 namespace BasicSampleContracts
@@ -12,5 +13,14 @@ namespace BasicSampleContracts
         /// The fecha.
         /// </value>
         DateTime Fecha { get; set; }
+
+        /// <summary>
+        /// Gets or sets the nombre.
+        /// </summary>
+        /// <value>
+        /// The nombre.
+        /// </value>
+        [DataMember]
+        string Nombre { get; set; }
     }
 }

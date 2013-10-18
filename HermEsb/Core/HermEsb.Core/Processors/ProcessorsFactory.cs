@@ -1,4 +1,5 @@
 ﻿using HermEsb.Core.Gateways;
+using HermEsb.Core.Gateways.Router;
 using HermEsb.Core.Handlers;
 using HermEsb.Core.Messages;
 using HermEsb.Core.Messages.Builders;
@@ -25,7 +26,7 @@ namespace HermEsb.Core.Processors
         /// <param name="handlerRepository">The handler repository.</param>
         /// <returns></returns>
         public static IController CreateControlProcessor(Identification identification,
-                                                         IInputGateway<IControlMessage> inputGateway,
+                                                         IInputGateway<IControlMessage, MessageHeader> inputGateway,
                                                          IOutputGateway<IControlMessage> outputGateway,
                                                          IHandlerRepository handlerRepository)
         {
@@ -50,7 +51,7 @@ namespace HermEsb.Core.Processors
         /// <param name="messageBuilder">The message builder.</param>
         /// <returns></returns>
         public static IProcessor CreateServiceProcessor(Identification identification,
-                                                        IInputGateway<IMessage> inputGateway,
+                                                        IInputGateway<IMessage, MessageHeader> inputGateway,
                                                         IHandlerRepository handlerRepository,
                                                         IMessageBuilder messageBuilder)
         {
@@ -72,7 +73,7 @@ namespace HermEsb.Core.Processors
         /// <param name="subscriptorsHelper">The subscriptors helper.</param>
         /// <returns></returns>
         public static IController CreateRouterControlProcessor(Identification identification,
-                                                               IInputGateway<IControlMessage> inputGateway,
+                                                               IInputGateway<IControlMessage, MessageHeader> inputGateway,
                                                                IHandlerRepository handlerRepository,
                                                                ISubscriptorsHelper subscriptorsHelper)
         {
@@ -93,7 +94,7 @@ namespace HermEsb.Core.Processors
         /// <param name="routerOutputHelper">The router output helper.</param>
         /// <returns></returns>
         public static IProcessor CreateRouterProcessor(Identification identification,
-                                                       IInputGateway<MessageBus> inputGateway,
+                                                       IInputGateway<byte[], RouterHeader> inputGateway,
                                                        IRouterOutputHelper routerOutputHelper)
         {
             return new RouterProcessor(identification, inputGateway, routerOutputHelper)

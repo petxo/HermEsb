@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using HermEsb.Core.Communication.EndPoints;
 using HermEsb.Core.Ioc;
 using HermEsb.Core.Messages;
@@ -60,7 +61,7 @@ namespace HermEsb.Core.Gateways.Agent
                 var callerContext = CallerContextFactory.Create(_identification);
                 messageBus.Header.CallStack.Push(callerContext);
 
-                var serializedMessage = DataContractSerializer.Serialize(messageBus);
+                var serializedMessage = MessageBusParser.ToBytes(messageBus);
                 SenderEndPoint.Send(serializedMessage, priority);
                 InvokeSentMessage(messageBus.Header.BodyType, serializedMessage.Length);
                 return serializedMessage.Length;
@@ -93,7 +94,6 @@ namespace HermEsb.Core.Gateways.Agent
             {
                 var messageBus = MessageBusFactory.Create(_identification, message, DataContractSerializer);
 
-                //messageBus.Header = (MessageHeader) messageInfo.Header.Clone();
                 messageBus.Header.Priority = messageInfo.Header.Priority;
                 messageBus.Header.CallStack = messageInfo.Header.CallStack;
                 messageBus.Header.CallContext = messageInfo.CurrentCallContext;
@@ -108,7 +108,8 @@ namespace HermEsb.Core.Gateways.Agent
                     messageBus.Header.Type = MessageBusType.Reply;
                 }
 
-                var serializedMessage = DataContractSerializer.Serialize(messageBus);
+                //TODO: Crear la serializacion del bus
+                var serializedMessage = Encoding.UTF8.GetBytes(DataContractSerializer.Serialize(messageBus));
 
                 if (!messageInfo.IsReply)
                 {

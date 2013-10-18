@@ -36,6 +36,22 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         }
 
         /// <summary>
+        /// Sends the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="priority">The priority.</param>
+        public override void Send(byte[] message, int priority)
+        {
+            var msmqMessage = new Message(message, _messageQueue.Formatter)
+            {
+                Recoverable = true,
+                Priority = (MessagePriority)priority,
+            };
+
+            _messageQueue.Send(msmqMessage);
+        }
+
+        /// <summary>
         /// Gets the transport.
         /// </summary>
         /// <value>The transport.</value>

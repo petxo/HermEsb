@@ -22,7 +22,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// </summary>
         /// <param name="typeName">Name of the type.</param>
         /// <returns></returns>
-        public override IEnumerable<IOutputGateway<string>> GetMessageSenders(string typeName)
+        public override IEnumerable<IOutputGateway<byte[]>> GetMessageSenders(string typeName)
         {
             return HierarchicalKeyEngine.GetMessageSenders(typeName);
         }
@@ -42,7 +42,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="type">The type.</param>
         /// <param name="service"></param>
         /// <param name="sender">The sender.</param>
-        public override void AddSender(SubscriptionKey type, Identification service, IOutputGateway<string> sender)
+        public override void AddSender(SubscriptionKey type, Identification service, IOutputGateway<byte[]> sender)
         {
             LoggerManager.Instance.Debug(string.Format("Add Sender: {0}", type.Key));
             HierarchicalKeyEngine.Add(type, service, sender);
@@ -54,7 +54,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="type">The type.</param>
         /// <param name="service"></param>
         /// <param name="sender">The sender.</param>
-        public override void RemoveSender(SubscriptionKey type, Identification service, IOutputGateway<string> sender)
+        public override void RemoveSender(SubscriptionKey type, Identification service, IOutputGateway<byte[]> sender)
         {
             HierarchicalKeyEngine.Remove(type, service, sender);
         }

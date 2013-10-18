@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using HermEsb.Core.Communication.EndPoints;
 using HermEsb.Core.Gateways.Router;
 using HermEsb.Core.Messages;
@@ -32,14 +33,14 @@ namespace HermEsb.Core.Test.Gateway.Router
 
             var eventargs = new EventReceiverEndPointHandlerArgs
             {
-                Message = jsonDataContractSerializer.Serialize(messageBus)
+                Message = Encoding.UTF8.GetBytes(jsonDataContractSerializer.Serialize(messageBus))
             };
 
 
             _receiverEndPoint.Setup(r => r.Start()).Raises(r => r.OnReceivedMessage += null, new object[] { null, eventargs });
 
             MessageBus messageReceived = null;
-            inputGateway.OnMessage += (sender, args) => messageReceived = args.Message;
+            inputGateway.OnMessage += (sender, args) => messageReceived = jsonDataContractSerializer.Deserialize<MessageBus>(args.Message);
 
 
             inputGateway.Start();

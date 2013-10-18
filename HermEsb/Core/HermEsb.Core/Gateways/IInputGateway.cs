@@ -9,12 +9,12 @@ namespace HermEsb.Core.Gateways
     /// <summary>
     /// Functionality present at a receiving endpoint
     /// </summary>
-    public interface IInputGateway<TMessage> : IStartable<EndPointStatus>, IDisposable, IReceiver, IMonitorableReceiverGateway
+    public interface IInputGateway<TMessage, THeader> : IStartable<EndPointStatus>, IDisposable, IReceiver, IMonitorableReceiverGateway
     {
         /// <summary>
         /// Occurs when a message is retrieved form the associated queue.
         /// </summary>
-        event OutputGatewayEventHandler<TMessage> OnMessage;
+        event OutputGatewayEventHandler<TMessage, THeader> OnMessage;
 
         /// <summary>
         /// Purges this instance.

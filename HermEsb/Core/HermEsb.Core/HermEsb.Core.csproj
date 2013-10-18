@@ -173,6 +173,9 @@
     <Compile Include="Gateways\OutputGatewayEventHandler.cs" />
     <Compile Include="Gateways\OutputGatewayEventHandlerArgs.cs" />
     <Compile Include="Gateways\Router\RouterGatewayFactory.cs" />
+    <Compile Include="Compression\GzipCompression.cs" />
+    <Compile Include="Messages\MessageBusParser.cs" />
+    <Compile Include="Messages\RouterHeader.cs" />
     <Compile Include="Gateways\Router\RouterInputGateway.cs" />
     <Compile Include="Gateways\Router\RouterOutputGateway.cs" />
     <Compile Include="Handlers\Context\ContextHandler.cs" />

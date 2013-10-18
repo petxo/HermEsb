@@ -12,7 +12,7 @@ namespace HermEsb.Configuration.Bus
     {
         private readonly HermEsbConfig _hermEsbConfig;
         private readonly Identification _identification;
-        private IInputGateway<MessageBus> _input;
+        private IInputGateway<byte[], RouterHeader> _input;
         private IRouterOutputHelper _routerOutputHelper;
 
         /// <summary>

@@ -22,8 +22,8 @@ namespace HermEsb.Core.Processors.Agent
         /// <param name="handlerRepository">The handler repository.</param>
         /// <param name="messageBuilder">The message builder.</param>
         /// <param name="reinjectionEngine">The reinjection engine.</param>
-        internal ServiceProcessor(Identification identification, 
-                                IInputGateway<IMessage> inputGateway, 
+        internal ServiceProcessor(Identification identification,
+                                IInputGateway<IMessage, MessageHeader> inputGateway, 
                                 IHandlerRepository handlerRepository, IMessageBuilder messageBuilder, IReinjectionEngine reinjectionEngine)
             : base(identification, inputGateway, handlerRepository, messageBuilder, reinjectionEngine)
         {

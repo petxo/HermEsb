@@ -20,7 +20,7 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
             try
             {
                 var consumer = new QueueingBasicConsumer(channel);
-                channel.BasicQos(0, 100, false);
+                channel.BasicQos(0, 3000, false);
                 channel.BasicConsume(queueName, false, consumer);
 
                 ISharedQueue sharedQueue = new SharedQueueDecorator(consumer.Queue);

@@ -2,6 +2,7 @@ using System;
 using Bteam.SimpleStateMachine;
 using HermEsb.Core.Gateways;
 using HermEsb.Core.Ioc;
+using HermEsb.Core.Messages;
 
 namespace HermEsb.Core.Processors.Agent.Reinjection
 {
@@ -10,14 +11,14 @@ namespace HermEsb.Core.Processors.Agent.Reinjection
     /// <typeparam name="TMessage">The type of the message.</typeparam>
     public class DirectReinjectionEngine<TMessage> : IReinjectionEngine
     {
-        private readonly IInputGateway<TMessage> _inputGateway;
+        private readonly IInputGateway<TMessage, MessageHeader> _inputGateway;
         private IStateMachine<ReinjectionStatus> _stateMachine;
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="DirectReinjectionEngine{TMessage}" /> class.
         /// </summary>
         /// <param name="inputGateway">The input gateway.</param>
-        public DirectReinjectionEngine(IInputGateway<TMessage> inputGateway)
+        public DirectReinjectionEngine(IInputGateway<TMessage, MessageHeader> inputGateway)
         {
             _inputGateway = inputGateway;
             InitializeStateMachine();

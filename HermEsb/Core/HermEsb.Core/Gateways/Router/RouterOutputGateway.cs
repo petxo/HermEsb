@@ -8,7 +8,7 @@ namespace HermEsb.Core.Gateways.Router
     /// <summary>
     /// 
     /// </summary>
-    public class RouterOutputGateway : AbstractOutputGateway<string>
+    public class RouterOutputGateway : AbstractOutputGateway<byte[]>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RouterOutputGateway"/> class.
@@ -33,7 +33,7 @@ namespace HermEsb.Core.Gateways.Router
         /// Sends the specified message.
         /// </summary>
         /// <param name="message">The message.</param>
-        public override int Send(string message)
+        public override int Send(byte[] message)
         {
             return Send(message, 0);
         }
@@ -43,7 +43,7 @@ namespace HermEsb.Core.Gateways.Router
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="priority">The priority.</param>
-        public override int Send(string message, int priority)
+        public override int Send(byte[] message, int priority)
         {
             SenderEndPoint.Send(message, priority);
             return message.Length;
@@ -55,7 +55,7 @@ namespace HermEsb.Core.Gateways.Router
         /// <param name="message">The message.</param>
         /// <param name="messageInfo">The message info.</param>
         /// <returns></returns>
-        public override int Send(string message, IMessageInfo messageInfo)
+        public override int Send(byte[] message, IMessageInfo messageInfo)
         {
             try
             {

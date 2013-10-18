@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using HermEsb.Core.Communication.EndPoints;
 using HermEsb.Core.Logging;
 using HermEsb.Core.Messages;
@@ -13,7 +14,8 @@ namespace HermEsb.Core.Gateways
     /// 
     /// </summary>
     /// <typeparam name="TMessage">The type of the message.</typeparam>
-    public abstract class AbstractInputGateway<TMessage> : IInputGateway<TMessage>, ILoggable
+    /// <typeparam name="THeader">The type of the header.</typeparam>
+    public abstract class AbstractInputGateway<TMessage, THeader> : IInputGateway<TMessage, THeader>, ILoggable
     {
         private readonly IReceiverEndPoint _receiverReceiverEndPoint;
         /// <summary>
@@ -58,12 +60,7 @@ namespace HermEsb.Core.Gateways
         {
             try
             {
-                var messageBus = DataContractSerializer.Deserialize<MessageBus>(args.Message);
-
-                ProcessReceivedMessage(messageBus, args.Message);
-
-                InvokeReceivedMessage(messageBus.Header.BodyType, args.Message.Length, messageBus.Header.CreatedAt);
-
+                ProcessReceivedMessage(args.Message);
             }
             catch (Exception ex)
             {
@@ -88,7 +85,7 @@ namespace HermEsb.Core.Gateways
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="serializedMessage">The serialized message.</param>
-        protected abstract void ProcessReceivedMessage(MessageBus message, string serializedMessage);
+        protected abstract void ProcessReceivedMessage(byte[] serializedMessage);
 
         /// <summary>
         /// Gets the status.
@@ -131,7 +128,7 @@ namespace HermEsb.Core.Gateways
         /// <summary>
         /// Occurs when a message is retrieved form the associated queue.
         /// </summary>
-        public event OutputGatewayEventHandler<TMessage> OnMessage;
+        public event OutputGatewayEventHandler<TMessage, THeader> OnMessage;
 
         /// <summary>
         /// Purges this instance.
@@ -147,10 +144,10 @@ namespace HermEsb.Core.Gateways
         /// <param name="message">The message.</param>
         /// <param name="serializedMessage">The serialized message.</param>
         /// <param name="header">The header.</param>
-        protected void InvokeOnMessage(TMessage message, string serializedMessage, MessageHeader header)
+        protected void InvokeOnMessage(TMessage message, byte[] serializedMessage, THeader header)
         {
             Logger.Debug("Input Gateway Received Message");
-            var args = new OutputGatewayEventHandlerArgs<TMessage> { Message = message, Header = header, SerializedMessage = serializedMessage };
+            var args = new OutputGatewayEventHandlerArgs<TMessage, THeader> { Message = message, Header = header, SerializedMessage = serializedMessage };
             var handler = OnMessage;
             if (handler != null) handler(this, args);
         }
@@ -195,7 +192,7 @@ namespace HermEsb.Core.Gateways
         /// </summary>
         /// <param name="other">The other.</param>
         /// <returns></returns>
-        public bool Equals(AbstractInputGateway<TMessage> other)
+        public bool Equals(AbstractInputGateway<TMessage, THeader> other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
@@ -213,8 +210,8 @@ namespace HermEsb.Core.Gateways
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof(AbstractInputGateway<TMessage>)) return false;
-            return Equals((AbstractInputGateway<TMessage>)obj);
+            if (obj.GetType() != typeof(AbstractInputGateway<TMessage, THeader>)) return false;
+            return Equals((AbstractInputGateway<TMessage, THeader>)obj);
         }
 
         /// <summary>

@@ -18,5 +18,14 @@ namespace BasicSampleContracts
         /// </value>
         [DataMember]
         public DateTime Fecha { get; set; }
+
+        /// <summary>
+        /// Gets or sets the nombre.
+        /// </summary>
+        /// <value>
+        /// The nombre.
+        /// </value>
+        [DataMember]
+        public string Nombre { get; set; }
     }
 }

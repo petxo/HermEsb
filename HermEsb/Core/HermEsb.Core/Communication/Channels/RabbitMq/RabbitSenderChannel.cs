@@ -39,6 +39,25 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
         }
 
         /// <summary>
+        /// Sends the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="priority">The priority.</param>
+        public override void Send(byte[] message, int priority)
+        {
+            try
+            {
+                _rabbitWrapper.Publish(message, priority);
+            }
+            catch (Exception)
+            {
+                Logger.Error(string.Format("Error Rabbit Sender Channel, message: {0}", message));
+                throw;
+            }
+
+        }
+
+        /// <summary>
         /// Gets the transport.
         /// </summary>
         /// <value>The transport.</value>

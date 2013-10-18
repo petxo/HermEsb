@@ -15,7 +15,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// </summary>
         /// <param name="key">The key.</param>
         /// <returns></returns>
-        IEnumerable<IOutputGateway<string>> GetMessageSenders(string key);
+        IEnumerable<IOutputGateway<byte[]>> GetMessageSenders(string key);
 
         /// <summary>
         /// Adds the specified key.
@@ -23,7 +23,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="key">The key.</param>
         /// <param name="service"></param>
         /// <param name="outputGateway">The output gateway.</param>
-        void Add(SubscriptionKey key, Identification service, IOutputGateway<string> outputGateway);
+        void Add(SubscriptionKey key, Identification service, IOutputGateway<byte[]> outputGateway);
 
         /// <summary>
         /// Removes the specified output gateway.
@@ -31,7 +31,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="key">The key.</param>
         /// <param name="service"></param>
         /// <param name="outputGateway">The output gateway.</param>
-        void Remove(SubscriptionKey key, Identification service, IOutputGateway<string> outputGateway);
+        void Remove(SubscriptionKey key, Identification service, IOutputGateway<byte[]> outputGateway);
 
         /// <summary>
         /// Gets the keys.
@@ -48,6 +48,6 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// Gets the output gateways.
         /// </summary>
         /// <returns></returns>
-        IEnumerable<IOutputGateway<string>> GetOutputGateways();
+        IEnumerable<IOutputGateway<byte[]>> GetOutputGateways();
     }
 }

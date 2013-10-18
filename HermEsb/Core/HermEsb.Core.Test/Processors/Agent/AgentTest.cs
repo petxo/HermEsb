@@ -14,10 +14,10 @@ namespace HermEsb.Core.Test.Processors.Agent
     internal class AgentTest
     {
         private Mock<Identification> _mockIdentification;
-        private Mock<IInputGateway<IMessage>> _mockInputGateway;
+        private Mock<IInputGateway<IMessage, MessageHeader>> _mockInputGateway;
         private Mock<IHandlerRepository> _mockHandlerRepository;
         private Mock<IMessageHandler<IMessage>> _mockHandler;
-        private OutputGatewayEventHandlerArgs<IMessage> _outputGatewayEventHandlerArgs;
+        private OutputGatewayEventHandlerArgs<IMessage, MessageHeader> _outputGatewayEventHandlerArgs;
         private Mock<IIoc> _iocMock;
         private Mock<IOutputGateway<IMessage>> _mockOutputGateway;
         private AgentFake _subject;
@@ -26,7 +26,7 @@ namespace HermEsb.Core.Test.Processors.Agent
         public void Setup()
         {
             _mockIdentification = new Mock<Identification>();
-            _mockInputGateway = new Mock<IInputGateway<IMessage>>();
+            _mockInputGateway = new Mock<IInputGateway<IMessage, MessageHeader>>();
             _mockHandlerRepository = new Mock<IHandlerRepository>();
             _subject = new AgentFake(_mockIdentification.Object, _mockInputGateway.Object, _mockHandlerRepository.Object);
 
@@ -34,7 +34,7 @@ namespace HermEsb.Core.Test.Processors.Agent
             var mockHeader = new Mock<MessageHeader>();
             mockHeader.SetupAllProperties();
 
-            _outputGatewayEventHandlerArgs = new OutputGatewayEventHandlerArgs<IMessage>
+            _outputGatewayEventHandlerArgs = new OutputGatewayEventHandlerArgs<IMessage, MessageHeader>
                                                  {
                                                      Message = new Mock<IMessage>().Object,
                                                      Header = mockHeader.Object

@@ -11,14 +11,14 @@ namespace HermEsb.Core.Test.Processors.Router.Subscriptors
     public class MemorySubscriptorsRepositoryTest
     {
         private MemorySubscriptorsRepository _subject;
-        private Mock<IOutputGateway<string>> _mockGateWayMessageBus;
+        private Mock<IOutputGateway<byte[]>> _mockGateWayMessageBus;
         private Mock<IOutputGateway<IControlMessage>> _mockGateWayControl;
 
         [SetUp]
         public void SetUp()
         {
             _subject = new MemorySubscriptorsRepository();
-            _mockGateWayMessageBus = new Mock<IOutputGateway<string>>();
+            _mockGateWayMessageBus = new Mock<IOutputGateway<byte[]>>();
             _mockGateWayControl = new Mock<IOutputGateway<IControlMessage>>();
         }
 

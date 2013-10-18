@@ -28,7 +28,7 @@ namespace HermEsb.Core.Processors.Agent
     {
         private readonly IHandlerRepository _handlerRepository;
         private readonly Identification _identification;
-        private readonly IInputGateway<TMessage> _inputGateway;
+        private readonly IInputGateway<TMessage, MessageHeader> _inputGateway;
         private readonly IMessageBuilder _messageBuilder;
         private readonly IReinjectionEngine _reinjectionEngine;
         private ILogger _logger;
@@ -44,7 +44,7 @@ namespace HermEsb.Core.Processors.Agent
         /// <param name="messageBuilder">The message builder.</param>
         /// <param name="reinjectionEngine">The reinjection engine.</param>
         protected Agent(Identification identification,
-                        IInputGateway<TMessage> inputGateway,
+                        IInputGateway<TMessage, MessageHeader> inputGateway,
                         IHandlerRepository handlerRepository, IMessageBuilder messageBuilder,
                         IReinjectionEngine reinjectionEngine)
         {
@@ -74,7 +74,7 @@ namespace HermEsb.Core.Processors.Agent
         ///     Gets the input gateway.
         /// </summary>
         /// <value>The input gateway.</value>
-        internal IInputGateway<TMessage> InputGateway
+        internal IInputGateway<TMessage, MessageHeader> InputGateway
         {
             get { return _inputGateway; }
         }
@@ -366,7 +366,7 @@ namespace HermEsb.Core.Processors.Agent
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="args">The args.</param>
-        protected virtual void MessageReceived(object sender, OutputGatewayEventHandlerArgs<TMessage> args)
+        protected virtual void MessageReceived(object sender, OutputGatewayEventHandlerArgs<TMessage, MessageHeader> args)
         {
             InvokeOnMessageReceived();
 
@@ -456,7 +456,7 @@ namespace HermEsb.Core.Processors.Agent
         /// <param name="args">The args.</param>
         /// <param name="currentSession">The current session.</param>
         private static void InitializeContext(IMessageContext messageContext,
-                                              OutputGatewayEventHandlerArgs<TMessage> args,
+                                              OutputGatewayEventHandlerArgs<TMessage, MessageHeader> args,
                                               Session currentSession)
         {
             messageContext.MessageInfo.Body = args.Message;
@@ -600,11 +600,11 @@ namespace HermEsb.Core.Processors.Agent
         /// <param name="message">The message bus.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="handlerType">Type of the handler.</param>
-        private void InvokeOnErrorHandler(MessageHeader header, string message, Exception exception, Type handlerType)
+        private void InvokeOnErrorHandler(MessageHeader header, byte[] message, Exception exception, Type handlerType)
         {
             ErrorOnHandlersEventHandler handler = OnErrorHandler;
             if (handler != null)
-                Task.Factory.StartNew(() => handler(this, new ErrorOnHandlersEventHandlerArgs<string>
+                Task.Factory.StartNew(() => handler(this, new ErrorOnHandlersEventHandlerArgs<byte[]>
                     {
                         Header = header,
                         Message = message,

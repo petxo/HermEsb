@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using HermEsb.Core.Messages;
 using HermEsb.Core.Serialization;
 using NUnit.Framework;
@@ -13,17 +14,45 @@ namespace HermEsb.Core.Test.Messages
         public void SerializeMessageBus()
         {
             var jsonDataContractSerializer = new JsonDataContractSerializer();
+            var callerContexts = new Stack<CallerContext>();
+            callerContexts.Push(new CallerContext { Identification = new Identification() { Id = "IdTest", Type = "TypeTest" } });
             var messageBus = new MessageBus
                                  {
                                      Body = "Test",
-                                     Header = {BodyType = "System.string", CreatedAt = new DateTime(2010,10,10)}
+                                     Header = { BodyType = "Un tipo de body cualquiera me vale.", CreatedAt = new DateTime(2010, 10, 10), CallStack = callerContexts }
                                  };
 
             var serialize = jsonDataContractSerializer.Serialize(messageBus);
 
-            var json = "{\"Body\":\"Test\",\"Header\":{\"BodyType\":\"System.string\",\"CallContext\":{\"_currentSession\":[]},\"CallStack\":{\"_array\":[],\"_size\":0,\"_version\":0},\"CreatedAt\":\"\\/Date(1286661600000+0200)\\/\",\"EncodingCodePage\":0,\"IdentificationService\":{\"Id\":null,\"Type\":null},\"Priority\":0,\"ReinjectionNumber\":0,\"Type\":0}}";
+            var bytes = MessageBusParser.ToBytes(messageBus);
+            var routerHeader = MessageBusParser.GetHeaderFromBytes(bytes);
+            var message = MessageBusParser.GetMessageFromBytes(bytes);
 
-            Assert.AreEqual(json, serialize);
+            Assert.AreEqual(serialize, message);
+            Assert.AreEqual("IdTest", routerHeader.Identification.Id);
+            Assert.AreEqual("TypeTest", routerHeader.Identification.Type);
+        }
+
+        [Test]
+        public void TestDeMierda()
+        {
+            var bytes = new byte[8];
+            var ticks = DateTime.Now.Ticks;
+            
+            bytes[0] = (byte)(ticks >> 56);
+            bytes[1] = (byte)(ticks >> 48);
+            bytes[2] = (byte)(ticks >> 40);
+            bytes[3] = (byte)(ticks >> 32);
+            bytes[4] = (byte)(ticks >> 24);
+            bytes[5] = (byte)(ticks >> 16);
+            bytes[6] = (byte)(ticks >> 8);
+            bytes[7] = (byte)(ticks);
+
+            long newticks = ((long)bytes[0] << 56) + ((long)bytes[1] << 48) + ((long)bytes[2] << 40)
+                         + ((long)bytes[3] << 32) + ((long)bytes[4] << 24) + ((long)bytes[5] << 16)
+                         + ((long)bytes[6] << 8) + (long)bytes[7];
+
+            Assert.AreEqual(ticks, newticks);
         }
 
         [Test]

@@ -35,7 +35,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// </summary>
         /// <param name="typeName">Name of the type.</param>
         /// <returns></returns>
-        public virtual IEnumerable<IOutputGateway<string>> GetMessageSenders(string typeName)
+        public virtual IEnumerable<IOutputGateway<byte[]>> GetMessageSenders(string typeName)
         {
             return _hierarchicalKeyEngine.GetMessageSenders(typeName);
         }
@@ -52,7 +52,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="type">The type.</param>
         /// <param name="service"></param>
         /// <param name="sender">The sender.</param>
-        public abstract void AddSender(SubscriptionKey type, Identification service, IOutputGateway<string> sender);
+        public abstract void AddSender(SubscriptionKey type, Identification service, IOutputGateway<byte[]> sender);
 
         /// <summary>
         /// Removes the sender.
@@ -60,7 +60,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="type">The type.</param>
         /// <param name="service"></param>
         /// <param name="sender">The sender.</param>
-        public abstract void RemoveSender(SubscriptionKey type, Identification service, IOutputGateway<string> sender);
+        public abstract void RemoveSender(SubscriptionKey type, Identification service, IOutputGateway<byte[]> sender);
 
         /// <summary>
         /// Inits this instance.

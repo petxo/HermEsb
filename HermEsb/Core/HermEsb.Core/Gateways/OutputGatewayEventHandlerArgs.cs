@@ -7,7 +7,7 @@ namespace HermEsb.Core.Gateways
     /// 
     /// </summary>
     /// <typeparam name="TMessage">The type of the message.</typeparam>
-    public class OutputGatewayEventHandlerArgs<TMessage> : EventArgs
+    public class OutputGatewayEventHandlerArgs<TMessage, THeader> : EventArgs
     {
         /// <summary>
         /// Gets or sets the message.
@@ -20,12 +20,12 @@ namespace HermEsb.Core.Gateways
         /// Gets or sets the serialized message.
         /// </summary>
         /// <value>The serialized message.</value>
-        public string SerializedMessage { get; set; }
+        public byte[] SerializedMessage { get; set; }
 
         /// <summary>
         /// Gets or sets the priority.
         /// </summary>
         /// <value>The priority.</value>
-        public MessageHeader Header { get; set; }
+        public THeader Header { get; set; }
     }
 }

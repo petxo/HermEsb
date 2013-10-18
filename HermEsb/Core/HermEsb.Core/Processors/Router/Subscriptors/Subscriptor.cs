@@ -26,7 +26,7 @@ namespace HermEsb.Core.Processors.Router.Subscriptors
         /// Gets or sets the input gateway.
         /// </summary>
         /// <value>The input gateway.</value>
-        public IOutputGateway<string> ServiceInputGateway { get; set; }
+        public IOutputGateway<byte[]> ServiceInputGateway { get; set; }
 
         /// <summary>
         /// Gets or sets the input control queue.

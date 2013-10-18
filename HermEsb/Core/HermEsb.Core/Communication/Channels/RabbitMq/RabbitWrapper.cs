@@ -85,6 +85,16 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
         /// <param name="priority">The priority.</param>
         public void Publish(string serializedMessage, int priority)
         {
+            Publish(Encoding.UTF8.GetBytes(serializedMessage), priority);
+        }
+
+        /// <summary>
+        /// Publishes the specified bytes message.
+        /// </summary>
+        /// <param name="bytesMessage">The bytes message.</param>
+        /// <param name="priority">The priority.</param>
+        public void Publish(byte[] bytesMessage, int priority)
+        {
             while (true)
             {
                 try
@@ -93,7 +103,7 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
                     basicProperties.Priority = (byte)priority;
                     basicProperties.SetPersistent(true);
 
-                    _connection.Channel.BasicPublish(_connection.PublicationAddress, basicProperties, Encoding.UTF8.GetBytes(serializedMessage));
+                    _connection.Channel.BasicPublish(_connection.PublicationAddress, basicProperties, bytesMessage);
                     break;
                 }
                 catch (Exception exception)

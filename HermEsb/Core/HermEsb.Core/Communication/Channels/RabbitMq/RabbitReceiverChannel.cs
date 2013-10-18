@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using HermEsb.Core.Communication.Channels.Specifications;
 using RabbitMQ.Client.Events;
 
@@ -59,8 +58,8 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
                 if (_rabbitWrapper.Dequeue((int)fromSeconds.TotalMilliseconds, out result))
                 {
                     var message = (BasicDeliverEventArgs)result;
-                    _rabbitWrapper.BasicAck(message.DeliveryTag, false);
-                    InvokeOnReceivedCompleted(Encoding.UTF8.GetString(message.Body));
+                    _rabbitWrapper.BasicAck(message.DeliveryTag, true);
+                    InvokeOnReceivedCompleted(message.Body);
                 }
             }
             ReadingQueue = false;
@@ -72,6 +71,16 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
         /// <param name="message">The message.</param>
         /// <param name="priority">The priority.</param>
         public override void Send(string message, int priority)
+        {
+            _rabbitWrapper.Publish(message, priority);
+        }
+
+        /// <summary>
+        /// Sends the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="priority">The priority.</param>
+        public override void Send(byte[] message, int priority)
         {
             _rabbitWrapper.Publish(message, priority);
         }

@@ -59,7 +59,7 @@ namespace HermEsb.Core.ErrorHandling
             _outputGateway.Send(errorRouterMessage);
         }
 
-        private void OnErrorHandler(object sender, ErrorOnHandlersEventHandlerArgs<string> args)
+        private void OnErrorHandler(object sender, ErrorOnHandlersEventHandlerArgs<byte[]> args)
         {
             var message = ErrorMessageFactory.CreateErrorHandlerMessageFromEventArgs(args);
             message.ServiceId = _identification;

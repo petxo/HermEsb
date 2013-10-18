@@ -13,7 +13,7 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
     public class RabbitConnectionProvider : IConnectionProvider<IRabbitConnection>
     {
 
-        private static Regex _regex = new Regex(@"//(?<host>.*):?(?<port>.*)?/(?<exch>.*)/(?<queue>.*)/(?<key>.*)");
+        private static Regex _regex = new Regex(@"/(?<exch>.*)/(?<queue>.*)/(?<key>.*)");
         private readonly int _maxReconnections;
 
         private int _reconnections;
@@ -89,21 +89,18 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
             var queue = string.Empty;
             var exch = string.Empty;
             var key = string.Empty;
-            var host = string.Empty;
-            var port = 5672;
+            var port = Uri.Port !=-1 ? Uri.Port : 5672;
 
-            var match = _regex.Match(Uri.OriginalString);
+            var match = _regex.Match(Uri.LocalPath);
             if (match.Success)
             {
-                host = match.Groups["host"].Value;
-                port = match.Groups.Count == 5 ? int.Parse(match.Groups["port"].Value) : 5672;
                 exch = match.Groups["exch"].Value;
                 queue = match.Groups["queue"].Value;
                 key = match.Groups["key"].Value;
             }
 
             var factory = new ConnectionFactory 
-                { Protocol = Protocols.FromEnvironment(), HostName = host, Port = port, RequestedHeartbeat = 50 };
+                { Protocol = Protocols.FromEnvironment(), HostName = Uri.Host, Port = port, RequestedHeartbeat = 50 };
 
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();

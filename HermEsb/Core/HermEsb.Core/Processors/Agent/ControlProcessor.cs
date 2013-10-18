@@ -3,6 +3,7 @@ using HermEsb.Core.Controller.Messages;
 using HermEsb.Core.Gateways;
 using HermEsb.Core.Handlers;
 using HermEsb.Core.Handlers.Context;
+using HermEsb.Core.Messages;
 using HermEsb.Core.Messages.Builders;
 using HermEsb.Core.Messages.Control;
 using HermEsb.Core.Monitoring;
@@ -24,8 +25,8 @@ namespace HermEsb.Core.Processors.Agent
         /// <param name="handlerRepository">The handler repository.</param>
         /// <param name="messageBuilder">The message builder.</param>
         /// <param name="reinjectionEngine">The reinjection engine.</param>
-        internal ControlProcessor(Identification identification, 
-                                IInputGateway<IControlMessage> inputGateway, 
+        internal ControlProcessor(Identification identification,
+                                IInputGateway<IControlMessage, MessageHeader> inputGateway, 
                                 IOutputGateway<IControlMessage> outputGateway, 
                                 IHandlerRepository handlerRepository, IMessageBuilder messageBuilder, IReinjectionEngine reinjectionEngine)
             : base(identification, inputGateway, handlerRepository, messageBuilder, reinjectionEngine)

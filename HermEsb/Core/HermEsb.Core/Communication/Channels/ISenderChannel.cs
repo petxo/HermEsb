@@ -19,5 +19,12 @@ namespace HermEsb.Core.Communication.Channels
         /// </summary>
         /// <value>The transport.</value>
         TransportType Transport { get; }
+
+        /// <summary>
+        /// Sends the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="priority">The priority.</param>
+        void Send(byte[] message, int priority);
     }
 }

@@ -75,5 +75,7 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
         /// <param name="deliveryTag">The delivery tag.</param>
         /// <param name="multiple">if set to <c>true</c> [multiple].</param>
         void BasicAck(ulong deliveryTag, bool multiple);
+
+        void Publish(byte[] bytesMessage, int priority);
     }
 }

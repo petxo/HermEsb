@@ -42,7 +42,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
             try
             {
                 var message = messageQueue.EndReceive(e.AsyncResult);
-                InvokeOnReceivedCompleted((string) message.Body);
+                InvokeOnReceivedCompleted((byte[]) message.Body);
                 StartReceive(TimeSpan.FromSeconds(10));
             }
             catch (MessageQueueException)
@@ -83,6 +83,22 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// <param name="message">The message.</param>
         /// <param name="priority">The priority.</param>
         public override void Send(string message, int priority)
+        {
+            var msmqMessage = new Message(message, _messageQueue.Formatter)
+            {
+                Recoverable = true,
+                Priority = (MessagePriority)priority,
+            };
+
+            _messageQueue.Send(msmqMessage);
+        }
+
+        /// <summary>
+        /// Sends the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="priority">The priority.</param>
+        public override void Send(byte[] message, int priority)
         {
             var msmqMessage = new Message(message, _messageQueue.Formatter)
             {

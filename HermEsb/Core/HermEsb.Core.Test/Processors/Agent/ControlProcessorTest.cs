@@ -1,5 +1,6 @@
 ﻿using HermEsb.Core.Gateways;
 using HermEsb.Core.Handlers;
+using HermEsb.Core.Messages;
 using HermEsb.Core.Messages.Control;
 using HermEsb.Core.Monitoring;
 using HermEsb.Core.Processors;
@@ -13,7 +14,7 @@ namespace HermEsb.Core.Test.Processors.Agent
     class ControlProcessorTest
     {
         private Mock<Identification> _mockIdentification;
-        private Mock<IInputGateway<IControlMessage>> _mockInputGateway;
+        private Mock<IInputGateway<IControlMessage, MessageHeader>> _mockInputGateway;
         private Mock<IOutputGateway<IControlMessage>> _mockOutputGateway;
         private Mock<IHandlerRepository> _mockHandlerRepository;
         private ControlProcessor _subject;
@@ -22,7 +23,7 @@ namespace HermEsb.Core.Test.Processors.Agent
         public void Setup()
         {
             _mockIdentification = new Mock<Identification>();
-            _mockInputGateway = new Mock<IInputGateway<IControlMessage>>();
+            _mockInputGateway = new Mock<IInputGateway<IControlMessage, MessageHeader>>();
             _mockOutputGateway = new Mock<IOutputGateway<IControlMessage>>();
             _mockHandlerRepository = new Mock<IHandlerRepository>();
 

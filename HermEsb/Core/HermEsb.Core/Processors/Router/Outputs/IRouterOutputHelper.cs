@@ -18,7 +18,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="type">The type.</param>
         /// <param name="service"></param>
         /// <param name="sender">The sender.</param>
-        void Subscribe(SubscriptionKey type, Identification service, IOutputGateway<string> sender);
+        void Subscribe(SubscriptionKey type, Identification service, IOutputGateway<byte[]> sender);
 
         /// <summary>
         /// Unsubscribes the specified type.
@@ -26,7 +26,7 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="type">The type.</param>
         /// <param name="service"></param>
         /// <param name="sender">The sender.</param>
-        void Unsubscribe(SubscriptionKey type, Identification service, IOutputGateway<string> sender);
+        void Unsubscribe(SubscriptionKey type, Identification service, IOutputGateway<byte[]> sender);
 
         /// <summary>
         /// Sends the specified message bus.
@@ -46,7 +46,15 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="routingKey">The routing key.</param>
         /// <param name="priority">The priority.</param>
         /// <param name="serializedMessage">The serialized message.</param>
-        void Publish(string routingKey, int priority, string serializedMessage);
+//        void Publish(string routingKey, int priority, string serializedMessage);
+
+        /// <summary>
+        /// Publishes the specified routing key.
+        /// </summary>
+        /// <param name="routingKey">The routing key.</param>
+        /// <param name="priority">The priority.</param>
+        /// <param name="serializedMessage">The serialized message.</param>
+        void Publish(string routingKey, int priority, byte[] serializedMessage);
 
         /// <summary>
         /// Replies the specified service.
@@ -54,6 +62,6 @@ namespace HermEsb.Core.Processors.Router.Outputs
         /// <param name="service">The service.</param>
         /// <param name="priority">The priority.</param>
         /// <param name="serializedMessage">The serialized message.</param>
-        void Reply(Identification service, int priority, string serializedMessage);
+        void Reply(Identification service, int priority, byte[] serializedMessage);
     }
 }

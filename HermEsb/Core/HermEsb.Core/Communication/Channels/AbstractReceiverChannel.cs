@@ -139,7 +139,7 @@ namespace HermEsb.Core.Communication.Channels
         /// Invokes the on received completed.
         /// </summary>
         /// <param name="message">The message.</param>
-        protected void InvokeOnReceivedCompleted(string message)
+        protected void InvokeOnReceivedCompleted(byte[] message)
         {
             var handler = OnReceivedCompleted;
             if (handler != null) handler(this, new ChannelMessageReceivedArgs { Message = message });
@@ -150,7 +150,7 @@ namespace HermEsb.Core.Communication.Channels
         /// Called when [received completed].
         /// </summary>
         /// <param name="message">The message.</param>
-        private void ReceivedCompleted(string message)
+        private void ReceivedCompleted(byte[] message)
         {
             try
             {
@@ -239,7 +239,7 @@ namespace HermEsb.Core.Communication.Channels
         /// Invokes the on received message.
         /// </summary>
         /// <param name="message">The message.</param>
-        private void InvokeOnReceivedMessage(string message)
+        private void InvokeOnReceivedMessage(byte[] message)
         {
             Logger.Debug(string.Format("Message Received channel"));
 

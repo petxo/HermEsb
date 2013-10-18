@@ -15,7 +15,7 @@ namespace HermEsb.Configuration.Services
     {
         private readonly ServiceProcessorConfig _serviceProcessorConfig;
         private readonly Identification _identification;
-        private IInputGateway<IMessage> _input;
+        private IInputGateway<IMessage, MessageHeader> _input;
         private IHandlerRepository _handlerRepository;
 
         /// <summary>

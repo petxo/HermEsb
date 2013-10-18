@@ -14,7 +14,7 @@ namespace HermEsb.Core.Processors.Router
         /// <param name="messageType">Type of the message.</param>
         /// <param name="service"></param>
         /// <param name="outputGateway">The message sender.</param>
-        void Subscribe(SubscriptionKey messageType, Identification service, IOutputGateway<string> outputGateway);
+        void Subscribe(SubscriptionKey messageType, Identification service, IOutputGateway<byte[]> outputGateway);
 
         /// <summary>
         /// Unsubscribes the specified message type.
@@ -22,6 +22,6 @@ namespace HermEsb.Core.Processors.Router
         /// <param name="messageType">Type of the message.</param>
         /// <param name="service"></param>
         /// <param name="outputGateway">The message sender.</param>
-        void Unsubscribe(SubscriptionKey messageType, Identification service, IOutputGateway<string> outputGateway);
+        void Unsubscribe(SubscriptionKey messageType, Identification service, IOutputGateway<byte[]> outputGateway);
     }
 }

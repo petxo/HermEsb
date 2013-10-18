@@ -11,7 +11,7 @@ namespace HermEsb.Core.Gateways.Agent
     /// 
     /// </summary>
     /// <typeparam name="TMessage">The type of the message.</typeparam>
-    public class AgentInputGateway<TMessage> : AbstractInputGateway<TMessage>
+    public class AgentInputGateway<TMessage> : AbstractInputGateway<TMessage, MessageHeader>
         where TMessage : IMessage
     {
         /// <summary>
@@ -40,8 +40,10 @@ namespace HermEsb.Core.Gateways.Agent
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="serializedMessage">The serialized message.</param>
-        protected override void ProcessReceivedMessage(MessageBus message, string serializedMessage)
+        protected override void ProcessReceivedMessage(byte[] serializedMessage)
         {
+            var message = DataContractSerializer.Deserialize<MessageBus>(MessageBusParser.GetMessageFromBytes(serializedMessage));
+
             Logger.Debug("OnMessageBusReceived");
             var split = message.Header.BodyType.Split(',');
             if (split.Length < 2)
@@ -58,6 +60,8 @@ namespace HermEsb.Core.Gateways.Agent
                                                    Encoding.GetEncoding(message.Header.EncodingCodePage));
 
             InvokeOnMessage((TMessage)body, serializedMessage, message.Header);
+
+            InvokeReceivedMessage(message.Header.BodyType, serializedMessage.Length, message.Header.CreatedAt);
         }
     }
 }

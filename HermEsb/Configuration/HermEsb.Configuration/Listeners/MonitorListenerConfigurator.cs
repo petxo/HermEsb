@@ -17,7 +17,7 @@ namespace HermEsb.Configuration.Listeners
     public class MonitorListenerConfigurator : IConfigurator
     {
         private readonly ListenerConfig _listenerConfig;
-        private IInputGateway<IMessage> _input;
+        private IInputGateway<IMessage, MessageHeader> _input;
         private IHandlerRepository _handlerRepository;
 
         /// <summary>

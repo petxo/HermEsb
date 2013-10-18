@@ -1,3 +1,4 @@
+using System;
 using HermEsb.Core.Communication.EndPoints;
 using HermEsb.Core.Messages;
 using HermEsb.Core.Serialization;
@@ -7,7 +8,7 @@ namespace HermEsb.Core.Gateways.Router
     /// <summary>
     /// 
     /// </summary>
-    public class RouterInputGateway : AbstractInputGateway<MessageBus>
+    public class RouterInputGateway : AbstractInputGateway<byte[], RouterHeader>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RouterInputGateway"/> class.
@@ -33,11 +34,12 @@ namespace HermEsb.Core.Gateways.Router
         /// <summary>
         /// Processes the received message.
         /// </summary>
-        /// <param name="message">The message.</param>
         /// <param name="serializedMessage">The serialized message.</param>
-        protected override void ProcessReceivedMessage(MessageBus message, string serializedMessage)
+        protected override void ProcessReceivedMessage(byte[] serializedMessage)
         {
-            InvokeOnMessage(message, serializedMessage, message.Header);
+            var routerHeader = MessageBusParser.GetHeaderFromBytes(serializedMessage);
+            InvokeOnMessage(serializedMessage, serializedMessage, routerHeader);
+            InvokeReceivedMessage(routerHeader.BodyType, serializedMessage.Length, routerHeader.CreatedAt);
         }
     }
 }

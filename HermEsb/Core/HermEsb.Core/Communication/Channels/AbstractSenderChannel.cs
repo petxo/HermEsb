@@ -48,5 +48,12 @@ namespace HermEsb.Core.Communication.Channels
         /// <param name="message">The message.</param>
         /// <param name="priority">The priority.</param>
         public abstract void Send(string message, int priority);
+
+        /// <summary>
+        /// Sends the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="priority">The priority.</param>
+        public abstract void Send(byte[] message, int priority);
     }
 }

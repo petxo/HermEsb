@@ -74,6 +74,24 @@ namespace HermEsb.Core.Communication.EndPoints
             }
         }
 
+        /// <summary>
+        /// Sends the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="priority">The priority.</param>
+        public void Send(byte[] message, int priority)
+        {
+            try
+            {
+                _receiverChannel.Send(message, priority);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(string.Format("Error Sender End Point {1} - Message: {0}", message, Uri), ex);
+                throw;
+            }
+        }
+
         private ILogger _logger;
 
         /// <summary>

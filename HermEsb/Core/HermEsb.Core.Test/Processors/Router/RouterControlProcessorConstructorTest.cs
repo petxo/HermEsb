@@ -1,5 +1,6 @@
 ﻿using HermEsb.Core.Gateways;
 using HermEsb.Core.Handlers;
+using HermEsb.Core.Messages;
 using HermEsb.Core.Messages.Builders;
 using HermEsb.Core.Messages.Control;
 using HermEsb.Core.Processors;
@@ -15,7 +16,7 @@ namespace HermEsb.Core.Test.Processors.Router
     {
         private Mock<ISubscriptorsHelper> _subscriptonsHelper;
         private Mock<Identification> _identification;
-        private Mock<IInputGateway<IControlMessage>> _inputGateway;
+        private Mock<IInputGateway<IControlMessage, MessageHeader>> _inputGateway;
         private Mock<IHandlerRepository> _handlerRepository;
         private Mock<IMessageBuilder> _messageBuilder;
 
@@ -24,7 +25,7 @@ namespace HermEsb.Core.Test.Processors.Router
         {
             _subscriptonsHelper = new Mock<ISubscriptorsHelper>();
             _identification = new Mock<Identification>();
-            _inputGateway = new Mock<IInputGateway<IControlMessage>>();
+            _inputGateway = new Mock<IInputGateway<IControlMessage, MessageHeader>>();
             _handlerRepository = new Mock<IHandlerRepository>();
             _messageBuilder = new Mock<IMessageBuilder>();
         }

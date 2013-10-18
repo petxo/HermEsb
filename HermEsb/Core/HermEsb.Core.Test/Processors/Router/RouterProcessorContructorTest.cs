@@ -10,14 +10,14 @@ namespace HermEsb.Core.Test.Processors.Router
     [TestFixture]
     public class RouterProcessorContructorTest
     {
-        private Mock<IInputGateway<MessageBus>> _mockInputGateway;
+        private Mock<IInputGateway<byte[], RouterHeader>> _mockInputGateway;
         private Mock<IRouterOutputHelper> _mockRouterOutputHelper;
         private Mock<Identification> _mockIdentification;
 
         [SetUp]
         public void Setup()
         {
-            _mockInputGateway = new Mock<IInputGateway<MessageBus>>();
+            _mockInputGateway = new Mock<IInputGateway<byte[], RouterHeader>>();
             _mockIdentification = new Mock<Identification>();
             _mockRouterOutputHelper = new Mock<IRouterOutputHelper>();
         }

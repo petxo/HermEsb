@@ -11,6 +11,7 @@ using HermEsb.Core.Gateways;
 using HermEsb.Core.Gateways.Agent;
 using HermEsb.Core.Handlers;
 using HermEsb.Core.Handlers.Control;
+using HermEsb.Core.Messages;
 using HermEsb.Core.Messages.Control;
 using HermEsb.Core.Processors;
 using HermEsb.Core.Processors.Router.Subscriptors;
@@ -23,7 +24,7 @@ namespace HermEsb.Configuration.Bus
         private readonly Identification _identification;
         private readonly HermEsbConfig _hermEsbConfig;
         private IHandlerRepository _handlerRepository;
-        private IInputGateway<IControlMessage> _input;
+        private IInputGateway<IControlMessage, MessageHeader> _input;
         private ISubscriptorsHelper _subscriptorsHelpers;
         private ISubscriptorsPersister _subscriptorsPersiter;
 

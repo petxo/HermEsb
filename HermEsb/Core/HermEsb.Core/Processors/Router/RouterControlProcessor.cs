@@ -25,7 +25,7 @@ namespace HermEsb.Core.Processors.Router
     {
         private readonly IHandlerRepository _handlerRepository;
         private readonly Identification _identification;
-        private readonly IInputGateway<IControlMessage> _inputGateway;
+        private readonly IInputGateway<IControlMessage, MessageHeader> _inputGateway;
         private readonly IMessageBuilder _messageBuilder;
         private readonly ISubscriptorsHelper _subscriptonsHelper;
         private ILogger _logger;
@@ -42,7 +42,7 @@ namespace HermEsb.Core.Processors.Router
         /// <param name="subscriptonsHelper">The subscriptors helper.</param>
         /// <param name="messageBuilder">The message builder.</param>
         internal RouterControlProcessor(Identification identification,
-                                        IInputGateway<IControlMessage> inputGateway,
+                                        IInputGateway<IControlMessage, MessageHeader> inputGateway,
                                         IHandlerRepository handlerRepository,
                                         ISubscriptorsHelper subscriptonsHelper,
                                         IMessageBuilder messageBuilder)
@@ -313,7 +313,7 @@ namespace HermEsb.Core.Processors.Router
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="args">The args.</param>
-        private void MessageReceived(object sender, OutputGatewayEventHandlerArgs<IControlMessage> args)
+        private void MessageReceived(object sender, OutputGatewayEventHandlerArgs<IControlMessage, MessageHeader> args)
         {
             var listTask = new List<Task>();
 
@@ -402,11 +402,11 @@ namespace HermEsb.Core.Processors.Router
         /// <param name="header">The header.</param>
         /// <param name="handlerType">Type of the handler.</param>
         /// <param name="exception">The exception.</param>
-        private void InvokeOnErrorHandler(string message, MessageHeader header, Type handlerType, Exception exception)
+        private void InvokeOnErrorHandler(byte[] message, MessageHeader header, Type handlerType, Exception exception)
         {
             ErrorOnHandlersEventHandler handler = OnErrorHandler;
             if (handler != null)
-                handler(this, new ErrorOnHandlersEventHandlerArgs<string>
+                handler(this, new ErrorOnHandlersEventHandlerArgs<byte[]>
                     {
                         Message = message,
                         Header = header,

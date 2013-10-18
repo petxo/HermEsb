@@ -9,7 +9,7 @@ namespace BasicSampleService.Handlers
     {
         public void HandleMessage(IMessageBasic message)
         {
-            Console.WriteLine("Hola son las {0}", message.Fecha);
+//            Console.WriteLine("Hola son las {0}", message.Fecha);
         }
 
         public void Dispose()

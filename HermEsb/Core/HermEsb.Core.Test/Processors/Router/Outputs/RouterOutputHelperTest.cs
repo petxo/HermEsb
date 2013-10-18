@@ -27,17 +27,17 @@ namespace HermEsb.Core.Test.Processors.Router.Outputs
         [Test(Description = "Cuando se suscribe un nuevo tipo se añade al repositorio")]
         public void Susbscribe_GateWayRepository_AddSender()
         {
-            _subject.Subscribe(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<string>>());
+            _subject.Subscribe(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<byte[]>>());
 
-            _mockGateWaysRepository.Verify(x => x.AddSender(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<string>>()));
+            _mockGateWaysRepository.Verify(x => x.AddSender(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<byte[]>>()));
         }
 
         [Test(Description = "Cuando se desuscribe un nuevo tipo se quita del repositorio")]
         public void Unsubscribe_GateWayRepository_RemoveSender()
         {
-            _subject.Unsubscribe(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<string>>());
+            _subject.Unsubscribe(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<byte[]>>());
 
-            _mockGateWaysRepository.Verify(x => x.RemoveSender(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<string>>()));
+            _mockGateWaysRepository.Verify(x => x.RemoveSender(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<byte[]>>()));
         }
 
         [Test(Description = "Cuando se realiza un publish se obtienen los OutputsGateWays del repositorio")]
@@ -60,7 +60,7 @@ namespace HermEsb.Core.Test.Processors.Router.Outputs
         [Test(Description = "Cuando se realiza un publish se obtienen los OutputsGateWays del repositorio y se realiza un send con los mismos")]
         public void Publish_GateWayRepository_Send()
         {
-            var mockOutput = new Mock<IOutputGateway<string>>();
+            var mockOutput = new Mock<IOutputGateway<byte[]>>();
             var mockEndPoint = new Mock<IEndPoint>();
             mockEndPoint.SetupGet(point => point.Uri).Returns(new Uri("http://localhost"));
             mockOutput.SetupGet(gateway => gateway.EndPoint).Returns(mockEndPoint.Object);
@@ -78,7 +78,7 @@ namespace HermEsb.Core.Test.Processors.Router.Outputs
 
             _subject.Publish(message);
 
-            mockOutput.Verify(x => x.Send(It.IsAny<string>(), It.IsAny<int>()));
+            mockOutput.Verify(x => x.Send(It.IsAny<byte[]>(), It.IsAny<int>()));
         }
 
         [Test(Description = "Cuando se quieren obtener los tipos de mensajes registados se obtienen del repositorio")]

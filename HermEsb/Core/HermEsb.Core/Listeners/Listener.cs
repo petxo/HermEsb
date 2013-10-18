@@ -19,12 +19,12 @@ namespace HermEsb.Core.Listeners
     /// <typeparam name="TMessage">The type of the message.</typeparam>
     public class Listener<TMessage> : IStartable<ListenerStatus>, IDisposable, ILoggable, IListener where TMessage : IMessage
     {
-        private readonly IInputGateway<TMessage> _inputGateway;
+        private readonly IInputGateway<TMessage, MessageHeader> _inputGateway;
         private readonly IHandlerRepository _handlerRepository;
         private IStateMachine<ListenerStatus> _stateMachine;
         private ILogger _logger;
 
-        internal Listener(IInputGateway<TMessage> inputGateway,
+        internal Listener(IInputGateway<TMessage, MessageHeader> inputGateway,
                             IHandlerRepository handlerRepository)
         {
             _inputGateway = inputGateway;
@@ -146,7 +146,7 @@ namespace HermEsb.Core.Listeners
             set { _logger = value; }
         }
 
-        private void MessageReceived(object sender, OutputGatewayEventHandlerArgs<TMessage> args)
+        private void MessageReceived(object sender, OutputGatewayEventHandlerArgs<TMessage, MessageHeader> args)
         {
             var listTask = new List<Task>();
 
@@ -198,7 +198,7 @@ namespace HermEsb.Core.Listeners
         /// <param name="messageContext">The message context.</param>
         /// <param name="args">The args.</param>
         private static void InitializeContext(IMessageContext messageContext,
-                                                OutputGatewayEventHandlerArgs<TMessage> args)
+                                                OutputGatewayEventHandlerArgs<TMessage, MessageHeader> args)
         {
             messageContext.MessageInfo.Body = args.Message;
             messageContext.MessageInfo.Header = args.Header;

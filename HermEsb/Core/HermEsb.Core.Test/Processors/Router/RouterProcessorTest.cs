@@ -13,7 +13,7 @@ namespace HermEsb.Core.Test.Processors.Router
     [TestFixture]
     public class RouterProcessorTest
     {
-        private Mock<IInputGateway<MessageBus>> _mockInputGateway;
+        private Mock<IInputGateway<byte[], RouterHeader>> _mockInputGateway;
         private Mock<IRouterOutputHelper> _mockRouterOutputHelper;
         private Mock<Identification> _mockIdentification;
         private RouterProcessor _subject;
@@ -22,7 +22,7 @@ namespace HermEsb.Core.Test.Processors.Router
         [SetUp]
         public void Setup()
         {
-            _mockInputGateway = new Mock<IInputGateway<MessageBus>>();
+            _mockInputGateway = new Mock<IInputGateway<byte[], RouterHeader>>();
             _mockIdentification = new Mock<Identification>();
             _mockRouterOutputHelper = new Mock<IRouterOutputHelper>();
 
@@ -72,12 +72,12 @@ namespace HermEsb.Core.Test.Processors.Router
             _subject.OnMessageReceived += (sender, args) => recivedRaised = true;
             _subject.OnMessageSent += (sender, args) => sendedRaised = true;
 
-            _mockInputGateway.Raise(m => m.OnMessage += null, new OutputGatewayEventHandlerArgs<MessageBus>
+            _mockInputGateway.Raise(m => m.OnMessage += null, new OutputGatewayEventHandlerArgs<MessageBus, MessageHeader>
                 {
-                    Header = new MessageHeader(){BodyType = "test"}, Message = new MessageBus(), SerializedMessage = string.Empty
+                    Header = new MessageHeader(){BodyType = "test"}, Message = new MessageBus(), SerializedMessage = new byte[0]
                 });
 
-            _mockRouterOutputHelper.Verify(x => x.Publish(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<string>()));
+            _mockRouterOutputHelper.Verify(x => x.Publish(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<byte[]>()));
 
              System.Threading.SpinWait.SpinUntil(() => sendedRaised && recivedRaised);
 
@@ -92,7 +92,7 @@ namespace HermEsb.Core.Test.Processors.Router
 
             _subject.OnMessageReceived += (sender, args) => recivedRaised = true;
 
-            _mockInputGateway.Raise(m => m.OnMessage += null, new OutputGatewayEventHandlerArgs<MessageBus>());
+            _mockInputGateway.Raise(m => m.OnMessage += null, new OutputGatewayEventHandlerArgs<MessageBus, MessageHeader>());
 
             System.Threading.SpinWait.SpinUntil(() => recivedRaised);
 
@@ -106,7 +106,7 @@ namespace HermEsb.Core.Test.Processors.Router
 
             _subject.OnMessageSent += (sender, args) => sendedRaised = true;
 
-            _mockInputGateway.Raise(m => m.OnMessage += null, new OutputGatewayEventHandlerArgs<MessageBus>());
+            _mockInputGateway.Raise(m => m.OnMessage += null, new OutputGatewayEventHandlerArgs<MessageBus, MessageHeader>());
 
             System.Threading.SpinWait.SpinUntil(() => sendedRaised);
 
@@ -116,21 +116,21 @@ namespace HermEsb.Core.Test.Processors.Router
         [Test(Description = "Verificar que se llama al metodo Subscribe de RouterOutputHelper")]
         public void Subscribe_IRouterOutputHelper_Subscribe_True()
         {
-            var mockOutputGateway = new Mock<IOutputGateway<string>>();
+            var mockOutputGateway = new Mock<IOutputGateway<byte[]>>();
 
             _subject.Subscribe(SubscriptionKeyMessageFactory.CreateFromType(typeof(IMessage)).ToSubscriptorKey(), _identification, mockOutputGateway.Object);
 
-            _mockRouterOutputHelper.Verify(x => x.Subscribe(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<string>>()));
+            _mockRouterOutputHelper.Verify(x => x.Subscribe(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<byte[]>>()));
         }
 
         [Test(Description = "Verificar que se llama al metodo Unsubscribe de RouterOutputHelper")]
         public void Unsubscribe_IRouterOutputHelper_Unsubscribe_True()
         {
-            var mockOutputGateway = new Mock<IOutputGateway<string>>();
+            var mockOutputGateway = new Mock<IOutputGateway<byte[]>>();
 
             _subject.Unsubscribe(SubscriptionKeyMessageFactory.CreateFromType(typeof(IMessage)).ToSubscriptorKey(), _identification, mockOutputGateway.Object);
 
-            _mockRouterOutputHelper.Verify(x => x.Unsubscribe(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<string>>()));
+            _mockRouterOutputHelper.Verify(x => x.Unsubscribe(It.IsAny<SubscriptionKey>(), _identification, It.IsAny<IOutputGateway<byte[]>>()));
         }
 
         [Test(Description = "Verificar que se llama al metodo GetMessageTypes de RouterOutputHelper")]

@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using HermEsb.Core.Communication.EndPoints;
 using HermEsb.Core.Gateways.Router;
 using HermEsb.Core.Messages;
@@ -35,7 +36,7 @@ namespace HermEsb.Core.Test.Gateway.Router
 
             var outputGateway = RouterGatewayFactory.CreateOutputGateway(_senderEndPoint.Object);
             var serialize = jsonDataContractSerializer.Serialize(messageBus);
-            outputGateway.Send(serialize);
+            outputGateway.Send(Encoding.UTF8.GetBytes(serialize));
             Assert.AreEqual(serialize, message);
         }
     }

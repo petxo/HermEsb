@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using HermEsb.Core.Gateways;
 using HermEsb.Core.Handlers;
 using HermEsb.Core.Ioc;
+using HermEsb.Core.Messages;
 using HermEsb.Core.Messages.Builders;
 using HermEsb.Core.Messages.Control;
 using HermEsb.Core.Monitoring;
@@ -20,7 +21,7 @@ namespace HermEsb.Core.Test.Processors.Router
         private RouterControlProcessor _subject;
         private Mock<ISubscriptorsHelper> _subscriptonsHelper;
         private Mock<Identification> _identification;
-        private Mock<IInputGateway<IControlMessage>> _inputGateway;
+        private Mock<IInputGateway<IControlMessage, MessageHeader>> _inputGateway;
         private Mock<IHandlerRepository> _handlerRepository;
         private Mock<IProcessor> _processor;
         private Mock<IMessageBuilder> _messageBuilder;
@@ -30,7 +31,7 @@ namespace HermEsb.Core.Test.Processors.Router
         {
             _subscriptonsHelper = new Mock<ISubscriptorsHelper>();
             _identification = new Mock<Identification>();
-            _inputGateway = new Mock<IInputGateway<IControlMessage>>();
+            _inputGateway = new Mock<IInputGateway<IControlMessage, MessageHeader>>();
             _handlerRepository = new Mock<IHandlerRepository>();
             _processor = new Mock<IProcessor>();
             _messageBuilder = new Mock<IMessageBuilder>();
@@ -156,7 +157,7 @@ namespace HermEsb.Core.Test.Processors.Router
         [Test(Description = "Cuando se recibe un mensaje, mediante HandlerRepository se obtiene el handler correspondiente")]
         public void OnMessageRecived_GetHandlersByMessage()
         {
-            var outputGatewayEventHandlerArgs = new OutputGatewayEventHandlerArgs<IControlMessage>
+            var outputGatewayEventHandlerArgs = new OutputGatewayEventHandlerArgs<IControlMessage, MessageHeader>
                                                     {Message = new Mock<IControlMessage>().Object};
 
             _inputGateway.Raise(x => x.OnMessage += null, outputGatewayEventHandlerArgs);
@@ -167,7 +168,7 @@ namespace HermEsb.Core.Test.Processors.Router
         [Test(Description = "Cuando se recibe un mensaje,se obtiene la instancia del tipo de handler mediante el Ioc configurado")]
         public void OnMessageRecived_ResolveHandler_True()
         {
-            var outputGatewayEventHandlerArgs = new OutputGatewayEventHandlerArgs<IControlMessage> { Message = new Mock<IControlMessage>().Object };
+            var outputGatewayEventHandlerArgs = new OutputGatewayEventHandlerArgs<IControlMessage, MessageHeader> { Message = new Mock<IControlMessage>().Object };
            
             _handlerRepository.Setup(x => x.GetHandlersByMessage(It.IsAny<Type>())).Returns(
                 new List<Type>(new[] { new Mock<IControlMessage>().Object.GetType() }));
@@ -185,7 +186,7 @@ namespace HermEsb.Core.Test.Processors.Router
         [Test(Description = "Cuando se recibe un mensaje,se debe invocar al handler correspondiente")]
         public void OnMessageRecived_InvokeMethodHandle_True()
         {
-            var outputGatewayEventHandlerArgs = new OutputGatewayEventHandlerArgs<IControlMessage> { Message = new Mock<IControlMessage>().Object };
+            var outputGatewayEventHandlerArgs = new OutputGatewayEventHandlerArgs<IControlMessage, MessageHeader> { Message = new Mock<IControlMessage>().Object };
 
             _handlerRepository.Setup(x => x.GetHandlersByMessage(It.IsAny<Type>())).Returns(
                 new List<Type>(new[] { new Mock<IControlMessage>().Object.GetType() }));

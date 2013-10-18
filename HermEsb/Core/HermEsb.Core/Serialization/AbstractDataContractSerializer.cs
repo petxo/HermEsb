@@ -19,12 +19,12 @@ namespace HermEsb.Core.Serialization
         }
 
         #region Implementation of IDataContractSerializer
-        
+
         /// <summary>
         /// Gets or sets the encoding.
         /// </summary>
         /// <value>The encoding.</value>
-        public Encoding Encoding { get; set;}
+        public Encoding Encoding { get; set; }
 
         /// <summary>
         /// Gets the type of the content.
@@ -97,7 +97,18 @@ namespace HermEsb.Core.Serialization
         /// <param name="encoding">The encoding.</param>
         public virtual TEntity Deserialize<TEntity>(string strObject, Encoding encoding) where TEntity : class
         {
-            using (var memoryStream = new MemoryStream(encoding.GetBytes(strObject)))
+            return Deserialize<TEntity>(encoding.GetBytes(strObject));
+        }
+
+        /// <summary>
+        /// Deserializes the specified STR objet.
+        /// </summary>
+        /// <typeparam name="TEntity">The type of the entity.</typeparam>
+        /// <param name="obj">The obj.</param>
+        /// <returns></returns>
+        public virtual TEntity Deserialize<TEntity>(byte[] obj) where TEntity : class
+        {
+            using (var memoryStream = new MemoryStream(obj))
             {
                 return Deserialize<TEntity>(memoryStream);
             }
