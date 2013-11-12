@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                {% include "widgets/memoryservice.html" %}
+            </div>
+            <div class="col-lg-5">
+                {% include "widgets/speedservice.html" %}
+            </div>
+            <div class="col-lg-5">
+                {% include "widgets/bandwidthservice.html" %}
+            </div>
+            <div class="col-lg-5">
+                {% include "widgets/lantencyservice.html" %}
+            </div>
+        </div>
+
+    </div>
+
+     <script>
+    $(document).ready(function() {
+        $('#lnkBus').addClass('active');
+    });
+    </script>
+{% endblock %}

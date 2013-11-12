@@ -1,0 +1,18 @@
+{% extends "widgets/widget.html" %}
+{% block titlewidget %}Latencia Mesajes Top 10{% endblock %}
+{% block blockwidget %}
+    <div id='latencyTable_div'>
+        <img src="{{ url_for('static', filename='img/loading2.gif') }}">
+    </div>
+    <script>
+    google.setOnLoadCallback(drawMemoryTable);
+    function drawMemoryTable() {
+        $.post("/latencytop/" + environment + "/").done(function( data ){
+                var datatable = new google.visualization.arrayToDataTable(data["Services"]);
+                var table = new google.visualization.BarChart(document.getElementById('latencyTable_div'));
+                table.draw(datatable);
+             });
+      }
+    </script>
+
+{% endblock %}

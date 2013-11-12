@@ -1,0 +1,29 @@
+{% extends "widgets/widget.html" %}
+{% block titlewidget %}Servicios No Responden{% endblock %}
+{% block blockwidget %}
+    <div id='hangoutTable_div'>
+        <img src="{{ url_for('static', filename='img/loading2.gif') }}">
+    </div>
+    <div id='alerthangout' class="alert alert-danger" style="display: none; margin-top: 10px"></div>
+    <script>
+    google.setOnLoadCallback(drawHangoutTable);
+    function drawHangoutTable() {
+        $.post("/hangoutservices/" + environment + "/").done(function( data ){
+                var dataTale = new google.visualization.DataTable();
+                dataTale.addColumn('string', 'Service');
+                dataTale.addColumn('string', 'Ping');
+                dataTale.addRows(data["Services"]["rows"]);
+                var table = new google.visualization.Table(document.getElementById('hangoutTable_div'));
+                table.draw(dataTale, {showRowNumber: true});
+
+                if(data["Services"]["total"] > 10)
+                {
+                    $('#alerthangout').text("Total de Servicios sin responder " + data["Services"]["total"] );
+                    $('#alerthangout').show();
+                }
+             });
+
+      }
+    </script>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "widgets/widget.html" %}
+{% block titlewidget %}Velocidad(m/s){% endblock %}
+{% block blockwidget %}
+    <div id='speedGraph_div' style="height: 360px">
+        <img src="{{ url_for('static', filename='img/loading2.gif') }}">
+    </div>
+    <script>
+    setInterval(loadspeedGraph, 10000);
+
+    google.setOnLoadCallback(drawMemoryTable);
+    function drawMemoryTable() {
+        loadspeedGraph();
+      }
+
+    function loadspeedGraph()
+    {
+        $.post("/speedservice/" + environment + "/{{ service }}").done(function( data ){
+                var datatable = new google.visualization.arrayToDataTable(data["Data"]);
+                var table = new google.visualization.LineChart(document.getElementById('speedGraph_div'));
+                table.draw(datatable, {vAxis : { minValue: 0}});
+             });
+    }
+    </script>
+
+{% endblock %}

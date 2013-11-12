@@ -1,0 +1,25 @@
+{% extends "widgets/widget.html" %}
+{% block titlewidget %}Memoria(KB){% endblock %}
+{% block blockwidget %}
+    <div id='memoryGraph_div' style="height: 360px">
+        <img src="{{ url_for('static', filename='img/loading2.gif') }}">
+    </div>
+    <script>
+    google.setOnLoadCallback(drawMemoryTable);
+    setInterval(loadmemoryGraph, 60000);
+
+    function drawMemoryTable() {
+        loadmemoryGraph();
+      }
+
+    function loadmemoryGraph()
+    {
+        $.post("/memoryservice/" + environment + "/{{ service }}").done(function( data ){
+                var datatable = new google.visualization.arrayToDataTable(data["Data"]);
+                var table = new google.visualization.LineChart(document.getElementById('memoryGraph_div'));
+                table.draw(datatable, {vAxis : { minValue: 0}});
+             });
+    }
+    </script>
+
+{% endblock %}

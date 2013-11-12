@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Backoffice Infraestructura</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/overcast/jquery-ui-1.10.3.custom.css') }}">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/ui.jqgrid.css') }}">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+        <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+        <script src="{{ url_for('static', filename='js/jquery-2.0.3.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/i18n/grid.locale-es.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.jqGrid.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/layout.js') }}"></script>
+        <script>
+            google.load('visualization', '1', {packages:['table', 'corechart']});
+            var environment = '{{ environment }}';
+        </script>
+    </head>
+</html>
+<body>
+    <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="#">Backoffice Infraestructura</a>
+          </div>
+          <div id="menu" class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+              <li id="lnkHome"><a href="/">Servicios</a></li>
+              <li id="lnkBus"><a href="/bus">Bus</a></li>
+              <li id="lnkErrores"><a href="/errores">Errores</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span id="selectEnvironment">{{ environment }}</span><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                   {% for e in envs %}
+                    <li><a href="javascript:javascript:changeEnvironment('{{ e }}')">{{ e }}</a></li>
+                {% endfor %}
+                  </ul>
+            </li>
+            </ul>
+          </div>
+      </nav>
+          <div class="row">
+              <div class="col-lg-12">
+                {% block body %}{% endblock %}
+              </div>
+          </div>
+    </div>
+</body>

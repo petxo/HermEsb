@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div style="margin-top: 20px; margin-bottom: 20px;">
+        <div id="alertErrores" class="alert alert-success" style="display: none"></div>
+        <table id="list"><tr><td></td></tr></table>
+        <div id="pager"></div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading"><h3 class="panel-title">Descripcion Error</h3></div>
+      <div class="panel-body">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-2 control-label">Id</label>
+            <div class="col-lg-10">
+              <p id="txtId" class="form-control-static"></p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">Fecha</label>
+            <div class="col-lg-10">
+              <p id="txtFecha" class="form-control-static"></p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">Service</label>
+            <div class="col-lg-10">
+              <p id="txtService" class="form-control-static"></p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">HandlerType</label>
+            <div class="col-lg-10">
+              <p id="txtHandlerType" class="form-control-static"></p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">Error</label>
+            <div class="col-lg-10">
+              <p id="txtError" class="form-control-static"></p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">StackTrace</label>
+            <div class="col-lg-10">
+              <p id="txtStackTrace" class="form-control-static"></p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">Message</label>
+            <div class="col-lg-10">
+              <p id="txtMessage" class="form-control-static"></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+   </div>
+</div>
+    <script>
+    lastSel = 0;
+    $(document).ready(function() {
+        $('#lnkErrores').addClass('active');
+        configureGrid();
+        jQuery("#list").jqGrid('filterToolbar',{
+            autosearch: true
+        });
+    });
+
+    function configureGrid()
+    {
+        $("#list").jqGrid({
+        url: "/geterrores/" + environment + "/",
+        datatype: "json",
+        mtype: "POST",
+        colNames: ["Fecha", "Service","HandlerType", "Error","Id", "Actions"],
+        colModel: [
+            { name: "Fecha", width: 120, sortable: false },
+            { name: "Service", width: 220, sortable: false},
+            { name: "HandlerType", width: 280, sortable: false},
+            { name: "Error", width: 270, sortable: false},
+            { name: "Id", width: 100, sortable: false, hidden: true},
+            { name: "Actions", width: 180, sortable: false, formatter:publishFormatter, search: false}
+        ],
+        pager: "#pager",
+        rowNum: 10,
+        rowList: [10, 20, 30],
+        sortname: "Fecha",
+        sortorder: "desc",
+        multiselect: true,
+        multiboxonly: true,
+        viewrecords: true,
+        gridview: true,
+        autoencode: true,
+            height: "auto",
+        caption: "Handler Errors",
+        onSelectRow: selectRow
+        });
+    }
+    function selectRow(id)
+    {
+        if(id && id!==lastSel){
+             row = $("#list").getRowData(id);
+             $.post("/geterror/" + environment + "/", { id: row["Id"] }).done(function( data ){
+                 $('#txtId').text(data["Id"]);
+                 $('#txtFecha').text(data["Fecha"]);
+                 $('#txtService').text(data["Service"]);
+                 $('#txtHandlerType').text(data["HandlerType"]);
+                 $('#txtError').text(data["Error"]);
+                 $('#txtStackTrace').text(data["StackTrace"]);
+                 $('#txtMessage').text(data["Message"]);
+              });
+             lastSel=id;
+          }
+    }
+    function reload()
+    {
+        $("#list").setGridParam({'url':"/geterrores/" + environment + "/"});
+        $("#list").trigger("reloadGrid");
+    }
+
+    function publishFormatter ( cellvalue, options, rowObject )
+    {
+        btn = '<button id="btnReencolar_' + cellvalue+ '" type="button" data-loading-text="Publicando..." class="btn btn-primary btn-xs" data="'+
+              cellvalue +'" onclick="publicar(this)">Reencolar</button>';
+
+        btnEnconlarEn = '<div class="btn-group" style="position: absolute;">' +
+                        '<button id="btnEncolarEn_'+ cellvalue +' type="button" class="btn btn-danger btn-xs" data-loading-text="Publicando..." >Encolar En</button>' +
+                        '<button type="button" class="btn btn-danger dropdown-toggle btn-xs" data-toggle="dropdown">' +
+                        '<span class="caret"></span>' +
+                        '</button>' +
+                        '<ul class="dropdown-menu" style="z-index: 2147483647;" role="menu">';
+        {% for e in envs %}
+        btnEnconlarEn += '<li><a href="javascript:publicarEn(&quot;'+ cellvalue +'&quot;,&quot;{{ e }}&quot; )">{{ e }}</a></li>';
+        {% endfor %}
+        btnEnconlarEn += '</ul>' +
+                        '</div>';
+
+        return btn + btnEnconlarEn;
+    }
+
+    function publicarEn(id, toenv)
+    {
+        $('#btnEncolarEn_' + id).button('loading');
+        $.post("/publishto/" + environment + "/" + toenv + "/", { id: $(btn).attr('data') }).done(function( data ){
+            $("#alertErrores").text("Mensaje publicado del entorno " + environment + " al entorno de " + toenv);
+            $("#alertErrores").slideDown();
+            setTimeout(function() {
+                    $("#alertErrores").slideUp();
+            }, 5000);
+                $('#btnEncolarEn_' + data["Id"] ).button('reset');
+              });
+
+    }
+
+    function publicar(btn)
+    {
+        $(btn).button('loading');
+        $.post("/publish/" + environment + "/", { id: $(btn).attr('data') }).done(function( data ){
+            $("#alertErrores").text("Mensaje publicado en el entorno " + environment);
+            $("#alertErrores").slideDown();
+            setTimeout(function() {
+                    $("#alertErrores").slideUp();
+            }, 5000);
+                $('#btnReencolar_' + data["Id"] ).button('reset');
+              });
+
+    }
+    </script>
+{% endblock %}

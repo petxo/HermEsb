@@ -1,0 +1,18 @@
+{% extends "widgets/widget.html" %}
+{% block titlewidget %}Picos Latencia Top 10{% endblock %}
+{% block blockwidget %}
+    <div id='latencyPeakTable_div'>
+        <img src="{{ url_for('static', filename='img/loading2.gif') }}">
+    </div>
+    <script>
+    google.setOnLoadCallback(drawMemoryTable);
+    function drawMemoryTable() {
+        $.post("/latencypeaktop/" + environment + "/").done(function( data ){
+                var datatable = new google.visualization.arrayToDataTable(data["Services"]);
+                var table = new google.visualization.BarChart(document.getElementById('latencyPeakTable_div'));
+                table.draw(datatable);
+             });
+      }
+    </script>
+
+{% endblock %}

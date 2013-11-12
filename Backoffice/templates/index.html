@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                {% include "widgets/hangoutServices.html" %}
+            </div>
+            <div class="col-lg-5">
+                {% include "widgets/memoryTop.html" %}
+            </div>
+            <div class="col-lg-5">
+                {% include "widgets/latencyTop.html" %}
+            </div>
+            <div class="col-lg-5">
+                {% include "widgets/latencyPeakTop.html" %}
+            </div>
+        </div>
+
+    </div>
+
+     <script>
+    $(document).ready(function() {
+        $('#lnkHome').addClass('active');
+    });
+    </script>
+{% endblock %}
