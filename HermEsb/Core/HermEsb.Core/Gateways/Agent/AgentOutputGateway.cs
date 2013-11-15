@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using HermEsb.Core.Communication.EndPoints;
 using HermEsb.Core.Ioc;
 using HermEsb.Core.Messages;
@@ -13,7 +12,7 @@ namespace HermEsb.Core.Gateways.Agent
     public class AgentOutputGateway: AbstractOutputGateway<IMessage>
     {
         private readonly Identification _identification;
-        private int _defaultPriority;
+        private readonly int _defaultPriority;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentOutputGateway"/> class.
@@ -108,8 +107,7 @@ namespace HermEsb.Core.Gateways.Agent
                     messageBus.Header.Type = MessageBusType.Reply;
                 }
 
-                //TODO: Crear la serializacion del bus
-                var serializedMessage = Encoding.UTF8.GetBytes(DataContractSerializer.Serialize(messageBus));
+                var serializedMessage = MessageBusParser.ToBytes(messageBus);
 
                 if (!messageInfo.IsReply)
                 {
