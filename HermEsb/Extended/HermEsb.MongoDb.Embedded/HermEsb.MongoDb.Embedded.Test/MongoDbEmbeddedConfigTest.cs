@@ -1,7 +1,12 @@
 ﻿using System.Configuration;
 using HermEsb.Extended.MongoDb.Embedded.Configuration;
 using HermEsb.Extended.MongoDb.Embedded.Installer;
+using HermEsb.Core.Ioc;
+using HermEsb.Core.Ioc.WindsorContainer;
 using Mrwesb.IocWindsor;
+using Castle;
+using Castle.Core;
+using Castle.Windsor;
 using NUnit.Framework;
 using FluentAssert;
 
@@ -22,7 +27,10 @@ namespace HermEsb.Extended.MongoDb.Embedded.Test
         [SetUp]
         public void BeforeEachTest()
         {
-            WindsorContainerInstanceHelper.Instance.WindsorContainer.Install(new MongoDbEmbeddedInstaller());
+			var container = new WindsorContainer ();
+			container.Install (new MongoDbEmbeddedInstaller ());
+			ContextManager.Create (new WindsorContainerHelper (container));
+			ContextManager.Instance.CreateNewContext ();
             _subjectUnderTest = ConfigurationManager.GetSection("mongoDbEmbedded") as MongoDbEmbeddedConfig;
         }
 
@@ -169,7 +177,7 @@ namespace HermEsb.Extended.MongoDb.Embedded.Test
         [TearDown]
         public void AfterEachTest()
         {
-            WindsorContainerInstanceHelper.Instance.Dispose();
+			ContextManager.Instance.CurrentContext.Dispose ();
         }
     }
 }

@@ -8,8 +8,8 @@
     <ProjectGuid>{084998CF-25BC-4EF3-9A79-6CE62465F92F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mrw.PoC.JobObjects.Test</RootNamespace>
-    <AssemblyName>Mrw.PoC.JobObjects.Test</AssemblyName>
+    <RootNamespace>HermEsb.JobObjects.Test</RootNamespace>
+    <AssemblyName>HermEsb.JobObjects.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

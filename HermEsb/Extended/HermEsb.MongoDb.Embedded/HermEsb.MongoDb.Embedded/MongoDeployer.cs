@@ -11,8 +11,13 @@ namespace HermEsb.Extended.MongoDb.Embedded
     {
         private readonly IEmbeddedResourceHelper _embeddedResourceHelper;
         private readonly IMongoDbEmbeddedConfig _dbEmbeddedConfig;
+#if !__MonoCS__
         private IJobObject _jobObject;
+#else
+		private Process _process;
+#endif
 
+#if !__MonoCS__
         /// <summary>
         /// Initializes a new instance of the <see cref="MongoDeployer"/> class.
         /// </summary>
@@ -26,6 +31,14 @@ namespace HermEsb.Extended.MongoDb.Embedded
             _jobObject = jobObject;
             _jobObject.KillProcessesOnJobClose = true;
         }
+#else
+		public MongoDeployer(IEmbeddedResourceHelper embeddedResourceHelper, IMongoDbEmbeddedConfig dbEmbeddedConfig)
+		{
+			_embeddedResourceHelper = embeddedResourceHelper;
+			_dbEmbeddedConfig = dbEmbeddedConfig;
+			_process = new Process();
+		}
+#endif
 
         #region IMongoDeployer Members
 
@@ -44,8 +57,12 @@ namespace HermEsb.Extended.MongoDb.Embedded
         /// </summary>
         public virtual void Kill()
         {            
-            while (IsRunning())           
-                _jobObject.TerminateProcesses(0);            
+            while (IsRunning())        
+#if !__MonoCS__				   
+                _jobObject.TerminateProcesses(0);
+#else
+				_process.Kill();
+#endif            
         }
 
         /// <summary>
@@ -78,7 +95,11 @@ namespace HermEsb.Extended.MongoDb.Embedded
                         }
                 };            
             process.Start();
+			#if !__MonoCS__
             _jobObject.AddProcess(process);
+			#else
+			_process = process;
+			#endif
         }
 
         /// <summary>
@@ -158,9 +179,16 @@ namespace HermEsb.Extended.MongoDb.Embedded
         protected virtual void Dispose(bool disposing)
         {
             if (!disposing) return;
+#if !__MonoCS__
             if (_jobObject == null) return;
             _jobObject.Dispose();
             _jobObject = null;
+#else
+			if (_process == null) return;
+			if (IsRunning())
+				_process.Kill();
+			_process.Dispose();
+#endif
         }
 
         /// <summary>

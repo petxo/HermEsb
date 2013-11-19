@@ -7,6 +7,9 @@ using HermEsb.Extended.JobObjects.Installer;
 using HermEsb.Extended.MongoDb.Embedded.Installer;
 using Mrwesb.IocWindsor;
 using NUnit.Framework;
+using Castle.Windsor;
+using HermEsb.Core.Ioc;
+using HermEsb.Core.Ioc.WindsorContainer;
 
 namespace HermEsb.Extended.MongoDb.Embedded.Test
 {
@@ -19,9 +22,12 @@ namespace HermEsb.Extended.MongoDb.Embedded.Test
         [SetUp]
         public void BeforeEachTest()
         {
-            WindsorContainerInstanceHelper.Instance.WindsorContainer.Install(new MongoDbEmbeddedInstaller());
-            WindsorContainerInstanceHelper.Instance.WindsorContainer.Install(new JobObjectsInstaller());
-            _subjectUnderTest = WindsorContainerInstanceHelper.Instance.Resolve<IMongoDeployer>();
+			var container = new WindsorContainer ();
+			container.Install (new MongoDbEmbeddedInstaller ());
+			container.Install (new JobObjectsInstaller ());
+			ContextManager.Create (new WindsorContainerHelper (container));
+			ContextManager.Instance.CreateNewContext ();
+			_subjectUnderTest = ContextManager.Instance.CurrentContext.Resolve<IMongoDeployer>();
         }
 
         [Test]
@@ -154,7 +160,7 @@ namespace HermEsb.Extended.MongoDb.Embedded.Test
                 //_subjectUnderTest.Remove();
                 _subjectUnderTest.Dispose();
             }
-            WindsorContainerInstanceHelper.Instance.Dispose();
+			ContextManager.Instance.CurrentContext.Dispose ();
         }
     }
 }

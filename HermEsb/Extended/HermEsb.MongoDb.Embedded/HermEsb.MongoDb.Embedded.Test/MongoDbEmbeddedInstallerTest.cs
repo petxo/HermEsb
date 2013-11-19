@@ -4,6 +4,8 @@ using HermEsb.Extended.JobObjects.Installer;
 using HermEsb.Extended.MongoDb.Embedded.Configuration;
 using HermEsb.Extended.MongoDb.Embedded.Installer;
 using NUnit.Framework;
+using HermEsb.Core.Ioc.WindsorContainer;
+using HermEsb.Core.Ioc;
 
 namespace HermEsb.Extended.MongoDb.Embedded.Test
 {
@@ -23,6 +25,8 @@ namespace HermEsb.Extended.MongoDb.Embedded.Test
             _containerUnderTest = new WindsorContainer();
             _containerUnderTest.Install(new JobObjectsInstaller());
             _containerUnderTest.Install(new MongoDbEmbeddedInstaller());
+			ContextManager.Create (new WindsorContainerHelper (_containerUnderTest));
+			ContextManager.Instance.CreateNewContext ();
         }
 
         [Test]
@@ -134,6 +138,7 @@ namespace HermEsb.Extended.MongoDb.Embedded.Test
         [TearDown]
         public void AfterEachTest()
         {            
+			ContextManager.Instance.CurrentContext.Dispose ();
             _containerUnderTest.Dispose();
         }
     }

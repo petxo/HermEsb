@@ -163,9 +163,8 @@ namespace HermEsb.Extended.JobObjects
             {
                 jobObjectName = null;
             }
-
             _jobHandle = PlatformAPI.CreateJobObject(IntPtr.Zero, jobObjectName);
-            if (_jobHandle.IsInvalid)
+			if (_jobHandle.IsInvalid)
             {
                 if (jobObjectName == null)
                 {

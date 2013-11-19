@@ -8,8 +8,8 @@
     <ProjectGuid>{4A5CB520-855D-459F-B349-DA6AE5729DDC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mrw.PoC.MongoDb.Embedded</RootNamespace>
-    <AssemblyName>Mrw.PoC.MongoDb.Embedded</AssemblyName>
+    <RootNamespace>HermEsb.MongoDb.Embedded</RootNamespace>
+    <AssemblyName>HermEsb.MongoDb.Embedded</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
