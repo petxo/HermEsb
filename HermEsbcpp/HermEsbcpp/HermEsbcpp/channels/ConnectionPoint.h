@@ -22,6 +22,8 @@ namespace HermEsb
 
     namespace Channels
     {
+		#define INFINITE_RECONNECTIONS -1
+
         /**
          * Clase abstracta que define un punto de conexion con un host, y que gestiona
          * las reconexiones mediante un temporizador
@@ -30,17 +32,19 @@ namespace HermEsb
         {
             public:
                 DELEGATE(void (ConnectionPoint& sender, ConnectException& exception))ConnectionErrorHandler;
-                protected:
+            
+			protected:
                 ConnectionErrorHandler _connectionError;
 
-                public:
+            public:
 
                 /**
                  * Crea una instancia de un punto de conexion, y estable el temporizador
                  * de la reconexion
                  * @param reconnectionTimer Temporizador de la reconexion
+				 * @param maxReconnections Numero maximo de reconexiones
                  */
-                ConnectionPoint(IReconnectionTimer* reconnectionTimer);
+                ConnectionPoint(IReconnectionTimer* reconnectionTimer, int maxReconnections = INFINITE_RECONNECTIONS);
 
                 virtual ~ConnectionPoint();
 
@@ -61,12 +65,13 @@ namespace HermEsb
                  */
                 void Close();
 
-                //void (*OnConnectionError) (ConnectionPoint& sender, ConnectException& exception);
-
                 EVENT(ConnectionErrorHandler, _connectionError, ConnectionError);
-                //EventConnection ConnectionError(const ConnectionErrorHandler::slot_type& subscriber);
 
-                protected:
+			protected:
+				/**
+				* Metodo que se ejecuta al inicio de la operacion de cerrar
+				*/
+				virtual void BeforeClose();
 
                 /**
                  * Metodo abstracto que establece la conexion fisica con el host
@@ -86,7 +91,7 @@ namespace HermEsb
                  */
                 void Reconnect() throw (ConnectException);
 
-                private:
+            private:
                 bool _isConnected;
                 IReconnectionTimer* _reconnectionTimer;
                 int _reconnectionNumber;

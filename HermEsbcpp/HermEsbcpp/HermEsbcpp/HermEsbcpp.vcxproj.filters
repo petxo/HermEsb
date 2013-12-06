@@ -69,6 +69,15 @@
     <ClInclude Include="channels\rabbitmq\RabbitOutBoundConnectionPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="channels\rabbitmq\rabbitmq.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="channels\rabbitmq\RabbitInBoundConnectionPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="channels\rabbitmq\BaseRabbitConnectionPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Timers\InstantReconnectionTimer.cpp">
@@ -96,6 +105,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="channels\rabbitmq\RabbitOutBoundConnectionPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="channels\rabbitmq\BaseRabbitConnectionPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="channels\rabbitmq\RabbitInBoundConnectionPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

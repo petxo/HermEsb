@@ -27,6 +27,12 @@
     <ClCompile Include="channels\connectionpoints\ConnectionPointTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="channels\rabbitmq\RabbitOutBoundTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="channels\rabbitmq\RabbitInBoundTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="channels\connectionpoints\ConnectionPointFake.h">

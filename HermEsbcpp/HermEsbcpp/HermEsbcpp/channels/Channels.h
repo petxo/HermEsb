@@ -14,5 +14,6 @@
 #include "ConnectionPoint.h"
 #include "OutBoundConnectionPoint.h"
 #include "InBoundConnectionPoint.h"
+#include "rabbitmq/rabbitmq.h"
 
 #endif /* CHANNELS_H_ */

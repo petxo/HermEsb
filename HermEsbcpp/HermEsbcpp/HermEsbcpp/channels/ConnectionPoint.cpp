@@ -15,9 +15,9 @@ namespace HermEsb
 {
     namespace Channels
     {
-        ConnectionPoint::ConnectionPoint(IReconnectionTimer* reconnectionTimer)
+        ConnectionPoint::ConnectionPoint(IReconnectionTimer* reconnectionTimer, int maxReconnections)
         {
-            this->_maxReconnections = 10;
+            this->_maxReconnections = maxReconnections;
             this->_reconnectionNumber = 0;
             this->_reconnectionTimer = reconnectionTimer;
             this->_isConnected = false;
@@ -56,7 +56,7 @@ namespace HermEsb
                     return;
                 } catch (ConnectException& connException)
                 {
-                    if (this->_reconnectionNumber >= this->_maxReconnections)
+                    if ((this->_maxReconnections != INFINITE_RECONNECTIONS) && (this->_reconnectionNumber >= this->_maxReconnections))
                     {
                         LOG(INFO)<< "Error Connect to Point, se ha alcanzado el limite de reconexiones "
                         << this->_maxReconnections;
@@ -81,8 +81,15 @@ namespace HermEsb
         void ConnectionPoint::Close()
         {
             if (this->_isConnected)
+			{
+				this->BeforeClose();
                 this->ClosePoint();
+			}
         }
+
+		void ConnectionPoint::BeforeClose()
+		{
+		}
 
         void ConnectionPoint::InvokeOnConnectionError(
                 ConnectException& exception)

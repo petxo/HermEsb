@@ -10,7 +10,9 @@
 
 #include "ConnectException.h"
 #include "ConnectionPoint.h"
+#include "../core/Startable.h"
 #include "../global.h"
+#include <boost/thread.hpp>
 
 namespace HermEsb
 {
@@ -19,26 +21,21 @@ namespace HermEsb
         /**
          * Clase que define un punto de conexion de entrada
          */
-		class HERMESB_API InBoundConnectionPoint: public ConnectionPoint
+		class HERMESB_API InBoundConnectionPoint: public ConnectionPoint, public HermEsb::Core::Startable
         {
             public:
+				DELEGATE(void (InBoundConnectionPoint& sender, void* message, int messageLen))MessageReceivedHandler;
 
+			protected:
+                MessageReceivedHandler _onMessageReceived;
+			
+			public:
                 /**
                  * Crea una instancia de InBoundConnection
                  * @param reconnectionTimer Temporizador de reconexion
                  */
-                InBoundConnectionPoint(IReconnectionTimer* reconnectionTimer);
+                InBoundConnectionPoint(IReconnectionTimer* reconnectionTimer, int maxReconnections = INFINITE_RECONNECTIONS);
                 virtual ~InBoundConnectionPoint();
-
-                /**
-                 * Fuerza el comienzo de la repecion de mensajes
-                 */
-                void BeginReceive();
-
-                /**
-                 * Detiene la recepción de mensajes
-                 */
-                void EndReceive();
 
                 /**
                  * Callback de llamada cuando llega un mensaje, el metodo devuelve el puntero al buffer
@@ -48,25 +45,40 @@ namespace HermEsb
                  * @param message Puntero al buffer con el mensaje recibido
                  * @param messageLength Tamaño del buffer
                  */
-                void (*OnMessageReceived)(InBoundConnectionPoint& sender,
-                        const void* message, int messageLength);
+				EVENT(MessageReceivedHandler, _onMessageReceived, OnMessageReceived);
 
             protected:
-                /**
-                 * Inicio de la recepcion de mensaje
-                 */
-                virtual void StartReceive() = 0;
+
+				/**
+				* Implementa el comportamiento necesario para arracar la instancia,
+				* devuelve true o false en funcion de si ha arrancado o no.
+				*/
+				virtual bool OnStart();
+
+				/**
+				* Se lanza cuando se ha terminado el Stop
+				*/
+				virtual void OnTerminateStop();
+				
+				/**
+				* Procesa la cola de mensajes y controla que no se produzca ninguna perdida de conexion
+				*/
+				void Proccess();
+
+				/**
+				* Metodo que se ejecuta al inicio de la operacion de cerrar
+				*/
+				virtual void BeforeClose();
 
                 /**
-                 * Detencion de la recepcion de los mensajes
+                 * Metodo que lee el mensaje del punto de conexion
+				 * @param destBuffer Buffer de destino 
                  */
-                virtual void StopReceive() = 0;
+                virtual int ListenMessage(void** destBuffer) throw (ConnectException) = 0;
 
-                //TODO: Aqui tiene que devolver algo
-                /**
-                 * Metodo que pone al punto de conexion en modo de escucha
-                 */
-                virtual void ListenMessage() = 0;
+				void InvokeOnMessageReceived(void* message, int messageLen);
+
+				boost::thread *threadListen;
 
         };
     } /* namespace Channels */

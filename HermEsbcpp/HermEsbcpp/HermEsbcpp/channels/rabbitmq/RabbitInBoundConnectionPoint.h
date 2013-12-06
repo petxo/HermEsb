@@ -1,7 +1,7 @@
-#ifndef CHANNELS_RABBIT_RABBITOUTBOUNDCONNECTIONPOINT
-#define CHANNELS_RABBIT_RABBITOUTBOUNDCONNECTIONPOINT
+#ifndef CHANNELS_RABBIT_RABBITINBOUNDCONNECTIONPOINT
+#define CHANNELS_RABBIT_RABBITINBOUNDCONNECTIONPOINT
 
-#include "../OutBoundConnectionPoint.h"
+#include "../InBoundConnectionPoint.h"
 #include "BaseRabbitConnectionPoint.h"
 #include <amqp_tcp_socket.h>
 #include <amqp.h>
@@ -14,18 +14,18 @@ namespace HermEsb
 		namespace Rabbit
 		{
 			/**
-			 * Clase que implementa un punto de conexion de salida 
+			 * Clase que implementa un punto de conexion de entrada 
 			 * a RabbitMq
 			 */
-			class HERMESB_API  RabbitOutBoundConnectionPoint : public OutBoundConnectionPoint, public BaseRabbitConnectionPoint
+			class HERMESB_API  RabbitInBoundConnectionPoint : public InBoundConnectionPoint, public BaseRabbitConnectionPoint
 			{
 			public:
 				/**
                  * Crea una instancia OutBoundConnectionPoint
                  * @param reconnectionTimer Temporizador de reconexion
                  */
-                RabbitOutBoundConnectionPoint(char* server, int port, char* exchange, char* routingKey, char* user, char* password, IReconnectionTimer* reconnectionTimer);
-                virtual ~RabbitOutBoundConnectionPoint();
+                RabbitInBoundConnectionPoint(char* server, int port, char* exchange, char* routingKey, char* user, char* password, char* queue, IReconnectionTimer* reconnectionTimer);
+                virtual ~RabbitInBoundConnectionPoint();
 
 			protected:
 
@@ -39,19 +39,17 @@ namespace HermEsb
                  * Metodo abstracto que cierra la conexion fisica con el host
                  */
                 virtual void ClosePoint();
-
-				/**
-                 * Envia un mensaje por medio del punto de conexión.
-                 * @param message Mensaje a enviar
-                 * @param messageLen Longitud del mensaje a enviar
-				 * @param priority Prioridad del mensaje a enviar
+				
+                /**
+                 * Metodo que pone al punto de conexion en modo de escucha
                  */
-                virtual void SendMessage(const void* message,
-                        int messageLen, int priority=0);
+				virtual	int ListenMessage(void** destBuffer) throw (ConnectException);
 
+			private:
 				char* _exchange;
 				char* _routingKey;
 				char* _exchangetype;
+				char* _queue;
 			};
 		}
 	}

@@ -46,6 +46,17 @@ namespace HermEsb
 			* devuelve true o false en funcion de si ha podido deternese o no.
 			*/
 			virtual bool OnStop();
+
+			/**
+			* Se lanza cuando se ha terminado el Stop
+			*/
+			virtual void OnTerminateStop();
+
+			/**
+			* Se lanza cuando se ha terminado el Start
+			*/
+			virtual void OnTerminateStart();
+
 			bool _running;
 		};
 

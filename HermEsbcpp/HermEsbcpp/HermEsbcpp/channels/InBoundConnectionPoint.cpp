@@ -7,15 +7,16 @@
 
 #include "InBoundConnectionPoint.h"
 
+
 namespace HermEsb
 {
     namespace Channels
     {
         InBoundConnectionPoint::InBoundConnectionPoint(
-                IReconnectionTimer* reconnectionTimer) :
-                ConnectionPoint(reconnectionTimer)
+                IReconnectionTimer* reconnectionTimer, int maxReconnections) :
+                ConnectionPoint(reconnectionTimer, maxReconnections)
         {
-
+			threadListen = NULL;
         }
 
         InBoundConnectionPoint::~InBoundConnectionPoint()
@@ -23,14 +24,64 @@ namespace HermEsb
 
         }
 
-        void InBoundConnectionPoint::BeginReceive()
+		bool InBoundConnectionPoint::OnStart()
         {
-            //TODO: Crear un hilo para iniciar la recepcion de mensajes
+			if(threadListen == NULL)
+			{
+				threadListen = new boost::thread(boost::bind(&InBoundConnectionPoint::Proccess, this));
+			}
+			return true;
         }
 
-        void InBoundConnectionPoint::EndReceive()
-        {
-            //TODO: Parar el hilo de recepcion de mensajes
-        }
+		void InBoundConnectionPoint::OnTerminateStop()
+		{
+			if(threadListen != NULL)
+			{
+				threadListen->join();
+				threadListen = NULL;
+			}
+		}
+		
+		void InBoundConnectionPoint::BeforeClose()
+		{
+			this->Stop();
+		}
+
+		void InBoundConnectionPoint::Proccess()
+		{
+			while (this->IsRunning()) 
+			{
+				try
+				{
+					void* message;
+					int messageLen = ListenMessage(&message);
+					InvokeOnMessageReceived(message, messageLen);
+				}
+				catch (ConnectException& connException)
+				{
+					//Cerrar la conexion y volver a conectar
+					if(!this->IsRunning())
+						break;
+
+					this->ClosePoint();
+					try
+					{
+						if(this->IsRunning())
+							this->Reconnect();
+					} catch (ConnectException& exception)
+					{
+						//TODO: Gestion de errores en la recepcion de mensajes
+						//this->InvokeOnSendMessageError(exception, message);
+						break;
+					}
+				}
+
+			}
+		}
+
+		void InBoundConnectionPoint::InvokeOnMessageReceived(void* message, int messageLen)
+		{
+			this->_onMessageReceived(*this, message, messageLen);
+		}
     } /* namespace Channels */
 } /* namespace HermEsb */

@@ -104,11 +104,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libglog.lib;gtestd.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libglog.lib;gtestd.lib;Ws2_32.lib;rabbitmq.1.lib;boost_date_time-vc100-mt-gd-1_54.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>msvcprtd;LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
@@ -151,6 +152,8 @@
   <ItemGroup>
     <ClCompile Include="channels\connectionpoints\ConnectionPointFake.cpp" />
     <ClCompile Include="channels\connectionpoints\ConnectionPointTest.cpp" />
+    <ClCompile Include="channels\rabbitmq\RabbitInBoundTest.cpp" />
+    <ClCompile Include="channels\rabbitmq\RabbitOutBoundTest.cpp" />
     <ClCompile Include="core\StartableTest.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

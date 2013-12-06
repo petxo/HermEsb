@@ -16,7 +16,7 @@ namespace HermEsbTest
         {
 
             ConnectionPointFake::ConnectionPointFake(int reintentos, int reintentosEnvios) :
-                        OutBoundConnectionPoint(new InstantReconnectionTimer())
+                        OutBoundConnectionPoint(new InstantReconnectionTimer(), 10)
             {
                 this->_reintentos = reintentos;
                 this->_numConnections = 0;
@@ -35,7 +35,7 @@ namespace HermEsbTest
                     throw ConnectException("Test de Error");
             }
 
-            void ConnectionPointFake::SendMessage(const void* message, int messageLen)
+            void ConnectionPointFake::SendMessage(const void* message, int messageLen, int priority)
             {
                 this->_numreintentosEnvios++;
                 if (this->_numreintentosEnvios < this->_reintentosEnvios)

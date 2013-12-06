@@ -27,7 +27,7 @@ namespace HermEsb
                  * Crea una instancia OutBoundConnectionPoint
                  * @param reconnectionTimer Temporizador de reconexion
                  */
-                OutBoundConnectionPoint(IReconnectionTimer* reconnectionTimer);
+                OutBoundConnectionPoint(IReconnectionTimer* reconnectionTimer, int maxReconnections = INFINITE_RECONNECTIONS);
                 virtual ~OutBoundConnectionPoint();
 
                 /**
@@ -35,8 +35,9 @@ namespace HermEsb
                  * En el caso de producirse un error al enviar, se produce una reconexion
                  * @param message Mensaje a enviar
                  * @param messageLen Longitud del mensaje a enviar
+				 * @param priority Prioridad del mensaje a enviar
                  */
-                void Send(const void* message, int messageLen);
+                void Send(const void* message, int messageLen, int priority=0);
 
                 /**
                  * Callback de llamada cuando se produce un error durante el envío del
@@ -53,9 +54,10 @@ namespace HermEsb
                  * Envia un mensaje por medio del punto de conexión.
                  * @param message Mensaje a enviar
                  * @param messageLen Longitud del mensaje a enviar
+				 * @param priority Prioridad del mensjae a enviar
                  */
                 virtual void SendMessage(const void* message,
-                        int messageLen) = 0;
+                        int messageLen, int priority=0) = 0;
 
             private:
                 void InvokeOnSendMessageError(ConnectException& exception,

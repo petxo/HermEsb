@@ -25,7 +25,7 @@ namespace HermEsbTest
 
                 protected:
                     virtual void ConnectPoint() throw(ConnectException);
-                    virtual void SendMessage(const void* message, int messageLen);
+                    virtual void SendMessage(const void* message, int messageLen, int priority=0);
                     virtual void ClosePoint();
 
                 private:

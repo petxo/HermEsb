@@ -20,6 +20,7 @@ namespace HermEsb
 			if(OnStart())
 			{
 				_running = true;
+				OnTerminateStart();
 			}
 		}
 
@@ -29,6 +30,7 @@ namespace HermEsb
 			if(OnStop())
 			{
 				_running = false;
+				OnTerminateStop();
 			}
 		}
 
@@ -45,6 +47,14 @@ namespace HermEsb
 		bool Startable::IsRunning()
 		{
 			return _running;
+		}
+
+		void Startable::OnTerminateStop()
+		{
+		}
+
+		void Startable::OnTerminateStart()
+		{
 		}
 	}
 }

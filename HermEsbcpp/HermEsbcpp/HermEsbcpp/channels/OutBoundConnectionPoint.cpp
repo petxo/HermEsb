@@ -12,8 +12,8 @@ namespace HermEsb
     namespace Channels
     {
         OutBoundConnectionPoint::OutBoundConnectionPoint(
-                IReconnectionTimer* reconnectionTimer) :
-                ConnectionPoint(reconnectionTimer)
+                IReconnectionTimer* reconnectionTimer, int maxReconnections) :
+                ConnectionPoint(reconnectionTimer, maxReconnections)
         {
 
         }
@@ -23,13 +23,13 @@ namespace HermEsb
 
         }
 
-        void OutBoundConnectionPoint::Send(const void* message, int messageLen)
+        void OutBoundConnectionPoint::Send(const void* message, int messageLen, int priority)
         {
             while (true)
             {
                 try
                 {
-                    this->SendMessage(message, messageLen);
+                    this->SendMessage(message, messageLen, priority);
                     return;
                 } catch (ConnectException& connException)
                 {
