@@ -30,17 +30,25 @@ class FakeHandler
     public:
         EventConnection connection;
         bool errorConnectionCalled;
+		bool sendErrorCalled;
+
         void ErrorConnection(ConnectionPoint& sender,
                 ConnectException& exception)
         {
             errorConnectionCalled = true;
         }
 
+		void SendError(ConnectionPoint& sender, ConnectException& exception, const void* message, int messageLen)
+		{
+			sendErrorCalled = true;
+		}
 
         FakeHandler(ConnectionPointFake* test)
         {
             EVENT_BIND2(connection, test->ConnectionError, &FakeHandler::ErrorConnection);
+			EVENT_BIND4(connection, test->OnSendError, &FakeHandler::SendError);
             this->errorConnectionCalled = false;
+			this->sendErrorCalled = false;
         }
 };
 
@@ -70,31 +78,28 @@ TEST(ConnectionPointTest, SendMessageSuccess)
 {
     _sendMessageErrorCalled = false;
     ConnectionPointFake* test = new ConnectionPointFake(3, 3);
-
+	FakeHandler *handler = new FakeHandler(test);
     //test->ConnectionPoint::OnConnectionError = ErrorConnection;
-    test->OnSendMessageError = SendMessageError;
+    
 
     char* buffer = "Message";
 
     ASSERT_NO_THROW(test->Send(buffer, sizeof(buffer)));
-    ASSERT_FALSE(_sendMessageErrorCalled);
+	ASSERT_FALSE(handler->sendErrorCalled);
 
     delete (test);
 }
 
-TEST(ConnectionPointTest, SendMessageFalied)
+TEST(ConnectionPointTest, SendMessageFailed)
 {
     _sendMessageErrorCalled = false;
     ConnectionPointFake* test = new ConnectionPointFake(12, 3);
-
-    //test->ConnectionPoint::OnConnectionError = ErrorConnection;
-    test->OnSendMessageError = SendMessageError;
-
+	FakeHandler *handler = new FakeHandler(test);
+    
     char* buffer = "Message";
 
     ASSERT_NO_THROW(test->Send(buffer, sizeof(buffer)));
-    ASSERT_TRUE(_sendMessageErrorCalled);
-    ASSERT_EQ(buffer, _message);
+	ASSERT_TRUE(handler->sendErrorCalled);
 
     delete (test);
 }

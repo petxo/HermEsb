@@ -29,6 +29,7 @@ namespace HermEsb
             {
                 try
                 {
+					//boost::lock_guard<boost::mutex> guard(_mutex);
                     this->SendMessage(message, messageLen, priority);
                     return;
                 } catch (ConnectException& connException)
@@ -40,7 +41,7 @@ namespace HermEsb
                         this->Reconnect();
                     } catch (ConnectException& exception)
                     {
-                        this->InvokeOnSendMessageError(exception, message);
+                        this->InvokeOnSendMessageError(exception, message, messageLen);
                         break;
                     }
 
@@ -48,11 +49,9 @@ namespace HermEsb
             }
         }
 
-        void OutBoundConnectionPoint::InvokeOnSendMessageError(
-                ConnectException& exception, const void* message)
+        void OutBoundConnectionPoint::InvokeOnSendMessageError(ConnectException& exception, const void* message, int messageLen)
         {
-            if (this->OnSendMessageError != NULL)
-                this->OnSendMessageError(*this, exception, message);
+			_sendError(*this, exception, message, messageLen);
         }
     } /* namespace Channels */
 } /* namespace HermEsb */

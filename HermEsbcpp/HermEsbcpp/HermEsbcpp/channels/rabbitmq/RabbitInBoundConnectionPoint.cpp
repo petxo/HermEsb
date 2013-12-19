@@ -81,6 +81,8 @@ namespace HermEsb
 						throw ConnectException("Error al leer de Rabbit", true);
 					}
 				}
+
+				return 0;
 			}
 		}
 	}

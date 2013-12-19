@@ -1,4 +1,5 @@
 using HermEsb.Configuration.Ioc;
+using HermEsb.Core.Serialization;
 using HermEsb.Logging;
 
 namespace HermEsb.Configuration
@@ -34,6 +35,7 @@ namespace HermEsb.Configuration
         /// <returns></returns>
         public static ConfigurationHelper With()
         {
+            InstallSerializers.Install();
             var instance = new ConfigurationHelper(new DefaultConfigurationRepository());
             instance.DefaultBuilder();
 
@@ -47,6 +49,7 @@ namespace HermEsb.Configuration
         /// <returns></returns>
         public static ConfigurationHelper With(string fileConfigPath)
         {
+            InstallSerializers.Install();
             LoggerManager.Instance.Debug(string.Format("Configuracion con el fichero: {0}", fileConfigPath));
             var instance = new ConfigurationHelper(new FileConfigurationRepository(fileConfigPath));
             instance.DefaultBuilder();

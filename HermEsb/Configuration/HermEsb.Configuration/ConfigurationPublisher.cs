@@ -1,4 +1,5 @@
 ﻿using HermEsb.Configuration.Publishers;
+using HermEsb.Core.Serialization;
 
 namespace HermEsb.Configuration
 {
@@ -31,6 +32,7 @@ namespace HermEsb.Configuration
         /// <returns></returns>
         public static ConfigurationPublisher With()
         {
+            InstallSerializers.Install();
             return new ConfigurationPublisher(new DefaultConfigurationRepository());
         }
 
@@ -41,6 +43,7 @@ namespace HermEsb.Configuration
         /// <returns></returns>
         public static ConfigurationPublisher With(string fileConfigPath)
         {
+            InstallSerializers.Install();
             return new ConfigurationPublisher(new FileConfigurationRepository(fileConfigPath));
         }
 

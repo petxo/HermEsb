@@ -52,7 +52,7 @@ namespace HermEsb
                                     0,
                                     &propertiesMessage,
                                     messageByte);
-
+				amqp_bytes_free(messageByte);
 				GetRabbitError("SendMessage");
                                    
 			}

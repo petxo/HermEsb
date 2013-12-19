@@ -84,6 +84,7 @@ namespace HermEsb
 			{
 				this->BeforeClose();
                 this->ClosePoint();
+				_isConnected = false;
 			}
         }
 

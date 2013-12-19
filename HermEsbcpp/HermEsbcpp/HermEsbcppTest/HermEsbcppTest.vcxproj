@@ -109,8 +109,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libglog.lib;gtestd.lib;Ws2_32.lib;rabbitmq.1.lib;boost_date_time-vc100-mt-gd-1_54.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>msvcprtd;LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>libglog.lib;gtestd.lib;Ws2_32.lib;rabbitmq.1.lib;boost_date_time-vc100-mt-gd-1_54.lib;boost_iostreams-vc100-mt-gd-1_54.lib;boost_chrono-vc100-mt-gd-1_54.lib;boost_system-vc100-mt-gd-1_54.lib;boost_zlib-vc100-mt-gd-1_54.lib;boost_thread-vc100-mt-gd-1_54.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -150,11 +150,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="channels\connectionpoints\ConnectionPointFake.cpp" />
-    <ClCompile Include="channels\connectionpoints\ConnectionPointTest.cpp" />
     <ClCompile Include="channels\rabbitmq\RabbitInBoundTest.cpp" />
     <ClCompile Include="channels\rabbitmq\RabbitOutBoundTest.cpp" />
     <ClCompile Include="core\StartableTest.cpp" />
+    <ClCompile Include="gateways\OutpuGatewayTest.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +162,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="channels\connectionpoints\ConnectionPointFake.h" />
+    <ClInclude Include="gateways\FakeIMessage.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -163,8 +163,16 @@
     <ClInclude Include="Core\Timers\LogarithmicReconnectionTimer.h" />
     <ClInclude Include="core\timers\PeriodicalReconnectionTimer.h" />
     <ClInclude Include="Core\Timers\Timers.h" />
+    <ClInclude Include="gateways\gateways.h" />
+    <ClInclude Include="gateways\BaseOutputGateway.h" />
+    <ClInclude Include="gateways\OutputGateway.h" />
     <ClInclude Include="hermesb.h" />
     <ClInclude Include="global.h" />
+    <ClInclude Include="messages\MessageBus.h" />
+    <ClInclude Include="messages\IMessage.h" />
+    <ClInclude Include="messages\MessageBusFactory.h" />
+    <ClInclude Include="messages\messages.h" />
+    <ClInclude Include="utils\timeutils.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="channels\ConnectException.cpp" />
@@ -178,6 +186,10 @@
     <ClCompile Include="Core\Timers\InstantReconnectionTimer.cpp" />
     <ClCompile Include="Core\Timers\LogarithmicReconnectionTimer.cpp" />
     <ClCompile Include="core\timers\PeriodicalReconnectionTimer.cpp" />
+    <ClCompile Include="gateways\BaseOutputGateway.cpp" />
+    <ClCompile Include="gateways\OutputGateway.cpp" />
+    <ClCompile Include="messages\MessageBus.cpp" />
+    <ClCompile Include="messages\MessageBusFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

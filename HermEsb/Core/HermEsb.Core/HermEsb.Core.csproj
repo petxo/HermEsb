@@ -314,6 +314,7 @@
     <Compile Include="Publishers\PublisherFactory.cs" />
     <Compile Include="Serialization\AbstractDataContractSerializer.cs" />
     <Compile Include="Serialization\IDataContractSerializer.cs" />
+    <Compile Include="Serialization\InstallSerializers.cs" />
     <Compile Include="Serialization\JsonDataContractSerializer.cs" />
     <Compile Include="Serialization\XmlDataContractSerializer.cs" />
     <Compile Include="Serialization\XmlSchemaSerializer.cs" />

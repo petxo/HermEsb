@@ -8,13 +8,13 @@
     <identification id="Service1" type="Service"/>
     <bus>
       <controlInput transport="RabbitMq">
-        <add name="uri" value="amqp://esocdesb02/HermEsbSamples.Exch/BasicBusSample.ControlInput/controlinputBasicBusSampleKey"/>
+        <add name="uri" value="amqp://localhost/HermEsbSamples.Exch/BasicBusSample.ControlInput/controlinputBasicBusSampleKey"/>
       </controlInput>
     </bus>
 
     <serviceProcessor numberOfParallelTasks="100">
       <input transport="RabbitMq">
-        <add name="uri" value="amqp://esocdesb02/HermEsbSamples.Exch/BasicServiceSample.Input/BasicServiceSampleInputKey"/>
+        <add name="uri" value="amqp://localhost/HermEsbSamples.Exch/BasicServiceSample.Input/BasicServiceSampleInputKey"/>
       </input>
       <handlersAssemblies>
         <add name="BasicSampleService" assembly="BasicSampleService.exe" />
@@ -22,7 +22,7 @@
     </serviceProcessor>
     <controlProcessor>
       <input transport="RabbitMq">
-        <add name="uri" value="amqp://esocdesb02/HermEsbSamples.Exch/BasicServiceSample.ControlInput/BasicServiceSampleControlInputKey"/>
+        <add name="uri" value="amqp://localhost/HermEsbSamples.Exch/BasicServiceSample.ControlInput/BasicServiceSampleControlInputKey"/>
       </input>
       <handlersAssemblies>
       </handlersAssemblies>

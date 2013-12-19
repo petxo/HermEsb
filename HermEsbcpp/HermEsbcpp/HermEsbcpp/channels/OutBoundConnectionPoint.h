@@ -11,6 +11,7 @@
 #include "ConnectException.h"
 #include "ConnectionPoint.h"
 #include "../global.h"
+#include <boost/thread.hpp>
 
 namespace HermEsb
 {
@@ -22,6 +23,12 @@ namespace HermEsb
          */
 		class HERMESB_API OutBoundConnectionPoint: public ConnectionPoint
         {
+            public:
+                DELEGATE(void (ConnectionPoint& sender, ConnectException& exception, const void* message, int messageLen))SendErrorHandler;
+            
+			protected:
+                SendErrorHandler _sendError;
+
             public:
                 /**
                  * Crea una instancia OutBoundConnectionPoint
@@ -46,22 +53,27 @@ namespace HermEsb
                  * @param exception Excepcion que se ha producido
                  * @param message Mensaje que se estaba intentado enviar
                  */
-                void (*OnSendMessageError)(OutBoundConnectionPoint& sender,
-                        ConnectException& exception, const void* message);
+                //void (*OnSendMessageError)(OutBoundConnectionPoint& sender,
+                //        ConnectException& exception, const void* message);
+
+				EVENT(SendErrorHandler, _sendError, OnSendError);
 
             protected:
+
+				
                 /**
                  * Envia un mensaje por medio del punto de conexión.
                  * @param message Mensaje a enviar
                  * @param messageLen Longitud del mensaje a enviar
 				 * @param priority Prioridad del mensjae a enviar
                  */
-                virtual void SendMessage(const void* message,
-                        int messageLen, int priority=0) = 0;
+                virtual void SendMessage(const void* message, int messageLen, int priority) = 0;
 
             private:
+				boost::mutex _mutex;
+
                 void InvokeOnSendMessageError(ConnectException& exception,
-                        const void* message);
+                        const void* message, int messageLen);
         };
     } /* namespace Channels */
 } /* namespace HermEsb */

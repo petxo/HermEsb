@@ -55,7 +55,11 @@ namespace HermEsb
 				{
 					void* message;
 					int messageLen = ListenMessage(&message);
-					InvokeOnMessageReceived(message, messageLen);
+					if (messageLen > 0)
+					{
+						InvokeOnMessageReceived(message, messageLen);
+						free(message);
+					}
 				}
 				catch (ConnectException& connException)
 				{

@@ -78,10 +78,10 @@ TEST(RabbitInBoundConnectionPointTest, ReceivedMessageMassiveSuccess)
 
 	void* message = malloc(512);
 	memset(message,66,512);
-	for(int i=0; i<1000000; i++)
+	for(int i=0; i<100000; i++)
 		output->Send(message, 512, 0);
 
-	while(handler->_messageCount < 1000000)
+	while(handler->_messageCount < 100000)
 	{
 		Sleep(1000);
 	}

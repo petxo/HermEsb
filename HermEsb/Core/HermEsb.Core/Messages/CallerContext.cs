@@ -10,7 +10,7 @@
         /// </summary>
         internal CallerContext()
         {
-
+            Session = new Session();
         }
         /// <summary>
         /// Gets or sets the identification.
