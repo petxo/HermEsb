@@ -3,5 +3,6 @@
 
 #include "IMessage.h"
 #include "MessageBus.h"
+#include "MessageBusFactory.h"
 
 #endif

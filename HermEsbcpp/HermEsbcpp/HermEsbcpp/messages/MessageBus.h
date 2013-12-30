@@ -14,6 +14,7 @@
 #include "../utils/timeutils.hpp"
 #include <rapidjson/writer.h>
 #include <rapidjson/stringbuffer.h>
+#include "rapidjson/document.h"
 
 using boost::property_tree::ptree;
 using namespace std;
@@ -41,6 +42,7 @@ namespace HermEsb
 			ptree ToJson();
 			void FromJson(ptree pt);
 			virtual void Serialize(Writer<StringBuffer>& writer);
+			virtual void Deserialize(Document& document);
 		};
 
 		class HERMESB_API CallerContext
@@ -54,6 +56,7 @@ namespace HermEsb
 			ptree ToJson();
 			void FromJson(ptree pt);
 			virtual void Serialize(Writer<StringBuffer>& writer);
+			virtual void Deserialize(Document& document);
 		};
 
 		typedef std::stack<CallerContext> CallerContextStack;
@@ -77,6 +80,7 @@ namespace HermEsb
 			ptree ToJson();
 			void FromJson(ptree pt);
 			virtual void Serialize(Writer<StringBuffer>& writer);
+			virtual void Deserialize(Document& document);
 		};
 
 		class HERMESB_API MessageBus
@@ -89,6 +93,7 @@ namespace HermEsb
 			ptree ToJson();
 			void FromJson(ptree pt);
 			virtual void Serialize(Writer<StringBuffer>& writer);
+			virtual void Deserialize(Document& document);
 		};
 
 	}

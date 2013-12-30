@@ -30,6 +30,9 @@
     <ClCompile Include="gateways\OutpuGatewayTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="messages\MessageSerializationTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gateways\FakeIMessage.hpp">

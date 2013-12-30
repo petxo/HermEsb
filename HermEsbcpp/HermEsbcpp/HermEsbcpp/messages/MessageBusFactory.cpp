@@ -1,10 +1,6 @@
 #include "MessageBusFactory.h"
 #include <vector>
-#include <boost/iostreams/filtering_stream.hpp>
-#include <boost/iostreams/filter/gzip.hpp>
-#include <boost/property_tree/ptree.hpp>
 #include <boost/foreach.hpp>
-#include <boost/property_tree/json_parser.hpp>
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
 #include "../utils/timeutils.hpp"

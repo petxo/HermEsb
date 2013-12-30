@@ -2,7 +2,7 @@
 #include <boost/uuid/uuid.hpp>            
 #include <boost/uuid/uuid_generators.hpp> 
 #include <boost/uuid/uuid_io.hpp> 
-
+using namespace rapidjson;
 namespace HermEsb
 {
 	namespace Messages
@@ -33,6 +33,13 @@ namespace HermEsb
 			Header.Serialize(writer);
 			writer.EndObject();
 		}
+
+		void MessageBus::Deserialize(Document& document)
+		{
+			Body = document["Body"].GetString();
+			/*Header.Deserialize(document.F)*/
+		}
+
 		void MessageBus::FromJson(ptree pt)
 		{
 			Body = pt.get<string>("Body");
@@ -48,8 +55,17 @@ namespace HermEsb
 
 		void Identification::Serialize(Writer<StringBuffer>& writer)
 		{
+			writer.StartObject();
+			writer.String("Id");
+			writer.String(Id.c_str(),(SizeType)Id.size());
+			writer.String("Type");
+			writer.String(Type.c_str(),(SizeType)Type.size());
+			writer.EndObject();
 		}
+		void Identification::Deserialize(Document& document)
+		{
 
+		}
 		ptree Identification::ToJson()
 		{
 			ptree pt;
@@ -88,8 +104,44 @@ namespace HermEsb
 			writer.Int(ReinjectionNumber);
 			writer.String("Type");
 			writer.Int(Type);
+			writer.String("CreatedAt");
+			string createdAt = to_iso_extended_string(CreatedAt);
+			writer.String(createdAt.c_str(), (SizeType)createdAt.size());
+			writer.String("IdentificationService");
+			Identification.Serialize(writer);
+
+			if (!CallContext.empty())
+			{
+				writer.String("CallContext");
+				writer.StartObject();
+				Session::iterator p;
+				ptree ptSession;
+				for(p = CallContext.begin(); p!=CallContext.end(); ++p)
+				{
+					writer.String(p->first.c_str(), p->first.size());
+					writer.String(p->second.c_str(), p->second.size());
+				}
+				writer.EndObject();
+			}
+			CallerContextStack cp(CallStack._Get_container());
+			if(!cp.empty())
+			{
+				writer.String("CallStack");
+				writer.StartArray();
+				while(!cp.empty())
+				{
+					cp.top().Serialize(writer);
+					cp.pop();
+				}
+				writer.EndArray();
+			}
 			writer.EndObject();
 	
+		}
+
+		void MessageHeader::Deserialize(Document& document)
+		{
+
 		}
 		ptree MessageHeader::ToJson()
 		{
@@ -162,9 +214,29 @@ namespace HermEsb
 
 		void CallerContext::Serialize(Writer<StringBuffer>& writer)
 		{
-	
+			writer.StartObject();
+			writer.String("Identification");
+			this->Identification.Serialize(writer);
+			if(!this->Session.empty())
+			{
+				writer.String("Session");
+				writer.StartObject();
+				Session::iterator p;
+				ptree ptSession;
+				for(p = this->Session.begin(); p!= this->Session.end(); ++p)
+				{
+					writer.String(p->first.c_str(), p->first.size());
+					writer.String(p->second.c_str(), p->second.size());
+				}
+				writer.EndObject();
+			}
+			writer.EndObject();
 		}
 
+		void CallerContext::Deserialize(Document& document)
+		{
+
+		}
 		ptree CallerContext::ToJson()
 		{
 			ptree ptHeader;
