@@ -36,7 +36,6 @@ TEST(OutputGatewayTest, ConnectSuccess)
 
 TEST(OutputGatewayTest, SendMessageSuccess)
 {
-    //RabbitOutBoundConnectionPoint* cp = new RabbitOutBoundConnectionPoint("localhost", 5672, "HermesbCppExch", "TestKey","guest", "guest", new InstantReconnectionTimer());
     RabbitOutBoundConnectionPoint* cp = new RabbitOutBoundConnectionPoint("localhost", 5672, "HermEsbSamples.Exch", "inputBasicBusSampleKey","guest", "guest", new InstantReconnectionTimer());
 	Identification id;
 	id.Id = "Publicador C++ - 1";
@@ -56,7 +55,6 @@ TEST(OutputGatewayTest, SendMessageSuccess)
 
 TEST(OutputGatewayTest, SendMassiveMessageSuccess)
 {
-    //RabbitOutBoundConnectionPoint* cp = new RabbitOutBoundConnectionPoint("localhost", 5672, "HermesbCppExch", "TestKey","guest", "guest", new InstantReconnectionTimer());
     RabbitOutBoundConnectionPoint* cp = new RabbitOutBoundConnectionPoint("localhost", 5672, "HermEsbSamples.Exch", "inputBasicBusSampleKey","guest", "guest", new InstantReconnectionTimer());
 	Identification id;
 	id.Id = "Publicador C++ - 1";

@@ -34,10 +34,10 @@ namespace HermEsb
 			writer.EndObject();
 		}
 
-		void MessageBus::Deserialize(Document& document)
+		void MessageBus::Deserialize(Value& document)
 		{
 			Body = document["Body"].GetString();
-			/*Header.Deserialize(document.F)*/
+			Header.Deserialize(document["Header"]);
 		}
 
 		void MessageBus::FromJson(ptree pt)
@@ -139,8 +139,21 @@ namespace HermEsb
 	
 		}
 
-		void MessageHeader::Deserialize(Document& document)
+		void MessageHeader::Deserialize(Value& document)
 		{
+			boost::uuids::string_generator gen;
+			MessageId = gen(document["MessageId"].GetString());
+			BodyType = document["BodyType"].GetString();
+			EncodingCodePage = document["EncodingCodePage"].GetInt();
+			Priority = document["Priority"].GetInt();
+			ReinjectionNumber = document["ReinjectionNumber"].GetInt();
+			Type = document["Type"].GetInt();
+			CreatedAt = HermEsb::Utils::Time::IsoTime::from_iso_extended_string(document["CreatedAt"].GetString());
+
+			BOOST_FOREACH(const ptree::value_type &v, pt.get_child("CallContext"))
+			{
+				CallContext.insert(SessionPair(string(v.first.data()), string(v.second.data())));
+			}
 
 		}
 		ptree MessageHeader::ToJson()

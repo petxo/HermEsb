@@ -80,7 +80,7 @@ namespace HermEsb
 			ptree ToJson();
 			void FromJson(ptree pt);
 			virtual void Serialize(Writer<StringBuffer>& writer);
-			virtual void Deserialize(Document& document);
+			virtual void Deserialize(Value& document);
 		};
 
 		class HERMESB_API MessageBus
@@ -93,7 +93,7 @@ namespace HermEsb
 			ptree ToJson();
 			void FromJson(ptree pt);
 			virtual void Serialize(Writer<StringBuffer>& writer);
-			virtual void Deserialize(Document& document);
+			virtual void Deserialize(Value& document);
 		};
 
 	}

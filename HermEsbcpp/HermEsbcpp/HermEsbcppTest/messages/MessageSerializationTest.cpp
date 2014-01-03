@@ -40,5 +40,6 @@ TEST(MessageSerialization, MessageBusSerializer)
 	MessageBus d;
 	d.Deserialize(document);
 	ASSERT_TRUE(d.Body.compare("body")==0);
+	ASSERT_TRUE(d.Header.BodyType.compare("key")==0);
 	delete(msg);
 }
