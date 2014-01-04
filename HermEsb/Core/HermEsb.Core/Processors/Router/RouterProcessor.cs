@@ -6,7 +6,6 @@ using Bteam.SimpleStateMachine;
 using HermEsb.Core.Communication.EndPoints;
 using HermEsb.Core.ErrorHandling;
 using HermEsb.Core.Gateways;
-using HermEsb.Core.Gateways.Router;
 using HermEsb.Core.Logging;
 using HermEsb.Core.Messages;
 using HermEsb.Core.Monitoring;
@@ -269,12 +268,12 @@ namespace HermEsb.Core.Processors.Router
                 }
                 else
                 {
-                    Logger.Error(string.Format("El mensaje no tiene bodytype: {0}", args.SerializedMessage));
+                    Logger.Error(string.Format("El mensaje no tiene bodytype: {0}", Encoding.UTF8.GetString(args.SerializedMessage)));
                 }
             }
             catch (Exception ex)
             {
-                Logger.Error(string.Format("Error publish bus: {0}", args.SerializedMessage), ex);
+                Logger.Error(string.Format("Error publish bus: {0}", Encoding.UTF8.GetString(args.SerializedMessage)), ex);
                 var messageByte = new byte[args.Header.MessageLength];
                 args.Message.CopyTo(messageByte, 15);
                 var message = _serializer.Deserialize<MessageBus>(messageByte);

@@ -1,4 +1,5 @@
 using System;
+using RabbitMQ.Client.Events;
 
 namespace HermEsb.Core.Communication.Channels.RabbitMq
 {
@@ -67,7 +68,7 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
         /// <param name="millisecondsTimeout">The milliseconds timeout.</param>
         /// <param name="result">The result.</param>
         /// <returns></returns>
-        bool Dequeue(int millisecondsTimeout, out object result);
+        bool Dequeue(int millisecondsTimeout, out BasicDeliverEventArgs result);
 
         /// <summary>
         /// Basics the ack.

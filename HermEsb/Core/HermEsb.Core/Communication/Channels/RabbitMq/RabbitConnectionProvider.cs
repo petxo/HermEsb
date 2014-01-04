@@ -76,7 +76,7 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
                 catch (Exception exception)
                 {
                     Logger.Error("Error al conectar", exception);
-                    Thread.Sleep(1000 * _reconnections);
+                    Thread.Sleep(1000);
                     Connect();
                 }
             }
@@ -107,10 +107,7 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
 
             channel.ExchangeDeclare(exch, ExchangeType.Direct, true);
             
-            channel.QueueDeclare(queue, true, false, false, new Dictionary<string, string>
-                                                                {
-                                                                    {"x-ha-policy", "all"}
-                                                                });
+            channel.QueueDeclare(queue, true, false, false, null);
             channel.QueueBind(queue, exch, key);
 
             var publicationAddress = new PublicationAddress(ExchangeType.Direct, exch, key);

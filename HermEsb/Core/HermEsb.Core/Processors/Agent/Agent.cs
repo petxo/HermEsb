@@ -16,6 +16,7 @@ using HermEsb.Core.Messages.Builders;
 using HermEsb.Core.Monitoring;
 using HermEsb.Core.Processors.Agent.Reinjection;
 using HermEsb.Logging;
+using ServiceStack;
 
 namespace HermEsb.Core.Processors.Agent
 {
@@ -429,8 +430,9 @@ namespace HermEsb.Core.Processors.Agent
                                 catch (Exception exception)
                                 {
                                     Logger.Fatal("Error On Handler", exception);
-                                    Logger.Fatal(string.Format("Message Error: {0}", args.SerializedMessage), exception);
-                                    InvokeOnErrorHandler(args.Header, args.SerializedMessage, exception, typeClosure);
+                                    var messageSerialized = args.Message.ToJson();
+                                    Logger.Fatal(string.Format("Message Error: {0}", messageSerialized), exception);
+                                    InvokeOnErrorHandler(args.Header, messageSerialized, exception, typeClosure);
                                 }
                             }
 
@@ -439,8 +441,9 @@ namespace HermEsb.Core.Processors.Agent
                         catch (Exception exception)
                         {
                             Logger.Fatal("Error On Task", exception);
-                            Logger.Fatal(string.Format("Message Error: {0}", args.SerializedMessage), exception);
-                            InvokeOnErrorHandler(args.Header, args.SerializedMessage, exception, typeClosure);
+                            var messageSerialized = args.Message.ToJson();
+                            Logger.Fatal(string.Format("Message Error: {0}", messageSerialized), exception);
+                            InvokeOnErrorHandler(args.Header, messageSerialized, exception, typeClosure);
                             //TODO: Poner tramiento de errores sobre la parallel
                         }
                     }));
@@ -600,11 +603,11 @@ namespace HermEsb.Core.Processors.Agent
         /// <param name="message">The message bus.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="handlerType">Type of the handler.</param>
-        private void InvokeOnErrorHandler(MessageHeader header, byte[] message, Exception exception, Type handlerType)
+        private void InvokeOnErrorHandler(MessageHeader header, string message, Exception exception, Type handlerType)
         {
             ErrorOnHandlersEventHandler handler = OnErrorHandler;
             if (handler != null)
-                Task.Factory.StartNew(() => handler(this, new ErrorOnHandlersEventHandlerArgs<byte[]>
+                Task.Factory.StartNew(() => handler(this, new ErrorOnHandlersEventHandlerArgs<string>
                     {
                         Header = header,
                         Message = message,

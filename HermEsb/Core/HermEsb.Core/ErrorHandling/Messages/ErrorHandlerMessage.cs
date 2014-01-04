@@ -21,7 +21,7 @@ namespace HermEsb.Core.ErrorHandling.Messages
         /// </summary>
         /// <value>The message.</value>
         [DataMember]
-        public byte[] Message { get; set; }
+        public string Message { get; set; }
 
         /// <summary>
         /// Gets or sets the header.

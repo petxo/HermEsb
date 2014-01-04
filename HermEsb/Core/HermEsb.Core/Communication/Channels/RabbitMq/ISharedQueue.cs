@@ -1,3 +1,6 @@
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
+
 namespace HermEsb.Core.Communication.Channels.RabbitMq
 {
     /// <summary>
@@ -11,23 +14,10 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
         void Close();
 
         /// <summary>
-        /// Enqueues the specified o.
-        /// </summary>
-        /// <param name="o">The o.</param>
-        void Enqueue(object o);
-
-        /// <summary>
         /// Dequeues this instance.
         /// </summary>
         /// <returns></returns>
         object Dequeue();
-
-        /// <summary>
-        /// Dequeues the no wait.
-        /// </summary>
-        /// <param name="defaultValue">The default value.</param>
-        /// <returns></returns>
-        object DequeueNoWait(object defaultValue);
 
         /// <summary>
         /// Dequeues the specified milliseconds timeout.
@@ -35,6 +25,6 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
         /// <param name="millisecondsTimeout">The milliseconds timeout.</param>
         /// <param name="result">The result.</param>
         /// <returns></returns>
-        bool Dequeue(int millisecondsTimeout, out object result);
+        bool Dequeue(int millisecondsTimeout, out BasicDeliverEventArgs result);
     }
 }
