@@ -16,6 +16,7 @@ using HermEsb.Core.Messages.Control;
 using HermEsb.Core.Monitoring;
 using HermEsb.Core.Processors.Router.Subscriptors;
 using HermEsb.Logging;
+using ServiceStack;
 
 namespace HermEsb.Core.Processors.Router
 {
@@ -342,8 +343,9 @@ namespace HermEsb.Core.Processors.Router
                         }
                         catch (Exception ex)
                         {
-                            Logger.Error(string.Format("Error Mensaje de Control: {0}", args.SerializedMessage), ex);
-                            InvokeOnErrorHandler(args.SerializedMessage, args.Header, typeClosure, ex);
+                            var message = args.Message.ToJson();
+                            Logger.Error(string.Format("Error Mensaje de Control: {0}", message), ex);
+                            InvokeOnErrorHandler(message, args.Header, typeClosure, ex);
                         }
                     }));
             }
@@ -402,11 +404,11 @@ namespace HermEsb.Core.Processors.Router
         /// <param name="header">The header.</param>
         /// <param name="handlerType">Type of the handler.</param>
         /// <param name="exception">The exception.</param>
-        private void InvokeOnErrorHandler(byte[] message, MessageHeader header, Type handlerType, Exception exception)
+        private void InvokeOnErrorHandler(string message, MessageHeader header, Type handlerType, Exception exception)
         {
             ErrorOnHandlersEventHandler handler = OnErrorHandler;
             if (handler != null)
-                handler(this, new ErrorOnHandlersEventHandlerArgs<byte[]>
+                handler(this, new ErrorOnHandlersEventHandlerArgs<string>
                     {
                         Message = message,
                         Header = header,

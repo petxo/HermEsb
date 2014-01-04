@@ -57,7 +57,7 @@ namespace HermEsb.Core.Test.Communication.Channels.RabbitChannels
 
         private void CallToDequeue()
         {
-            object result = new BasicDeliverEventArgs
+            var result = new BasicDeliverEventArgs
             {
                 Body = Encoding.UTF8.GetBytes("test")
             };

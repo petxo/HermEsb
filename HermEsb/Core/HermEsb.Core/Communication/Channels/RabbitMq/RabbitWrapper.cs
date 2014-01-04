@@ -1,6 +1,7 @@
 using HermEsb.Logging;
 using System;
 using System.Text;
+using RabbitMQ.Client.Events;
 
 namespace HermEsb.Core.Communication.Channels.RabbitMq
 {
@@ -169,7 +170,7 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
         /// <param name="millisecondsTimeout">The milliseconds timeout.</param>
         /// <param name="result">The result.</param>
         /// <returns></returns>
-        public bool Dequeue(int millisecondsTimeout, out object result)
+        public bool Dequeue(int millisecondsTimeout, out BasicDeliverEventArgs result)
         {
             while (true)
             {

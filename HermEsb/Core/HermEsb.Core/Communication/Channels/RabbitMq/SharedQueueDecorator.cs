@@ -1,3 +1,5 @@
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using RabbitMQ.Util;
 
 namespace HermEsb.Core.Communication.Channels.RabbitMq
@@ -8,13 +10,13 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
     public class SharedQueueDecorator : ISharedQueue
     {
 
-        private readonly SharedQueue _sharedQueue;
+        private readonly SharedQueue<BasicDeliverEventArgs> _sharedQueue;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedQueueDecorator"/> class.
         /// </summary>
         /// <param name="sharedQueue">The shared queue.</param>
-        internal SharedQueueDecorator(SharedQueue sharedQueue)
+        internal SharedQueueDecorator(SharedQueue<BasicDeliverEventArgs> sharedQueue)
         {
             _sharedQueue = sharedQueue;
         }
@@ -27,14 +29,6 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
             _sharedQueue.Close();
         }
 
-        /// <summary>
-        /// Enqueues the specified o.
-        /// </summary>
-        /// <param name="o">The o.</param>
-        public void Enqueue(object o)
-        {
-            _sharedQueue.Enqueue(o);
-        }
 
         /// <summary>
         /// Dequeues this instance.
@@ -46,22 +40,12 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
         }
 
         /// <summary>
-        /// Dequeues the no wait.
-        /// </summary>
-        /// <param name="defaultValue">The default value.</param>
-        /// <returns></returns>
-        public object DequeueNoWait(object defaultValue)
-        {
-            return _sharedQueue.DequeueNoWait(defaultValue);
-        }
-
-        /// <summary>
         /// Dequeues the specified milliseconds timeout.
         /// </summary>
         /// <param name="millisecondsTimeout">The milliseconds timeout.</param>
         /// <param name="result">The result.</param>
         /// <returns></returns>
-        public bool Dequeue(int millisecondsTimeout, out object result)
+        public bool Dequeue(int millisecondsTimeout, out BasicDeliverEventArgs result)
         {
             return _sharedQueue.Dequeue(millisecondsTimeout, out result);
         }

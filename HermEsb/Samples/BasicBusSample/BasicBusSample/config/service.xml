@@ -8,13 +8,13 @@
     <identification id="Bus" type="Bus"/>
     <routerProcessor>
       <input transport="RabbitMq">
-        <add name="uri" value="amqp://esocdesb02/HermEsbSamples.Exch/BasicBusSample.Input/inputBasicBusSampleKey"/>
+        <add name="uri" value="amqp://localhost/HermEsbSamples.Exch/BasicBusSample.Input/inputBasicBusSampleKey"/>
       </input>
     </routerProcessor>
 
     <routerControlProcessor>
       <input transport="RabbitMq">
-        <add name="uri" value="amqp://esocdesb02/HermEsbSamples.Exch/BasicBusSample.ControlInput/controlinputBasicBusSampleKey"/>
+        <add name="uri" value="amqp://localhost/HermEsbSamples.Exch/BasicBusSample.ControlInput/controlinputBasicBusSampleKey"/>
       </input>
     </routerControlProcessor>
   </HermEsb>
