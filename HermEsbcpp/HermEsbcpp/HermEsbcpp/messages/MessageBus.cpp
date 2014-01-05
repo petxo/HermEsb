@@ -15,15 +15,6 @@ namespace HermEsb
 		MessageBus::~MessageBus()
 		{
 		}
-
-		ptree MessageBus::ToJson()
-		{
-			ptree pt;
-			pt.put("Body", Body);
-			//pt.put_child("Header", Header.ToJson());
-			return pt;
-	
-		}
 		void MessageBus::Serialize(Writer<StringBuffer>& writer)
 		{
 			writer.StartObject();
@@ -38,12 +29,6 @@ namespace HermEsb
 		{
 			Body = document["Body"].GetString();
 			Header.Deserialize(document["Header"]);
-		}
-
-		void MessageBus::FromJson(ptree pt)
-		{
-			Body = pt.get<string>("Body");
-			Header.FromJson(pt.get_child("Header"));
 		}
 
 		Identification::Identification()
@@ -62,24 +47,12 @@ namespace HermEsb
 			writer.String(Type.c_str(),(SizeType)Type.size());
 			writer.EndObject();
 		}
-		void Identification::Deserialize(Document& document)
-		{
 
-		}
-		ptree Identification::ToJson()
+		void Identification::Deserialize(Value& document)
 		{
-			ptree pt;
-			pt.put("Id", Id);
-			pt.put("Type", Type);
-			return pt;
+			Id = document["Id"].GetString();
+			Type = document["Type"].GetString();
 		}
-
-		void Identification::FromJson(ptree pt)
-		{
-			Id = pt.get<string>("Id");
-			Type = pt.get<string>("Type");
-		}
-
 		MessageHeader::MessageHeader()
 		{
 			MessageId = guidGenerator();
@@ -149,71 +122,19 @@ namespace HermEsb
 			ReinjectionNumber = document["ReinjectionNumber"].GetInt();
 			Type = document["Type"].GetInt();
 			CreatedAt = HermEsb::Utils::Time::IsoTime::from_iso_extended_string(document["CreatedAt"].GetString());
+			this->Identification.Deserialize(document["IdentificationService"]);
 
-			BOOST_FOREACH(const ptree::value_type &v, pt.get_child("CallContext"))
+			Value::MemberIterator itr = document["CallContext"].MemberBegin();
+			while (itr != document["CallContext"].MemberEnd())
 			{
-				CallContext.insert(SessionPair(string(v.first.data()), string(v.second.data())));
+				CallContext.insert(SessionPair(string(itr->name.GetString()), string(itr->value.GetString())));
+				++itr;
 			}
 
-		}
-		ptree MessageHeader::ToJson()
-		{
-			ptree ptHeader;
-			ptHeader.put("MessageId", boost::uuids::to_string(MessageId));
-			ptHeader.put("BodyType", BodyType);
-			ptHeader.put<int>("EncodingCodePage", EncodingCodePage);
-			ptHeader.put<int>("Priority", Priority);
-			ptHeader.put<int>("ReinjectionNumber", ReinjectionNumber);
-			ptHeader.put<int>("Type", Type);
-			ptHeader.put_child("IdentificationService", Identification.ToJson());
-			ptHeader.put("CreatedAt", to_iso_extended_string(CreatedAt));
-
-			if (!CallContext.empty())
-			{
-				Session::iterator p;
-				ptree ptSession;
-				for(p = CallContext.begin(); p!=CallContext.end(); ++p)
-				{
-					ptSession.put(p->first, p->second);
-				}
-				ptHeader.put_child("CallContext", ptSession);
-			}
-			ptree ptCallStack;
-	
-			CallerContextStack cp(CallStack._Get_container());
-			if(!cp.empty())
-			{
-				while(!cp.empty())
-				{
-					ptCallStack.push_back(std::make_pair("", cp.top().ToJson()));
-					cp.pop();
-				}
-				ptHeader.put_child("CallStack", ptCallStack);
-			}
-			
-
-			return ptHeader;
-		}
-
-		void MessageHeader::FromJson(ptree pt)
-		{
-			BodyType = pt.get<string>("BodyType");
-			EncodingCodePage = pt.get<int>("EncodingCodePage");
-			Priority = pt.get<int>("Priority");
-			ReinjectionNumber = pt.get<int>("ReinjectionNumber");
-			Type = pt.get<int>("Type");
-			Identification.FromJson(pt.get_child("IdentificationService"));
-
-			CreatedAt =  HermEsb::Utils::Time::IsoTime::from_iso_extended_string(pt.get<string>("CreatedAt"));
-			BOOST_FOREACH(const ptree::value_type &v, pt.get_child("CallContext")) 
-			{
-				CallContext.insert(SessionPair (string(v.first.data()), string(v.second.data())));
-			}
-	
-			BOOST_REVERSE_FOREACH(const ptree::value_type &v, pt.get_child("CallStack")) 
+			for (SizeType i = document["CallStack"].Size(); i > 0; i--)
 			{
 				CallerContext cs;
-				cs.FromJson(v.second);
+				cs.Deserialize(document["CallStack"][i - 1]);
 				CallStack.push(cs);
 			}
 		}
@@ -246,34 +167,18 @@ namespace HermEsb
 			writer.EndObject();
 		}
 
-		void CallerContext::Deserialize(Document& document)
+		void CallerContext::Deserialize(Value& document)
 		{
-
-		}
-		ptree CallerContext::ToJson()
-		{
-			ptree ptHeader;
-			ptHeader.put_child("IdentificationService", Identification.ToJson());
-
-			if(!this->Session.empty())
+			Identification.Deserialize(document["Identification"]);
+			
+			if (document.HasMember("Session"))
 			{
-				Session::iterator p;
-				ptree ptSession;
-				for(p = this->Session.begin(); p!= this->Session.end(); ++p)
+				Value::MemberIterator itr = document["Session"].MemberBegin();
+				while (itr != document["Session"].MemberEnd())
 				{
-					ptSession.put(p->first, p->second);
+					this->Session.insert(SessionPair(string(itr->name.GetString()), string(itr->value.GetString())));
+					++itr;
 				}
-				ptHeader.put_child("Session", ptSession);
-			}
-			return ptHeader;
-		}
-
-		void CallerContext::FromJson(ptree pt)
-		{
-			Identification.FromJson(pt.get_child("IdentificationService"));
-			BOOST_FOREACH(const ptree::value_type &v, pt.get_child("Session")) 
-			{
-				this->Session.insert(SessionPair (string(v.first.data()), string(v.second.data())));
 			}
 		}
 	}

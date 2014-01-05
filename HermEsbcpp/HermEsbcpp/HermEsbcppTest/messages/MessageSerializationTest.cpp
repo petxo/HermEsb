@@ -28,6 +28,12 @@ TEST(MessageSerialization, MessageBusSerializer)
 	id.Id = "Id";
 	id.Type = "Type";
 	HermEsb::Messages::MessageBus *msg = HermEsb::Messages::MessageBusFactory::CreateMessageBus(&id, "key", "body");
+	msg->Header.CallContext.insert(SessionPair("hola", "mundo"));
+	CallerContext cc;
+	cc.Identification.Id = "Id";
+	cc.Identification.Type = "Type";
+	cc.Session.insert(SessionPair("hola", "mundo"));
+	msg->Header.CallStack.push(cc);
 
 	StringBuffer sbMessage;
 	Writer<StringBuffer> writer(sbMessage);
@@ -41,5 +47,8 @@ TEST(MessageSerialization, MessageBusSerializer)
 	d.Deserialize(document);
 	ASSERT_TRUE(d.Body.compare("body")==0);
 	ASSERT_TRUE(d.Header.BodyType.compare("key")==0);
+	ASSERT_TRUE(d.Header.Identification.Id.compare("Id")==0);
+	ASSERT_TRUE(d.Header.Identification.Type.compare("Type")==0);
+	ASSERT_TRUE(d.Header.CallContext.size()==1);
 	delete(msg);
 }

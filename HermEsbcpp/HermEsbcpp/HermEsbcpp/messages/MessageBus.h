@@ -39,10 +39,8 @@ namespace HermEsb
 			~Identification();
 			string Id;
 			string Type;
-			ptree ToJson();
-			void FromJson(ptree pt);
 			virtual void Serialize(Writer<StringBuffer>& writer);
-			virtual void Deserialize(Document& document);
+			virtual void Deserialize(Value& document);
 		};
 
 		class HERMESB_API CallerContext
@@ -52,11 +50,8 @@ namespace HermEsb
 			~CallerContext();
 			Identification Identification;
 			Session Session;
-
-			ptree ToJson();
-			void FromJson(ptree pt);
 			virtual void Serialize(Writer<StringBuffer>& writer);
-			virtual void Deserialize(Document& document);
+			virtual void Deserialize(Value& document);
 		};
 
 		typedef std::stack<CallerContext> CallerContextStack;
@@ -76,9 +71,6 @@ namespace HermEsb
 			Session CallContext;
 			CallerContextStack CallStack;
 			ptime CreatedAt;
-
-			ptree ToJson();
-			void FromJson(ptree pt);
 			virtual void Serialize(Writer<StringBuffer>& writer);
 			virtual void Deserialize(Value& document);
 		};
@@ -90,8 +82,6 @@ namespace HermEsb
 			~MessageBus();
 			MessageHeader Header;
 			string Body;
-			ptree ToJson();
-			void FromJson(ptree pt);
 			virtual void Serialize(Writer<StringBuffer>& writer);
 			virtual void Deserialize(Value& document);
 		};
