@@ -1,9 +1,10 @@
+#define BOOST_ALL_DYN_LINK
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <glog/logging.h>
 #include <gtest/gtest.h>
-#define BOOST_ALL_DYN_LINK
+
 
 int main(int argc, char* argv[])
 {

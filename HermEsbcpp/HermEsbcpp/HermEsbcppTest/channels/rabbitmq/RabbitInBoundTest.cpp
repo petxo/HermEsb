@@ -4,7 +4,9 @@
 #include <string.h>
 #include <gtest/gtest.h>
 #include <hermesb.h>
+#ifdef WIN32
 #include <Windows.h>
+#endif
 
 using namespace HermEsb::Channels::Rabbit;
 using namespace HermEsb::Core::Timers;
@@ -43,7 +45,12 @@ TEST(RabbitInBoundConnectionPointTest, ReceivedMessageSuccess)
     ASSERT_NO_THROW(test->Connect());
 	ASSERT_NO_THROW(test->Start());
 	FakeRabbitInBoundHandler *handler = new FakeRabbitInBoundHandler(test);
+#ifdef WIN32
 	Sleep(1000);
+#else
+	sleep(1000);
+#endif
+
 
 	output->Connect();
 
@@ -53,7 +60,12 @@ TEST(RabbitInBoundConnectionPointTest, ReceivedMessageSuccess)
 
 	while(!handler->_receivedMessage)
 	{
+#ifdef WIN32
 		Sleep(1000);
+#else
+		sleep(1000);
+#endif
+
 	}
 
 	ASSERT_TRUE(handler->_receivedMessage);
@@ -72,7 +84,11 @@ TEST(RabbitInBoundConnectionPointTest, ReceivedMessageMassiveSuccess)
     ASSERT_NO_THROW(test->Connect());
 	ASSERT_NO_THROW(test->Start());
 	FakeRabbitInBoundHandler *handler = new FakeRabbitInBoundHandler(test);
+#ifdef WIN32
 	Sleep(1000);
+#else
+	sleep(1000);
+#endif
 
 	output->Connect();
 
@@ -83,7 +99,11 @@ TEST(RabbitInBoundConnectionPointTest, ReceivedMessageMassiveSuccess)
 
 	while(handler->_messageCount < 100000)
 	{
+#ifdef WIN32
 		Sleep(1000);
+#else
+		sleep(1000);
+#endif
 	}
 
 	ASSERT_TRUE(handler->_receivedMessage);

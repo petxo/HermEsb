@@ -8,7 +8,7 @@
 #ifndef CORE_H_
 #define CORE_H_
 
-#include "Timers/Timers.h"
+#include "timers/timers.h"
 #include "EventHandling.h"
 #include "Startable.h"
 

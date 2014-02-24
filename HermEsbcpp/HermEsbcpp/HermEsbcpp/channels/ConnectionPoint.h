@@ -10,8 +10,8 @@
 
 #include <stdio.h>
 #include "ConnectException.h"
-#include "../Core/Timers/IReconnectionTimer.h"
-#include "../Core/EventHandling.h"
+#include "../core/timers/IReconnectionTimer.h"
+#include "../core/EventHandling.h"
 #include "../global.h"
 
 using namespace std;

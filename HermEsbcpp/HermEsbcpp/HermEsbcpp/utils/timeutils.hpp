@@ -40,16 +40,16 @@ namespace HermEsb
 			class HERMESB_API TimeExtensions
 			{
 			public:
-				static __int64 ticks_from_epoch(ptime t)
+				static int64_t ticks_from_epoch(ptime t)
 				{
 					ptime myEpoch(boost::gregorian::date(1970,1,1));
 					time_duration myTimeFromEpoch = t - myEpoch;
 					return myTimeFromEpoch.ticks() * 10;
 				}
 
-				static __int64 ticks_from_mindate(ptime t)
+				static int64_t ticks_from_mindate(ptime t)
 				{
-					__int64 ticksFromEpoch = ticks_from_epoch(t);
+					int64_t ticksFromEpoch = ticks_from_epoch(t);
 					return ticksFromEpoch + 621355968000000000;
 				}
 			};

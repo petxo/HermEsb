@@ -47,7 +47,7 @@ TEST(OutputGatewayTest, SendMessageSuccess)
 	IMessageBasic msg;
 	msg.Nombre = "Manolito Gafotas";
 	msg.Fecha = boost::posix_time::microsec_clock::universal_time();
-	gateway->Publish("BasicSampleContracts.IMessageBasic,BasicSampleContracts", &msg);
+	gateway->Publish(string("BasicSampleContracts.IMessageBasic,BasicSampleContracts"), &msg);
 	gateway->Close();
     delete (gateway);
 }
