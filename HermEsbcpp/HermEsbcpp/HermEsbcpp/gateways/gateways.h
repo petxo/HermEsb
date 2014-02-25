@@ -3,5 +3,6 @@
 
 #include "BaseGateway.h"
 #include "OutputGateway.h"
+#include "InputGateway.h"
 
 #endif

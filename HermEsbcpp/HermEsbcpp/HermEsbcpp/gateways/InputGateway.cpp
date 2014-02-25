@@ -1,6 +1,8 @@
 
 #include "InputGateway.h"
 #include "BaseGateway.h"
+#include <omp.h>
+#include "../global.h"
 
 namespace HermEsb
 {
@@ -22,6 +24,7 @@ namespace HermEsb
 		*/
 		bool InputGateway::OnStart()
 		{
+			((InBoundConnectionPoint *)this->_connectionPoint)->Start();
 			return true;
 		}
 
@@ -31,7 +34,13 @@ namespace HermEsb
 		*/
 		bool InputGateway::OnStop()
 		{
+			((InBoundConnectionPoint *)this->_connectionPoint)->Stop();
 			return true;
+		}
+
+		void InputGateway::ReceivedMessage(InBoundConnectionPoint& sender, void* message, int messageLen)
+		{
+			//Leer el mensaje del bus y lanzar un hilo con un nuevo evento
 		}
 
 	}

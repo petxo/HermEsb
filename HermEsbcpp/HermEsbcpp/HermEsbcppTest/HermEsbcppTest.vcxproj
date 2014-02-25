@@ -157,6 +157,7 @@
     <ClCompile Include="channels\rabbitmq\RabbitInBoundTest.cpp" />
     <ClCompile Include="channels\rabbitmq\RabbitOutBoundTest.cpp" />
     <ClCompile Include="core\StartableTest.cpp" />
+    <ClCompile Include="gateways\InputGatewayTest.cpp" />
     <ClCompile Include="gateways\OutpuGatewayTest.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="messages\MessageSerializationTest.cpp" />

@@ -53,6 +53,10 @@ namespace HermEsb
 			*/
 			virtual bool OnStop();
 
+			/**
+
+			*/
+			void ReceivedMessage(InBoundConnectionPoint& sender, void* message, int messageLen);
 		};
 
 	}

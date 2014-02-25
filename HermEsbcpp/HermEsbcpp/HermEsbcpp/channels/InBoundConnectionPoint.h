@@ -16,38 +16,38 @@
 
 namespace HermEsb
 {
-    namespace Channels
-    {
-        /**
-         * Clase que define un punto de conexion de entrada
-         */
+	namespace Channels
+	{
+		/**
+		 * Clase que define un punto de conexion de entrada
+		 */
 		class HERMESB_API InBoundConnectionPoint: public ConnectionPoint, public HermEsb::Core::Startable
-        {
-            public:
+		{
+			public:
 				DELEGATE(void (InBoundConnectionPoint& sender, void* message, int messageLen))MessageReceivedHandler;
 
 			protected:
-                MessageReceivedHandler _onMessageReceived;
+				MessageReceivedHandler _onMessageReceived;
 			
 			public:
-                /**
-                 * Crea una instancia de InBoundConnection
-                 * @param reconnectionTimer Temporizador de reconexion
-                 */
-                InBoundConnectionPoint(IReconnectionTimer* reconnectionTimer, int maxReconnections = INFINITE_RECONNECTIONS);
-                virtual ~InBoundConnectionPoint();
+				/**
+				 * Crea una instancia de InBoundConnection
+				 * @param reconnectionTimer Temporizador de reconexion
+				 */
+				InBoundConnectionPoint(IReconnectionTimer* reconnectionTimer, int maxReconnections = INFINITE_RECONNECTIONS);
+				virtual ~InBoundConnectionPoint();
 
-                /**
-                 * Callback de llamada cuando llega un mensaje, el metodo devuelve el puntero al buffer
-                 * que contiene el mensaje recibido y el tamaño del buffer.
-                 * Es responsabilidad del cliente eliminar el buffer mediante free.
-                 * @param sender Punto de conexión que ha recibido el mensaje
-                 * @param message Puntero al buffer con el mensaje recibido
-                 * @param messageLength Tamaño del buffer
-                 */
+				/**
+				 * Callback de llamada cuando llega un mensaje, el metodo devuelve el puntero al buffer
+				 * que contiene el mensaje recibido y el tamaño del buffer.
+				 * Es responsabilidad del cliente eliminar el buffer mediante free.
+				 * @param sender Punto de conexión que ha recibido el mensaje
+				 * @param message Puntero al buffer con el mensaje recibido
+				 * @param messageLength Tamaño del buffer
+				 */
 				EVENT(MessageReceivedHandler, _onMessageReceived, OnMessageReceived);
 
-            protected:
+			protected:
 
 				/**
 				* Implementa el comportamiento necesario para arracar la instancia,
@@ -70,17 +70,17 @@ namespace HermEsb
 				*/
 				virtual void BeforeClose();
 
-                /**
-                 * Metodo que lee el mensaje del punto de conexion
+				/**
+				 * Metodo que lee el mensaje del punto de conexion
 				 * @param destBuffer Buffer de destino 
-                 */
-                virtual int ListenMessage(void** destBuffer) throw (ConnectException) = 0;
+				 */
+				virtual int ListenMessage(void** destBuffer) throw (ConnectException) = 0;
 
 				void InvokeOnMessageReceived(void* message, int messageLen);
 
 				boost::thread *threadListen;
 
-        };
-    } /* namespace Channels */
+		};
+	} /* namespace Channels */
 } /* namespace HermEsb */
 #endif /* INBOUNDCONNECTIONPOINT_H_ */

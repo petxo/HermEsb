@@ -11,12 +11,12 @@ namespace HermEsb
 			_useCompression = useCompression;
 
 			EVENT_BIND2(connection, connectionPoint->ConnectionError, &BaseGateway::ErrorConnection);
-
 		}
 
 		BaseGateway::~BaseGateway()
 		{
 			_connectionPoint->Close();
+			EVENT_UNBIND(connection);
 			delete _connectionPoint;
 		}
 

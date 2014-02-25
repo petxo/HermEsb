@@ -8,7 +8,7 @@
 namespace HermEsb
 {
 	namespace Channels
-    {
+	{
 		namespace Rabbit
 		{
 			RabbitInBoundConnectionPoint::RabbitInBoundConnectionPoint(char* server, int port, char* exchange, char* routingKey, char* user, char* password, char* queue, IReconnectionTimer* reconnectionTimer):
@@ -25,32 +25,32 @@ namespace HermEsb
 			}
 
 			
-            void RabbitInBoundConnectionPoint::ConnectPoint() throw (ConnectException)
+			void RabbitInBoundConnectionPoint::ConnectPoint() throw (ConnectException)
 			{
 				ConnectRabbit();
 
 				amqp_exchange_declare(_conn, 1, amqp_cstring_bytes(_exchange), amqp_cstring_bytes(_exchangetype),
-                        0, 1, amqp_empty_table);
+						0, 1, amqp_empty_table);
 				GetRabbitError("Declaracion Exchange");
 
 				amqp_queue_declare(_conn, 1, amqp_cstring_bytes(_queue), 0, 1, 0, 0, amqp_empty_table);
 				GetRabbitError("Declaracion Queue");
 
 				amqp_queue_bind(_conn, 1, amqp_cstring_bytes(_queue), amqp_cstring_bytes(_exchange), amqp_cstring_bytes(_routingKey),
-                  amqp_empty_table);
+				  amqp_empty_table);
 				GetRabbitError("Binding Queue");
 
 				amqp_basic_consume(_conn, 1, amqp_cstring_bytes(_queue), amqp_empty_bytes, 0, 0, 0, amqp_empty_table);
 				GetRabbitError("Binding Queue");
 			}
 
-            void RabbitInBoundConnectionPoint::ClosePoint()
+			void RabbitInBoundConnectionPoint::ClosePoint()
 			{
 				CloseRabbit();
 			}
 
 			int RabbitInBoundConnectionPoint::ListenMessage(void** destBuffer) throw (ConnectException)
-            {
+			{
 				amqp_rpc_reply_t res;
 				amqp_envelope_t envelope;
 

@@ -33,6 +33,9 @@
     <ClCompile Include="messages\MessageSerializationTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gateways\InputGatewayTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gateways\FakeIMessage.hpp">
