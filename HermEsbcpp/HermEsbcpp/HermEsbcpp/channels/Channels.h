@@ -8,8 +8,8 @@
 #ifndef CHANNELS_H_
 #define CHANNELS_H_
 
-#include "Factories/Factories.h"
-#include "Communication/Communication.h"
+#include "factories/Factories.h"
+#include "communication/Communication.h"
 #include "ConnectException.h"
 #include "ConnectionPoint.h"
 #include "OutBoundConnectionPoint.h"

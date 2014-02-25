@@ -17,7 +17,7 @@ namespace HermEsb
 		{
 		public:
 			static MessageBus* CreateMessageBus(Identification* identification, string key, string body);
-			static int MessageBusFactory::CreateRouterMessage(MessageBus* messageBus, void** messageBuffer , bool useCompression);
+			static int CreateRouterMessage(MessageBus* messageBus, void** messageBuffer , bool useCompression);
 		};
 
 	}

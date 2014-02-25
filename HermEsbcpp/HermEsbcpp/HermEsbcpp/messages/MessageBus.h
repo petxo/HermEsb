@@ -6,17 +6,14 @@
 #include <vector>
 #include <stack>
 #include <map>
-#include <boost/property_tree/ptree.hpp>
 #include <boost/foreach.hpp>
-#include <boost/property_tree/json_parser.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/uuid/uuid.hpp>
-#include "../utils/timeutils.hpp"
 #include <rapidjson/writer.h>
 #include <rapidjson/stringbuffer.h>
-#include "rapidjson/document.h"
+#include <rapidjson/document.h>
+#include "../utils/timeutils.hpp"
 
-using boost::property_tree::ptree;
 using namespace std;
 using namespace boost::posix_time;
 using namespace rapidjson;
@@ -36,7 +33,7 @@ namespace HermEsb
 		{
 		public:
 			Identification();
-			~Identification();
+			virtual ~Identification();
 			string Id;
 			string Type;
 			virtual void Serialize(Writer<StringBuffer>& writer);
@@ -47,9 +44,9 @@ namespace HermEsb
 		{
 		public:
 			CallerContext();
-			~CallerContext();
-			Identification Identification;
-			Session Session;
+			virtual ~CallerContext();
+			Identification Id;
+			Session Storage;
 			virtual void Serialize(Writer<StringBuffer>& writer);
 			virtual void Deserialize(Value& document);
 		};
@@ -60,14 +57,14 @@ namespace HermEsb
 		{
 		public:
 			MessageHeader();
-			~MessageHeader();
+			virtual ~MessageHeader();
 			boost::uuids::uuid MessageId;
 			string BodyType;
 			int EncodingCodePage;
 			int ReinjectionNumber;
 			int Priority;
 			int Type;
-			Identification Identification;
+			Identification Id;
 			Session CallContext;
 			CallerContextStack CallStack;
 			ptime CreatedAt;
@@ -79,7 +76,7 @@ namespace HermEsb
 		{
 		public:
 			MessageBus();
-			~MessageBus();
+			virtual ~MessageBus();
 			MessageHeader Header;
 			string Body;
 			virtual void Serialize(Writer<StringBuffer>& writer);

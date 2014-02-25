@@ -6,7 +6,7 @@
 #include "../utils/timeutils.hpp"
 #include <zlib.h>
 
-using boost::property_tree::ptree;
+
 using namespace rapidjson;
 
 namespace HermEsb
@@ -24,7 +24,7 @@ namespace HermEsb
 			msg->Header.Identification.Type = string(identification->Type);
 			
 			CallerContext cc;
-			cc.Identification = *identification;
+			cc.Id = *identification;
 			msg->Header.CallStack.push(cc);
 
 			return msg;
@@ -70,7 +70,7 @@ namespace HermEsb
 			if(!messageBus->Header.CallStack.empty())
 			{
 				c1 = messageBus->Header.CallStack.top();
-				bufferLen += c1.Identification.Id.size() + 4 + c1.Identification.Type.size();
+				bufferLen += c1.Id.Id.size() + 4 + c1.Id.Type.size();
 			}
 			 
 			void* bufferRet = malloc(bufferLen);
@@ -80,10 +80,10 @@ namespace HermEsb
 			pos += 1;
 			memcpy(pos, &(messageBus->Header.Priority), sizeof(char));
 			pos += 2; //Reservado
-			__int64 ticks = HermEsb::Utils::Time::TimeExtensions::ticks_from_mindate(messageBus->Header.CreatedAt);
+			int64_t ticks = HermEsb::Utils::Time::TimeExtensions::ticks_from_mindate(messageBus->Header.CreatedAt);
 			
-			memcpy(pos, &ticks, sizeof(__int64));
-			pos +=sizeof(__int64);
+			memcpy(pos, &ticks, sizeof(int64_t));
+			pos +=sizeof(int64_t);
 			int bodytypeLen = messageBus->Header.BodyType.size();
 			memcpy(pos, &bodytypeLen, sizeof(int));
 			pos += sizeof(int);
@@ -94,18 +94,18 @@ namespace HermEsb
 			pos += sizeof(int);
 			memcpy(pos, serializedMessage, bodysize);
 
-			if(!c1.Identification.Id.empty())
+			if(!c1.Id.Id.empty())
 			{
 				pos += bodysize;
-				int idLen = c1.Identification.Id.size();
+				int idLen = c1.Id.Id.size();
 				memcpy(pos, &idLen, sizeof(int));
 				pos +=  sizeof(int);
-				memcpy(pos, c1.Identification.Id.c_str(), c1.Identification.Id.size());
-				pos += c1.Identification.Id.size();
-				int typeLen = c1.Identification.Type.size();
+				memcpy(pos, c1.Id.Id.c_str(), c1.Id.Id.size());
+				pos += c1.Id.Id.size();
+				int typeLen = c1.Id.Type.size();
 				memcpy(pos, &typeLen, sizeof(int));
 				pos +=  sizeof(int);
-				memcpy(pos, c1.Identification.Type.c_str(), c1.Identification.Type.size());
+				memcpy(pos, c1.Id.Type.c_str(), c1.Id.Type.size());
 			}
 
 			if(zBuffer!=NULL)

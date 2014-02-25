@@ -56,6 +56,7 @@ namespace HermEsb
 		MessageHeader::MessageHeader()
 		{
 			MessageId = guidGenerator();
+			EncodingCodePage = 0;
 		}
 
 		MessageHeader::~MessageHeader()
@@ -81,14 +82,13 @@ namespace HermEsb
 			string createdAt = to_iso_extended_string(CreatedAt);
 			writer.String(createdAt.c_str(), (SizeType)createdAt.size());
 			writer.String("IdentificationService");
-			Identification.Serialize(writer);
+			Id.Serialize(writer);
 
 			if (!CallContext.empty())
 			{
 				writer.String("CallContext");
 				writer.StartObject();
 				Session::iterator p;
-				ptree ptSession;
 				for(p = CallContext.begin(); p!=CallContext.end(); ++p)
 				{
 					writer.String(p->first.c_str(), p->first.size());
@@ -96,7 +96,11 @@ namespace HermEsb
 				}
 				writer.EndObject();
 			}
+#ifdef WIN32
 			CallerContextStack cp(CallStack._Get_container());
+#else
+			CallerContextStack cp(CallStack);
+#endif
 			if(!cp.empty())
 			{
 				writer.String("CallStack");
@@ -150,14 +154,13 @@ namespace HermEsb
 		{
 			writer.StartObject();
 			writer.String("Identification");
-			this->Identification.Serialize(writer);
-			if(!this->Session.empty())
+			this->Id.Serialize(writer);
+			if(!this->Storage.empty())
 			{
 				writer.String("Session");
 				writer.StartObject();
 				Session::iterator p;
-				ptree ptSession;
-				for(p = this->Session.begin(); p!= this->Session.end(); ++p)
+				for(p = this->Storage.begin(); p!= this->Storage.end(); ++p)
 				{
 					writer.String(p->first.c_str(), p->first.size());
 					writer.String(p->second.c_str(), p->second.size());

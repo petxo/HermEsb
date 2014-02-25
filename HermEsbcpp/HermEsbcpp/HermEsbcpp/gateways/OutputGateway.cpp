@@ -33,7 +33,7 @@ namespace HermEsb
 			msg->Header.Priority = priority;
 			msg->Header.ReinjectionNumber = 0;
 			msg->Header.Type = MESSAGETYPE_GENERAL;
-			msg->Header.Identification = *_identification;
+			msg->Header.Id = *_identification;
 
 			void* msgBuffer;
 			int messageLen = HermEsb::Messages::MessageBusFactory::CreateRouterMessage(msg, &msgBuffer, _useCompression);
