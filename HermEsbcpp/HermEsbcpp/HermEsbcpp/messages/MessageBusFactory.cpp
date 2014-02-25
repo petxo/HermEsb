@@ -20,8 +20,8 @@ namespace HermEsb
 			msg->Header.BodyType = key;
 			msg->Header.EncodingCodePage = 0;
 			msg->Header.CreatedAt = boost::posix_time::microsec_clock::universal_time();
-			msg->Header.Identification.Id = string(identification->Id);
-			msg->Header.Identification.Type = string(identification->Type);
+			msg->Header.Id.Id = string(identification->Id);
+			msg->Header.Id.Type = string(identification->Type);
 			
 			CallerContext cc;
 			cc.Id = *identification;

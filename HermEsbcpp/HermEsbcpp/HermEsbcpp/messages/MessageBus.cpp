@@ -126,7 +126,7 @@ namespace HermEsb
 			ReinjectionNumber = document["ReinjectionNumber"].GetInt();
 			Type = document["Type"].GetInt();
 			CreatedAt = HermEsb::Utils::Time::IsoTime::from_iso_extended_string(document["CreatedAt"].GetString());
-			this->Identification.Deserialize(document["IdentificationService"]);
+			this->Id.Deserialize(document["IdentificationService"]);
 
 			Value::MemberIterator itr = document["CallContext"].MemberBegin();
 			while (itr != document["CallContext"].MemberEnd())
@@ -172,14 +172,14 @@ namespace HermEsb
 
 		void CallerContext::Deserialize(Value& document)
 		{
-			Identification.Deserialize(document["Identification"]);
+			Id.Deserialize(document["Identification"]);
 			
 			if (document.HasMember("Session"))
 			{
 				Value::MemberIterator itr = document["Session"].MemberBegin();
 				while (itr != document["Session"].MemberEnd())
 				{
-					this->Session.insert(SessionPair(string(itr->name.GetString()), string(itr->value.GetString())));
+					this->Storage.insert(SessionPair(string(itr->name.GetString()), string(itr->value.GetString())));
 					++itr;
 				}
 			}
