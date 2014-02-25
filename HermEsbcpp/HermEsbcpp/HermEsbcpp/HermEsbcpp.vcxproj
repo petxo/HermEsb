@@ -168,7 +168,8 @@
     <ClInclude Include="core\timers\PeriodicalReconnectionTimer.h" />
     <ClInclude Include="Core\Timers\Timers.h" />
     <ClInclude Include="gateways\gateways.h" />
-    <ClInclude Include="gateways\BaseOutputGateway.h" />
+    <ClInclude Include="gateways\BaseGateway.h" />
+    <ClInclude Include="gateways\InputGateway.h" />
     <ClInclude Include="gateways\OutputGateway.h" />
     <ClInclude Include="hermesb.h" />
     <ClInclude Include="global.h" />
@@ -190,7 +191,8 @@
     <ClCompile Include="Core\Timers\InstantReconnectionTimer.cpp" />
     <ClCompile Include="Core\Timers\LogarithmicReconnectionTimer.cpp" />
     <ClCompile Include="core\timers\PeriodicalReconnectionTimer.cpp" />
-    <ClCompile Include="gateways\BaseOutputGateway.cpp" />
+    <ClCompile Include="gateways\BaseGateway.cpp" />
+    <ClCompile Include="gateways\InputGateway.cpp" />
     <ClCompile Include="gateways\OutputGateway.cpp" />
     <ClCompile Include="messages\MessageBus.cpp" />
     <ClCompile Include="messages\MessageBusFactory.cpp" />

@@ -21,50 +21,50 @@ using namespace HermEsb::Messages;
 
 TEST(OutputGatewayTest, ConnectSuccess)
 {
-    RabbitOutBoundConnectionPoint* cp = new RabbitOutBoundConnectionPoint("localhost", 5672, "HermesbCppExch", "TestKey","guest", "guest", new InstantReconnectionTimer());
+	RabbitOutBoundConnectionPoint* cp = new RabbitOutBoundConnectionPoint("localhost", 5672, "HermesbCppExch", "TestKey","guest", "guest", new InstantReconnectionTimer());
 	Identification id;
 	id.Id = "Publicador";
 	id.Type = "Publicador";
 
 	OutputGateway* gateway = new OutputGateway(&id, cp, true);
 
-    ASSERT_NO_THROW(gateway->Connect());
+	ASSERT_NO_THROW(gateway->Connect());
 
 	gateway->Close();
-    delete (gateway);
+	delete (gateway);
 }
 
 TEST(OutputGatewayTest, SendMessageSuccess)
 {
-    RabbitOutBoundConnectionPoint* cp = new RabbitOutBoundConnectionPoint("localhost", 5672, "HermEsbSamples.Exch", "inputBasicBusSampleKey","guest", "guest", new InstantReconnectionTimer());
+	RabbitOutBoundConnectionPoint* cp = new RabbitOutBoundConnectionPoint("localhost", 5672, "HermEsbSamples.Exch", "inputBasicBusSampleKey","guest", "guest", new InstantReconnectionTimer());
 	Identification id;
 	id.Id = "Publicador C++ - 1";
 	id.Type = "Publicador C++";
 
 	OutputGateway* gateway = new OutputGateway(&id, cp, true);
 
-    ASSERT_NO_THROW(gateway->Connect());
+	ASSERT_NO_THROW(gateway->Connect());
 	IMessageBasic msg;
 	msg.Nombre = "Manolito Gafotas";
 	msg.Fecha = boost::posix_time::microsec_clock::universal_time();
 	gateway->Publish("BasicSampleContracts.IMessageBasic,BasicSampleContracts", &msg);
 	gateway->Close();
-    delete (gateway);
+	delete (gateway);
 }
 
 
 TEST(OutputGatewayTest, SendMassiveMessageSuccess)
 {
-    RabbitOutBoundConnectionPoint* cp = new RabbitOutBoundConnectionPoint("localhost", 5672, "HermEsbSamples.Exch", "inputBasicBusSampleKey","guest", "guest", new InstantReconnectionTimer());
+	RabbitOutBoundConnectionPoint* cp = new RabbitOutBoundConnectionPoint("localhost", 5672, "HermEsbSamples.Exch", "inputBasicBusSampleKey","guest", "guest", new InstantReconnectionTimer());
 	Identification id;
 	id.Id = "Publicador C++ - 1";
 	id.Type = "Publicador C++";
 
 	OutputGateway* gateway = new OutputGateway(&id, cp, true);
 
-    ASSERT_NO_THROW(gateway->Connect());
+	ASSERT_NO_THROW(gateway->Connect());
 	
-	for(int i = 0; i < 400000; i++)
+	for(int i = 0; i < 1; i++)
 	{
 		IMessageBasic msg;
 		msg.Nombre = "Manolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito GafotasManolito Gafotas";
@@ -72,5 +72,5 @@ TEST(OutputGatewayTest, SendMassiveMessageSuccess)
 		gateway->Publish("BasicSampleContracts.IMessageBasic,BasicSampleContracts", &msg);
 	}
 	gateway->Close();
-    delete (gateway);
+	delete (gateway);
 }

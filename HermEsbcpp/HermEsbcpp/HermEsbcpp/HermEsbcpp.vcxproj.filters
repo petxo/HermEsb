@@ -84,9 +84,6 @@
     <ClInclude Include="utils\timeutils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gateways\BaseOutputGateway.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="gateways\OutputGateway.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -100,6 +97,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="messages\MessageBus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gateways\BaseGateway.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gateways\InputGateway.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -137,9 +140,6 @@
     <ClCompile Include="channels\rabbitmq\RabbitInBoundConnectionPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gateways\BaseOutputGateway.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="gateways\OutputGateway.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -147,6 +147,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="messages\MessageBusFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gateways\BaseGateway.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gateways\InputGateway.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

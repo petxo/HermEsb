@@ -3,23 +3,19 @@
 #include <stdlib.h>
 #include "../messages/MessageBus.h"
 #include "../messages/MessageBusFactory.h"
-#include <boost/property_tree/ptree.hpp>
-#include <boost/foreach.hpp>
-#include <boost/property_tree/json_parser.hpp>
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
 
-using boost::property_tree::ptree;
 using namespace rapidjson;
 
 namespace HermEsb
 {
-    namespace Gateways
-    {
-		OutputGateway::OutputGateway(Identification* identification, OutBoundConnectionPoint *outBoundConnectionPoint, bool useCompression) : BaseOutputGateway(outBoundConnectionPoint)
+	namespace Gateways
+	{
+		OutputGateway::OutputGateway(Identification* identification, OutBoundConnectionPoint *outBoundConnectionPoint, bool useCompression) : 
+			BaseGateway(identification, outBoundConnectionPoint, useCompression)
 		{
-			_identification = identification;
-			_useCompression = useCompression;
+			EVENT_BIND4(connection, outBoundConnectionPoint->OnSendError, &OutputGateway::SendError);
 		}
 
 		OutputGateway::~OutputGateway()
@@ -41,9 +37,14 @@ namespace HermEsb
 
 			void* msgBuffer;
 			int messageLen = HermEsb::Messages::MessageBusFactory::CreateRouterMessage(msg, &msgBuffer, _useCompression);
-			_outBoundConnectionPoint->Send(msgBuffer, messageLen, priority);
+			((OutBoundConnectionPoint*)_connectionPoint)->Send(msgBuffer, messageLen, priority);
 			free(msgBuffer);
 			delete(msg);
+		}
+
+		void OutputGateway::SendError(ConnectionPoint& sender, ConnectException& exception, const void* message, int messageLen)
+		{
+			this->_sendError(*this, exception, message, messageLen);
 		}
 	}
 }
