@@ -96,7 +96,7 @@ class ErroresView:
     def GetStack(self, exception):
         ex = exception["StackTrace"]
         if not exception["InnerException"] is None:
-            ex = ex + "\r\n" + self.GetException(exception["InnerException"])
+            ex = self.GetStack(exception["InnerException"]) + ex + "\r\n"
         return ex
 
     def GetMessage(self, id):

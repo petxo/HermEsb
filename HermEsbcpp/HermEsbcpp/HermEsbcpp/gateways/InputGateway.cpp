@@ -11,11 +11,10 @@ namespace HermEsb
 		InputGateway::InputGateway(Identification* identification, InBoundConnectionPoint *inBoundConnectionPoint, bool useCompression) : 
 			BaseGateway(identification, inBoundConnectionPoint, useCompression), Startable()
 		{
-
+			EVENT_BIND3(connection, inBoundConnectionPoint->OnMessageReceived, &InputGateway::ReceivedMessage);
 		}
 		InputGateway::~InputGateway()
 		{
-
 		}
 
 		/**
@@ -41,6 +40,7 @@ namespace HermEsb
 		void InputGateway::ReceivedMessage(InBoundConnectionPoint& sender, void* message, int messageLen)
 		{
 			//Leer el mensaje del bus y lanzar un hilo con un nuevo evento
+
 		}
 
 	}

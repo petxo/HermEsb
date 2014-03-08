@@ -345,7 +345,7 @@ namespace HermEsb.Core.Processors.Router
                         {
                             var message = args.Message.ToJson();
                             Logger.Error(string.Format("Error Mensaje de Control: {0}", message), ex);
-                            InvokeOnErrorHandler(message, args.Header, typeClosure, ex);
+                            InvokeOnErrorHandler(message, args.Header, args.SerializedMessage, typeClosure, ex);
                         }
                     }));
             }
@@ -404,16 +404,18 @@ namespace HermEsb.Core.Processors.Router
         /// <param name="header">The header.</param>
         /// <param name="handlerType">Type of the handler.</param>
         /// <param name="exception">The exception.</param>
-        private void InvokeOnErrorHandler(string message, MessageHeader header, Type handlerType, Exception exception)
+        /// <param name="messageBus"></param>
+        private void InvokeOnErrorHandler(string message, MessageHeader header, byte[] messageBus, Type handlerType, Exception exception)
         {
             ErrorOnHandlersEventHandler handler = OnErrorHandler;
             if (handler != null)
-                handler(this, new ErrorOnHandlersEventHandlerArgs<string>
+                handler(this, new ErrorOnHandlersEventHandlerArgs
                     {
                         Message = message,
                         Header = header,
                         HandlerType = handlerType,
-                        Exception = exception
+                        Exception = exception,
+                        MessageBus = messageBus
                     });
         }
     }

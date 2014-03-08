@@ -6,7 +6,7 @@ namespace HermEsb.Core.ErrorHandling
     /// <summary>
     /// 
     /// </summary>
-    public class ErrorOnHandlersEventHandlerArgs<TMessage> : EventArgs
+    public class ErrorOnHandlersEventHandlerArgs : EventArgs
     {
         /// <summary>
         /// Gets or sets the type of the handler.
@@ -18,7 +18,15 @@ namespace HermEsb.Core.ErrorHandling
         /// Gets or sets the message.
         /// </summary>
         /// <value>The message.</value>
-        public TMessage Message { get; set; }
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Gets or sets the message bus.
+        /// </summary>
+        /// <value>
+        /// The message bus.
+        /// </value>
+        public byte[] MessageBus { get; set; }
 
         /// <summary>
         /// Gets or sets the header.

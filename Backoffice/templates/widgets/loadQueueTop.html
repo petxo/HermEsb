@@ -1,0 +1,18 @@
+{% extends "widgets/widget.html" %}
+{% block titlewidget %}Total Mensajes Top 10{% endblock %}
+{% block blockwidget %}
+    <div id='loadQueueTable_div'>
+        <img src="{{ url_for('static', filename='img/loading2.gif') }}">
+    </div>
+    <script>
+    google.setOnLoadCallback(drawMemoryTable);
+    function drawMemoryTable() {
+        $.post("/loadqueuetop/" + environment + "/").done(function( data ){
+                var datatable = new google.visualization.arrayToDataTable(data["Services"]);
+                var table = new google.visualization.BarChart(document.getElementById('loadQueueTable_div'));
+                table.draw(datatable);
+             });
+      }
+    </script>
+
+{% endblock %}

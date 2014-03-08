@@ -10,28 +10,28 @@
 
 namespace HermEsb
 {
-    namespace Channels
-    {
-        InBoundConnectionPoint::InBoundConnectionPoint(
-                IReconnectionTimer* reconnectionTimer, int maxReconnections) :
-                ConnectionPoint(reconnectionTimer, maxReconnections)
-        {
+	namespace Channels
+	{
+		InBoundConnectionPoint::InBoundConnectionPoint(
+				IReconnectionTimer* reconnectionTimer, int maxReconnections) :
+				ConnectionPoint(reconnectionTimer, maxReconnections)
+		{
 			threadListen = NULL;
-        }
+		}
 
-        InBoundConnectionPoint::~InBoundConnectionPoint()
-        {
+		InBoundConnectionPoint::~InBoundConnectionPoint()
+		{
 
-        }
+		}
 
 		bool InBoundConnectionPoint::OnStart()
-        {
+		{
 			if(threadListen == NULL)
 			{
 				threadListen = new boost::thread(boost::bind(&InBoundConnectionPoint::Proccess, this));
 			}
 			return true;
-        }
+		}
 
 		void InBoundConnectionPoint::OnTerminateStop()
 		{
@@ -87,5 +87,5 @@ namespace HermEsb
 		{
 			this->_onMessageReceived(*this, message, messageLen);
 		}
-    } /* namespace Channels */
+	} /* namespace Channels */
 } /* namespace HermEsb */

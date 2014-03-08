@@ -26,14 +26,15 @@ namespace HermEsb.Core.ErrorHandling.Messages
         /// </summary>
         /// <param name="args">The args.</param>
         /// <returns></returns>
-        public static ErrorHandlerMessage CreateErrorHandlerMessageFromEventArgs(ErrorOnHandlersEventHandlerArgs<string> args)
+        public static ErrorHandlerMessage CreateErrorHandlerMessageFromEventArgs(ErrorOnHandlersEventHandlerArgs args)
         {
             return new ErrorHandlerMessage
             {
                 Message = args.Message,
                 Header = args.Header,
                 Exception = CreateExceptionMessage(args.Exception),
-                HandlerType = args.HandlerType.FullName
+                HandlerType = args.HandlerType.FullName,
+                MessageBus = args.MessageBus
             };
         }
 

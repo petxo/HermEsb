@@ -40,6 +40,10 @@ class ServiceRepository:
             .sort("PeakMaxLatency", pymongo.DESCENDING) \
             .limit(rows)
 
+    def GetLoadQueueTop(self, rows):
+        return self.__db.find({"TotalMessages": {"$gte": 0}})\
+            .sort("TotalMessages", pymongo.DESCENDING) \
+            .limit(rows)
 
 class ServiceInfoView:
     def __init__(self, server):
@@ -110,6 +114,24 @@ class ServiceInfoView:
                 pmin.append(p["Identification"]["_id"])
                 pmin.append(p["PeakMaxLatency"] / 1000)
                 pmin.append(p["PeakMinLatency"] / 1000)
+
+                rowlist.append(pmin)
+
+        except Exception as ex:
+            pass
+
+        return rowlist
+
+    def LoadQueueTop(self, rows):
+        rowlist = list()
+        try:
+            rowlist.append(['Service', 'Messages', 'Velocity'])
+            mongoCursor = self.__repo.GetLoadQueueTop(rows)
+            for p in mongoCursor:
+                pmin = list()
+                pmin.append(p["Identification"]["_id"])
+                pmin.append(p["TotalMessages"])
+                pmin.append(p["Velocity"])
 
                 rowlist.append(pmin)
 

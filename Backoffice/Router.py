@@ -143,6 +143,12 @@ def TotalBandWidthServiceData(entorno="DEV", id="Bus"):
     services = view.GetTotalBandWidth(id, 7200)
     return jsonify({services})
 
+@app.route('/loadqueuetop/<entorno>/', methods=['GET', 'POST'])
+def LoadQueueTop(entorno="DEV"):
+    view = ServiceInfoView(Environments.GetEnvironment(entorno).MongoServer)
+    services = view.LoadQueueTop(10)
+    return jsonify({"Services": services})
+
 if __name__ == '__main__':
     Environments.Create("environments.cfg")
     app.run(port=18045)

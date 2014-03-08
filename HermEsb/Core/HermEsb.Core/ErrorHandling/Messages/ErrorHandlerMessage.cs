@@ -29,5 +29,14 @@ namespace HermEsb.Core.ErrorHandling.Messages
         /// <value>The header.</value>
         [DataMember]
         public MessageHeader Header { get; set; }
+
+        /// <summary>
+        /// Gets or sets the message bus.
+        /// </summary>
+        /// <value>
+        /// The message bus.
+        /// </value>
+        [DataMember]
+        public byte[] MessageBus { get; set; }
     }
 }
