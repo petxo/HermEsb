@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FEE03F14-DCD8-4208-A8B9-BC2A1497507D}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -38,6 +40,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Performance1.psess = Performance1.psess
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Monitoring", "Monitoring", "{61666072-CE36-46CC-B398-B247812CD3B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HermEsb.Monitoring", "Monitoring\HermEsb.Monitoring\HermEsb.Monitoring.csproj", "{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +135,16 @@ Global
 		{90DB8110-EC48-4AC8-BC1F-5B3600CFCF14}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{90DB8110-EC48-4AC8-BC1F-5B3600CFCF14}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{90DB8110-EC48-4AC8-BC1F-5B3600CFCF14}.Release|x86.ActiveCfg = Release|Any CPU
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,5 +159,6 @@ Global
 		{C9D7DA8E-0289-4BAE-A4D3-CAF5DAD07685} = {361A2EE4-052E-48A9-9C85-384BE33919BC}
 		{572DD0A2-1007-4E66-B8CB-33A17EF8396E} = {361A2EE4-052E-48A9-9C85-384BE33919BC}
 		{E515458A-256B-4A4E-9F36-DFB49CDCEE94} = {361A2EE4-052E-48A9-9C85-384BE33919BC}
+		{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE} = {61666072-CE36-46CC-B398-B247812CD3B3}
 	EndGlobalSection
 EndGlobal

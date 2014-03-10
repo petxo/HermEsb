@@ -54,9 +54,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\RabbitMQ.Client.3.2.1\lib\net30\RabbitMQ.Client.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Text, Version=4.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ServiceStack.Text, Version=4.0.12.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\ServiceStack.Text.4.0.5\lib\net40\ServiceStack.Text.dll</HintPath>
+      <HintPath>..\..\packages\ServiceStack.Text.4.0.12\lib\net40\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -181,6 +181,8 @@
     <Compile Include="Gateways\OutputGatewayEventHandlerArgs.cs" />
     <Compile Include="Gateways\Router\RouterGatewayFactory.cs" />
     <Compile Include="Compression\GzipCompression.cs" />
+    <Compile Include="Handlers\Monitoring\IMonitoringMessageHandler.cs" />
+    <Compile Include="Handlers\Monitoring\MonitoringHandlerRepositoryFactory.cs" />
     <Compile Include="Messages\MessageBusParser.cs" />
     <Compile Include="Messages\RouterHeader.cs" />
     <Compile Include="Gateways\Router\RouterInputGateway.cs" />
