@@ -60,7 +60,7 @@ namespace HermEsb.Core.Handlers
 
                 _workList.TryGetValue(messageType, out list);
             }
-            return list;
+            return list?? new ConcurrentBag<Type>();
         }
 
         /// <summary>
