@@ -1,0 +1,17 @@
+<li class="dropdown tasks-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="glyphicon glyphicon-hdd"></i>
+        <span>{{ session.enviroment }}<i class="caret"></i></span>
+    </a>
+    <ul class="dropdown-menu">
+        <li class="header">Selecciona el entorno</li>
+        <li>
+            <!-- inner menu: contains the actual data -->
+            <ul class="menu">
+                {% for env in session.enviromentlist %}
+                    <li> <a href="/changeenvironment/{{ env }}"> <h3>{{ env }}</h3> </a></li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</li>

@@ -8,13 +8,15 @@ namespace HermEsb
 {
 	namespace Gateways
 	{
-		InputGateway::InputGateway(Identification* identification, InBoundConnectionPoint *inBoundConnectionPoint, bool useCompression) : 
+		InputGateway::InputGateway(Identification* identification, InBoundConnectionPoint *inBoundConnectionPoint, bool useCompression, int numThreads) :
 			BaseGateway(identification, inBoundConnectionPoint, useCompression), Startable()
 		{
+			_thSemaphore = new boost::interprocess::interprocess_semaphore(numThreads);
 			EVENT_BIND3(connection, inBoundConnectionPoint->OnMessageReceived, &InputGateway::ReceivedMessage);
 		}
 		InputGateway::~InputGateway()
 		{
+			delete (_thSemaphore);
 		}
 
 		/**
@@ -40,6 +42,11 @@ namespace HermEsb
 		void InputGateway::ReceivedMessage(InBoundConnectionPoint& sender, void* message, int messageLen)
 		{
 			//Leer el mensaje del bus y lanzar un hilo con un nuevo evento
+			//TODO: Crear el pool de hilos mediante semaforo
+			_thSemaphore->wait();
+			boost::t
+			
+			//threadListen = new boost::thread(boost::bind(&InBoundConnectionPoint::Proccess, this));
 
 		}
 

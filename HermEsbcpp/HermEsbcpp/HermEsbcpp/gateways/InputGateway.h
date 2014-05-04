@@ -7,6 +7,7 @@
 #include "../core/Startable.h"
 #include "../messages/IMessage.h"
 #include "../channels/InBoundConnectionPoint.h"
+#include <boost/interprocess/sync/interprocess_semaphore.hpp>
 
 using namespace HermEsb::Channels;
 using namespace HermEsb::Messages;
@@ -25,6 +26,7 @@ namespace HermEsb
 			DELEGATE(void(InputGateway& sender, ConnectException& exception, const void* message, int messageLen))RecevieErrorHandler;
 		protected:
 			RecevieErrorHandler _recevieError;
+			boost::interprocess::interprocess_semaphore* _thSemaphore;
 
 		public:
 			/**
@@ -33,7 +35,7 @@ namespace HermEsb
 			* @param inBoundConnectionPoint Conexion del punto de entrada
 			* @param useCompression Determina si se debe usar la compresion
 			*/
-			InputGateway(Identification* identification, InBoundConnectionPoint *inBoundConnectionPoint, bool useCompression);
+			InputGateway(Identification* identification, InBoundConnectionPoint *inBoundConnectionPoint, bool useCompression, int numThreads = 20);
 
 			/**
 			* Destructor del punto de entrada
