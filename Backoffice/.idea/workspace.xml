@@ -2,695 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d187867b-85a3-4bbe-be0c-94832685efdb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/aero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/aero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/aero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/aero@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/aero@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/aero@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/ajax-loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/ajax-loader1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/bootstrap-colorpicker/alpha-horizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/bootstrap-colorpicker/alpha.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/credit/american-express.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/link/images/anchor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/link/images/hidpi/anchor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/animated-overlay.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/animated-overlay.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/images/arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/avatar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/avatar04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/avatar2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/avatar3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/avatar5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/blue@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/blue@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/blue@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/blur-background04.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/blur-background08.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/blur-background09.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/credit/cirrus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/images/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/images/hidpi/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/flat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/flat@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/futurico/futurico.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/futurico/futurico@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/green@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/green@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/green@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/grey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/grey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/grey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/grey@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/grey@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/grey@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/bootstrap-colorpicker/hue-horizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/bootstrap-colorpicker/hue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/magicline/images/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/magicline/images/hidpi/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/icons_hidpi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/icons_hidpi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/ionicons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/ionicons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/ionicons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/line@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/images/lock-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/images/hidpi/lock-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/images/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/images/hidpi/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/about/dialogs/logo_ckeditor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/credit/mastercard.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/credit/mestro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/minimal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/minimal@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/image/images/noimage.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/orange.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/orange.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/orange.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/orange@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/orange@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/orange@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/credit/paypal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/credit/paypal2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/pink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/pink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/pink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/pink@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/pink@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/pink@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/polaris/polaris.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/polaris/polaris@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/purple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/purple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/purple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/purple@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/purple@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/purple@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/red@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/red@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/red@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/images/refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/images/hidpi/refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/bootstrap-colorpicker/saturation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/datatables/images/sort_asc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/datatables/images/sort_asc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/datatables/images/sort_both.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/datatables/images/sort_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/datatables/images/sort_desc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/fakeobjects/images/spacer.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/sprite-skin-flat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/sprite-skin-nice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/square.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/square@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-bg_flat_100_e6e7e8_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-bg_flat_100_f56954_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-bg_flat_55_f39c12_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-bg_flat_55_fbec88_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-bg_flat_65_ffffff_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-bg_flat_75_dadada_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-bg_flat_75_e6e6e6_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-bg_flat_75_ffffff_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-bg_glass_75_d0e5f5_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-bg_glass_85_dfeffc_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-bg_glass_95_fef1ec_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-bg_inset-hard_100_f5f8f9_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-bg_inset-hard_100_fcfdfd_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-icons_217bc0_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-icons_2e83ff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-icons_454545_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-icons_469bdd_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-icons_6da8d5_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-icons_888888_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-icons_cd0a0a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-icons_d8e7f3_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-icons_f9bd01_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/user-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/credit/visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/yellow@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/yellow@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/yellow@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/404_500_errors.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/500.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/AdminLTE.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/AdminLTE.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/CHANGES.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/scayt/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/wsc/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/scayt/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/wsc/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/Router.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/_all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/_all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/_all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/_all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/about/dialogs/about.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/aero.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/af.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/alerts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/link/dialogs/anchor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/AdminLTE/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/bn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/colorpicker/bootstrap-colorpicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/colorpicker/bootstrap-colorpicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/colorpicker/bootstrap-colorpicker.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/colorpicker/bootstrap-colorpicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/bootstrap-slider/bootstrap-slider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/bootstrap-social.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/timepicker/bootstrap-timepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/timepicker/bootstrap-timepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/timepicker/bootstrap-timepicker.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/timepicker/bootstrap-timepicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/boxes.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/bs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/build-config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/buscarenvios.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/buttons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/callout.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/wsc/dialogs/ciframe.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/ckeditor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/contents.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/core.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/AdminLTE/dashboard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/datatables/dataTables.bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/datatables/dataTables.bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/daterangepicker/daterangepicker-bs3.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/daterangepicker/daterangepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/pastefromword/filter/default.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/dialog/dialogDefinition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/dialog_ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/dialog_ie7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/dialog_ie8.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/dialog_iequirks.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/dialog_opera.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/dropdown.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/editor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/editor_gecko.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/editor_ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/editor_ie7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/editor_ie8.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/editor_iequirks.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/en-au.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/en-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/en-gb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/navbar/enviroment.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/eu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/excanvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/excanvas.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/flat.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/fo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/forms.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/fr-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/fullcalendar/fullcalendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/fullcalendar/fullcalendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/fullcalendar/fullcalendar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/fullcalendar/fullcalendar.print.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/futurico/futurico.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/general.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/green.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/grey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/gu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/header.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/hi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/misc/html5shiv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/iCheck.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/iCheck/icheck.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/iCheck/icheck.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/image/dialogs/image.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/integraciong2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/invoice.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ionslider/ion.rangeSlider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ionslider/ion.rangeSlider.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ionslider/ion.rangeSlider.skinFlat.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ionslider/ion.rangeSlider.skinNice.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ionicons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ionicons.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/fonts/ionicons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/is.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jvectormap/jquery-jvectormap-1.2.2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/jquery-ui-1.10.3.custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/jquery-ui-1.10.3.custom.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/misc/jquery.ba-resize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.colorhelpers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.colorhelpers.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/datatables/jquery.dataTables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.canvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.canvas.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.categories.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.categories.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.crosshair.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.crosshair.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.errorbars.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.errorbars.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.fillbetween.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.fillbetween.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.image.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.image.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.navigate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.navigate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.pie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.pie.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.resize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.resize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.selection.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.selection.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.stack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.stack.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.symbol.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.symbol.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.threshold.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.threshold.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/flot/jquery.flot.time.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/input-mask/jquery.inputmask.date.extensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/input-mask/jquery.inputmask.extensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/input-mask/jquery.inputmask.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/input-mask/jquery.inputmask.numeric.extensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/input-mask/jquery.inputmask.phone.extensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/input-mask/jquery.inputmask.regex.extensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/adapters/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/jqueryKnob/jquery.knob.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/misc/jquery.placeholder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/slimScroll/jquery.slimscroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/slimScroll/jquery.slimscroll.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/sparkline/jquery.sparkline.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/sparkline/jquery.sparkline.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/ka.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/ku.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ku.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/layoutAdmin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/line.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/link/dialogs/link.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/lockscreen.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/login_and_register.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/mailbox.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/navbar/messageMenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/minimal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/mn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/misc/modernizr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/morris/morris.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/morris/morris.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/morris/morris.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/ms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/navbar/navbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/navs.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/navbar/notificationsMenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/scayt/dialogs/options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/orange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/pace.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/clipboard/dialogs/paste.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/input-mask/phone-codes/phone-be.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/input-mask/phone-codes/phone-codes.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/pink.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/polaris/polaris.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/progress-bars.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/pt-br.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/purple.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/skins/moono/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/input-mask/phone-codes/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/red.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/misc/respond.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/sidebar/searchpanel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/sidebar/sidebar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/sidebar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/sidebar/sidebarmenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/skins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/bootstrap-slider/slider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/slimScroll/slimScroll.jquery.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/small-box.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/specialchar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/square.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/sr-latn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/styles.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/table/dialogs/table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/tabletools/dialogs/tableCell.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/navbar/taskmenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/timeline.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/wsc/dialogs/tmp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/wsc/dialogs/tmpFrameset.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/scayt/dialogs/toolbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/ug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/navbar/userMenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/sidebar/userpanel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/less/vars.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/widget.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/wsc/dialogs/wsc.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/wsc/dialogs/wsc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/wsc/dialogs/wsc_ie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/flat/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/line/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/minimal/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/iCheck/square/yellow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/lang/zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/zh.js" />
-      <change type="DELETED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\Router.py" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\fonts\glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\fonts\glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\fonts\glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\widget.html" afterPath="" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\Environments.py" afterPath="$PROJECT_DIR$/HermEsbPanel/Environments.py" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\Errores.py" afterPath="$PROJECT_DIR$/HermEsbPanel/Errores.py" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\ServiceInfo.py" afterPath="$PROJECT_DIR$/HermEsbPanel/ServiceInfo.py" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\ServiceStatistics.py" afterPath="$PROJECT_DIR$/HermEsbPanel/ServiceStatistics.py" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\environments.cfg" afterPath="$PROJECT_DIR$/HermEsbPanel/environments.cfg" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\bootstrap-responsive.css" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/bootstrap-responsive.css" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/bootstrap-responsive.min.css" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\bootstrap.css" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/bootstrap.css" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\bootstrap.min.css" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/bootstrap.min.css" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ellipsis-xbl.xml" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ellipsis-xbl.xml" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\animated-overlay.gif" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/animated-overlay.gif" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-bg_flat_0_aaaaaa_40x100.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-bg_flat_0_eeeeee_40x100.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-bg_flat_0_eeeeee_40x100.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-bg_flat_55_c0402a_40x100.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-bg_flat_55_c0402a_40x100.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-bg_flat_55_eeeeee_40x100.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-bg_flat_55_eeeeee_40x100.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-bg_glass_100_f8f8f8_1x400.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-bg_glass_100_f8f8f8_1x400.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-bg_glass_35_dddddd_1x400.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-bg_glass_35_dddddd_1x400.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-bg_glass_60_eeeeee_1x400.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-bg_glass_60_eeeeee_1x400.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-bg_inset-hard_75_999999_1x100.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-bg_inset-hard_75_999999_1x100.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-bg_inset-soft_50_c9c9c9_1x100.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-bg_inset-soft_50_c9c9c9_1x100.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-icons_3383bb_256x240.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-icons_3383bb_256x240.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-icons_454545_256x240.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-icons_454545_256x240.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-icons_70b2e1_256x240.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-icons_70b2e1_256x240.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-icons_999999_256x240.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-icons_999999_256x240.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\images\ui-icons_fbc856_256x240.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/images/ui-icons_fbc856_256x240.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\jquery-ui-1.10.3.custom.css" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/jquery-ui-1.10.3.custom.css" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\overcast\jquery-ui-1.10.3.custom.min.css" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/overcast/jquery-ui-1.10.3.custom.min.css" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\style.css" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/style.css" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\animated-overlay.gif" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/animated-overlay.gif" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-icons_222222_256x240.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-icons_228ef1_256x240.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-icons_228ef1_256x240.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-icons_ef8c08_256x240.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/images/ui-icons_ffd27a_256x240.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\images\ui-icons_ffffff_256x240.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/jQueryUI/images/ui-icons_ffffff_256x240.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\jquery-ui-1.10.3.custom.css" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/jquery-ui-1.10.3.custom.css" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui-lightness\jquery-ui-1.10.3.custom.min.css" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui-lightness/jquery-ui-1.10.3.custom.min.css" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\css\ui.jqgrid.css" afterPath="$PROJECT_DIR$/HermEsbPanel/static/css/ui.jqgrid.css" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\Corner.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/Corner.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\Home.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/Home.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\Matic.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/Matic.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\Office.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/Office.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\PointMatic.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/PointMatic.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\PointOffice.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/PointOffice.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/glyphicons-halflings-white.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\glyphicons-halflings.png" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/glyphicons-halflings.png" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\loading2.gif" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/loading2.gif" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\loading_black.gif" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/loading_black.gif" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\img\loading_gif.gif" afterPath="$PROJECT_DIR$/HermEsbPanel/static/img/loading_gif.gif" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\bootstrap.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/bootstrap.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\bootstrap.min.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/bootstrap.min.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-ar.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-ar.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-bg.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-bg.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-bg1251.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-bg1251.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-cat.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-cat.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-cn.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-cn.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-cs.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-cs.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-da.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-da.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-de.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-de.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-dk.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-dk.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-el.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-el.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-en.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-en.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-es.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-es.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-fa.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-fa.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-fi.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-fi.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-fr.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-fr.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-gl.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-gl.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-he.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-he.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-hr.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-hr.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-hr1250.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-hr1250.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-hu.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-hu.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-id.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-id.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-is.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-is.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-it.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-it.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-ja.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-ja.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-kr.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-kr.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-lt.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-lt.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-mne.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-mne.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-nl.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-nl.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-no.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-no.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-pl.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-pl.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-pt-br.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-pt-br.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-pt.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-pt.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-ro.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-ro.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-ru.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-ru.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-sk.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-sk.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-sr-latin.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-sr-latin.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-sr.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-sr.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-sv.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-sv.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-th.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-th.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-tr.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-tr.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-tw.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-tw.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-ua.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-ua.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\i18n\grid.locale-vi.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/i18n/grid.locale-vi.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\jquery-2.0.3.min.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/jquery-2.0.3.min.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\jquery-ui-1.10.3.custom.min.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/jquery-ui-1.10.3.custom.min.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\jquery.jqGrid.min.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/jquery.jqGrid.min.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\static\js\layout.js" afterPath="$PROJECT_DIR$/HermEsbPanel/static/js/layout.js" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\bus.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/bus.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\errores.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/errores.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\layout.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/layout.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\bandwidthservice.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/bandwidthservice.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\hangoutServices.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/hangoutServices.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\lantencyservice.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/lantencyservice.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\latencyPeakTop.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/latencyPeakTop.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\latencyTop.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/latencyTop.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\loadQueueTop.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/loadQueueTop.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\memoryTop.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryTop.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\memoryservice.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryservice.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\speedservice.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/speedservice.html" />
-      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\templates\widgets\totalsizebandwidthservice.html" afterPath="$PROJECT_DIR$/HermEsbPanel/templates/widgets/totalsizebandwidthservice.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/runserver.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HermEsbPanel/settings.cfg" />
+      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\.idea\Direccion.iml" afterPath="$PROJECT_DIR$/.idea/HermEsbPanel.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/gateways/InputGateway.cpp" afterPath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/gateways/InputGateway.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/gateways/InputGateway.h" afterPath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/gateways/InputGateway.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcppTest/gateways/OutpuGatewayTest.cpp" afterPath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcppTest/gateways/OutpuGatewayTest.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HermEsbPanel/__init__.py" afterPath="$PROJECT_DIR$/HermEsbPanel/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsbBalancer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../HermEsbBalancer/.idea/workspace.xml" />
     </list>
     <ignored path="Direccion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -716,19 +38,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/index.html">
+      <file leaf-file-name="runserver.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HermEsbPanel/runserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="13" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="544">
-              <folding />
+            <state line="24" column="50" selection-start="781" selection-end="781" vertical-scroll-proportion="0.091561936" vertical-offset="357" max-vertical-offset="1972">
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bandwidthservice.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/bandwidthservice.html">
+      <file leaf-file-name="settings.cfg" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HermEsbPanel/settings.cfg">
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+            <state line="31" column="39" selection-start="851" selection-end="851" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
@@ -746,7 +73,7 @@
       <file leaf-file-name="layout.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="69" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="986">
+            <state line="32" column="69" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="986">
               <folding />
             </state>
           </provider>
@@ -761,15 +88,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceInfo.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HermEsbPanel/ServiceInfo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="1" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="2482">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="loadQueueTop.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/loadQueueTop.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -779,10 +97,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Router.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Router.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HermEsbPanel/Router.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="12" selection-start="281" selection-end="281" vertical-scroll-proportion="0.2142039" vertical-offset="0" max-vertical-offset="2754">
+            <state line="21" column="0" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2754">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HermEsbPanel/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="27" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="272">
               <folding />
             </state>
           </provider>
@@ -800,7 +127,7 @@
       <file leaf-file-name="widget.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/widget.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="638" selection-end="638" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="357">
+            <state line="14" column="0" selection-start="638" selection-end="638" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="357">
               <folding />
             </state>
           </provider>
@@ -845,14 +172,18 @@
         <option value="$PROJECT_DIR$/templates/layoutAdmin.html" />
         <option value="$PROJECT_DIR$/templates/widgets/widget.html" />
         <option value="$PROJECT_DIR$/HermEsbPanel/Router.py" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/HermEsbPanel/__init__.py" />
+        <option value="$PROJECT_DIR$/HermEsbPanel/settings.cfg" />
+        <option value="$PROJECT_DIR$/HermEsbPanel/runserver.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -885,17 +216,39 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Direccion" />
+              <option name="myItemId" value="HermEsbPanel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Direccion" />
+              <option name="myItemId" value="HermEsbPanel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Backoffice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HermEsbPanel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HermEsbPanel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backoffice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HermEsbPanel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -906,10 +259,10 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.30916667" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../clitellum_old" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
@@ -931,6 +284,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\Bteam\HermEsb\Backoffice\HermEsbPanel" />
+      <recent name="C:\Projects\Bteam\HermEsb\Backoffice" />
       <recent name="C:\Users\sbermudel\Desktop\Geograficos\sample\Direccion\static\js" />
       <recent name="C:\Users\sbermudel\Desktop\Geograficos\sample\Direccion\static\img" />
       <recent name="C:\Users\sbermudel\Desktop\Geograficos\sample\Direccion\static" />
@@ -1139,7 +493,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1147,7 +501,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24542125" sideWeight="0.6498278" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2031722" sideWeight="0.6498278" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34359807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298731" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1155,11 +509,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1181,32 +535,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryservice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HermEsbPanel/ServiceInfo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="33" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2108">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/bandwidthservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
-          <folding />
-        </state>
+        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/errores.html">
@@ -1242,16 +573,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryTop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
-          <folding />
-        </state>
+        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/environments.cfg">
@@ -1264,23 +591,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/ServiceInfo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="31" selection-start="2346" selection-end="2346" vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="2108">
-          <folding />
-        </state>
+        <state line="62" column="31" selection-start="2346" selection-end="2346" vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="2108" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/bandwidthservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
-          <folding />
-        </state>
+        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/errores.html">
@@ -1311,16 +632,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryTop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
-          <folding />
-        </state>
+        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/Router.py">
@@ -1330,16 +647,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/bandwidthservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
-          <folding />
-        </state>
+        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/errores.html">
@@ -1370,16 +683,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryTop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
-          <folding />
-        </state>
+        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/bus.html">
@@ -1404,23 +713,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
+        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/memoryTop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/bandwidthservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
+        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/site-packages/flask/app.py">
@@ -1474,9 +777,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/ServiceInfo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="1" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2482">
-          <folding />
-        </state>
+        <state line="10" column="1" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2482" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/layout.html">
@@ -1488,9 +789,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="544">
-          <folding />
-        </state>
+        <state line="25" column="13" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="544" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/layoutAdmin.html">
@@ -1502,18 +801,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/templates/widgets/widget.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="638" selection-end="638" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="357">
+        <state line="14" column="0" selection-start="638" selection-end="638" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="357">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HermEsbPanel/Router.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="12" selection-start="281" selection-end="281" vertical-scroll-proportion="0.2142039" vertical-offset="0" max-vertical-offset="2754">
+        <state line="21" column="0" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2669">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HermEsbPanel/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="27" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HermEsbPanel/settings.cfg">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="39" selection-start="851" selection-end="851" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HermEsbPanel/runserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="50" selection-start="781" selection-end="781" vertical-scroll-proportion="0.091561936" vertical-offset="357" max-vertical-offset="1972">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 

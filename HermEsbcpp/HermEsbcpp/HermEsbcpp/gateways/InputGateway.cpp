@@ -44,7 +44,7 @@ namespace HermEsb
 			//Leer el mensaje del bus y lanzar un hilo con un nuevo evento
 			//TODO: Crear el pool de hilos mediante semaforo
 			_thSemaphore->wait();
-			boost::t
+			//boost::t
 			
 			//threadListen = new boost::thread(boost::bind(&InBoundConnectionPoint::Proccess, this));
 
