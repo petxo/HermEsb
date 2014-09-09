@@ -45,6 +45,7 @@ class ServiceRepository:
             .sort("TotalMessages", pymongo.DESCENDING) \
             .limit(rows)
 
+
 class ServiceInfoView:
     def __init__(self, server):
         self.__repo = ServiceRepository(server)

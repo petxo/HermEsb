@@ -39,7 +39,7 @@ namespace HermEsb
 
 		void InputGateway::ReceivedMessage(InBoundConnectionPoint& sender, void* message, int messageLen)
 		{
-			//Leer el mensaje del bus y lanzar un hilo con un nuevo evento
+			//TODO: Leer el mensaje del bus y lanzar un hilo con un nuevo evento
 
 		}
 

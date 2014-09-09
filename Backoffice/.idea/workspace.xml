@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d187867b-85a3-4bbe-be0c-94832685efdb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/widgets/loadQueueTop.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Agent/Agent.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Agent/Agent.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/ErrorHandling/Messages/ErrorHandlerMessage.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/ErrorHandling/Messages/ErrorHandlerMessage.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/ErrorHandling/ErrorHandlingController.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/ErrorHandling/ErrorHandlingController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/ErrorHandling/Messages/ErrorMessageFactory.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/ErrorHandling/Messages/ErrorMessageFactory.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/ErrorHandling/ErrorOnHandlersEventHandler.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/ErrorHandling/ErrorOnHandlersEventHandler.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/ErrorHandling/ErrorOnHandlersEventHandlerArgs.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/ErrorHandling/ErrorOnHandlersEventHandlerArgs.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Errores.py" afterPath="$PROJECT_DIR$/Errores.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/channels/InBoundConnectionPoint.cpp" afterPath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/channels/InBoundConnectionPoint.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/channels/OutBoundConnectionPoint.cpp" afterPath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/channels/OutBoundConnectionPoint.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcppTest/channels/rabbitmq/RabbitInBoundTest.cpp" afterPath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcppTest/channels/rabbitmq/RabbitInBoundTest.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Router.py" afterPath="$PROJECT_DIR$/Router.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Router/RouterControlProcessor.cs" afterPath="$PROJECT_DIR$/../HermEsb/Core/HermEsb.Core/Processors/Router/RouterControlProcessor.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Sergio.xml" />
+      <change type="MOVED" beforePath="C:\Projects\Bteam\HermEsb\Backoffice\.idea\Direccion.iml" afterPath="$PROJECT_DIR$/.idea/HermesBackOffice.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/gateways/InputGateway.cpp" afterPath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/gateways/InputGateway.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/channels/OutBoundConnectionPoint.h" afterPath="$PROJECT_DIR$/../HermEsbcpp/HermEsbcpp/HermEsbcpp/channels/OutBoundConnectionPoint.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceInfo.py" afterPath="$PROJECT_DIR$/ServiceInfo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServiceStatistics.py" afterPath="$PROJECT_DIR$/ServiceStatistics.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/environments.cfg" afterPath="$PROJECT_DIR$/environments.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Direccion.iws" />
@@ -48,7 +38,8 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="586" selection-end="586" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="527">
+            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="527">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -57,7 +48,8 @@
       <file leaf-file-name="bandwidthservice.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/widgets/bandwidthservice.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -66,7 +58,8 @@
       <file leaf-file-name="errores.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/errores.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="170" column="14" selection-start="6625" selection-end="6625" vertical-scroll-proportion="0.0" vertical-offset="2890" max-vertical-offset="2992">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2890" max-vertical-offset="2992">
+              <caret line="170" column="14" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -75,7 +68,8 @@
       <file leaf-file-name="layout.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="48" selection-start="1270" selection-end="1287" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="986">
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="986">
+              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -84,16 +78,28 @@
       <file leaf-file-name="Errores.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Errores.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="73" selection-start="3128" selection-end="3128" vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="1853">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="1853">
+              <caret line="98" column="73" selection-start-line="98" selection-start-column="73" selection-end-line="98" selection-end-column="73" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceInfo.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ServiceInfo.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServiceInfo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="54" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.51993066" vertical-offset="431" max-vertical-offset="2482">
+            <state vertical-scroll-proportion="0.0" vertical-offset="431" max-vertical-offset="2499">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="environments.cfg" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/environments.cfg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.24142012" vertical-offset="0" max-vertical-offset="845">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -102,7 +108,8 @@
       <file leaf-file-name="loadQueueTop.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/widgets/loadQueueTop.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="23" selection-start="118" selection-end="118" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="408">
+            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="408">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -111,7 +118,8 @@
       <file leaf-file-name="Router.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Router.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="0" selection-start="5380" selection-end="5380" vertical-scroll-proportion="0.0" vertical-offset="1758" max-vertical-offset="2652">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="2720">
+              <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -120,16 +128,8 @@
       <file leaf-file-name="memoryTop.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/widgets/memoryTop.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="memoryservice.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/widgets/memoryservice.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -194,7 +194,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -206,42 +206,27 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Direccion" />
+              <option name="myItemId" value="HermesBackOffice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Direccion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Backoffice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Direccion" />
+              <option name="myItemId" value="HermesBackOffice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Backoffice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Direccion" />
+              <option name="myItemId" value="HermesBackOffice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -252,14 +237,10 @@
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widgets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Direccion" />
+              <option name="myItemId" value="HermesBackOffice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -273,15 +254,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="web.server" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
@@ -307,6 +289,73 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.Router">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Direccion" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Direccion" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Direccion" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -322,6 +371,9 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -348,6 +400,26 @@
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Direccion" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -427,8 +499,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24285714" sideWeight="0.6498278" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3445652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25183374" sideWeight="0.6498278" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34422657" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298731" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3054348" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -446,6 +518,9 @@
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -461,100 +536,118 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ServiceStatistics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="2954" selection-end="2954" vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="2584">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/memoryTop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/memoryservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServiceStatistics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="2584">
+          <caret line="65" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/widgets/memoryTop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/widgets/memoryservice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
+          <caret line="8" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ServiceInfo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="33" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2108">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2108">
+          <caret line="55" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/bandwidthservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+          <caret line="8" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/errores.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="14" selection-start="6625" selection-end="6625" vertical-scroll-proportion="0.0" vertical-offset="2890" max-vertical-offset="2992">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2890" max-vertical-offset="2992">
+          <caret line="170" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="48" selection-start="1270" selection-end="1287" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="986">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="986">
+          <caret line="18" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Errores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="73" selection-start="3128" selection-end="3128" vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="1853">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Environments.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="12" selection-start="2437" selection-end="2437" vertical-scroll-proportion="0.0" vertical-offset="883" max-vertical-offset="2108">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="1853">
+          <caret line="98" column="73" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ServiceStatistics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="8" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="2669">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="2669">
+          <caret line="20" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/memoryTop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/memoryservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
+          <caret line="8" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/environments.cfg">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="61" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <caret line="46" column="61" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
@@ -562,250 +655,297 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ServiceInfo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="31" selection-start="2346" selection-end="2346" vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="2108">
+        <state vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="2108">
+          <caret line="62" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/bandwidthservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+          <caret line="8" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/errores.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="14" selection-start="6625" selection-end="6625" vertical-scroll-proportion="0.0" vertical-offset="2890" max-vertical-offset="2992">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2890" max-vertical-offset="2992">
+          <caret line="170" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="48" selection-start="1270" selection-end="1287" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="986">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="986">
+          <caret line="18" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Errores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ServiceStatistics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="8" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="2669">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="2669">
+          <caret line="20" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/memoryTop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/memoryservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
+          <caret line="8" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Router.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="26" selection-start="5670" selection-end="5696" vertical-scroll-proportion="0.0" vertical-offset="2465" max-vertical-offset="2550" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2465" max-vertical-offset="2550">
+          <caret line="145" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/bandwidthservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+          <caret line="8" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/errores.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="14" selection-start="6625" selection-end="6625" vertical-scroll-proportion="0.0" vertical-offset="2890" max-vertical-offset="2992">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2890" max-vertical-offset="2992">
+          <caret line="170" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="48" selection-start="1270" selection-end="1287" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="986">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="986">
+          <caret line="18" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Errores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ServiceStatistics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="8" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="2669">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="2669">
+          <caret line="20" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/memoryTop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/memoryservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
+          <caret line="8" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/bus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="12" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/speedservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="39" selection-start="265" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="7" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/totalsizebandwidthservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="57" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="11" column="57" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/lantencyservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="53" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="3" column="53" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/memoryservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="40" selection-start="310" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="527">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/memoryTop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/bandwidthservice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="48" selection-start="1270" selection-end="1287" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="986">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1466" column="0" selection-start="61884" selection-end="61884" vertical-scroll-proportion="0.5222222" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.5222222" vertical-offset="0" max-vertical-offset="0">
+          <caret line="1466" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/errores.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="14" selection-start="6625" selection-end="6625" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2890" max-vertical-offset="2992">
+          <caret line="170" column="14" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="61" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="969" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Errores.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="73" selection-start="3128" selection-end="3128" vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="1819">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Environments.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="12" selection-start="2437" selection-end="2437" vertical-scroll-proportion="0.0" vertical-offset="883" max-vertical-offset="2108">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="1853">
+          <caret line="98" column="73" selection-start-line="98" selection-start-column="73" selection-end-line="98" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/re.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="8" selection-start="3207" selection-end="3207" vertical-scroll-proportion="0.33216783" vertical-offset="1935" max-vertical-offset="4811" />
+        <state vertical-scroll-proportion="0.33216783" vertical-offset="1935" max-vertical-offset="4811">
+          <caret line="125" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ServiceStatistics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="20" selection-start="1960" selection-end="1972" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2703">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2703">
+          <caret line="39" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="586" selection-end="586" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="527">
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="527">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Router.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="0" selection-start="5380" selection-end="5380" vertical-scroll-proportion="0.0" vertical-offset="1758" max-vertical-offset="2652">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="2720">
+          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/widgets/loadQueueTop.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="23" selection-start="118" selection-end="118" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="408">
+        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="408">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ServiceInfo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="54" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.51993066" vertical-offset="431" max-vertical-offset="2482">
+        <state vertical-scroll-proportion="0.0" vertical-offset="431" max-vertical-offset="2499">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/environments.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24142012" vertical-offset="0" max-vertical-offset="845">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
