@@ -109,7 +109,7 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
                 }
                 catch (Exception exception)
                 {
-                    Logger.Error("Error Socket Rabbit (AlreadyClosedException), intentando reconectar", exception);
+                    Logger.Error("Error Socket Rabbit intentando reconectar", exception);
                     Reconnect();
                 }
             }

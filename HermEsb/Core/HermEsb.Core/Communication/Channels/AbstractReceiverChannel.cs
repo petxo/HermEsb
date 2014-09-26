@@ -1,8 +1,6 @@
 using Bteam.SimpleStateMachine;
 using System;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using HermEsb.Core.Communication.EndPoints;
 
 namespace HermEsb.Core.Communication.Channels
@@ -12,12 +10,10 @@ namespace HermEsb.Core.Communication.Channels
     /// </summary>
     public abstract class AbstractReceiverChannel : AbstractSenderChannel, IReceiverChannel
     {
-        private Task[] _messageExtractionTasks;
         private IStateMachine<EndPointStatus> _endPointStateMachine;
-        private readonly int _numberOfParallelTasks;
-        private int _numberOfCurrentTasks;
-        private Task _extractTask;
-        private CancellationTokenSource _cancellationTokenSource;
+        private Thread _extractTask;
+        private readonly Semaphore _semaphore;
+        private readonly CountdownEvent _countdown;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AbstractReceiverChannel"/> class.
@@ -26,12 +22,11 @@ namespace HermEsb.Core.Communication.Channels
         internal AbstractReceiverChannel(int numberOfParallelTasks)
         {
             ConfigureStateMachine();
-            _numberOfParallelTasks = numberOfParallelTasks;
+            _semaphore = new Semaphore(numberOfParallelTasks, numberOfParallelTasks);
+            _countdown = new CountdownEvent(0);
 
             // Retrieve the number of tasks from configuration
             // Create an array of MessageBus returning tasks
-            _messageExtractionTasks = new Task[_numberOfParallelTasks];
-            _numberOfCurrentTasks = 0;
 
             OnReceivedCompleted += (sender, args) => ReceivedCompleted(args.Message);
         }
@@ -84,26 +79,17 @@ namespace HermEsb.Core.Communication.Channels
             if (_extractTask != null)
             {
                 SpinWait.SpinUntil(() => !ReadingQueue);
-                Task.WaitAll(_messageExtractionTasks.Where(task => task != null).ToArray());
-
-                foreach (var messageExtractionTask in _messageExtractionTasks.Where(task => task != null))
-                {
-                    messageExtractionTask.Dispose();
-                }
-                _messageExtractionTasks = new Task[_numberOfParallelTasks];
-                _numberOfCurrentTasks = 0;
-
-                Task.WaitAny(_extractTask);
-                _cancellationTokenSource.Cancel();
-                _extractTask.Dispose();
+                _countdown.Wait();
+                _extractTask.Join();
             }
         }
 
         private void ReceivingStart()
         {
             ReadingQueue = true;
-            _cancellationTokenSource = new CancellationTokenSource();
-            _extractTask = Task.Factory.StartNew(ExtractMessages, _cancellationTokenSource.Token);
+            _countdown.Reset();
+            _extractTask = new Thread(ExtractMessages);
+            _extractTask.Start();
         }
 
         /// <summary>
@@ -155,21 +141,22 @@ namespace HermEsb.Core.Communication.Channels
             try
             {
                 Logger.Debug("Channel Received Completed");
-                int nextFreeTaskIndex;
-                if (_numberOfCurrentTasks == _numberOfParallelTasks)
-                {
-                    nextFreeTaskIndex = Task.WaitAny(_messageExtractionTasks);
-                    _messageExtractionTasks[nextFreeTaskIndex].Dispose();
-                }
-                else
-                {
-                    nextFreeTaskIndex = _numberOfCurrentTasks;
-                    _numberOfCurrentTasks++;
-                }
-
-                // Start a new parallel task in the next free place holder
-                _messageExtractionTasks[nextFreeTaskIndex] = Task.Factory.StartNew(() => InvokeOnReceivedMessage(message));
-
+                _semaphore.WaitOne();
+                _countdown.AddCount();
+                var thread = new Thread(() =>
+                                            {
+                                                try
+                                                {
+                                                    InvokeOnReceivedMessage(message);
+                                                }
+                                                catch (Exception exception)
+                                                {
+                                                    Logger.Error("Error On Received Message", exception);
+                                                }
+                                                _countdown.Signal();
+                                                _semaphore.Release();
+                                            });
+                thread.Start();
             }
             catch (Exception exception)
             {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using Bteam.SimpleStateMachine;
 using HermEsb.Core.Communication;
@@ -392,64 +393,70 @@ namespace HermEsb.Core.Processors.Agent
                 }
             }
 
-            var listTask = new List<Task>();
+            var listTask = new List<Thread>();
 
             //Buscar en los handlers para procesar el mensaje
             foreach (Type type in HandlerRepository.GetHandlersByMessage(args.Message.GetType()))
             {
                 Type typeClosure = type;
-
-                listTask.Add(Task.Factory.StartNew(() =>
-                    {
-                        try
-                        {
-                            using (var messageContext = ContextManager.Instance.CreateNewContext())
-                            {
-                                Logger.Debug(string.Format("Se abre el handler {0}: ", typeClosure.FullName));
-                                var messageSession = (Session)currentSession.Clone();
-
-                                object messageHandler =
-                                    messageContext.Resolve(typeClosure);
-
-                                InvokeOnCreatedHandler();
-
-                                InitializeContext(messageContext, args, messageSession);
-
-                                var contextHandler = ContextHandlerFactory.Create(messageSession,
-                                                                                    ContextManager.Instance
-                                                                                                .CurrentContext
-                                                                                                .MessageInfo
-                                                                                                .CurrentCallContext);
-
-                                InitializeMessageHandler(messageHandler, contextHandler);
-
-                                try
-                                {
-                                    InvokeMethodHandle(messageHandler, args.Message);
-                                }
-                                catch (Exception exception)
-                                {
-                                    Logger.Fatal("Error On Handler", exception);
-                                    var messageSerialized = args.Message.ToJson();
-                                    Logger.Fatal(string.Format("Message Error: {0}", messageSerialized), exception);
-                                    InvokeOnErrorHandler(args.Header, messageSerialized, args.SerializedMessage, exception, typeClosure);
-                                }
-                            }
-
-                            InvokeOnDestoyedHandler();
-                        }
-                        catch (Exception exception)
-                        {
-                            Logger.Fatal("Error On Task", exception);
-                            var messageSerialized = args.Message.ToJson();
-                            Logger.Fatal(string.Format("Message Error: {0}", messageSerialized), exception);
-                            InvokeOnErrorHandler(args.Header, messageSerialized, args.SerializedMessage, exception, typeClosure);
-                            //TODO: Poner tramiento de errores sobre la parallel
-                        }
-                    }));
+                var th = new Thread(() => ExecuteHandler(args, typeClosure, currentSession));
+                th.Start();
+                listTask.Add(th);
             }
 
-            Task.WaitAll(listTask.ToArray());
+            foreach (var thread in listTask)
+            {
+                thread.Join(TimeSpan.FromMinutes(3));
+            }
+        }
+
+        private void ExecuteHandler(OutputGatewayEventHandlerArgs<TMessage, MessageHeader> args, Type type, Session currentSession)
+        {
+            try
+            {
+                using (var messageContext = ContextManager.Instance.CreateNewContext())
+                {
+                    Logger.Debug(string.Format("Se abre el handler {0}: ", type.FullName));
+                    var messageSession = (Session) currentSession.Clone();
+
+                    object messageHandler =
+                        messageContext.Resolve(type);
+
+                    InvokeOnCreatedHandler();
+
+                    InitializeContext(messageContext, args, messageSession);
+
+                    var contextHandler = ContextHandlerFactory.Create(messageSession,
+                        ContextManager.Instance
+                            .CurrentContext
+                            .MessageInfo
+                            .CurrentCallContext);
+
+                    InitializeMessageHandler(messageHandler, contextHandler);
+
+                    try
+                    {
+                        InvokeMethodHandle(messageHandler, args.Message);
+                    }
+                    catch (Exception exception)
+                    {
+                        Logger.Fatal("Error On Handler", exception);
+                        var messageSerialized = args.Message.ToJson();
+                        Logger.Fatal(string.Format("Message Error: {0}", messageSerialized), exception);
+                        InvokeOnErrorHandler(args.Header, messageSerialized, args.SerializedMessage, exception, type);
+                    }
+                }
+
+                InvokeOnDestoyedHandler();
+            }
+            catch (Exception exception)
+            {
+                Logger.Fatal("Error On Task", exception);
+                var messageSerialized = args.Message.ToJson();
+                Logger.Fatal(string.Format("Message Error: {0}", messageSerialized), exception);
+                InvokeOnErrorHandler(args.Header, messageSerialized, args.SerializedMessage, exception, type);
+                //TODO: Poner tramiento de errores sobre la parallel
+            }
         }
 
         /// <summary>
@@ -565,7 +572,8 @@ namespace HermEsb.Core.Processors.Agent
             MonitorEventHandler handler = OnMessageReceived;
             if (handler != null)
             {
-                Task.Factory.StartNew(() => handler(this, new MonitorEventArgs()));
+                var thread = new Thread(() => handler(this, new MonitorEventArgs()));
+                thread.Start();
             }
         }
 
@@ -575,7 +583,11 @@ namespace HermEsb.Core.Processors.Agent
         private void InvokeOnMessageSent()
         {
             MonitorEventHandler handler = OnMessageSent;
-            if (handler != null) Task.Factory.StartNew(() => handler(this, new MonitorEventArgs()));
+            if (handler != null)
+            {
+                var thread = new Thread(() => handler(this, new MonitorEventArgs()));
+                thread.Start();
+            }
         }
 
         /// <summary>
@@ -584,7 +596,11 @@ namespace HermEsb.Core.Processors.Agent
         private void InvokeOnCreatedHandler()
         {
             HandlerMonitorEventHandler handler = OnCreatedHandler;
-            if (handler != null) Task.Factory.StartNew(() => handler(this, new HandlerMonitorEventArgs()));
+            if (handler != null)
+            {
+                var thread = new Thread(() => handler(this, new HandlerMonitorEventArgs()));
+                thread.Start();
+            }
         }
 
         /// <summary>
@@ -593,7 +609,11 @@ namespace HermEsb.Core.Processors.Agent
         private void InvokeOnDestoyedHandler()
         {
             HandlerMonitorEventHandler handler = OnDestoyedHandler;
-            if (handler != null) Task.Factory.StartNew(() => handler(this, new HandlerMonitorEventArgs()));
+            if (handler != null)
+            {
+                var thread = new Thread(() => handler(this, new HandlerMonitorEventArgs()));
+                thread.Start();
+            }
         }
 
         /// <summary>
@@ -608,14 +628,17 @@ namespace HermEsb.Core.Processors.Agent
         {
             ErrorOnHandlersEventHandler handler = OnErrorHandler;
             if (handler != null)
-                Task.Factory.StartNew(() => handler(this, new ErrorOnHandlersEventHandlerArgs
-                    {
-                        Header = header,
-                        Message = message,
-                        Exception = exception,
-                        HandlerType = handlerType,
-                        MessageBus = messageBus
-                    }));
+            {
+                var thread = new Thread(() => handler(this, new ErrorOnHandlersEventHandlerArgs
+                {
+                    Header = header,
+                    Message = message,
+                    Exception = exception,
+                    HandlerType = handlerType,
+                    MessageBus = messageBus
+                }));
+                thread.Start();
+            }
         }
     }
 }
