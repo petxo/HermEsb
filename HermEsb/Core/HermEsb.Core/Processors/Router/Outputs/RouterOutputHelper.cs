@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using HermEsb.Core.Gateways;
 using HermEsb.Core.Messages;
 using HermEsb.Core.Monitoring;

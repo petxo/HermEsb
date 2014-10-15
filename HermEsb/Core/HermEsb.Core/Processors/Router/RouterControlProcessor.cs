@@ -16,7 +16,7 @@ using HermEsb.Core.Messages.Control;
 using HermEsb.Core.Monitoring;
 using HermEsb.Core.Processors.Router.Subscriptors;
 using HermEsb.Logging;
-using ServiceStack;
+using ServiceStack.Text;
 
 namespace HermEsb.Core.Processors.Router
 {

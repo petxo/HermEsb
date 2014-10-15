@@ -53,13 +53,10 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
             while (RunningChannelSpec.Instance.IsSatisfiedBy(this))
             {
                 BasicDeliverEventArgs result;
-                //TODO: Tener en cuenta los cortes de red
-                // Hay que poner un try para que se vuelva a reconectar el jodio wrapper
                 if (_rabbitWrapper.Dequeue((int)fromSeconds.TotalMilliseconds, out result))
                 {
-                    var message = result;
-                    _rabbitWrapper.BasicAck(message.DeliveryTag, true);
-                    InvokeOnReceivedCompleted(message.Body);
+                    _rabbitWrapper.BasicAck(result.DeliveryTag, true);
+                    InvokeOnReceivedCompleted(result.Body);
                 }
             }
             ReadingQueue = false;
