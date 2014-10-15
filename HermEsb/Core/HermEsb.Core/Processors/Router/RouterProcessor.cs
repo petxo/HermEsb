@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Bteam.SimpleStateMachine;
 using HermEsb.Core.Communication.EndPoints;
@@ -305,7 +306,11 @@ namespace HermEsb.Core.Processors.Router
         private void InvokeOnMessageReceived()
         {
             MonitorEventHandler handler = OnMessageReceived;
-            if (handler != null) Task.Factory.StartNew(() => handler(this, new MonitorEventArgs()));
+            if (handler != null)
+            {
+                var thread = new Thread(() => handler(this, new MonitorEventArgs()));
+                thread.Start();
+            }
         }
 
         /// <summary>
@@ -315,7 +320,11 @@ namespace HermEsb.Core.Processors.Router
         private void InvokeOnMessageSent(MonitorEventArgs monitorEventArgs)
         {
             MonitorEventHandler handler = OnMessageSent;
-            if (handler != null) Task.Factory.StartNew(() => handler(this, monitorEventArgs));
+            if (handler != null)
+            {
+                var thread = new Thread(() => handler(this, new MonitorEventArgs()));
+                thread.Start();
+            }
         }
 
         /// <summary>
@@ -327,7 +336,10 @@ namespace HermEsb.Core.Processors.Router
         {
             ErrorOnRouterEventHandler handler = OnRouterError;
             if (handler != null)
-                handler(this, new ErrorOnRouterEventHandlerArgs {Message = message, Exception = exception});
+            {
+                var thread = new Thread(() => handler(this, new ErrorOnRouterEventHandlerArgs { Message = message, Exception = exception }));
+                thread.Start();
+            }
         }
     }
 }

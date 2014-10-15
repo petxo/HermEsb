@@ -1,7 +1,9 @@
 
 #include "InputGateway.h"
 #include "BaseGateway.h"
-#include <omp.h>
+#include <boost\thread.hpp>
+#include <boost\thread\latch.hpp>
+#include <boost\interprocess\sync\interprocess_semaphore.hpp>
 #include "../global.h"
 
 namespace HermEsb
@@ -41,7 +43,7 @@ namespace HermEsb
 
 		void InputGateway::ReceivedMessage(InBoundConnectionPoint& sender, void* message, int messageLen)
 		{
-			//Leer el mensaje del bus y lanzar un hilo con un nuevo evento
+			//TODO: Leer el mensaje del bus y lanzar un hilo con un nuevo evento
 			//TODO: Crear el pool de hilos mediante semaforo
 			_thSemaphore->wait();
 			//boost::t

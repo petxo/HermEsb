@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97A0FB89-618E-4BB6-9DD3-0D533BFDB8AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HermEsb.Monitoring</RootNamespace>
+    <AssemblyName>HermEsb.Monitoring</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Bteam.Specifications">
+      <HintPath>..\..\libs\Bteam.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="BteamMongoDB">
+      <HintPath>..\..\libs\BteamMongoDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.3.5.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\RabbitMQ.Client.3.3.5\lib\net30\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\AbstractMongoEntity.cs" />
+    <Compile Include="Entities\ErrorHandlerEntity.cs" />
+    <Compile Include="Entities\ErrorRouterEntity.cs" />
+    <Compile Include="Entities\HealthEntity.cs" />
+    <Compile Include="Entities\HeartBeatEntity.cs" />
+    <Compile Include="Entities\MessageTypesEntity.cs" />
+    <Compile Include="Entities\MonitoringEntity.cs" />
+    <Compile Include="Entities\ProcessingVelocityEntity.cs" />
+    <Compile Include="Entities\QueueLoadEntity.cs" />
+    <Compile Include="Entities\ServiceInfoEntity.cs" />
+    <Compile Include="Entities\TransferVelocityEntity.cs" />
+    <Compile Include="Entities\VelocityEntity.cs" />
+    <Compile Include="Handlers\ErrorOnHanldersMessageHandler.cs" />
+    <Compile Include="Handlers\ErrorRouterHandler.cs" />
+    <Compile Include="Handlers\HealthHandler.cs" />
+    <Compile Include="Handlers\HeartBeatHandler.cs" />
+    <Compile Include="Handlers\InputQueueHandler.cs" />
+    <Compile Include="Handlers\MessageTypesHandler.cs" />
+    <Compile Include="Handlers\MonitoringMessageHandler.cs" />
+    <Compile Include="Handlers\OutputTypesHandler.cs" />
+    <Compile Include="Handlers\ProcessingVelocityHandler.cs" />
+    <Compile Include="Handlers\QueueLoadHandler.cs" />
+    <Compile Include="Handlers\TransferVelocityHandler.cs" />
+    <Compile Include="Installer\MonitoringWindsorInstaller.cs" />
+    <Compile Include="Messages\HealthMessage.cs" />
+    <Compile Include="Messages\HeartBeatMessage.cs" />
+    <Compile Include="Messages\IHealthMessage.cs" />
+    <Compile Include="Messages\IHeartBeatMessage.cs" />
+    <Compile Include="Messages\IOutputTypesMessage.cs" />
+    <Compile Include="Messages\IProcessingVelocityMessage.cs" />
+    <Compile Include="Messages\IQueueLoadMessage.cs" />
+    <Compile Include="Messages\ITransferVelocityMessage.cs" />
+    <Compile Include="Messages\OutputTypesMessage.cs" />
+    <Compile Include="Messages\ProcessingVelocityMessage.cs" />
+    <Compile Include="Messages\QueueLoadMessage.cs" />
+    <Compile Include="Messages\TransferVelocityMessage.cs" />
+    <Compile Include="Messages\VelocityMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IMonitoringRepository.cs" />
+    <Compile Include="Repositories\IServiceInfoRepository.cs" />
+    <Compile Include="Repositories\MonitoringRepository.cs" />
+    <Compile Include="Repositories\ServiceInfoRepository.cs" />
+    <Compile Include="Samplers\HealthSampler.cs" />
+    <Compile Include="Samplers\HeartBeatSampler.cs" />
+    <Compile Include="Samplers\MessageOutputTypesSampler.cs" />
+    <Compile Include="Samplers\MessageTypesSampler.cs" />
+    <Compile Include="Samplers\ProcessingVelocitySampler.cs" />
+    <Compile Include="Samplers\QueueLoadSampler.cs" />
+    <Compile Include="Samplers\TransferVelocitySampler.cs" />
+    <Compile Include="Services\IServiceInfoService.cs" />
+    <Compile Include="Services\ServiceInfoEventHandler.cs" />
+    <Compile Include="Services\ServiceInfoEventHandlerArgs.cs" />
+    <Compile Include="Services\ServiceInfoService.cs" />
+    <Compile Include="Specifications\BusTypeSpec.cs" />
+    <Compile Include="Specifications\IdentitySpec.cs" />
+    <Compile Include="Translators\BaseTranslator.cs" />
+    <Compile Include="Translators\ITranslator.cs" />
+    <Compile Include="Translators\Translator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\HermEsb.Core\HermEsb.Core.csproj">
+      <Project>{abad7cc1-9a85-4f5e-9109-d00f5700caf1}</Project>
+      <Name>HermEsb.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extended\HermEsb.Logging\HermEsb.Logging.csproj">
+      <Project>{9a6b1507-ae61-4773-9d72-718e33106397}</Project>
+      <Name>HermEsb.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
