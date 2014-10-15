@@ -172,7 +172,7 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
         /// <returns></returns>
         public bool Dequeue(int millisecondsTimeout, out BasicDeliverEventArgs result)
         {
-            while (true)
+            while (BasicConsumer.IsRunning)
             {
                 try
                 {
@@ -180,11 +180,16 @@ namespace HermEsb.Core.Communication.Channels.RabbitMq
                 }
                 catch (Exception exception)
                 {
-                    Logger.Error("Error Socket Rabbit (AlreadyClosedException), intentando reconectar", exception);
-                    Reconnect();
+                    if (BasicConsumer.IsRunning)
+                    {
+                        Logger.Error("Error Socket Rabbit (AlreadyClosedException), intentando reconectar", exception);
+                        Reconnect();
+                    }
                 }
             }
-            
+            result = null;
+            return true;
+
         }
 
         /// <summary>

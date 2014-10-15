@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Threading;
-using System.Threading.Tasks;
 using Bteam.SimpleStateMachine;
 using HermEsb.Core.Communication;
 using HermEsb.Core.Communication.EndPoints;
@@ -17,7 +16,7 @@ using HermEsb.Core.Messages.Builders;
 using HermEsb.Core.Monitoring;
 using HermEsb.Core.Processors.Agent.Reinjection;
 using HermEsb.Logging;
-using ServiceStack;
+using ServiceStack.Text;
 
 namespace HermEsb.Core.Processors.Agent
 {

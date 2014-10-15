@@ -31,7 +31,8 @@ namespace BasicBusSample
                     if (key.KeyChar == 'x' || key.KeyChar == 'X') break;
                 }
                 service.Stop();
-
+                service.Dispose();
+                Console.WriteLine("Bus parado");
             }
             catch (Exception ex)
             {

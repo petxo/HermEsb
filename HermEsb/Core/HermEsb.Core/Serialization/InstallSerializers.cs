@@ -16,7 +16,7 @@ namespace HermEsb.Core.Serialization
                 return new Stack<CallerContext>(callerContexts);
             };
 
-            JsConfig.DateHandler = DateHandler.ISO8601;
+            JsConfig.DateHandler = JsonDateHandler.ISO8601;
         }
     }
 }
