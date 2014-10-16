@@ -3,7 +3,7 @@ using HermEsb.Core.Messages.Monitoring;
 
 namespace HermEsb.Core.Test.Monitoring
 {
-    [DataContract]
+
     public class MonitoringMessageFake : MonitoringMessage
     {
 
@@ -12,7 +12,7 @@ namespace HermEsb.Core.Test.Monitoring
         /// Gets or sets the count.
         /// </summary>
         /// <value>The count.</value>
-        [DataMember]
+
         public int Count { get; set; }
     }
 }

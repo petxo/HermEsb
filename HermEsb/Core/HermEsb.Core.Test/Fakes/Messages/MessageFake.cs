@@ -13,7 +13,7 @@ namespace HermEsb.Core.Test.Fakes.Messages
         DateTime CreatedAt { get; set; }
     }
 
-    [DataContract]
+
     public class MessageFake : IMessageFake
     {
 
@@ -21,7 +21,7 @@ namespace HermEsb.Core.Test.Fakes.Messages
         /// Gets or sets the created at.
         /// </summary>
         /// <value>The created at.</value>
-        [DataMember]
+
         public DateTime CreatedAt { get; set; }
 
 

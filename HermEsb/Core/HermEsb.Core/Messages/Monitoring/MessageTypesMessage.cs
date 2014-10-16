@@ -6,7 +6,7 @@ namespace HermEsb.Core.Messages.Monitoring
     /// <summary>
     /// 
     /// </summary>
-    [DataContract]
+
     public class MessageTypesMessage : MonitoringMessage, IMessageTypesMessage
     {
         /// <summary>
@@ -21,7 +21,7 @@ namespace HermEsb.Core.Messages.Monitoring
         /// Gets or sets the message types.
         /// </summary>
         /// <value>The message types.</value>
-        [DataMember]
+
         public IList<MessageType> MessageTypes { get; set; }
     }
 }

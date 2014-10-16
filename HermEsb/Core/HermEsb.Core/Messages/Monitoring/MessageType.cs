@@ -5,14 +5,14 @@ namespace HermEsb.Core.Messages.Monitoring
     /// <summary>
     /// 
     /// </summary>
-    [DataContract]
+
     public class MessageType
     {
         /// <summary>
         /// Gets or sets the full name.
         /// </summary>
         /// <value>The full name.</value>
-        [DataMember]
+
         public string FullName { get; set; }
 
         /// <summary>

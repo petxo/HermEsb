@@ -20,7 +20,7 @@ namespace BasicSampleContracts
         /// <value>
         /// The nombre.
         /// </value>
-        [DataMember]
+
         string Nombre { get; set; }
     }
 }

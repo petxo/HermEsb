@@ -7,10 +7,10 @@ namespace HermEsb.Core.Messages
     /// <summary>
     /// 
     /// </summary>
-    [DataContract]
+
     public class Session : ISession
     {
-        [DataMember]
+
         private readonly IDictionary<string, object> _currentSession;
 
         /// <summary>

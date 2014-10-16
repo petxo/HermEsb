@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using HermEsb.Core.Messages;
 
 namespace BasicSampleContracts
 {
-    [DataContract]
+
     public class MessageBasic : IMessageBasic
     {
         /// <summary>
@@ -16,7 +11,7 @@ namespace BasicSampleContracts
         /// <value>
         /// The fecha.
         /// </value>
-        [DataMember]
+
         public DateTime Fecha { get; set; }
 
         /// <summary>
@@ -25,7 +20,7 @@ namespace BasicSampleContracts
         /// <value>
         /// The nombre.
         /// </value>
-        [DataMember]
+
         public string Nombre { get; set; }
     }
 }

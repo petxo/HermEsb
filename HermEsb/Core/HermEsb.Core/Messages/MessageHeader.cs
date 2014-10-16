@@ -9,10 +9,6 @@ namespace HermEsb.Core.Messages
     ///     Header for message bus
     /// </summary>
     [Serializable]
-    [DataContract]
-    [KnownType(typeof (Session))]
-    [KnownType(typeof (Identification))]
-    [KnownType(typeof (CallerContext))]
     public class MessageHeader : ICloneable
     {
         /// <summary>
@@ -48,7 +44,7 @@ namespace HermEsb.Core.Messages
         ///     Gets or sets the identification service.
         /// </summary>
         /// <value>The identification service.</value>
-        [DataMember]
+
         public Identification IdentificationService { get; set; }
 
 
@@ -58,63 +54,63 @@ namespace HermEsb.Core.Messages
         /// <value>
         /// The message id.
         /// </value>
-        [DataMember]
+
         public Guid MessageId { get; set; }
 
         /// <summary>
         ///     Gets or sets the type of the body.
         /// </summary>
         /// <value>The type of the body.</value>
-        [DataMember]
+
         public string BodyType { get; set; }
 
         /// <summary>
         ///     Gets or sets the created at.
         /// </summary>
         /// <value>The created at.</value>
-        [DataMember]
+
         public DateTime CreatedAt { get; set; }
 
         /// <summary>
         ///     Gets or sets the encoding code page.
         /// </summary>
         /// <value>The encoding code page.</value>
-        [DataMember]
+
         public int EncodingCodePage { get; set; }
 
         /// <summary>
         ///     Gets or sets the error reinjections.
         /// </summary>
         /// <value>The error reinjections.</value>
-        [DataMember]
+
         public int ReinjectionNumber { get; set; }
 
         /// <summary>
         ///     Gets or sets the priority.
         /// </summary>
         /// <value>The priority.</value>
-        [DataMember]
+
         public int Priority { get; set; }
 
         /// <summary>
         ///     Gets or sets the type.
         /// </summary>
         /// <value>The type.</value>
-        [DataMember]
+
         public MessageBusType Type { get; set; }
 
         /// <summary>
         ///     Gets or sets the call context.
         /// </summary>
         /// <value>The call context.</value>
-        [DataMember]
+
         public Session CallContext { get; set; }
 
         /// <summary>
         ///     Gets or sets the call stack.
         /// </summary>
         /// <value>The call stack.</value>
-        [DataMember]
+
         public Stack<CallerContext> CallStack { get; set; }
 
         /// <summary>
