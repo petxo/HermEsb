@@ -10,4 +10,13 @@ Permite la implementación de los patrones de diseño arquitectónicos:
 - Sender - Receiver
 - Publish - Suscriber
 
+Sender-Receiver
+---------------
+
+            var busPublisher = ConfigurationPublisher.With("config/publisher.xml")
+                                                .Log4NetBuilder("config/logging.xml")
+                                                .ConfigurePublisher()
+                                                .Create();
+
+
 
