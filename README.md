@@ -12,11 +12,11 @@ Permite la implementación de los patrones de diseño arquitectónicos:
 
 Sender-Receiver
 ---------------
-
+```cs
             var busPublisher = ConfigurationPublisher.With("config/publisher.xml")
                                                 .Log4NetBuilder("config/logging.xml")
                                                 .ConfigurePublisher()
                                                 .Create();
-
+```
 
 
