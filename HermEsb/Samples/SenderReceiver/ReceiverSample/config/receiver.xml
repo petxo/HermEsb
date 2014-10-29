@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="listener" type="HermEsb.Configuration.Listeners.ListenerConfig, HermEsb.Configuration"/>
+  </configSections>
+
+  <listener>
+    <input transport="RabbitMq">
+      <add name="uri" value="amqp://localhost/HermEsbSamples.Exch/ReceiverSample.Input/inputReceiverSample"/>
+    </input>
+    <handlersAssemblies>
+      <add name="ReceiverSample" assembly="ReceiverSample.exe" />
+    </handlersAssemblies>
+  </listener>
+</configuration>

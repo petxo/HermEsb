@@ -7,7 +7,7 @@ namespace HermEsb.Core.Messages
     /// Internal Message Bus
     /// </summary>
     [Serializable]
-    [DataContract]
+
     public class MessageBus
     {
         /// <summary>
@@ -32,14 +32,14 @@ namespace HermEsb.Core.Messages
         /// Gets or sets the header.
         /// </summary>
         /// <value>The header.</value>
-        [DataMember]
+
         public MessageHeader Header { get; set; }
 
         /// <summary>
         /// Gets or sets the body in JSON
         /// </summary>
         /// <value>The body.</value>
-        [DataMember]
+
         public string Body { get; set; }
 
         /// <summary>

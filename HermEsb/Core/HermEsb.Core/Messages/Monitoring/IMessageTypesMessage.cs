@@ -12,7 +12,6 @@ namespace HermEsb.Core.Messages.Monitoring
         /// Gets or sets the message types.
         /// </summary>
         /// <value>The message types.</value>
-        [DataMember]
         IList<MessageType> MessageTypes { get; set; }
     }
 }

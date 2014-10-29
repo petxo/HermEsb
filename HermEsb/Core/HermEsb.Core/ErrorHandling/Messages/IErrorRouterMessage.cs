@@ -12,7 +12,6 @@ namespace HermEsb.Core.ErrorHandling.Messages
         /// Gets or sets the message.
         /// </summary>
         /// <value>The message.</value>
-        [DataMember]
         MessageBus Message { get; set; }
     }
 }

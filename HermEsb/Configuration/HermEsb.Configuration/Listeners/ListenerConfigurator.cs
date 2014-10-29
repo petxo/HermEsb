@@ -10,21 +10,20 @@ using HermEsb.Core.Messages;
 using HermEsb.Core.Messages.Builders;
 using HermEsb.Core.Monitoring;
 using HermEsb.Core.Service;
-using HermEsb.Logging;
 
 namespace HermEsb.Configuration.Listeners
 {
-    public class MonitorListenerConfigurator : IConfigurator
+    public class ListenerConfigurator : IConfigurator
     {
         private readonly ListenerConfig _listenerConfig;
         private IInputGateway<IMessage, MessageHeader> _input;
         private IHandlerRepository _handlerRepository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MonitorListenerConfigurator"/> class.
+        /// Initializes a new instance of the <see cref="ListenerConfigurator"/> class.
         /// </summary>
         /// <param name="listenerConfig">The listener config.</param>
-        public MonitorListenerConfigurator(ListenerConfig listenerConfig)
+        public ListenerConfigurator(ListenerConfig listenerConfig)
         {
             _listenerConfig = listenerConfig;
         }
@@ -53,7 +52,7 @@ namespace HermEsb.Configuration.Listeners
         /// Creates the handler repository.
         /// </summary>
         /// <returns></returns>
-        private MonitorListenerConfigurator CreateHandlerRepository()
+        private ListenerConfigurator CreateHandlerRepository()
         {
             var handlerRepositoryFactory = HandlerRepositoryFactory.GetFactory<ListenersHandlerRepositoryFactory>();
             var assemblies = _listenerConfig.HandlersAssemblies.Cast<HandlerAssemblyConfig>().Select(ha => ha.Assembly).ToList();
@@ -65,7 +64,7 @@ namespace HermEsb.Configuration.Listeners
         /// Creates the input.
         /// </summary>
         /// <returns></returns>
-        private MonitorListenerConfigurator CreateInput()
+        private ListenerConfigurator CreateInput()
         {
             var uri = new Uri(_listenerConfig.Input.Uri);
             _input = AgentGatewayFactory.CreateInputGateway<IMessage>(uri, _listenerConfig.Input.Transport, 

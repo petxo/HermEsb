@@ -9,7 +9,7 @@ namespace HermEsb.Core.Controller.Messages
         /// Gets or sets the service.
         /// </summary>
         /// <value>The service.</value>
-        [DataMember]
+
         Identification Service { get; set; }
     }
 }

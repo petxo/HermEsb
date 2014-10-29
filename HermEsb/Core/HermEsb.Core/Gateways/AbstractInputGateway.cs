@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using HermEsb.Core.Communication.EndPoints;
 using HermEsb.Core.Logging;
 using HermEsb.Core.Messages;

@@ -108,7 +108,7 @@
     <Compile Include="IConfigurator.cs" />
     <Compile Include="Ioc\ConfigureIoc.cs" />
     <Compile Include="Listeners\ListenerConfig.cs" />
-    <Compile Include="Listeners\MonitorListenerConfigurator.cs" />
+    <Compile Include="Listeners\ListenerConfigurator.cs" />
     <Compile Include="Logging\ConfiguratorLogger.cs" />
     <Compile Include="MessageBuilder\ConfigurationBuilderHelper.cs" />
     <Compile Include="MessageBuilder\ConfigurationMessageBuilder.cs" />

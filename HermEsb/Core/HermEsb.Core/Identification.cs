@@ -7,7 +7,7 @@ namespace HermEsb.Core
     /// 
     /// </summary>
     [Serializable]
-    [DataContract]
+
     public class Identification
     {
         /// <summary>
@@ -28,14 +28,14 @@ namespace HermEsb.Core
         /// Gets or sets the id.
         /// </summary>
         /// <value>The id.</value>
-        [DataMember]
+
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or sets the type.
         /// </summary>
         /// <value>The type.</value>
-        [DataMember]
+
         public string Type { get; set; }
 
         /// <summary>
