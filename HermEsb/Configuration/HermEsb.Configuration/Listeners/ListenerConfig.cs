@@ -4,7 +4,7 @@ using HermEsb.Configuration.Services;
 
 namespace HermEsb.Configuration.Listeners
 {
-    [ConfigurationFragmentName("HermEsbListener")]
+    [ConfigurationFragmentName("listener")]
     public class ListenerConfig : ConfigurationSection
     {
         /// <summary>

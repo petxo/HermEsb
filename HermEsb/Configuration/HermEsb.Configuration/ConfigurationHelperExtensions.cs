@@ -31,7 +31,7 @@ namespace HermEsb.Configuration
 
         public static ConfigurationHelper ConfigureListener(this ConfigurationHelper configurationHelper)
         {
-            configurationHelper.Configurator = new MonitorListenerConfigurator(configurationHelper.ConfigurationRepository.Get<ListenerConfig>());
+            configurationHelper.Configurator = new ListenerConfigurator(configurationHelper.ConfigurationRepository.Get<ListenerConfig>());
             configurationHelper.Configurator.Configure();
             return configurationHelper;
         }

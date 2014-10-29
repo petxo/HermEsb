@@ -23,7 +23,7 @@ namespace HermEsb.Core.Communication.Channels
         {
             ConfigureStateMachine();
             _semaphore = new Semaphore(numberOfParallelTasks, numberOfParallelTasks);
-            _countdown = new CountdownEvent(0);
+            _countdown = new CountdownEvent(1);
 
             // Retrieve the number of tasks from configuration
             // Create an array of MessageBus returning tasks
@@ -79,6 +79,7 @@ namespace HermEsb.Core.Communication.Channels
             if (_extractTask != null)
             {
                 SpinWait.SpinUntil(() => !ReadingQueue);
+                _countdown.Signal();
                 _countdown.Wait();
                 _extractTask.Join();
             }
@@ -153,8 +154,11 @@ namespace HermEsb.Core.Communication.Channels
                                                 {
                                                     Logger.Error("Error On Received Message", exception);
                                                 }
-                                                _countdown.Signal();
-                                                _semaphore.Release();
+                                                finally
+                                                {
+                                                    _countdown.Signal();
+                                                    _semaphore.Release();
+                                                }
                                             });
                 thread.Start();
             }

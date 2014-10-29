@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="publisher" type="HermEsb.Configuration.Publishers.PublisherConfig, HermEsb.Configuration"/>
+  </configSections>
+
+  <publisher>
+    <identification id="Sender1" type="Sender"/>
+      <output transport="RabbitMq">
+        <add name="uri" value="amqp://localhost/HermEsbSamples.Exch/ReceiverSample.Input/inputReceiverSample"/>
+      </output>
+  </publisher>
+</configuration>

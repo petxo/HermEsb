@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using BasicSampleContracts;
 using HermEsb.Configuration;
+using HermEsb.Configuration.MessageBuilder;
 
 namespace BasicSamplePublisher
 {
