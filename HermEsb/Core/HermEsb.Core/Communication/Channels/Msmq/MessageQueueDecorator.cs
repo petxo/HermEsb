@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Messaging;
 using System.Runtime.Remoting;
 
+#if !MONO
 namespace HermEsb.Core.Communication.Channels.Msmq
 {
     /// <summary>
@@ -1061,7 +1062,7 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         /// Introduced in MSMQ 3.0. Gets or sets the multicast address associated with the queue.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.String"/> that contains a valid multicast address (in the form shown below) or null, which indicates that the queue is not associated with a multicast address. Copy Code&lt;address&gt;:&lt;port&gt;
+        /// A <see cref="T:System.String"/> that contains a valid multicast address (in the form shown below) or null, which indicates that the queue is not associated with a multicast address.ï¿½Copy Code&lt;address&gt;:&lt;port&gt;
         /// </returns>
         /// <exception cref="T:System.PlatformNotSupportedException">MSMQ 3.0 is not installed.</exception>
         public string MulticastAddress
@@ -1170,3 +1171,4 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         }
     }
 }
+#endif

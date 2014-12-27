@@ -2,6 +2,7 @@ using System;
 using System.Messaging;
 using HermEsb.Core.Communication.Channels.Specifications;
 
+#if !MONO
 namespace HermEsb.Core.Communication.Channels.Msmq
 {
     /// <summary>
@@ -119,3 +120,4 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         }
     }
 }
+#endif

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Messaging;
 using System.Runtime.Remoting;
 
+#if !MONO
 namespace HermEsb.Core.Communication.Channels.Msmq
 {
     /// <summary>
@@ -826,3 +827,4 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         event ReceiveCompletedEventHandler ReceiveCompleted;
     }
 }
+#endif

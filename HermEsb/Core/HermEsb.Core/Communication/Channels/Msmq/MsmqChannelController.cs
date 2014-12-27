@@ -1,3 +1,5 @@
+
+#if !MONO
 namespace HermEsb.Core.Communication.Channels.Msmq
 {
     /// <summary>
@@ -41,3 +43,4 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         }
     }
 }
+#endif

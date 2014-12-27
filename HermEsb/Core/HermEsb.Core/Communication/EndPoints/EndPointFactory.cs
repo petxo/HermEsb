@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+#if !MONO
 using HermEsb.Core.Communication.EndPoints.Msmq;
+#endif
 using HermEsb.Core.Communication.EndPoints.RabbitMq;
 
 namespace HermEsb.Core.Communication.EndPoints
@@ -18,7 +20,9 @@ namespace HermEsb.Core.Communication.EndPoints
         {
             Factories = new Dictionary<TransportType, IEndPointFactory>
                              {
+								#if !MONO
                                  { TransportType.Msmq, new MsmqEndPointFactory() },
+								#endif
                                  { TransportType.RabbitMq, new RabbitEndPointFactory() }
                              };
         }

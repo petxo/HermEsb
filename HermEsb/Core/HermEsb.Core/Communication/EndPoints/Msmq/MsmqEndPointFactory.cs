@@ -1,3 +1,4 @@
+#if !MONO
 using HermEsb.Core.Communication.Channels.Msmq;
 using HermEsb.Logging;
 using System;
@@ -46,3 +47,4 @@ namespace HermEsb.Core.Communication.EndPoints.Msmq
         }
     }
 }
+#endif

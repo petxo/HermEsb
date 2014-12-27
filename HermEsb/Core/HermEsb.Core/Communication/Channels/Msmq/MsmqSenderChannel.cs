@@ -1,3 +1,4 @@
+#if !MONO
 using System.Messaging;
 
 namespace HermEsb.Core.Communication.Channels.Msmq
@@ -73,3 +74,4 @@ namespace HermEsb.Core.Communication.Channels.Msmq
         }
     }
 }
+#endif
