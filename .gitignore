@@ -139,3 +139,4 @@ local.properties
 .texlipse
 
 *.pyc
+/HermEsb/HermEsb.userprefs

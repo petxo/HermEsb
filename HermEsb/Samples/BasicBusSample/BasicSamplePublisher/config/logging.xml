@@ -4,7 +4,7 @@
     <priority value="DEBUG"/>
     <appender-ref ref="ColoredConsoleAppender"/>
   </root>
-  <appender name="ColoredConsoleAppender" type="log4net.Appender.ColoredConsoleAppender,log4net">
+  <appender name="ColoredConsoleAppender" type="log4net.Appender.ConsoleAppender,log4net">
     <mapping>
       <level value="ERROR" />
       <foreColor value="Red, HighIntensity" />
